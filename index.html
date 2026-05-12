@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Savage Skin — Skincare With Teeth</title>
+<meta name="description" content="Clinical-grade formulas. Savage attitude. Pre-order the drop." />
+<meta property="og:title" content="Savage Skin — Skincare With Teeth" />
+<meta property="og:description" content="Clinical-grade actives. Savage attitude. For skin that refuses to be polite." />
+<meta property="og:type" content="website" />
+<link rel="icon" type="image/png" href="/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body class="cursor-on">
+
+<div class="bg-mesh"></div>
+<canvas id="stage"></canvas>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<div class="layer">
+
+<nav class="top">
+  <a href="#" class="brand magnetic"><span class="mark"></span><span>Savage<em style="font-style:normal;color:var(--neon)">/</em>Skin</span></a>
+  <div class="nav-links">
+    <a href="#shop" class="magnetic">Shop</a>
+    <a href="#science" class="magnetic">Science</a>
+    <a href="#manifesto" class="magnetic">Manifesto</a>
+    <a href="#ritual" class="magnetic">Ritual</a>
+    <a href="#vip" class="magnetic">VIP</a>
+  </div>
+  <a href="#vip" class="nav-cart magnetic"><span class="dot"></span>Presale Live</a>
+</nav>
+
+<section class="hero" data-scene="hero">
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="hero-pill reveal"><span class="pulse"></span> DROP 01 · LAUNCHING SOON</div>
+      <h1 class="hero-title">
+        <span class="word">Skincare</span>
+        <span class="word" style="display:block">with</span>
+        <em class="word">teeth.</em>
+      </h1>
+      <p class="hero-sub reveal d1">Clinical-grade actives. Savage attitude. Engineered for skin that refuses to be polite, predictable, or perfect. Presale opens at launch — VIP gets in 48 hours early.</p>
+      <div class="hero-ctas reveal d2">
+        <a href="#vip" class="btn btn-primary magnetic"><span>Reserve The Drop <span class="arr">→</span></span></a>
+        <a href="#shop" class="btn btn-ghost magnetic">View The Lineup</a>
+      </div>
+      <div class="countdown reveal d3">
+        <div class="cd-cell"><div class="cd-num" id="cdDays">00</div><div class="cd-lbl">Days</div></div>
+        <div class="cd-cell"><div class="cd-num" id="cdHours">00</div><div class="cd-lbl">Hours</div></div>
+        <div class="cd-cell"><div class="cd-num" id="cdMins">00</div><div class="cd-lbl">Mins</div></div>
+        <div class="cd-cell"><div class="cd-num" id="cdSecs">00</div><div class="cd-lbl">Secs</div></div>
+      </div>
+    </div>
+    <div class="hero-side">
+      <div class="spec-card reveal d2">
+        <div class="lbl">// HERO PRODUCT — POWER FIX</div>
+        <div class="row"><b>Active Complex</b><span>L-Ascorbic 15%</span></div>
+        <div class="row"><b>Niacinamide</b><span>5%</span></div>
+        <div class="row"><b>Peptide Blend</b><span>Matrixyl-3000</span></div>
+        <div class="row"><b>pH</b><span>3.5 — clinical</span></div>
+        <div class="row"><b>Verdict</b><span style="color:var(--neon)">Witchcraft.</span></div>
+      </div>
+      <div class="spec-card reveal d3">
+        <div class="lbl">// THE NUMBERS</div>
+        <div class="row"><b>Cult Products</b><span>04</span></div>
+        <div class="row"><b>BS Ingredients</b><span>00</span></div>
+        <div class="row"><b>Cruelty Free</b><span>100%</span></div>
+        <div class="row"><b>Receipts</b><span>Peer-reviewed</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <span><span class="star">★</span> Stay Feral <span class="star">★</span> Glow Loud <span class="star">★</span> Skincare With Teeth <span class="star">★</span> Free Shipping $60+ <span class="star">★</span> Drop 01 Presale <span class="star">★</span> Clinical, Not Cute <span class="star">★</span></span>
+    <span><span class="star">★</span> Stay Feral <span class="star">★</span> Glow Loud <span class="star">★</span> Skincare With Teeth <span class="star">★</span> Free Shipping $60+ <span class="star">★</span> Drop 01 Presale <span class="star">★</span> Clinical, Not Cute <span class="star">★</span></span>
+  </div>
+</div>
+
+<section id="shop" data-scene="products">
+  <div class="container">
+    <div class="reveal"><div class="section-tag">/ 01 — The Lineup</div></div>
+    <h2 class="section-title reveal">The <em>Goods.</em></h2>
+    <p class="section-sub reveal d1">Four formulations. Zero filler. Each one tested at clinical percentages and engineered to do exactly what it promises — out loud.</p>
+    <div class="products-grid" id="productsGrid"></div>
+  </div>
+</section>
+
+<section class="reel" data-scene="reel">
+  <video class="reel-video" autoplay muted loop playsinline preload="metadata">
+    <source src="/reel.mp4" type="video/mp4">
+  </video>
+  <div class="reel-inner">
+    <div class="reel-text">
+      <div class="reel-tag reveal">// FORMULATED IN THE LAB</div>
+      <h2 class="reel-title reveal d1">Engineered to <em>actually work.</em></h2>
+      <div class="reel-meta reveal d2">
+        <span>Peer-reviewed</span>
+        <span>Clinical percentages</span>
+        <span>Zero filler</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="science" id="science" data-scene="science">
+  <div class="container">
+    <div class="science-grid">
+      <div class="reveal">
+        <div class="molecule-stage">
+          <div class="molecule-corner tl"></div><div class="molecule-corner tr"></div>
+          <div class="molecule-corner bl"></div><div class="molecule-corner br"></div>
+          <div class="molecule-label"><span class="dot"></span>L-ASCORBIC · 15% · pH 3.5</div>
+          <canvas id="moleculeCanvas"></canvas>
+        </div>
+      </div>
+      <div>
+        <div class="reveal"><div class="section-tag">/ 02 — The Science</div></div>
+        <h2 class="section-title reveal">Receipts. <em>Not vibes.</em></h2>
+        <p class="section-sub reveal d1">Every formula peer-reviewed. Every active at the clinical percentage that actually moves the needle. We don't believe in "fragrance for emotional reasons." We don't believe in 0.2% retinol either.</p>
+        <div class="ingredient-list">
+          <div class="ing reveal d1"><div class="ing-num">/ 01</div><div><div class="ing-name">L-Ascorbic Acid</div><div class="ing-desc">Brightens, fades pigmentation, stimulates collagen at the dermal layer.</div></div><div class="ing-pct">15.0%</div></div>
+          <div class="ing reveal d2"><div class="ing-num">/ 02</div><div><div class="ing-name">Niacinamide</div><div class="ing-desc">Regulates sebum, tightens pores, reinforces barrier without irritation.</div></div><div class="ing-pct">5.0%</div></div>
+          <div class="ing reveal d3"><div class="ing-num">/ 03</div><div><div class="ing-name">Matrixyl-3000</div><div class="ing-desc">Peptide signal complex. Tells skin to produce more collagen — out loud.</div></div><div class="ing-pct">3.0%</div></div>
+          <div class="ing reveal d4"><div class="ing-num">/ 04</div><div><div class="ing-name">Bakuchiol</div><div class="ing-desc">Plant-derived retinol alternative. Same results. None of the rage.</div></div><div class="ing-pct">1.0%</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="manifesto" id="manifesto" data-scene="manifesto">
+  <div class="container">
+    <div class="reveal"><div class="section-tag">/ 03 — Manifesto</div></div>
+    <p class="manifesto-statement reveal d1">We don't do pretty. We do <em>powerful.</em> Skincare for skin that refuses to behave — built on clinical percentages, peer-reviewed actives, and a complete unwillingness to dilute the dose.</p>
+    <div class="pillars">
+      <div class="pillar reveal d1 magnetic"><div class="pillar-num">/ 01</div><div class="pillar-title">Clinical, Not Cute</div><div class="pillar-body">Real actives at real percentages. No watered-down whatever. No 0.05% anything pretending to do work.</div></div>
+      <div class="pillar reveal d2 magnetic"><div class="pillar-num">/ 02</div><div class="pillar-title">Loud Skin Energy</div><div class="pillar-body">Glow that doesn't apologize. Texture that has things to say. Skin that occupies space.</div></div>
+      <div class="pillar reveal d3 magnetic"><div class="pillar-num">/ 03</div><div class="pillar-title">Receipts Always</div><div class="pillar-body">Every formula peer-reviewed. Every claim provable. Every percentage on the label, in writing, every time.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="reviews" data-scene="reviews">
+  <div class="container">
+    <div class="reveal"><div class="section-tag">/ 04 — The Receipts</div></div>
+    <h2 class="section-title reveal">Loud <em>Reviews.</em></h2>
+    <div class="reviews-track">
+      <div class="review reveal d1"><div class="stars">★ ★ ★ ★ ★</div><p>"My skin has never looked this loud. Power Fix is unreal — three weeks in and I'm getting stopped in the street."</p><div class="who"><div class="ava">M</div><div><b>Maya R.</b><small>Verified · Brooklyn</small></div></div></div>
+      <div class="review reveal d2"><div class="stars">★ ★ ★ ★ ★</div><p>"Three weeks in and my dark spots are gone. I keep waiting for the catch. There isn't one. Witchcraft."</p><div class="who"><div class="ava">J</div><div><b>Jordan T.</b><small>Verified · LA</small></div></div></div>
+      <div class="review reveal d3"><div class="stars">★ ★ ★ ★ ★</div><p>"Finally a brand that doesn't talk down to me. The actives are real, the percentages are listed, and the glow is real."</p><div class="who"><div class="ava">A</div><div><b>Alex K.</b><small>Verified · Austin</small></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="ritual" data-scene="ritual">
+  <div class="container">
+    <div class="reveal"><div class="section-tag">/ 05 — The Ritual</div></div>
+    <h2 class="section-title reveal">Four Steps. <em>Zero Mercy.</em></h2>
+    <p class="section-sub reveal d1">A complete protocol, designed to escalate. AM clears and protects. PM resurfaces and seals. Do it twice. Don't skip.</p>
+    <div class="ritual-grid">
+      <div class="step reveal d1 magnetic"><div class="n">01</div><h4>Cleanse</h4><p>War Paint, twice daily. Strips the day, not your barrier.</p></div>
+      <div class="step reveal d2 magnetic"><div class="n">02</div><h4>Tone</h4><p>Riot Acid, 3x weekly PM. Resurface. Refine. Repeat.</p></div>
+      <div class="step reveal d3 magnetic"><div class="n">03</div><h4>Treat</h4><p>Power Fix, every AM. Brightening with intent.</p></div>
+      <div class="step reveal d4 magnetic"><div class="n">04</div><h4>Protect</h4><p>Feral Glow, every PM. Seals everything in.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="vip" id="vip" data-scene="vip">
+  <div class="vip-card">
+    <div class="vip-grid">
+      <div>
+        <div class="section-tag reveal">/ VIP · Founders Circle</div>
+        <h2 class="reveal d1">Get in <em>48 hours</em> early.</h2>
+        <p class="lead reveal d2">Founders Circle members access Drop 01 before the public, lock in launch pricing, and get the limited Power Fix engraving. Spaces are capped at 500.</p>
+        <div class="perks reveal d3">
+          <div class="perk"><span class="chk">✓</span> 48-hour early access to Drop 01</div>
+          <div class="perk"><span class="chk">✓</span> 15% off founders pricing (locked, forever)</div>
+          <div class="perk"><span class="chk">✓</span> Limited engraved Power Fix bottle (run of 500)</div>
+          <div class="perk"><span class="chk">✓</span> First dibs on every drop, restock, and collab</div>
+        </div>
+      </div>
+      <div class="reveal d2">
+        <form class="form" id="vipForm">
+          <input type="text" placeholder="Your name" id="vipName" required>
+          <input type="email" placeholder="Your email" id="vipEmail" required>
+          <div class="pill-row" id="skinType">
+            <div class="opt magnetic" data-val="oily">Oily</div>
+            <div class="opt magnetic" data-val="dry">Dry</div>
+            <div class="opt magnetic" data-val="combo">Combo</div>
+            <div class="opt magnetic" data-val="sensitive">Sensitive</div>
+            <div class="opt magnetic" data-val="acne">Acne-prone</div>
+          </div>
+          <button type="submit" class="submit magnetic">Reserve My Spot →</button>
+          <small>// Capped at 500 spots · No spam, ever</small>
+          <div class="success" id="vipSuccess">✓ You're in. Check your inbox.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <h3>Savage<em style="font-style:normal;color:var(--neon)">/</em>Skin</h3>
+      <p>Skincare with teeth. Made for skin that refuses to behave. Engineered, peer-reviewed, and proudly loud.</p>
+    </div>
+    <div class="foot"><h5>Shop</h5><ul><li><a href="#shop">War Paint Cleanser</a></li><li><a href="#shop">Riot Acid Toner</a></li><li><a href="#shop">Power Fix Serum</a></li><li><a href="#shop">Feral Glow Oil</a></li></ul></div>
+    <div class="foot"><h5>Brand</h5><ul><li><a href="#manifesto">Manifesto</a></li><li><a href="#science">The Science</a></li><li><a href="#ritual">The Ritual</a></li><li><a href="#vip">Founders Circle</a></li></ul></div>
+    <div class="foot"><h5>Connect</h5><ul><li><a href="#">Instagram</a></li><li><a href="#">TikTok</a></li><li><a href="mailto:hello@savageskin.co">hello@savageskin.co</a></li></ul></div>
+  </div>
+  <div class="foot-bottom"><div>© 2026 Savage Skin — All rights reserved</div><div>Stay Feral · Glow Loud</div></div>
+</footer>
+
+</div>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
