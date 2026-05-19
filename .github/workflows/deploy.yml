@@ -25,8 +25,18 @@ jobs:
         with:
           node-version: 20
 
+      - name: Debug environment
+        run: |
+          echo "=== versions ==="
+          node --version
+          npm --version
+          echo "=== package.json ==="
+          cat package.json
+          echo "=== files in repo root ==="
+          ls -la
+
       - name: Install
-        run: npm install --no-audit --no-fund --legacy-peer-deps
+        run: npm install --no-audit --no-fund --legacy-peer-deps --loglevel verbose 2>&1 | tail -80
 
       - name: Build
         env:
