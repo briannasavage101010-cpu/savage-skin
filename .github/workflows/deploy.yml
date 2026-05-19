@@ -26,7 +26,7 @@ jobs:
           node-version: 20
 
       - name: Install
-        run: npm install --no-audit --no-fund
+        run: npm install --no-audit --no-fund --legacy-peer-deps
 
       - name: Build
         env:
