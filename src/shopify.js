@@ -47,8 +47,7 @@ function fmt(money) {
 export async function getProducts(handles) {
   if (!shopifyConfigured) return {};
   const query = `
-    query Products($handles: [String!]!) {
-      products: nodes(ids: []) { id }
+    query Products {
       ${handles
         .map(
           (h, i) => `
@@ -72,7 +71,7 @@ export async function getProducts(handles) {
     }
   `;
   try {
-    const data = await gql(query, { handles });
+    const data = await gql(query);
     const out = {};
     handles.forEach((h, i) => {
       const p = data[`p${i}`];
