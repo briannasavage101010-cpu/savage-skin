@@ -4,13 +4,13 @@ This file gives Claude Code the context it needs to be useful in this project. R
 
 ## What this is
 
-A marketing site + storefront for **Savage Skin**, a clinical-grade skincare brand. Built with Vite (vanilla JS, no framework). Deploys to GitHub Pages via GitHub Actions. Checkout is wired to Shopify via the Storefront API.
+A marketing site + storefront for **Savage Skin**, a clinical-grade skincare brand designed for teen skin. Built with Vite (vanilla JS, no framework). Deploys to GitHub Pages via GitHub Actions. Checkout is wired to Shopify via the Storefront API.
 
-The brand voice is edgy, anti-pretty, clinical-but-loud — "Skincare with teeth," "Stay feral," "Glow loud." When you generate copy, match this voice. Never write soft skincare-influencer copy ("luxurious self-care moment," "treat yourself," etc.).
+The brand voice is confident, science-backed, and teen-friendly — "Clear skin confident," "Real formulas," "Peer-reviewed science." Focus on results, actives at clinical percentages, and accessibility for teen skin. Never write soft skincare-influencer copy ("luxurious self-care moment," "treat yourself," etc.) or aggressive copy ("stay feral," "glow loud").
 
 ## Tech stack
 
-- **Build:** Vite 5
+- **Build:** Vite 4.5.5 (pinned to avoid rollup native-binary npm bug)
 - **3D:** Three.js (r160) — npm import, not CDN
 - **Scroll:** Lenis (smooth scroll)
 - **Hosting:** GitHub Pages (via Actions workflow)
@@ -43,11 +43,13 @@ No framework. No TypeScript. No CSS framework. Pure vanilla. Keep it that way un
 
 ## Brand voice rules (for copy)
 
-- Short sentences. Punchy. Confident.
-- Use percentages ("15% L-Ascorbic"), not adjectives ("powerful vitamin C").
-- "Receipts" = proof, evidence, peer-reviewed studies.
-- Phrases that fit: Stay feral. Glow loud. Skincare with teeth. Clinical, not cute. No watered-down whatever. Receipts always.
-- Phrases that DON'T fit: Pamper. Self-care moment. Glow up (too generic). Pretty. Luxurious. Treat yourself.
+- Short sentences. Clear. Direct.
+- Use percentages ("15% L-Ascorbic"), not vague adjectives ("powerful vitamin C").
+- Focus on results: clear skin, confidence, real results that people can see.
+- Speak to teen skin specifically: accessible, gentle-but-effective, understanding of their concerns.
+- Phrases that fit: Clear skin confident. Real formulas. Peer-reviewed. Designed for teen skin. Real results. Zero filler.
+- Phrases that DON'T fit: Aggressive language. Luxury or pampering. Self-care moments. Edgy attitude. Stay feral. Glow loud. Skincare with teeth.
+- Tone: Honest, approachable, scientific. Not patronizing. Not corporate.
 - Italics + serif (Fraunces) for emphasis words in headlines.
 
 ## Colors
