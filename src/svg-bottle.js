@@ -95,18 +95,19 @@ export function renderProductCard(product, index, liveData = null) {
   const available = liveData?.available !== false;
   const variantId = liveData?.variantId || '';
 
+  const detailUrl = `/products/${product.handle}/`;
   return `
     <div class="product-card reveal magnetic d${index + 1}" data-product="${product.slug}" data-handle="${product.handle}" data-variant="${variantId}">
-      <div class="product-visual">
+      <a class="product-visual" href="${detailUrl}" aria-label="View ${product.name}">
         <div class="float-chip">/ ${product.step}</div>
         <div class="float-chip right">${price}</div>
         <div class="grid-lines"></div>
         <div class="glow-orb"></div>
         ${svgBottle(product, index)}
-      </div>
+      </a>
       <div class="product-info">
         <div class="product-meta"><span>${product.size}</span><span class="tag">${product.tag}</span></div>
-        <div class="product-name">${product.name}</div>
+        <a class="product-name product-name-link" href="${detailUrl}">${product.name}</a>
         <div class="product-desc">${product.desc}</div>
         <div class="product-foot">
           <div class="product-price">${compareAt ? `<s>${compareAt}</s>` : ''}${price}</div>

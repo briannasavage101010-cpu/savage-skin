@@ -94,6 +94,65 @@ export async function getProducts(handles) {
   }
 }
 
+/**
+ * Fetch full product detail for the product detail page.
+ * Returns null if not configured, not found, or on any error.
+ */
+export async function getProductDetail(handle) {
+  if (!shopifyConfigured) return null;
+  const query = `
+    query ProductDetail($handle: String!) {
+      productByHandle(handle: $handle) {
+        id
+        handle
+        title
+        descriptionHtml
+        availableForSale
+        featuredImage { url altText }
+        images(first: 8) { edges { node { url altText } } }
+        variants(first: 10) {
+          edges { node {
+            id
+            title
+            availableForSale
+            price { amount currencyCode }
+            compareAtPrice { amount currencyCode }
+          } }
+        }
+      }
+    }
+  `;
+  try {
+    const data = await gql(query, { handle });
+    const p = data.productByHandle;
+    if (!p) return null;
+    const variants = (p.variants?.edges || []).map((e) => ({
+      id: e.node.id,
+      title: e.node.title,
+      available: e.node.availableForSale,
+      price: fmt(e.node.price),
+      compareAtPrice: fmt(e.node.compareAtPrice),
+    }));
+    const firstAvailable = variants.find((v) => v.available) || variants[0] || null;
+    return {
+      id: p.id,
+      handle: p.handle,
+      title: p.title,
+      descriptionHtml: p.descriptionHtml || '',
+      available: p.availableForSale,
+      featuredImage: p.featuredImage?.url || null,
+      images: (p.images?.edges || []).map((e) => ({ url: e.node.url, alt: e.node.altText })),
+      variants,
+      price: firstAvailable?.price || null,
+      compareAtPrice: firstAvailable?.compareAtPrice || null,
+      variantId: firstAvailable?.id || null,
+    };
+  } catch (err) {
+    console.warn('Shopify product detail fetch failed:', err.message);
+    return null;
+  }
+}
+
 /** Get or create a persistent cart for this visitor. */
 async function getOrCreateCart() {
   if (!shopifyConfigured) return null;

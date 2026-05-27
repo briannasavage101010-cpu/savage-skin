@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
+import { resolve } from 'path';
 
 export default defineConfig({
   base: '/',
@@ -6,6 +7,13 @@ export default defineConfig({
     outDir: 'dist',
     assetsInlineLimit: 0,
     rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        cleanser: resolve(__dirname, 'products/clean-start-cleanser/index.html'),
+        toner: resolve(__dirname, 'products/prime-time-toner/index.html'),
+        serum: resolve(__dirname, 'products/power-fix-spot-corrector/index.html'),
+        moisturizer: resolve(__dirname, 'products/dew-guard-moisturizer/index.html'),
+      },
       output: {
         manualChunks: {
           three: ['three'],
