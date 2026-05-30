@@ -8,7 +8,6 @@ import { PRODUCTS } from './products.js';
 import { renderProductCard } from './svg-bottle.js';
 import { getProducts, addToCartAndCheckout, submitVipSignup, shopifyConfigured } from './shopify.js';
 import { initReveal } from './reveal.js';
-import { initMolecule } from './molecule.js';
 import { initThreeScene } from './three-scene.js';
 import {
   initSmoothScroll,

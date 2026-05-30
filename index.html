@@ -21,16 +21,18 @@
 
 <div class="layer">
 
-<nav class="top">
-  <a href="#" class="brand magnetic"><span class="mark"></span><span>Savage<em style="font-style:normal;color:var(--neon)">/</em>Skin</span></a>
+<a href="#shop" class="skip-link">Skip to content</a>
+
+<nav class="top" aria-label="Primary">
+  <a href="#" class="brand" aria-label="Savage Skin home"><span class="mark" aria-hidden="true"></span><span>Savage<em style="font-style:normal;color:var(--neon)">/</em>Skin</span></a>
   <div class="nav-links">
-    <a href="#shop" class="magnetic">Shop</a>
-    <a href="#science" class="magnetic">Science</a>
-    <a href="#manifesto" class="magnetic">Manifesto</a>
-    <a href="#ritual" class="magnetic">Ritual</a>
-    <a href="#vip" class="magnetic">VIP</a>
+    <a href="#shop">Shop</a>
+    <a href="#science">Science</a>
+    <a href="#manifesto">Manifesto</a>
+    <a href="#ritual">Ritual</a>
+    <a href="#vip">VIP</a>
   </div>
-  <a href="#vip" class="nav-cart magnetic"><span class="dot"></span>Presale Live</a>
+  <a href="#vip" class="nav-cart"><span class="dot" aria-hidden="true"></span>Presale Live</a>
 </nav>
 
 <section class="hero" data-scene="hero">
@@ -124,26 +126,14 @@
 
 <section class="science" id="science" data-scene="science">
   <div class="container">
-    <div class="science-grid">
-      <div class="reveal">
-        <div class="molecule-stage">
-          <div class="molecule-corner tl"></div><div class="molecule-corner tr"></div>
-          <div class="molecule-corner bl"></div><div class="molecule-corner br"></div>
-          <div class="molecule-label"><span class="dot"></span>L-ASCORBIC · 15% · pH 3.5</div>
-          <canvas id="moleculeCanvas"></canvas>
-        </div>
-      </div>
-      <div>
-        <div class="reveal"><div class="section-tag">/ 02 — The Science</div></div>
-        <h2 class="section-title reveal">The <em>science.</em></h2>
-        <p class="section-sub reveal d1">Every formula peer-reviewed. Every active at the clinical percentage that actually works. We skip the filler, the fragrance, and the empty promises.</p>
-        <div class="ingredient-list">
-          <div class="ing reveal d1"><div class="ing-num">/ 01</div><div><div class="ing-name">L-Ascorbic Acid</div><div class="ing-desc">Brightens, fades pigmentation, stimulates collagen at the dermal layer.</div></div><div class="ing-pct">15.0%</div></div>
-          <div class="ing reveal d2"><div class="ing-num">/ 02</div><div><div class="ing-name">Niacinamide</div><div class="ing-desc">Regulates sebum, tightens pores, reinforces barrier without irritation.</div></div><div class="ing-pct">5.0%</div></div>
-          <div class="ing reveal d3"><div class="ing-num">/ 03</div><div><div class="ing-name">Matrixyl-3000</div><div class="ing-desc">Peptide signal complex. Tells skin to produce more collagen — out loud.</div></div><div class="ing-pct">3.0%</div></div>
-          <div class="ing reveal d4"><div class="ing-num">/ 04</div><div><div class="ing-name">Bakuchiol</div><div class="ing-desc">Plant-derived retinol alternative. Same results. None of the rage.</div></div><div class="ing-pct">1.0%</div></div>
-        </div>
-      </div>
+    <div class="reveal"><div class="section-tag">/ 02 — The Science</div></div>
+    <h2 class="section-title reveal">The <em>science.</em></h2>
+    <p class="section-sub reveal d1">Every formula peer-reviewed. Every active at the clinical percentage that actually works. We skip the filler, the fragrance, and the empty promises.</p>
+    <div class="ingredient-grid">
+      <div class="ing reveal d1"><div class="ing-num">/ 01</div><div><div class="ing-name">L-Ascorbic Acid</div><div class="ing-desc">Brightens, fades pigmentation, stimulates collagen at the dermal layer.</div></div><div class="ing-pct">15.0%</div></div>
+      <div class="ing reveal d2"><div class="ing-num">/ 02</div><div><div class="ing-name">Niacinamide</div><div class="ing-desc">Regulates sebum, tightens pores, reinforces barrier without irritation.</div></div><div class="ing-pct">5.0%</div></div>
+      <div class="ing reveal d3"><div class="ing-num">/ 03</div><div><div class="ing-name">Matrixyl-3000</div><div class="ing-desc">Peptide signal complex. Tells skin to produce more collagen.</div></div><div class="ing-pct">3.0%</div></div>
+      <div class="ing reveal d4"><div class="ing-num">/ 04</div><div><div class="ing-name">Bakuchiol</div><div class="ing-desc">Plant-derived retinol alternative. Same results, gentler on barrier.</div></div><div class="ing-pct">1.0%</div></div>
     </div>
   </div>
 </section>
@@ -228,7 +218,16 @@
     <div class="foot"><h5>Brand</h5><ul><li><a href="#manifesto">Manifesto</a></li><li><a href="#science">The Science</a></li><li><a href="#ritual">The Ritual</a></li><li><a href="#vip">Founders Circle</a></li></ul></div>
     <div class="foot"><h5>Connect</h5><ul><li><a href="#">Instagram</a></li><li><a href="#">TikTok</a></li><li><a href="mailto:hello@savageskin.co">hello@savageskin.co</a></li></ul></div>
   </div>
-  <div class="foot-bottom"><div>© 2026 Savage Skin — All rights reserved</div><div>Clear Skin Confident</div></div>
+  <div class="foot-bottom">
+    <div>© 2026 Savage Skin — All rights reserved</div>
+    <ul class="foot-policies" aria-label="Legal policies">
+      <li><a href="/policies/privacy" data-policy="privacy">Privacy</a></li>
+      <li><a href="/policies/terms" data-policy="terms">Terms</a></li>
+      <li><a href="/policies/refund" data-policy="refund">Refund</a></li>
+      <li><a href="/policies/shipping" data-policy="shipping">Shipping</a></li>
+    </ul>
+    <div>Clear Skin Confident</div>
+  </div>
 </footer>
 
 </div>

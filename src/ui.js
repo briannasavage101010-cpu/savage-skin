@@ -8,6 +8,10 @@ export const scroll = { y: 0 };
 
 export function initSmoothScroll() {
   if (!window.Lenis && !Lenis) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    // Honor reduced motion — fall back to native scroll, no smoothing.
+    return;
+  }
   lenis = new Lenis({
     duration: 1.4,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),

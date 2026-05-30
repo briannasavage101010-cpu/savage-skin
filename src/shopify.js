@@ -11,7 +11,7 @@
 const DOMAIN = import.meta.env.VITE_SHOPIFY_DOMAIN || '';
 const TOKEN = import.meta.env.VITE_SHOPIFY_STOREFRONT_TOKEN || '';
 const API_VERSION = '2024-10';
-const CART_KEY = 'savage_cart_id';
+export const CART_KEY = 'savage_cart_id';
 
 export const shopifyConfigured = Boolean(DOMAIN && TOKEN);
 
@@ -153,63 +153,153 @@ export async function getProductDetail(handle) {
   }
 }
 
-/** Get or create a persistent cart for this visitor. */
-async function getOrCreateCart() {
-  if (!shopifyConfigured) return null;
-  const existing = localStorage.getItem(CART_KEY);
-  if (existing) {
-    try {
-      const data = await gql(
-        `query Cart($id: ID!) { cart(id: $id) { id checkoutUrl } }`,
-        { id: existing }
-      );
-      if (data.cart) return data.cart;
-    } catch (err) {
-      /* fall through to create */
+/* ------------------------------------------------------------------ *
+ * Cart line operations.
+ * Every function returns a normalized cart (or null) so the UI in
+ * src/cart.js never has to touch raw Shopify response shapes.
+ * ------------------------------------------------------------------ */
+
+const CART_FRAGMENT = `
+  fragment CartFields on Cart {
+    id
+    checkoutUrl
+    totalQuantity
+    cost { subtotalAmount { amount currencyCode } }
+    lines(first: 50) {
+      edges { node {
+        id
+        quantity
+        cost { totalAmount { amount currencyCode } }
+        merchandise {
+          ... on ProductVariant {
+            id
+            title
+            price { amount currencyCode }
+            image { url altText }
+            product { title handle featuredImage { url altText } }
+          }
+        }
+      } }
     }
   }
-  const data = await gql(
-    `mutation CartCreate { cartCreate { cart { id checkoutUrl } userErrors { message } } }`
-  );
-  const cart = data.cartCreate?.cart;
-  if (cart) {
-    localStorage.setItem(CART_KEY, cart.id);
-    return cart;
+`;
+
+function normalizeCart(cart) {
+  if (!cart) return null;
+  return {
+    id: cart.id,
+    checkoutUrl: cart.checkoutUrl,
+    totalQuantity: cart.totalQuantity || 0,
+    subtotal: fmt(cart.cost?.subtotalAmount) || '$0',
+    lines: (cart.lines?.edges || []).map((e) => {
+      const n = e.node;
+      const m = n.merchandise || {};
+      const variantTitle = m.title && m.title !== 'Default Title' ? m.title : '';
+      return {
+        id: n.id,
+        quantity: n.quantity,
+        variantId: m.id,
+        variantTitle,
+        productTitle: m.product?.title || 'Product',
+        handle: m.product?.handle || '',
+        image: m.image?.url || m.product?.featuredImage?.url || null,
+        price: fmt(m.price),
+        lineTotal: fmt(n.cost?.totalAmount),
+      };
+    }),
+  };
+}
+
+function firstUserError(errors) {
+  if (errors?.length) throw new Error(errors.map((e) => e.message).join('; '));
+}
+
+/** Fetch an existing cart by id. Returns null if missing/expired/unreachable. */
+export async function cartFetch(id) {
+  if (!shopifyConfigured || !id) return null;
+  try {
+    const data = await gql(
+      `query Cart($id: ID!) { cart(id: $id) { ...CartFields } } ${CART_FRAGMENT}`,
+      { id }
+    );
+    return normalizeCart(data.cart);
+  } catch (err) {
+    return null;
   }
-  throw new Error('Could not create cart');
+}
+
+/** Create a fresh empty cart. */
+export async function cartCreate() {
+  const data = await gql(
+    `mutation { cartCreate { cart { ...CartFields } userErrors { message } } } ${CART_FRAGMENT}`
+  );
+  firstUserError(data.cartCreate?.userErrors);
+  const cart = normalizeCart(data.cartCreate?.cart);
+  if (!cart) throw new Error('Could not create cart');
+  return cart;
+}
+
+/** Add a variant to the cart. */
+export async function cartLinesAdd(cartId, variantId, quantity = 1) {
+  const data = await gql(
+    `mutation Add($cartId: ID!, $lines: [CartLineInput!]!) {
+      cartLinesAdd(cartId: $cartId, lines: $lines) { cart { ...CartFields } userErrors { message } }
+    } ${CART_FRAGMENT}`,
+    { cartId, lines: [{ merchandiseId: variantId, quantity }] }
+  );
+  firstUserError(data.cartLinesAdd?.userErrors);
+  return normalizeCart(data.cartLinesAdd?.cart);
+}
+
+/** Set a line's quantity. */
+export async function cartLinesUpdate(cartId, lineId, quantity) {
+  const data = await gql(
+    `mutation Upd($cartId: ID!, $lines: [CartLineUpdateInput!]!) {
+      cartLinesUpdate(cartId: $cartId, lines: $lines) { cart { ...CartFields } userErrors { message } }
+    } ${CART_FRAGMENT}`,
+    { cartId, lines: [{ id: lineId, quantity }] }
+  );
+  firstUserError(data.cartLinesUpdate?.userErrors);
+  return normalizeCart(data.cartLinesUpdate?.cart);
+}
+
+/** Remove a line entirely. */
+export async function cartLinesRemove(cartId, lineId) {
+  const data = await gql(
+    `mutation Rem($cartId: ID!, $lineIds: [ID!]!) {
+      cartLinesRemove(cartId: $cartId, lineIds: $lineIds) { cart { ...CartFields } userErrors { message } }
+    } ${CART_FRAGMENT}`,
+    { cartId, lineIds: [lineId] }
+  );
+  firstUserError(data.cartLinesRemove?.userErrors);
+  return normalizeCart(data.cartLinesRemove?.cart);
 }
 
 /**
- * Add a product variant to the cart, then redirect to Shopify checkout.
+ * Convenience: ensure a cart, add a variant, then redirect to Shopify checkout.
+ * Used by homepage Reserve buttons and the product detail page Add to Cart.
+ * Composes cartFetch/cartCreate + cartLinesAdd; the cart subsystem below is
+ * authoritative for line-level operations.
  */
 export async function addToCartAndCheckout(variantId, quantity = 1) {
   if (!shopifyConfigured || !variantId) {
-    // Graceful: scroll to VIP form
     document.querySelector('#vip')?.scrollIntoView({ behavior: 'smooth' });
     return;
   }
   try {
-    const cart = await getOrCreateCart();
-    const data = await gql(
-      `mutation AddLines($cartId: ID!, $lines: [CartLineInput!]!) {
-        cartLinesAdd(cartId: $cartId, lines: $lines) {
-          cart { id checkoutUrl }
-          userErrors { message }
-        }
-      }`,
-      {
-        cartId: cart.id,
-        lines: [{ merchandiseId: variantId, quantity }],
-      }
-    );
-    const updated = data.cartLinesAdd?.cart;
+    const existingId = localStorage.getItem(CART_KEY);
+    let cart = existingId ? await cartFetch(existingId) : null;
+    if (!cart) {
+      cart = await cartCreate();
+      localStorage.setItem(CART_KEY, cart.id);
+    }
+    const updated = await cartLinesAdd(cart.id, variantId, quantity);
     if (updated?.checkoutUrl) {
       window.location.href = updated.checkoutUrl;
     } else {
       throw new Error('No checkout URL returned');
     }
   } catch (err) {
-    console.error('Cart add failed:', err);
     alert('Could not add to cart. Please try again or use the VIP signup below.');
   }
 }
