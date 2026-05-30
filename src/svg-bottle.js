@@ -96,22 +96,27 @@ export function renderProductCard(product, index, liveData = null) {
   const variantId = liveData?.variantId || '';
 
   const detailUrl = `/products/${product.handle}/`;
+  const stepNum = product.step.split(' ')[0];
+  const stepLabel = product.step.split('·')[1]?.trim() || product.step;
   return `
-    <div class="product-card reveal magnetic d${index + 1}" data-product="${product.slug}" data-handle="${product.handle}" data-variant="${variantId}">
+    <div class="product-card reveal d${index + 1}" data-product="${product.slug}" data-handle="${product.handle}" data-variant="${variantId}">
       <a class="product-visual" href="${detailUrl}" aria-label="View ${product.name}">
-        <div class="float-chip">/ ${product.step}</div>
-        <div class="float-chip right">${price}</div>
+        <div class="float-chip"><span class="chip-step">${stepNum}</span> ${stepLabel}</div>
+        ${product.tag ? `<div class="float-chip right tag-chip">${product.tag}</div>` : ''}
         <div class="grid-lines"></div>
         <div class="glow-orb"></div>
         ${svgBottle(product, index)}
       </a>
       <div class="product-info">
-        <div class="product-meta"><span>${product.size}</span><span class="tag">${product.tag}</span></div>
+        <div class="product-meta"><span>${product.size}</span></div>
         <a class="product-name product-name-link" href="${detailUrl}">${product.name}</a>
         <div class="product-desc">${product.desc}</div>
         <div class="product-foot">
-          <div class="product-price">${compareAt ? `<s>${compareAt}</s>` : ''}${price}</div>
-          <button class="product-buy magnetic" type="button" ${available ? '' : 'disabled'}>${available ? 'Add +' : 'Sold out'}</button>
+          <div class="product-price-block">
+            ${compareAt ? `<div class="product-compare-at">${compareAt}</div>` : ''}
+            <div class="product-price">${price} <span class="presale-label">Presale</span></div>
+          </div>
+          <button class="product-buy" type="button" ${available ? '' : 'disabled'}>${available ? 'Reserve' : 'Sold out'}</button>
         </div>
       </div>
     </div>
