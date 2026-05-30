@@ -38,16 +38,20 @@
 <section class="hero" data-scene="hero">
   <div class="hero-grid">
     <div class="hero-left">
-      <div class="hero-pill reveal"><span class="pulse"></span> DROP 01 · LAUNCHING SOON</div>
+      <div class="hero-pill reveal"><span class="pulse"></span> DROP 01 · 500 PRESALE SPOTS</div>
       <h1 class="hero-title">
         <span class="word">Clear</span>
         <span class="word" style="display:block">skin</span>
         <em class="word">confident.</em>
       </h1>
-      <p class="hero-sub reveal d1">Clinical actives, clean formulas. Designed for teen skin that's ready for real results. Presale opens at launch — VIP gets in 48 hours early.</p>
+      <p class="hero-sub reveal d1">Clinical formulas designed for teen skin. Actives at the percentages that actually work.</p>
+      <ul class="hero-bullets reveal d1" aria-label="Founders Circle perks">
+        <li><span class="bullet-chk" aria-hidden="true">✓</span> 48 hours early access to Drop 01</li>
+        <li><span class="bullet-chk" aria-hidden="true">✓</span> 15% founders pricing — locked forever</li>
+        <li><span class="bullet-chk" aria-hidden="true">✓</span> Drop 01 capped at 500 spots</li>
+      </ul>
       <div class="hero-ctas reveal d2">
         <a href="#vip" class="btn btn-primary magnetic"><span>Reserve The Drop <span class="arr">→</span></span></a>
-        <a href="#shop" class="btn btn-ghost magnetic">View The Lineup</a>
       </div>
       <div class="countdown reveal d3">
         <div class="cd-cell"><div class="cd-num" id="cdDays">00</div><div class="cd-lbl">Days</div></div>
@@ -188,19 +192,17 @@
         </div>
       </div>
       <div class="reveal d2">
-        <form class="form" id="vipForm">
-          <input type="text" placeholder="Your name" id="vipName" required>
-          <input type="email" placeholder="Your email" id="vipEmail" required>
-          <div class="pill-row" id="skinType">
-            <div class="opt magnetic" data-val="oily">Oily</div>
-            <div class="opt magnetic" data-val="dry">Dry</div>
-            <div class="opt magnetic" data-val="combo">Combo</div>
-            <div class="opt magnetic" data-val="sensitive">Sensitive</div>
-            <div class="opt magnetic" data-val="acne">Acne-prone</div>
-          </div>
+        <form class="form" id="vipForm" novalidate>
+          <label for="vipEmail" class="form-label">Email</label>
+          <input type="email" id="vipEmail" name="email" placeholder="you@email.com" required autocomplete="email" inputmode="email">
+          <div class="form-error" id="vipEmailError" role="alert" aria-live="polite"></div>
           <button type="submit" class="submit magnetic">Reserve My Spot →</button>
-          <small>// Capped at 500 spots · No spam, ever</small>
-          <div class="success" id="vipSuccess">✓ You're in. Check your inbox.</div>
+          <small>// Capped at 500 spots · No spam, ever · One-click unsubscribe</small>
+          <div class="success" id="vipSuccess" role="status" aria-live="polite">
+            <div class="success-title">You're in.</div>
+            <div class="success-body">Check your inbox for confirmation. Want to skip the line for friends? Share your link:</div>
+            <button type="button" class="share-btn magnetic" id="vipShare" data-share="https://savageskincare.com/?ref=vip">Copy share link</button>
+          </div>
         </form>
       </div>
     </div>
@@ -220,6 +222,10 @@
   <div class="foot-bottom"><div>© 2026 Savage Skin — All rights reserved</div><div>Clear Skin Confident</div></div>
 </footer>
 
+</div>
+
+<div class="sticky-cta" id="stickyCta" aria-hidden="true">
+  <a href="#vip" class="sticky-cta-btn">Reserve The Drop <span class="arr">→</span></a>
 </div>
 
 <script type="module" src="/src/main.js"></script>

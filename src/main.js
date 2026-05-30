@@ -17,6 +17,7 @@ import {
   initCountdown,
   initHeroStagger,
   initVipForm,
+  initStickyCta,
 } from './ui.js';
 
 async function renderProducts() {
@@ -69,6 +70,7 @@ function boot() {
   initCountdown();
   initHeroStagger();
   initVipForm(submitVipSignup);
+  initStickyCta();
   initMolecule();
   initThreeScene();
 }

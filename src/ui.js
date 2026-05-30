@@ -91,6 +91,28 @@ export function initCursor() {
     });
 }
 
+export function initStickyCta() {
+  const cta = document.getElementById('stickyCta');
+  if (!cta) return;
+  const vip = document.getElementById('vip');
+  let pending = false;
+  function update() {
+    pending = false;
+    const scrolled = window.scrollY > window.innerHeight * 0.6;
+    const vipRect = vip?.getBoundingClientRect();
+    const vipInView = vipRect ? vipRect.top < window.innerHeight * 0.9 : false;
+    const show = scrolled && !vipInView;
+    cta.classList.toggle('is-visible', show);
+    cta.setAttribute('aria-hidden', show ? 'false' : 'true');
+  }
+  window.addEventListener('scroll', () => {
+    if (pending) return;
+    pending = true;
+    requestAnimationFrame(update);
+  }, { passive: true });
+  update();
+}
+
 export function initScrollProgress() {
   const bar = document.getElementById('scrollProgress');
   if (!bar) return;
@@ -141,39 +163,72 @@ export function initHeroStagger() {
   );
 }
 
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 export function initVipForm(onSubmit) {
   const form = document.getElementById('vipForm');
   if (!form) return;
-  const opts = document.querySelectorAll('#skinType .opt');
-  opts.forEach((o) =>
-    o.addEventListener('click', () => {
-      opts.forEach((x) => x.classList.remove('active'));
-      o.classList.add('active');
-    })
-  );
+  const emailEl = document.getElementById('vipEmail');
+  const errorEl = document.getElementById('vipEmailError');
+  const successEl = document.getElementById('vipSuccess');
+  const shareBtn = document.getElementById('vipShare');
+
+  function setError(msg) {
+    if (!errorEl) return;
+    errorEl.textContent = msg || '';
+    if (msg) {
+      emailEl.setAttribute('aria-invalid', 'true');
+    } else {
+      emailEl.removeAttribute('aria-invalid');
+    }
+  }
+
+  emailEl?.addEventListener('input', () => setError(''));
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const name = document.getElementById('vipName').value.trim();
-    const email = document.getElementById('vipEmail').value.trim();
-    const skin = document.querySelector('#skinType .opt.active')?.dataset.val || null;
-    if (!name || !email) return;
+    const email = emailEl.value.trim();
+    if (!email) {
+      setError('Email is required.');
+      emailEl.focus();
+      return;
+    }
+    if (!EMAIL_RE.test(email)) {
+      setError('Please enter a valid email address.');
+      emailEl.focus();
+      return;
+    }
+    setError('');
 
-    // Local backup
     const list = JSON.parse(localStorage.getItem('savage_vip') || '[]');
-    list.push({ name, email, skin, ts: Date.now() });
+    list.push({ email, ts: Date.now() });
     localStorage.setItem('savage_vip', JSON.stringify(list));
 
-    // Optional: send to Klaviyo / Shopify / your backend
     if (onSubmit) {
       try {
-        await onSubmit({ name, email, skin });
+        await onSubmit({ email });
       } catch (err) {
-        console.warn('VIP submit handler failed:', err);
+        // Silent — localStorage backup is the safety net.
       }
     }
 
-    document.getElementById('vipSuccess').classList.add('is-visible');
+    successEl?.classList.add('is-visible');
     form.reset();
-    opts.forEach((x) => x.classList.remove('active'));
   });
+
+  if (shareBtn) {
+    shareBtn.addEventListener('click', async () => {
+      const url = shareBtn.dataset.share || window.location.href;
+      try {
+        await navigator.clipboard.writeText(url);
+        const original = shareBtn.textContent;
+        shareBtn.textContent = 'Copied!';
+        setTimeout(() => {
+          shareBtn.textContent = original;
+        }, 1800);
+      } catch (err) {
+        shareBtn.textContent = 'Copy this: ' + url;
+      }
+    });
+  }
 }

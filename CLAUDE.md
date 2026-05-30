@@ -66,10 +66,10 @@ No framework. No TypeScript. No CSS framework. Pure vanilla. Keep it that way un
 Products are fetched by handle on page load. If `VITE_SHOPIFY_DOMAIN` or `VITE_SHOPIFY_STOREFRONT_TOKEN` is missing, the site falls back to static product data in `src/products.js`. This means the site always renders even without Shopify configured.
 
 Product handles in `src/products.js` MUST match the handles in Shopify admin exactly:
-- `war-paint-cleanser`
-- `riot-acid-toner`
-- `power-fix-serum`
-- `feral-glow-oil`
+- `clean-start-cleanser`
+- `prime-time-toner`
+- `power-fix-spot-corrector`
+- `dew-guard-moisturizer`
 
 Cart flow: `addToCart()` creates a Shopify cart (cartCreate mutation), adds the variant, then redirects to `cart.checkoutUrl`. The cart ID is stored in localStorage so a return visitor can resume.
 

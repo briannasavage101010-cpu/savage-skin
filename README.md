@@ -1,6 +1,6 @@
 # Savage Skin
 
-Skincare with teeth. Clinical-grade formulas, savage attitude.
+Clinical formulas designed for teen skin. Real percentages, peer-reviewed actives, clear results.
 
 This is the marketing site for Savage Skin — a Vite-powered storefront with Three.js 3D product visuals, Lenis smooth scroll, and Shopify Storefront API integration for real checkout.
 
@@ -73,10 +73,10 @@ The site expects 4 products with these **handles** (URL slugs). Create them in S
 
 | Product Name | Handle | Notes |
 |---|---|---|
-| War Paint Cleanser | `war-paint-cleanser` | Step 1, Cleanse |
-| Riot Acid Toner | `riot-acid-toner` | Step 2, Tone |
-| Power Fix Serum | `power-fix-serum` | Step 3, Treat (hero) |
-| Feral Glow Oil | `feral-glow-oil` | Step 4, Protect |
+| Clean Start Cleanser | `clean-start-cleanser` | Step 1, Cleanse |
+| Prime Time Toner | `prime-time-toner` | Step 2, Tone |
+| Power Fix Spot Corrector | `power-fix-spot-corrector` | Step 3, Treat (hero) |
+| Dew Guard Moisturizer | `dew-guard-moisturizer` | Step 4, Hydrate |
 
 If you want different handles, edit them in `src/products.js`.
 
@@ -151,11 +151,11 @@ See `CLAUDE.md` for full codebase context that Claude Code reads on startup.
 
 ## Brand & Copy
 
-- **Voice:** Edgy, anti-pretty, clinical-but-loud. "Skincare with teeth." "Stay feral." "Glow loud."
-- **Tagline:** Skincare with teeth.
-- **Hero copy:** Clinical-grade actives. Savage attitude. Engineered for skin that refuses to be polite, predictable, or perfect.
-- **Pillars:** Clinical Not Cute · Loud Skin Energy · Receipts Always
-- **Ritual:** Cleanse → Tone → Treat → Protect
+- **Voice:** Clean, clinical, confident — direct with a sharper edge than skincare-influencer fluff. Never aggressive, never twee.
+- **Tagline:** Clear skin confident.
+- **Hero copy:** Clinical actives, clean formulas. Designed for teen skin that's ready for real results.
+- **Pillars:** Real Formulas · Clear & Confident · Peer-Reviewed
+- **Ritual:** Cleanse → Tone → Treat → Hydrate
 
 ## Performance Notes
 
