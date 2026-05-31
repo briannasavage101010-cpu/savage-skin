@@ -116,7 +116,7 @@ export function renderProductCard(product, index, liveData = null) {
             ${compareAt ? `<div class="product-compare-at">${compareAt}</div>` : ''}
             <div class="product-price">${price} <span class="presale-label">Presale</span></div>
           </div>
-          <button class="product-buy" type="button" ${available ? '' : 'disabled'}>${available ? 'Reserve' : 'Sold out'}</button>
+          <button class="product-buy" type="button" ${available ? '' : 'disabled'}>${available ? 'Add to Cart' : 'Sold out'}</button>
         </div>
       </div>
     </div>

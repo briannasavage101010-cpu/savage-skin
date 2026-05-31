@@ -32,7 +32,11 @@
     <a href="#ritual">Ritual</a>
     <a href="#vip">VIP</a>
   </div>
-  <a href="#vip" class="nav-cart"><span class="dot" aria-hidden="true"></span>Presale Live</a>
+  <button type="button" id="cartToggle" class="nav-cart" aria-label="Open cart">
+    <svg class="nav-cart-ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>
+    <span class="nav-cart-label">Cart</span>
+    <span class="nav-cart-count" data-cart-count hidden>0</span>
+  </button>
 </nav>
 
 <section class="hero" data-scene="hero">

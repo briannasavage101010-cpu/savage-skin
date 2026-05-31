@@ -275,35 +275,6 @@ export async function cartLinesRemove(cartId, lineId) {
   return normalizeCart(data.cartLinesRemove?.cart);
 }
 
-/**
- * Convenience: ensure a cart, add a variant, then redirect to Shopify checkout.
- * Used by homepage Reserve buttons and the product detail page Add to Cart.
- * Composes cartFetch/cartCreate + cartLinesAdd; the cart subsystem below is
- * authoritative for line-level operations.
- */
-export async function addToCartAndCheckout(variantId, quantity = 1) {
-  if (!shopifyConfigured || !variantId) {
-    document.querySelector('#vip')?.scrollIntoView({ behavior: 'smooth' });
-    return;
-  }
-  try {
-    const existingId = localStorage.getItem(CART_KEY);
-    let cart = existingId ? await cartFetch(existingId) : null;
-    if (!cart) {
-      cart = await cartCreate();
-      localStorage.setItem(CART_KEY, cart.id);
-    }
-    const updated = await cartLinesAdd(cart.id, variantId, quantity);
-    if (updated?.checkoutUrl) {
-      window.location.href = updated.checkoutUrl;
-    } else {
-      throw new Error('No checkout URL returned');
-    }
-  } catch (err) {
-    alert('Could not add to cart. Please try again or use the VIP signup below.');
-  }
-}
-
 /** Optional: submit VIP signup as a Shopify customer (requires the right scope). */
 export async function submitVipSignup({ name, email, skin }) {
   if (!shopifyConfigured) return;

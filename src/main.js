@@ -6,7 +6,8 @@ import './styles.css';
 
 import { PRODUCTS } from './products.js';
 import { renderProductCard } from './svg-bottle.js';
-import { getProducts, addToCartAndCheckout, submitVipSignup, shopifyConfigured } from './shopify.js';
+import { getProducts, submitVipSignup, shopifyConfigured } from './shopify.js';
+import { initCart, addToCart } from './cart.js';
 import { initReveal } from './reveal.js';
 import { initThreeScene } from './three-scene.js';
 import {
@@ -47,7 +48,7 @@ function bindProductCards() {
       const card = btn.closest('.product-card');
       const variantId = card?.dataset.variant;
       if (variantId) {
-        await addToCartAndCheckout(variantId, 1);
+        await addToCart(variantId, 1);
       } else {
         // No Shopify variant yet — send to VIP signup
         document.querySelector('#vip')?.scrollIntoView({ behavior: 'smooth' });
@@ -70,7 +71,7 @@ function boot() {
   initHeroStagger();
   initVipForm(submitVipSignup);
   initStickyCta();
-  initMolecule();
+  initCart();
   initThreeScene();
 }
 

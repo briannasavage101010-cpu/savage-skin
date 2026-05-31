@@ -7,7 +7,8 @@ import './styles.css';
 
 import { PRODUCTS } from './products.js';
 import { svgBottle } from './svg-bottle.js';
-import { getProductDetail, addToCartAndCheckout, shopifyConfigured } from './shopify.js';
+import { getProductDetail, shopifyConfigured } from './shopify.js';
+import { initCart, addToCart } from './cart.js';
 import { initSmoothScroll, initCursor, initScrollProgress } from './ui.js';
 import { initReveal } from './reveal.js';
 
@@ -180,12 +181,15 @@ function renderPage(live) {
       e.preventDefault();
       const variantId = buyBtn.dataset.variant;
       if (variantId) {
+        const label = buyBtn.querySelector('span');
+        const original = label.textContent;
         buyBtn.disabled = true;
-        buyBtn.querySelector('span').textContent = 'Adding…';
+        label.textContent = 'Adding…';
         try {
-          await addToCartAndCheckout(variantId, 1);
+          await addToCart(variantId, 1);
         } finally {
           buyBtn.disabled = false;
+          label.textContent = original;
         }
       } else {
         window.location.href = '/#vip';
@@ -205,6 +209,7 @@ async function boot() {
 
   initSmoothScroll();
   initScrollProgress();
+  initCart();
   renderPage(null);
   initReveal();
   initCursor();
