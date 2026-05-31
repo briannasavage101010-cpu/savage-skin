@@ -9,7 +9,6 @@ import { renderProductCard } from './svg-bottle.js';
 import { getProducts, submitVipSignup, shopifyConfigured } from './shopify.js';
 import { initCart, addToCart } from './cart.js';
 import { initReveal } from './reveal.js';
-import { initThreeScene } from './three-scene.js';
 import {
   initSmoothScroll,
   initCursor,
@@ -60,7 +59,7 @@ function bindProductCards() {
 function boot() {
   // Order matters: smooth scroll first so UI binds to lenis events,
   // then products (so cards exist before reveal observer attaches),
-  // then reveal, then 3D.
+  // then reveal.
   initSmoothScroll();
   renderProducts().then(() => {
     initReveal();
@@ -72,7 +71,6 @@ function boot() {
   initVipForm(submitVipSignup);
   initStickyCta();
   initCart();
-  initThreeScene();
 }
 
 if (document.readyState === 'loading') {
