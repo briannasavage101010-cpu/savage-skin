@@ -9,6 +9,7 @@ import { renderProductCard } from './svg-bottle.js';
 import { getProducts, submitVipSignup, shopifyConfigured } from './shopify.js';
 import { initCart, addToCart } from './cart.js';
 import { initReveal } from './reveal.js';
+import { initIngredientHalo } from './ingredient-halo.js';
 import {
   initSmoothScroll,
   initCursor,
@@ -71,6 +72,7 @@ function boot() {
   initVipForm(submitVipSignup);
   initStickyCta();
   initCart();
+  initIngredientHalo();
 }
 
 if (document.readyState === 'loading') {
