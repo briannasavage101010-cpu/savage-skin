@@ -68,7 +68,7 @@ function renderHero(live) {
           </div>
           <div class="pdp-trust reveal d3">
             <span>✓ Clinical percentages</span>
-            <span>✓ Peer-reviewed</span>
+            <span>✓ Peer-reviewed actives</span>
             <span>✓ Cruelty-free</span>
           </div>
         </div>
@@ -129,6 +129,7 @@ function renderHowToUse() {
             )
             .join('')}
         </div>
+        <p class="pdp-safety">New to active ingredients? Patch-test before first use, introduce one product at a time, and always wear a broad-spectrum SPF during the day — acids and vitamin C can increase sun sensitivity. Results vary. Not medical advice.</p>
       </div>
     </section>
   `;

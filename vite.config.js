@@ -13,6 +13,7 @@ export default defineConfig({
         toner: resolve(__dirname, 'products/prime-time-toner/index.html'),
         serum: resolve(__dirname, 'products/power-fix-spot-corrector/index.html'),
         moisturizer: resolve(__dirname, 'products/dew-guard-moisturizer/index.html'),
+        lipgloss: resolve(__dirname, 'products/glass-glow-lip-gloss/index.html'),
       },
       output: {
         manualChunks: {
