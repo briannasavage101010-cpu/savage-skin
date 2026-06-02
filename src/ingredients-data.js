@@ -80,6 +80,7 @@ export const INGREDIENT_PRODUCTS = [
     layers: [
       { name: 'Lip Peptides', pct: '', type: 'liquid', color: '#e9d3d8', effect: 'Help soften and plump the look of lips with continued use.' },
       { name: 'Hyaluronic Acid', pct: '', type: 'liquid', color: '#d6e6ee', effect: 'Draws in water for a fuller, hydrated, glassy finish.' },
+      { name: 'Broad-Spectrum SPF 30', pct: '', type: 'liquid', color: '#f0ead7', effect: 'Shields lips from UV — sun damage happens on lips too.' },
       { name: 'Vitamin E', pct: '', type: 'powder', color: '#e0a94f', effect: 'An antioxidant that softens and helps protect against daily wear.' },
     ],
   },
