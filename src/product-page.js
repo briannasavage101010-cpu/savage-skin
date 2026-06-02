@@ -11,6 +11,7 @@ import { getProductDetail, shopifyConfigured } from './shopify.js';
 import { initCart, addToCart } from './cart.js';
 import { initSmoothScroll, initCursor, initScrollProgress } from './ui.js';
 import { initReveal } from './reveal.js';
+import { initCookieConsent } from './cookie-consent.js';
 
 const HANDLE = window.__PRODUCT_HANDLE__;
 const STATIC = PRODUCTS.find((p) => p.handle === HANDLE);
@@ -71,6 +72,7 @@ function renderHero(live) {
             <span>✓ Peer-reviewed actives</span>
             <span>✓ Cruelty-free</span>
           </div>
+          <p class="pdp-help reveal d3">Free shipping over $60 · 30-day returns · <a href="/shipping-returns/">Shipping &amp; Returns</a> · <a href="/faq/">FAQ</a></p>
         </div>
       </div>
     </section>
@@ -109,6 +111,10 @@ function renderHowToUse() {
     'dew-guard-moisturizer': [
       ['AM + PM', 'A pearl-sized amount, pressed into skin as the last step.'],
       ['Bonus', 'Use over Power Fix in the morning to lock in actives.'],
+    ],
+    'glass-glow-lip-gloss': [
+      ['Anytime', 'Swipe on for shine. Apply generously and evenly for SPF protection.'],
+      ['Reapply', 'At least every 2 hours, and after eating, drinking, or wiping lips.'],
     ],
   };
   const steps = usage[HANDLE] || [['Apply', 'Use as part of your daily routine.']];
@@ -211,6 +217,7 @@ async function boot() {
   initSmoothScroll();
   initScrollProgress();
   initCart();
+  initCookieConsent();
   renderPage(null);
   initReveal();
   initCursor();

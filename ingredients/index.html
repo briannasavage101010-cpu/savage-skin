@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Inside the Formula — Savage Skin</title>
+<meta name="description" content="Fall through every layer of a Savage Skin formula. See each ingredient and exactly what it does." />
+<meta property="og:title" content="Inside the Formula — Savage Skin" />
+<meta property="og:description" content="See every active in a Savage Skin formula, and exactly what it does for your skin." />
+<meta property="og:type" content="website" />
+<link rel="icon" type="image/png" href="/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body class="ing-body">
+
+<canvas id="ingCanvas" class="ing-canvas" aria-hidden="true"></canvas>
+<div class="ing-vignette" aria-hidden="true"></div>
+
+<nav class="top ing-nav">
+  <a href="/" class="brand"><span class="mark" aria-hidden="true"></span><span>Savage<em style="font-style:normal;color:var(--neon)">/</em>Skin</span></a>
+  <div class="nav-links">
+    <a href="/#shop">Shop</a>
+    <a href="/ingredients/" aria-current="page">Ingredients</a>
+    <a href="/#science">Science</a>
+    <a href="/#vip">VIP</a>
+  </div>
+  <a href="/#shop" class="nav-cart">Back to shop</a>
+</nav>
+
+<!-- Product switcher -->
+<div class="ing-switch" id="ingSwitch" role="tablist" aria-label="Choose a product"></div>
+
+<!-- Scroll-synced annotations (built by JS from ingredients-data) -->
+<main class="ing-scroll" id="ingScroll" aria-live="polite"></main>
+
+<a class="ing-skip" href="/#shop">Skip the experience →</a>
+
+<noscript>
+  <div class="ing-noscript">
+    <h1>Inside the Formula</h1>
+    <p>This page is an interactive 3D experience and needs JavaScript. Browse the full ingredient breakdown on each product page instead.</p>
+    <a href="/#shop">View products →</a>
+  </div>
+</noscript>
+
+<script type="module" src="/src/ingredients-page.js"></script>
+</body>
+</html>

@@ -26,9 +26,9 @@
   <a href="#" class="brand" aria-label="Savage Skin home"><span class="mark" aria-hidden="true"></span><span>Savage<em style="font-style:normal;color:var(--neon)">/</em>Skin</span></a>
   <div class="nav-links">
     <a href="#shop">Shop</a>
+    <a href="/ingredients/">Ingredients</a>
     <a href="#science">Science</a>
     <a href="#manifesto">Manifesto</a>
-    <a href="#ritual">Ritual</a>
     <a href="#vip">VIP</a>
   </div>
   <button type="button" id="cartToggle" class="nav-cart" aria-label="Open cart">
@@ -94,16 +94,6 @@
   </div>
 </section>
 
-<section class="halo" id="ingredients" data-halo aria-labelledby="halo-title">
-  <canvas class="halo-canvas" aria-hidden="true"></canvas>
-  <div class="halo-copy">
-    <div class="halo-tag reveal">/ Inside the formula</div>
-    <h2 class="halo-title" id="halo-title">The actives, <em>up&nbsp;close.</em></h2>
-    <p class="halo-sub reveal d1">Every drop is built around clinical-percentage actives and plant extracts — no filler, no guesswork. This is what's orbiting your skin.</p>
-    <a href="#shop" class="btn btn-primary magnetic halo-cta reveal d2"><span>See the lineup <span class="arr">&#8594;</span></span></a>
-  </div>
-</section>
-
 <div class="marquee">
   <div class="marquee-track">
     <span><span class="star">★</span> Clear Skin Confident <span class="star">★</span> Peer-Reviewed Actives <span class="star">★</span> Your First Real Routine <span class="star">★</span> Free Shipping $60+ <span class="star">★</span> Drop 01 Presale <span class="star">★</span> Clinical Percentages <span class="star">★</span></span>
@@ -116,6 +106,32 @@
     <div class="reveal"><div class="section-tag">/ 01 — The Lineup</div></div>
     <h2 class="section-title reveal">The <em>Goods.</em></h2>
     <p class="section-sub reveal d1">Five formulations. Zero filler. Each one formulated at clinical percentages and designed to help your skin.</p>
+
+    <div class="bundle-hero reveal d1" id="bundleHero">
+      <div class="bundle-tag">★ Best value · The complete routine</div>
+      <div class="bundle-main">
+        <div class="bundle-info">
+          <h3 class="bundle-name">The Full Ritual</h3>
+          <p class="bundle-desc">All four core steps — Clean Start, Prime Time, Power Fix, and Dew Guard — in one routine. Everything your AM and PM need, nothing extra.</p>
+          <ul class="bundle-includes">
+            <li>Clean Start Cleanser</li>
+            <li>Prime Time Toner</li>
+            <li>Power Fix Spot Corrector</li>
+            <li>Dew Guard Moisturizer</li>
+          </ul>
+        </div>
+        <div class="bundle-buy">
+          <div class="bundle-price-row">
+            <span class="bundle-compare" data-bundle-compare>$104</span>
+            <span class="bundle-price" data-bundle-price>$84</span>
+          </div>
+          <div class="bundle-save" data-bundle-save>Founders price · save $20</div>
+          <button class="btn btn-primary magnetic bundle-buy-btn" type="button" id="bundleBuy" data-handle="the-full-ritual" data-variant=""><span>Add the full routine <span class="arr">→</span></span></button>
+          <small class="bundle-note">Or build your own below.</small>
+        </div>
+      </div>
+    </div>
+
     <div class="products-grid" id="productsGrid"></div>
   </div>
 </section>
@@ -212,6 +228,7 @@
           <div class="form-error" id="vipEmailError" role="alert" aria-live="polite"></div>
           <button type="submit" class="submit magnetic">Reserve My Spot →</button>
           <small>// Capped at 500 spots · No spam, ever · One-click unsubscribe</small>
+          <small class="form-legal">You must be 16 or older (or have a parent or guardian's permission) to sign up. By joining you agree to our <a href="https://tbqaxz-rg.myshopify.com/policies/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</small>
           <div class="success" id="vipSuccess" role="status" aria-live="polite">
             <div class="success-title">You're in.</div>
             <div class="success-body">Check your inbox for confirmation. Want to skip the line for friends? Share your link:</div>
@@ -230,16 +247,17 @@
       <p>Clean, confident skincare for your first real routine. Formulated with peer-reviewed actives. Results vary. Not medical advice.</p>
     </div>
     <div class="foot"><h5>Shop</h5><ul><li><a href="#shop">Clean Start Cleanser</a></li><li><a href="#shop">Prime Time Toner</a></li><li><a href="#shop">Power Fix Spot Corrector</a></li><li><a href="#shop">Dew Guard Moisturizer</a></li><li><a href="#shop">Glass Glow Lip Gloss</a></li></ul></div>
-    <div class="foot"><h5>Brand</h5><ul><li><a href="#manifesto">Manifesto</a></li><li><a href="#science">The Science</a></li><li><a href="#ritual">The Ritual</a></li><li><a href="#vip">Founders Circle</a></li></ul></div>
+    <div class="foot"><h5>Help</h5><ul><li><a href="/faq/">FAQ</a></li><li><a href="/shipping-returns/">Shipping &amp; Returns</a></li><li><a href="/founders/">Our Story</a></li><li><a href="#vip">Founders Circle</a></li></ul></div>
     <div class="foot"><h5>Connect</h5><ul><li><a href="https://www.instagram.com/savageskincare_4teens/" target="_blank" rel="noopener noreferrer">Instagram</a></li><li><a href="#">TikTok</a></li><li><a href="mailto:hello@savageskincare.com">hello@savageskincare.com</a></li></ul></div>
   </div>
   <div class="foot-bottom">
     <div>© 2026 Savage Skin — All rights reserved</div>
     <ul class="foot-policies" aria-label="Legal policies">
-      <li><a href="/policies/privacy" data-policy="privacy">Privacy</a></li>
-      <li><a href="/policies/terms" data-policy="terms">Terms</a></li>
-      <li><a href="/policies/refund" data-policy="refund">Refund</a></li>
-      <li><a href="/policies/shipping" data-policy="shipping">Shipping</a></li>
+      <li><a href="https://tbqaxz-rg.myshopify.com/policies/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy</a></li>
+      <li><a href="https://tbqaxz-rg.myshopify.com/policies/terms-of-service" target="_blank" rel="noopener noreferrer">Terms</a></li>
+      <li><a href="https://tbqaxz-rg.myshopify.com/policies/refund-policy" target="_blank" rel="noopener noreferrer">Refund</a></li>
+      <li><a href="https://tbqaxz-rg.myshopify.com/policies/shipping-policy" target="_blank" rel="noopener noreferrer">Shipping</a></li>
+      <li><a href="/cookies/">Cookies</a></li>
     </ul>
     <div>Clear Skin Confident</div>
   </div>
