@@ -113,8 +113,8 @@ function renderHowToUse() {
       ['Bonus', 'Use over Power Fix in the morning to lock in actives.'],
     ],
     'glass-glow-lip-gloss': [
-      ['Anytime', 'Swipe on for shine. Apply generously and evenly for SPF protection.'],
-      ['Reapply', 'At least every 2 hours, and after eating, drinking, or wiping lips.'],
+      ['Anytime', 'Swipe on for instant shine and a hydrated, glassy finish. Reapply through the day as you like.'],
+      ['Layer it', 'Wears beautifully on its own or as the final touch over your routine.'],
     ],
   };
   const steps = usage[HANDLE] || [['Apply', 'Use as part of your daily routine.']];

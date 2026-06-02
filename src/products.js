@@ -71,7 +71,7 @@ export const PRODUCTS = [
     step: '05 · GLOSS',
     tag: 'New',
     name: 'Glass Glow Lip Gloss',
-    desc: 'Peptide + hyaluronic shine with broad-spectrum SPF 30. Plumps and softens for a glassy, non-sticky finish that also helps shield lips from the sun.',
+    desc: 'Peptide + hyaluronic shine. Plumps and softens for a glassy, non-sticky finish.',
     size: '8ml · Anytime',
     price: '$16',
     sale: null,
