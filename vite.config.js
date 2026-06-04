@@ -19,6 +19,13 @@ export default defineConfig({
         shippingReturns: resolve(__dirname, 'shipping-returns/index.html'),
         founders: resolve(__dirname, 'founders/index.html'),
         cookies: resolve(__dirname, 'cookies/index.html'),
+        blog: resolve(__dirname, 'blog/index.html'),
+        blog_how_to_fix_chapped_lips: resolve(__dirname, 'blog/how-to-fix-chapped-lips/index.html'),
+        blog_lip_balm_vs_mask_vs_oil: resolve(__dirname, 'blog/lip-balm-vs-mask-vs-oil/index.html'),
+        blog_do_lip_plumpers_work: resolve(__dirname, 'blog/do-lip-plumpers-work/index.html'),
+        blog_teen_skincare_routine: resolve(__dirname, 'blog/teen-skincare-routine/index.html'),
+        blog_can_teens_use_actives: resolve(__dirname, 'blog/can-teens-use-actives/index.html'),
+        blog_how_to_get_rid_of_teen_acne: resolve(__dirname, 'blog/how-to-get-rid-of-teen-acne/index.html'),
       },
       output: {
         manualChunks: {

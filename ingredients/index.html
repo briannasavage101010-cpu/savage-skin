@@ -15,7 +15,9 @@
 </head>
 <body class="ing-body">
 
-<canvas id="ingCanvas" class="ing-canvas" aria-hidden="true"></canvas>
+<canvas id="ingFrames" class="ing-canvas" aria-hidden="true"></canvas>
+<video id="ingVideo" class="ing-canvas" muted playsinline preload="auto" aria-hidden="true"></video>
+<div class="ing-tint" id="ingTint" aria-hidden="true"></div>
 <div class="ing-vignette" aria-hidden="true"></div>
 
 <nav class="top ing-nav">
@@ -40,7 +42,7 @@
 <noscript>
   <div class="ing-noscript">
     <h1>Inside the Formula</h1>
-    <p>This page is an interactive 3D experience and needs JavaScript. Browse the full ingredient breakdown on each product page instead.</p>
+    <p>This page is an interactive experience and needs JavaScript. Browse the full ingredient breakdown on each product page instead.</p>
     <a href="/#shop">View products →</a>
   </div>
 </noscript>

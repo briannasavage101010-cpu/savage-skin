@@ -381,6 +381,43 @@ footer .foot-bottom{color:#7a7686;border-top-color:rgba(255,255,255,0.08)}
 .content-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:48px}
 @media (max-width:760px){.content-page{padding:32px 22px 72px}}
 
+/* ---- Blog / Journal ---- */
+.content-prose h3{font-family:var(--serif);font-weight:500;font-size:20px;color:var(--bone);margin:28px 0 10px}
+.content-prose p{margin:0 0 18px}
+.content-prose hr{display:none}
+.content-prose ol{padding-left:20px;margin:0 0 18px;display:grid;gap:10px}
+.content-prose table{width:100%;border-collapse:collapse;margin:24px 0;font-size:14px}
+.content-prose th,.content-prose td{text-align:left;padding:12px 14px;border:1px solid var(--line);vertical-align:top}
+.content-prose thead th{background:#fff;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--bone)}
+.content-prose tbody tr:nth-child(even){background:rgba(10,10,18,0.02)}
+.content-prose em{font-style:italic}
+
+.blog-post .post-meta{display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--mute);margin-bottom:32px}
+.blog-post .post-meta strong{color:var(--bone-dim);font-weight:500}
+.blog-post .post-dot{color:var(--line-2)}
+.post-figure{margin:0 0 40px;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:#070409}
+.post-figure img{display:block;width:100%;height:auto}
+.post-faq{margin-top:48px}
+.post-faq h2{font-family:var(--serif);font-weight:500;font-size:26px;color:var(--bone);margin:0 0 18px}
+.post-byline{margin-top:48px;padding:24px 26px;border:1px solid var(--line);border-radius:16px;background:#fff}
+.post-byline-author{font-family:var(--serif);font-size:17px;color:var(--bone);margin:0 0 8px}
+.post-byline-note{font-size:13px;line-height:1.6;color:var(--mute);margin:0}
+.post-byline a{color:var(--neon);text-decoration:underline}
+
+.blog-head{margin-bottom:48px}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.blog-card{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;transition:transform .25s, box-shadow .25s, border-color .25s}
+.blog-card:hover{transform:translateY(-4px);border-color:var(--neon);box-shadow:0 18px 40px rgba(10,10,18,.10)}
+.blog-card-media{aspect-ratio:1200/630;overflow:hidden;background:#070409}
+.blog-card-media img{display:block;width:100%;height:100%;object-fit:cover}
+.blog-card-body{padding:22px 24px 26px;display:flex;flex-direction:column;flex:1}
+.blog-card-cat{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--neon);margin-bottom:12px}
+.blog-card-title{font-family:var(--serif);font-weight:500;font-size:22px;line-height:1.18;letter-spacing:-.01em;color:var(--bone);margin:0 0 12px}
+.blog-card-excerpt{font-size:14px;line-height:1.6;color:var(--bone-dim);margin:0 0 18px;flex:1}
+.blog-card-meta{font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:var(--mute)}
+@media (max-width:900px){.blog-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.blog-grid{grid-template-columns:1fr}.content-prose table{display:block;overflow-x:auto;white-space:nowrap}}
+
 .pdp-hero{position:relative;padding:60px 40px 100px;z-index:5}
 .pdp-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1400px;margin:0 auto}
 @media (max-width:980px){.pdp-grid{grid-template-columns:1fr;gap:40px}}
@@ -498,8 +535,11 @@ html.cart-open{overflow:hidden}
    /ingredients — "fall through the formula" scroll experience
    ============================================================ */
 .ing-body{--ing-accent:#ff2d95;background:#05040a;color:#f4f1f7}
-.ing-canvas{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;display:block}
-.ing-vignette{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(60% 50% at 50% 45%,transparent 0%,rgba(5,4,10,.35) 80%),linear-gradient(180deg,rgba(5,4,10,.55) 0%,transparent 22%,transparent 70%,rgba(5,4,10,.75) 100%)}
+.ing-canvas{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;display:block;object-fit:cover;background:#0d0b12}
+/* Scroll-synced color wash — shifts through the ingredient layer colors as the
+   bottle descends, so the clip reads as passing through colored liquid layers. */
+.ing-tint{position:fixed;inset:0;z-index:1;pointer-events:none;mix-blend-mode:soft-light;opacity:0;transition:opacity .4s ease}
+.ing-vignette{position:fixed;inset:0;z-index:2;pointer-events:none;background:radial-gradient(60% 50% at 50% 45%,transparent 0%,rgba(5,4,10,.35) 80%),linear-gradient(180deg,rgba(5,4,10,.55) 0%,transparent 22%,transparent 70%,rgba(5,4,10,.75) 100%)}
 
 .ing-nav{background:transparent;border-bottom:1px solid rgba(255,255,255,.08);backdrop-filter:none}
 .ing-nav .nav-links a{color:rgba(244,241,247,.7)}

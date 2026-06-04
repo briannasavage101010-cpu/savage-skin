@@ -1,22 +1,24 @@
 /**
- * /ingredients — controller for the scroll-driven "fall through the formula".
+ * /ingredients — controller for the scroll "fall through the formula".
  *
- * Builds the product switcher + per-ingredient annotation blocks from
- * ingredients-data.js, maps page scroll to the 3D scene's progress, and keeps
- * the active label in sync with the layer the bottle is currently passing.
+ * Builds the product switcher + per-ingredient annotation blocks, scrubs the
+ * pre-rendered hero video to scroll position, and lights up each ingredient
+ * label as you reach its section.
  */
 import './styles.css';
 import { INGREDIENT_PRODUCTS, getIngredientProduct } from './ingredients-data.js';
-import { createIngredientsScene } from './ingredients-scene.js';
+import { createIngredientsVideo } from './ingredients-video.js';
 import { initCookieConsent } from './cookie-consent.js';
 
-const canvas = document.getElementById('ingCanvas');
+const video = document.getElementById('ingVideo');
+const tint = document.getElementById('ingTint');
 const switchEl = document.getElementById('ingSwitch');
 const scrollEl = document.getElementById('ingScroll');
 
-let scene = null;
+let controller = null;
 let current = null;
 let blocks = [];
+let activeIndex = -1;
 
 function buildSwitcher() {
   switchEl.innerHTML = INGREDIENT_PRODUCTS.map(
@@ -70,16 +72,33 @@ function buildBlocks(product) {
 }
 
 function setActiveBlock(index) {
+  if (index === activeIndex) return;
+  activeIndex = index;
   blocks.forEach((b, i) => b.classList.toggle('is-active', i === index));
+}
+
+// Which ingredient label is active for a given scroll progress. Sections are
+// [intro, ...layers, outro] = (count + 2) full-height blocks, so layer k is
+// centred at p_k = (1.5 + k) / (count + 1).
+function activeForProgress(p) {
+  const count = current.layers.length;
+  const band = 0.5 / (count + 1);
+  for (let k = 0; k < count; k++) {
+    const pk = (1.5 + k) / (count + 1);
+    if (Math.abs(p - pk) <= band) return k;
+  }
+  return -1;
 }
 
 function selectProduct(slug) {
   current = getIngredientProduct(slug);
   setActiveTab(current.slug);
   buildBlocks(current);
-  scene.setProduct(current);
+  controller.setProduct(current);
   window.scrollTo(0, 0);
-  scene.setProgress(0);
+  controller.setProgress(0);
+  setActiveBlock(-1);
+  applyTint(0);
   document.documentElement.style.setProperty('--ing-accent', current.accent);
 }
 
@@ -88,25 +107,64 @@ function scrollProgress() {
   return max > 0 ? window.scrollY / max : 0;
 }
 
+// --- Color-layer wash over the video ---------------------------------------
+function hexToRgb(h) {
+  const n = parseInt(h.replace('#', ''), 16);
+  return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+}
+function smoothstep(t) { t = Math.max(0, Math.min(1, t)); return t * t * (3 - 2 * t); }
+function mixRgb(a, b, f) { return a.map((v, i) => Math.round(v + (b[i] - v) * f)); }
+
+// The liquid colour at a given scroll progress: holds each ingredient's colour
+// at its station (p_k = (1.5+k)/(count+1)) and blends between stations, so the
+// bottle visibly descends through colour layers — perfectly aligned to labels.
+function tintForProgress(p) {
+  const ls = current.layers;
+  const n = ls.length;
+  const pk = (k) => (1.5 + k) / (n + 1);
+  if (p <= pk(0)) return ls[0].color;
+  if (p >= pk(n - 1)) return ls[n - 1].color;
+  for (let k = 0; k < n - 1; k++) {
+    if (p >= pk(k) && p <= pk(k + 1)) {
+      const f = smoothstep((p - pk(k)) / (pk(k + 1) - pk(k)));
+      return rgbToCss(mixRgb(hexToRgb(ls[k].color), hexToRgb(ls[k + 1].color), f));
+    }
+  }
+  return ls[0].color;
+}
+function rgbToCss(a) { return `rgb(${a[0]},${a[1]},${a[2]})`; }
+
+function applyTint(p) {
+  tint.style.backgroundColor = tintForProgress(p);
+  // Fade the wash in after the intro and out before the outro.
+  const edge = 1 / (current.layers.length + 1);
+  const inFade = smoothstep((p - edge * 0.4) / (edge * 0.8));
+  const outFade = smoothstep((1 - p - edge * 0.4) / (edge * 0.8));
+  tint.style.opacity = (Math.min(inFade, outFade) * 0.7).toFixed(3);
+}
+
 function init() {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   initCookieConsent();
   buildSwitcher();
-  scene = createIngredientsScene(canvas, { reduceMotion });
-  scene.onLayer(setActiveBlock);
+  controller = createIngredientsVideo(video, { reduceMotion });
 
   const startSlug = new URLSearchParams(location.search).get('p') || INGREDIENT_PRODUCTS[0].slug;
   selectProduct(getIngredientProduct(startSlug).slug);
 
-  window.addEventListener('scroll', () => scene.setProgress(scrollProgress()), { passive: true });
+  window.addEventListener('scroll', () => {
+    const p = scrollProgress();
+    controller.setProgress(p);
+    setActiveBlock(activeForProgress(p));
+    applyTint(p);
+  }, { passive: true });
 
-  // Pause rendering when the tab is hidden.
   document.addEventListener('visibilitychange', () => {
-    if (document.hidden) scene.stop();
-    else scene.start();
+    if (document.hidden) controller.stop();
+    else controller.start();
   });
 
-  scene.start();
+  controller.start();
 }
 
 if (document.readyState === 'loading') {
