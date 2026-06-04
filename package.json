@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "blog": "node scripts/build-blog.mjs",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -13,6 +14,7 @@
     "three": "0.160.1"
   },
   "devDependencies": {
+    "marked": "^12.0.2",
     "vite": "4.5.5"
   },
   "engines": {
