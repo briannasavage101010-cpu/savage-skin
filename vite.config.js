@@ -15,7 +15,9 @@ export default defineConfig({
         serum: resolve(__dirname, 'products/power-fix-spot-corrector/index.html'),
         moisturizer: resolve(__dirname, 'products/dew-guard-moisturizer/index.html'),
         lipgloss: resolve(__dirname, 'products/glass-glow-lip-gloss/index.html'),
-        lipService: resolve(__dirname, 'products/lip-service/index.html'),
+        // NOTE: lip-service entry removed — products/lip-service/index.html is an
+        // unfinished stub and isn't committed. Finish + commit that page, then
+        // re-add this input to publish the Lip Service PDP.
         faq: resolve(__dirname, 'faq/index.html'),
         shippingReturns: resolve(__dirname, 'shipping-returns/index.html'),
         founders: resolve(__dirname, 'founders/index.html'),
