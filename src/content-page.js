@@ -9,6 +9,7 @@ import { initCart } from './cart.js';
 import { initReveal } from './reveal.js';
 import { initSmoothScroll, initScrollProgress, initCursor } from './ui.js';
 import { initCookieConsent } from './cookie-consent.js';
+import { initMobileNav } from './mobile-nav.js';
 
 function boot() {
   initSmoothScroll();
@@ -17,6 +18,7 @@ function boot() {
   initReveal();
   initCursor();
   initCookieConsent();
+  initMobileNav();
 }
 
 if (document.readyState === 'loading') {

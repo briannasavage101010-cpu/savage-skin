@@ -74,14 +74,14 @@ export const INGREDIENT_PRODUCTS = [
   {
     slug: 'lipgloss',
     handle: 'glass-glow-lip-gloss',
-    name: 'Glass Glow Lip Gloss',
-    tagline: 'Step 05 · Gloss',
+    name: 'Lip Service',
+    tagline: 'Step 01 · Lips',
     accent: '#ff7ec4',
     layers: [
-      { name: 'Lip Peptides', pct: '', type: 'liquid', color: '#e9d3d8', effect: 'Help soften and plump the look of lips with continued use.' },
-      { name: 'Hyaluronic Acid', pct: '', type: 'liquid', color: '#d6e6ee', effect: 'Draws in water for a fuller, hydrated, glassy finish.' },
-      { name: 'Broad-Spectrum SPF 30', pct: '', type: 'liquid', color: '#f0ead7', effect: 'Shields lips from UV — sun damage happens on lips too.' },
-      { name: 'Vitamin E', pct: '', type: 'powder', color: '#e0a94f', effect: 'An antioxidant that softens and helps protect against daily wear.' },
+      { name: 'Hyaluronic Acid', pct: '', type: 'liquid', color: '#d6e6ee', effect: 'Draws water into lips for a cushioned, hydrated plump — no sting, no irritation.' },
+      { name: 'Squalane', pct: '', type: 'liquid', color: '#ecdfc8', effect: 'A weightless emollient that seals everything in — the overnight-mask step, in one tube.' },
+      { name: 'Glycerin', pct: '', type: 'liquid', color: '#d3e4ea', effect: 'A humectant that keeps lips soft and hydrated all day — your daily balm.' },
+      { name: 'Vitamin E', pct: '', type: 'powder', color: '#e0a94f', effect: 'An antioxidant that conditions and softens lips against daily wear.' },
     ],
   },
 ];

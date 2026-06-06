@@ -4,15 +4,32 @@
  * Each product has:
  * - slug: internal identifier
  * - handle: Shopify product handle (URL slug in Shopify admin). Must match exactly.
+ * - hero: optional flag — the hero launch product. Shown in the homepage hero
+ *   section, so it is filtered OUT of the secondary "routine" grid.
  * - step: visual step label on the product card
  * - tag: small badge ("New", "Cult", "Hero")
  * - name, desc, size: copy
  * - price, sale: fallback price strings shown if Shopify data is unavailable
+ *   (price = current price, sale = struck-through compare-at price)
  * - serum: gradient colors for the SVG bottle liquid (light, main, dark)
  * - cap: neon ring color on the bottle cap
  */
 
 export const PRODUCTS = [
+  {
+    slug: 'lipgloss',
+    handle: 'glass-glow-lip-gloss',
+    hero: true,
+    step: '01 · LIPS',
+    tag: 'Hero',
+    name: 'Lip Service',
+    desc: 'Daily balm, overnight mask, and hydration-plumper in one tube. Skincare for your lips — not another wax stick that quits by 10am.',
+    size: '12ml · Day + Night',
+    price: '$24',
+    sale: '$18',
+    serum: { light: '#ffd0e6', main: '#ff7ec4', dark: '#5a0a35' },
+    cap: '#b026ff',
+  },
   {
     slug: 'cleanser',
     handle: 'clean-start-cleanser',
@@ -43,7 +60,7 @@ export const PRODUCTS = [
     slug: 'serum',
     handle: 'power-fix-spot-corrector',
     step: '03 · TREAT',
-    tag: 'Hero',
+    tag: 'Cult',
     name: 'Power Fix Spot Corrector',
     desc: "15% L-Ascorbic + Matrixyl, formulated to help brighten and even tone. Always follow with SPF.",
     size: '30ml · AM Treatment',
@@ -64,18 +81,5 @@ export const PRODUCTS = [
     sale: null,
     serum: { light: '#f3e07b', main: '#e5c26b', dark: '#4a3a0a' },
     cap: '#ff2d95',
-  },
-  {
-    slug: 'lipgloss',
-    handle: 'glass-glow-lip-gloss',
-    step: '05 · GLOSS',
-    tag: 'New',
-    name: 'Glass Glow Lip Gloss',
-    desc: 'Peptide + hyaluronic shine with broad-spectrum SPF 30. Plumps and softens for a glassy, non-sticky finish that also helps shield lips from the sun.',
-    size: '8ml · Anytime',
-    price: '$16',
-    sale: null,
-    serum: { light: '#ffd0e6', main: '#ff7ec4', dark: '#5a0a35' },
-    cap: '#b026ff',
   },
 ];

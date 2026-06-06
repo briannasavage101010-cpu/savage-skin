@@ -12,6 +12,7 @@ import { initCart, addToCart } from './cart.js';
 import { initSmoothScroll, initCursor, initScrollProgress } from './ui.js';
 import { initReveal } from './reveal.js';
 import { initCookieConsent } from './cookie-consent.js';
+import { initMobileNav } from './mobile-nav.js';
 
 const HANDLE = window.__PRODUCT_HANDLE__;
 const STATIC = PRODUCTS.find((p) => p.handle === HANDLE);
@@ -112,10 +113,6 @@ function renderHowToUse() {
       ['AM + PM', 'A pearl-sized amount, pressed into skin as the last step.'],
       ['Bonus', 'Use over Power Fix in the morning to lock in actives.'],
     ],
-    'glass-glow-lip-gloss': [
-      ['Anytime', 'Swipe on for shine. Apply generously and evenly for SPF protection.'],
-      ['Reapply', 'At least every 2 hours, and after eating, drinking, or wiping lips.'],
-    ],
   };
   const steps = usage[HANDLE] || [['Apply', 'Use as part of your daily routine.']];
   return `
@@ -181,27 +178,69 @@ function renderPage(live) {
     renderHowToUse() +
     renderRoutine();
 
-  // Bind add-to-cart
-  const buyBtn = root.querySelector('.pdp-buy');
-  if (buyBtn) {
-    buyBtn.addEventListener('click', async (e) => {
-      e.preventDefault();
-      const variantId = buyBtn.dataset.variant;
-      if (variantId) {
-        const label = buyBtn.querySelector('span');
-        const original = label.textContent;
-        buyBtn.disabled = true;
-        label.textContent = 'Adding…';
-        try {
-          await addToCart(variantId, 1);
-        } finally {
-          buyBtn.disabled = false;
-          label.textContent = original;
-        }
-      } else {
-        window.location.href = '/#vip';
+  bindBuy(root);
+}
+
+/**
+ * Bind the add-to-cart button. Shared by JS-rendered pages and statically
+ * authored ("custom") pages. Falls back to the VIP signup when there is no
+ * Shopify variant yet, exactly like the homepage product cards.
+ */
+function bindBuy(scope) {
+  const buyBtn = scope.querySelector('.pdp-buy');
+  if (!buyBtn) return;
+  buyBtn.addEventListener('click', async (e) => {
+    e.preventDefault();
+    const variantId = buyBtn.dataset.variant;
+    if (variantId) {
+      const label = buyBtn.querySelector('span');
+      const original = label.textContent;
+      buyBtn.disabled = true;
+      label.textContent = 'Adding…';
+      try {
+        await addToCart(variantId, 1);
+      } finally {
+        buyBtn.disabled = false;
+        label.textContent = original;
       }
+    } else {
+      window.location.href = '/#vip';
+    }
+  });
+}
+
+/**
+ * Custom pages author their own markup in <main id="pdpRoot" data-custom>.
+ * We only inject the SVG bottle into the [data-bottle] slot and, once Shopify
+ * data arrives, sync the live price + variant — never overwriting the page.
+ */
+function renderCustomBottle() {
+  const slot = document.querySelector('[data-bottle]');
+  if (slot && !slot.dataset.rendered) {
+    slot.innerHTML = svgBottle(STATIC, STATIC_INDEX);
+    slot.dataset.rendered = 'true';
+  }
+}
+
+function hydrateCustom(live) {
+  if (live.price) {
+    document.querySelectorAll('[data-live-price]').forEach((el) => {
+      el.textContent = live.price;
     });
+  }
+  if (live.compareAtPrice) {
+    document.querySelectorAll('[data-live-compare]').forEach((el) => {
+      el.textContent = live.compareAtPrice;
+    });
+  }
+  const buyBtn = document.querySelector('.pdp-buy');
+  if (buyBtn) {
+    if (live.variantId) buyBtn.dataset.variant = live.variantId;
+    if (live.available === false) {
+      buyBtn.disabled = true;
+      const label = buyBtn.querySelector('span');
+      if (label) label.textContent = 'Sold Out';
+    }
   }
 }
 
@@ -210,24 +249,42 @@ async function boot() {
     console.error('Unknown product handle:', HANDLE);
     return;
   }
-  document.title = `${STATIC.name} — Savage Skin`;
-  const metaDesc = document.querySelector('meta[name="description"]');
-  if (metaDesc) metaDesc.setAttribute('content', STATIC.desc);
+  const root = document.getElementById('pdpRoot');
+  const custom = Boolean(root && root.hasAttribute('data-custom'));
+
+  // Custom pages own their <title> + meta description; only JS-rendered pages
+  // get them filled in from the static catalog.
+  if (!custom) {
+    document.title = `${STATIC.name} — Savage Skin`;
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', STATIC.desc);
+  }
 
   initSmoothScroll();
   initScrollProgress();
   initCart();
   initCookieConsent();
-  renderPage(null);
+  initMobileNav();
+
+  if (custom) {
+    renderCustomBottle();
+    if (root) bindBuy(root);
+  } else {
+    renderPage(null);
+  }
   initReveal();
   initCursor();
 
   if (shopifyConfigured) {
     const live = await getProductDetail(HANDLE);
     if (live) {
-      renderPage(live);
-      initReveal();
-      initCursor();
+      if (custom) {
+        hydrateCustom(live);
+      } else {
+        renderPage(live);
+        initReveal();
+        initCursor();
+      }
     }
   }
 }

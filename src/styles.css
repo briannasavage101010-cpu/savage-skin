@@ -61,7 +61,30 @@ nav.top{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items
 .nav-cart{display:flex;align-items:center;gap:8px;padding:10px 18px;border:1px solid var(--line-2);border-radius:999px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;transition:all .25s}
 .nav-cart:hover{border-color:var(--neon);background:rgba(255,45,149,.08);box-shadow:0 0 24px rgba(255,45,149,.25)}
 .nav-cart .dot{width:6px;height:6px;border-radius:50%;background:var(--neon);box-shadow:0 0 8px var(--neon)}
-@media (max-width:760px){nav.top{padding:16px 20px}.nav-links{display:none}}
+/* Hamburger toggle — injected by src/mobile-nav.js, only shown on mobile */
+.nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;padding:0;border:1px solid var(--line-2);border-radius:12px;background:transparent;color:inherit;cursor:pointer;transition:border-color .25s}
+.nav-toggle:hover{border-color:var(--neon)}
+.nav-toggle-bar{display:block;width:18px;height:2px;margin:0 auto;background:currentColor;border-radius:2px;transition:transform .3s ease,opacity .2s ease}
+nav.top.nav-open .nav-toggle-bar:nth-child(1){transform:translateY(7px) rotate(45deg)}
+nav.top.nav-open .nav-toggle-bar:nth-child(2){opacity:0}
+nav.top.nav-open .nav-toggle-bar:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.ing-nav .nav-toggle{border-color:rgba(255,255,255,.2)}
+.ing-nav .nav-toggle:hover{border-color:var(--neon)}
+@media (max-width:760px){
+  nav.top{padding:14px 20px}
+  .nav-toggle{display:flex}
+  /* group the cart + hamburger to the right, brand stays left */
+  .nav-cart{margin-left:auto;margin-right:12px}
+  /* nav links drop down as a full-width panel below the bar */
+  .nav-links{display:flex;flex-direction:column;gap:0;position:absolute;top:100%;left:0;right:0;background:rgba(247,243,237,0.98);border-bottom:1px solid var(--line);backdrop-filter:blur(12px);padding:6px 20px 14px;max-height:0;overflow:hidden;opacity:0;visibility:hidden;transform:translateY(-8px);transition:max-height .35s ease,opacity .25s ease,transform .3s ease,visibility .35s}
+  nav.top.nav-open .nav-links{max-height:80vh;overflow:auto;opacity:1;visibility:visible;transform:none}
+  .nav-links a{padding:15px 4px;border-top:1px solid var(--line);font-size:14px;letter-spacing:.16em}
+  .nav-links a:first-child{border-top:0}
+  .nav-links a::after{display:none}
+  /* dark dropdown for the ingredients page nav */
+  .ing-nav .nav-links{background:rgba(10,8,18,0.97);border-bottom-color:rgba(255,255,255,.1)}
+  .ing-nav .nav-links a{border-top-color:rgba(255,255,255,.1)}
+}
 
 /* Hero */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:120px 40px 80px}

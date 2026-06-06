@@ -10,6 +10,7 @@ import { getProducts, submitVipSignup, shopifyConfigured } from './shopify.js';
 import { initCart, addToCart } from './cart.js';
 import { initReveal } from './reveal.js';
 import { initCookieConsent } from './cookie-consent.js';
+import { initMobileNav } from './mobile-nav.js';
 import {
   initSmoothScroll,
   initCursor,
@@ -24,16 +25,20 @@ async function renderProducts() {
   const grid = document.getElementById('productsGrid');
   if (!grid) return;
 
+  // The hero product (Lip Service) leads the homepage hero section, so the grid
+  // below shows only the secondary skincare routine.
+  const routine = PRODUCTS.filter((p) => !p.hero);
+
   // Render with static fallback data immediately for fast first paint
-  grid.innerHTML = PRODUCTS.map((p, i) => renderProductCard(p, i)).join('');
+  grid.innerHTML = routine.map((p, i) => renderProductCard(p, i)).join('');
   bindProductCards();
 
   // Then fetch live Shopify data and re-render in place (if configured)
   if (shopifyConfigured) {
-    const handles = PRODUCTS.map((p) => p.handle);
+    const handles = routine.map((p) => p.handle);
     const liveByHandle = await getProducts(handles);
     if (Object.keys(liveByHandle).length > 0) {
-      grid.innerHTML = PRODUCTS.map((p, i) =>
+      grid.innerHTML = routine.map((p, i) =>
         renderProductCard(p, i, liveByHandle[p.handle] || null)
       ).join('');
       bindProductCards();
@@ -108,6 +113,7 @@ function boot() {
   initCart();
   initBundle();
   initCookieConsent();
+  initMobileNav();
 }
 
 if (document.readyState === 'loading') {
