@@ -275,26 +275,34 @@ export async function cartLinesRemove(cartId, lineId) {
   return normalizeCart(data.cartLinesRemove?.cart);
 }
 
-/** Optional: submit VIP signup as a Shopify customer (requires the right scope). */
-export async function submitVipSignup({ name, email, skin }) {
-  if (!shopifyConfigured) return;
-  // Stub. Wire up your preferred service here (Klaviyo, Mailchimp, Shopify Customer API).
-  // Example Klaviyo subscribe:
-  //
-  //   const listId = import.meta.env.VITE_KLAVIYO_LIST_ID;
-  //   const publicKey = import.meta.env.VITE_KLAVIYO_PUBLIC_KEY;
-  //   if (!listId || !publicKey) return;
-  //   await fetch(`https://a.klaviyo.com/client/subscriptions/?company_id=${publicKey}`, {
-  //     method: 'POST',
-  //     headers: { 'Content-Type': 'application/json', revision: '2024-10-15' },
-  //     body: JSON.stringify({
-  //       data: {
-  //         type: 'subscription',
-  //         attributes: {
-  //           profile: { data: { type: 'profile', attributes: { email, properties: { name, skin } } } },
-  //         },
-  //         relationships: { list: { data: { type: 'list', id: listId } } },
-  //       },
-  //     }),
-  //   });
+/**
+ * Subscribe a VIP signup to the Klaviyo list via Klaviyo's client-side endpoint
+ * (public key only — safe to call from the browser). No-ops if Klaviyo isn't
+ * configured yet, so the form still succeeds via its localStorage backup.
+ */
+export async function submitVipSignup({ email }) {
+  const listId = import.meta.env.VITE_KLAVIYO_LIST_ID;
+  const publicKey = import.meta.env.VITE_KLAVIYO_PUBLIC_KEY;
+  if (!listId || !publicKey) return;
+
+  const res = await fetch(`https://a.klaviyo.com/client/subscriptions/?company_id=${publicKey}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', revision: '2024-10-15' },
+    body: JSON.stringify({
+      data: {
+        type: 'subscription',
+        attributes: {
+          profile: {
+            data: {
+              type: 'profile',
+              attributes: { email },
+            },
+          },
+        },
+        relationships: { list: { data: { type: 'list', id: listId } } },
+      },
+    }),
+  });
+
+  if (!res.ok) throw new Error(`Klaviyo subscribe failed (${res.status})`);
 }
