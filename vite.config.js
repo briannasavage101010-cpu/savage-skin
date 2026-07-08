@@ -27,6 +27,8 @@ export default defineConfig({
         shippingReturns: resolve(__dirname, 'shipping-returns/index.html'),
         founders: resolve(__dirname, 'founders/index.html'),
         cookies: resolve(__dirname, 'cookies/index.html'),
+        privacy: resolve(__dirname, 'privacy/index.html'),
+        terms: resolve(__dirname, 'terms/index.html'),
         blog: resolve(__dirname, 'blog/index.html'),
         blog_how_to_fix_chapped_lips: resolve(__dirname, 'blog/how-to-fix-chapped-lips/index.html'),
         blog_lip_balm_vs_mask_vs_oil: resolve(__dirname, 'blog/lip-balm-vs-mask-vs-oil/index.html'),
