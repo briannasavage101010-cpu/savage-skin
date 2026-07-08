@@ -9,6 +9,11 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
+        // Storefront (the previous homepage, preserved here so it stays live at /shop/)
+        shop: resolve(__dirname, 'shop/index.html'),
+        // Audience ad landing pages (see CLAUDE.md ad-landing-page convention)
+        lpTeens: resolve(__dirname, 'lp-teens.html'),
+        lpParents: resolve(__dirname, 'lp-parents.html'),
         ingredients: resolve(__dirname, 'ingredients/index.html'),
         cleanser: resolve(__dirname, 'products/clean-start-cleanser/index.html'),
         toner: resolve(__dirname, 'products/prime-time-toner/index.html'),

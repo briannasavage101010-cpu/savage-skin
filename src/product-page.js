@@ -6,7 +6,7 @@
 import './styles.css';
 
 import { PRODUCTS } from './products.js';
-import { svgBottle } from './svg-bottle.js';
+import { productVisual } from './svg-bottle.js';
 import { getProductDetail, shopifyConfigured } from './shopify.js';
 import { initCart, addToCart } from './cart.js';
 import { initSmoothScroll, initCursor, initScrollProgress } from './ui.js';
@@ -40,12 +40,12 @@ function renderHero(live) {
   return `
     <section class="pdp-hero" data-scene="hero">
       <div class="container pdp-grid">
-        <div class="pdp-visual reveal">
+        <div class="pdp-visual reveal" style="--accent:${STATIC.accent || '#ff2d95'}">
           <div class="float-chip">/ ${STATIC.step}</div>
           <div class="float-chip right">${escapeHtml(price)}</div>
           <div class="grid-lines"></div>
           <div class="glow-orb"></div>
-          ${svgBottle(STATIC, STATIC_INDEX)}
+          ${productVisual(STATIC, STATIC_INDEX, { eager: true })}
         </div>
         <div class="pdp-info">
           <div class="reveal"><div class="section-tag">/ ${STATIC.step}</div></div>
@@ -149,11 +149,11 @@ function renderRoutine() {
           ${others
             .map(
               (p, i) => `
-              <a class="pdp-routine-card reveal d${i + 1} magnetic" href="/products/${p.handle}/">
+              <a class="pdp-routine-card reveal d${i + 1} magnetic" href="/products/${p.handle}/" style="--accent:${p.accent || '#ff2d95'}">
                 <div class="pdp-routine-visual">
                   <div class="grid-lines"></div>
                   <div class="glow-orb"></div>
-                  ${svgBottle(p, PRODUCTS.indexOf(p) + 100)}
+                  ${productVisual(p, PRODUCTS.indexOf(p) + 100)}
                 </div>
                 <div class="pdp-routine-info">
                   <div class="product-meta"><span>${escapeHtml(p.step)}</span><span class="tag">${escapeHtml(p.tag)}</span></div>
@@ -217,7 +217,7 @@ function bindBuy(scope) {
 function renderCustomBottle() {
   const slot = document.querySelector('[data-bottle]');
   if (slot && !slot.dataset.rendered) {
-    slot.innerHTML = svgBottle(STATIC, STATIC_INDEX);
+    slot.innerHTML = productVisual(STATIC, STATIC_INDEX, { eager: true });
     slot.dataset.rendered = 'true';
   }
 }

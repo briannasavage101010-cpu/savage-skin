@@ -84,8 +84,35 @@ export function svgBottle(product, index) {
 </svg>`;
 }
 
+function escapeAttr(s) {
+  return String(s || '')
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
 /**
- * Render a product card with the SVG bottle inside.
+ * Product visual. Returns the real packshot (an <img>) when the catalog entry
+ * has an `image`, otherwise falls back to the generated SVG bottle.
+ *
+ * Photos are square 1024×1024 PNGs; width/height are declared so the browser
+ * reserves the box and there's no layout shift while it loads. Pass
+ * { eager:true } for above-the-fold spots (homepage hero, PDP hero) so the LCP
+ * image fetches immediately; everything else lazy-loads.
+ */
+export function productVisual(product, index, opts = {}) {
+  if (product && product.image) {
+    const loadAttrs = opts.eager
+      ? 'fetchpriority="high" decoding="async"'
+      : 'loading="lazy" decoding="async"';
+    return `<img class="product-photo" src="${escapeAttr(product.image)}" alt="${escapeAttr(product.name)}" width="1024" height="1024" ${loadAttrs}>`;
+  }
+  return svgBottle(product, index);
+}
+
+/**
+ * Render a product card with the product visual (photo, or SVG bottle fallback).
  * `liveData` is optional Shopify data (price, available, variantId) — if missing,
  * falls back to the static fields in PRODUCTS.
  */
@@ -99,13 +126,13 @@ export function renderProductCard(product, index, liveData = null) {
   const stepNum = product.step.split(' ')[0];
   const stepLabel = product.step.split('·')[1]?.trim() || product.step;
   return `
-    <div class="product-card reveal d${index + 1}" data-product="${product.slug}" data-handle="${product.handle}" data-variant="${variantId}">
+    <div class="product-card reveal d${index + 1}" data-product="${product.slug}" data-handle="${product.handle}" data-variant="${variantId}" style="--accent:${product.accent || '#ff2d95'}">
       <a class="product-visual" href="${detailUrl}" aria-label="View ${product.name}">
         <div class="float-chip"><span class="chip-step">${stepNum}</span> ${stepLabel}</div>
         ${product.tag ? `<div class="float-chip right tag-chip">${product.tag}</div>` : ''}
         <div class="grid-lines"></div>
         <div class="glow-orb"></div>
-        ${svgBottle(product, index)}
+        ${productVisual(product, index)}
       </a>
       <div class="product-info">
         <div class="product-meta"><span>${product.size}</span></div>

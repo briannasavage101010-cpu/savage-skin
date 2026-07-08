@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lip Service — The Lip Treatment You Can Actually Read the Label Of | Savage Skin</title>
+<meta name="description" content="A 3-in-1 lip treatment for teens: daily balm, overnight mask, and a hydration-plump in one tube. Every ingredient in plain English. Drop 01 presale — $18 (reg. $24)." />
+<meta name="robots" content="noindex" />
+<meta property="og:title" content="The lip treatment you can actually read the label of" />
+<meta property="og:description" content="Clean, gentle, and honest. Every ingredient in plain English. Founders presale $18." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="/images/products/lip-service.png" />
+<link rel="icon" type="image/png" href="/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!--
+  INTERNAL NOTE (not shown to visitors): the four ingredients listed in the
+  "What's actually in it" table (shea butter, squalane, hyaluronic acid, vitamin E)
+  are placeholders consistent with a clean hydrating balm/mask. Confirm them against
+  the REAL Lip Service INCI list before this page goes live — radical transparency
+  only works if the label on the page matches the tube.
+-->
+<style>
+:root{
+  --bg:#faf8f4; --card:#ffffff; --ink:#1c1822; --ink2:#3c3646; --muted:#726c7c;
+  --lip:#D4537E; --lip-soft:#fbeef3; --plum:#6f5b86; --gold:#a9823a; --line:rgba(28,24,34,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;line-height:1.55;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+.serif{font-family:'Fraunces',Georgia,serif;font-style:italic}
+.mono{font-family:'JetBrains Mono',monospace}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* nav */
+.nav{display:flex;align-items:center;justify-content:space-between;max-width:1080px;margin:0 auto;padding:20px 24px}
+.brand{font-weight:700;font-size:19px;letter-spacing:-.02em;text-decoration:none}
+.brand em{font-style:normal;color:var(--lip)}
+.nav-cta{font-size:14px;font-weight:600;text-decoration:none;color:var(--ink);border:1px solid var(--line);
+  border-radius:30px;padding:9px 16px;transition:.2s}
+.nav-cta:hover{border-color:var(--lip);color:var(--lip)}
+
+/* hero */
+.hero{padding:34px 0 56px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--lip)}
+h1{font-size:clamp(38px,5.4vw,64px);line-height:1.04;letter-spacing:-.025em;font-weight:700;margin:16px 0 18px}
+.sub{font-size:clamp(16px,1.6vw,19px);color:var(--ink2);max-width:32em;margin-bottom:26px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15.5px;text-decoration:none;
+  padding:15px 26px;border-radius:40px;border:1px solid transparent;cursor:pointer;transition:.2s;white-space:nowrap}
+.btn-primary{background:var(--lip);color:#fff;box-shadow:0 10px 30px rgba(212,83,126,.28)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 38px rgba(212,83,126,.38)}
+.btn-ghost{background:#fff;color:var(--ink);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--lip);color:var(--lip)}
+.reassure{margin-top:16px;font-size:13.5px;color:var(--muted)}
+.reassure b{color:var(--ink)}
+.hero-art{position:relative;background:radial-gradient(70% 70% at 50% 40%,var(--lip-soft),transparent 70%);
+  border-radius:30px;padding:18px}
+.hero-art img{margin:0 auto;filter:drop-shadow(0 24px 44px rgba(212,83,126,.22))}
+.price-chip{position:absolute;right:8%;bottom:7%;background:#fff;border:1px solid var(--line);
+  border-radius:16px;padding:13px 17px;text-align:center;box-shadow:0 12px 30px rgba(28,24,34,.1)}
+.price-chip .now{font-size:28px;font-weight:700;color:var(--lip);line-height:1}
+.price-chip .was{font-size:13px;color:var(--muted);text-decoration:line-through}
+.price-chip .lbl{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.12em;color:var(--muted);margin-top:4px}
+
+/* trust strip */
+.trust{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.trust .wrap{display:flex;gap:30px;flex-wrap:wrap;justify-content:center;padding:18px 24px;
+  font-size:14px;color:var(--ink2)}
+.trust span{display:inline-flex;align-items:center;gap:8px}
+.trust .i{color:var(--lip);font-weight:700}
+
+/* sections */
+section{padding:66px 0}
+.tag{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--lip)}
+h2{font-size:clamp(28px,4vw,44px);line-height:1.08;letter-spacing:-.02em;font-weight:700;margin:12px 0 14px}
+.lead{font-size:17px;color:var(--ink2);max-width:36em}
+.center{text-align:center}
+.center .lead{margin-left:auto;margin-right:auto}
+
+/* honesty grid */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px 24px}
+.tile .ic{width:38px;height:38px;border-radius:10px;background:var(--lip-soft);display:flex;align-items:center;
+  justify-content:center;color:var(--lip);font-weight:700;margin-bottom:16px;font-family:'JetBrains Mono',monospace}
+.tile h3{font-size:19px;margin-bottom:8px;letter-spacing:-.01em}
+.tile p{color:var(--muted);font-size:14.5px}
+
+/* swallow band */
+.band{background:var(--lip-soft);border-radius:26px;padding:52px 44px;margin-top:10px}
+.band .lead{font-size:18px;color:var(--ink2)}
+.band h2 .serif{color:var(--lip)}
+
+/* ingredient table */
+.ing-table{margin-top:30px;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.ing-row{display:grid;grid-template-columns:200px 1fr;gap:16px;padding:18px 24px;border-top:1px solid var(--line)}
+.ing-row:first-child{border-top:none;background:#fbf9f6}
+.ing-row b{font-weight:600}
+.ing-row.head{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.ing-row span{color:var(--ink2);font-size:15px}
+
+/* value compare */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:34px}
+.col{border:1px solid var(--line);border-radius:18px;padding:28px 26px;background:#fff}
+.col.them{opacity:.92}
+.col.us{border-color:var(--lip);box-shadow:0 12px 34px rgba(212,83,126,.14)}
+.col h3{font-size:18px;margin-bottom:14px}
+.col ul{list-style:none;display:grid;gap:11px}
+.col li{display:flex;gap:10px;font-size:15px;color:var(--ink2)}
+.col .x{color:#b9636f}
+.col .v{color:var(--lip);font-weight:700}
+.col .tot{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-weight:700;font-size:17px}
+
+/* offer */
+.offer{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:46px;
+  display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;box-shadow:0 18px 50px rgba(28,24,34,.07)}
+.perks{list-style:none;margin-top:22px;display:grid;gap:13px}
+.perks li{display:flex;gap:11px;font-size:15.5px;color:var(--ink2)}
+.chk{color:var(--lip);font-weight:700}
+.form label{display:block;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:9px}
+.form input{width:100%;background:#fff;border:1px solid var(--line);border-radius:12px;padding:15px 16px;
+  color:var(--ink);font-size:16px;font-family:inherit}
+.form input:focus{outline:none;border-color:var(--lip)}
+.form .submit{width:100%;margin-top:12px;border:none;background:var(--lip);color:#fff;font-weight:700;
+  font-size:16px;padding:16px;border-radius:40px;cursor:pointer;transition:.2s;font-family:inherit}
+.form .submit:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(212,83,126,.4)}
+.form .second{display:block;text-align:center;margin-top:12px;font-size:14.5px;font-weight:600;color:var(--lip);text-decoration:none}
+.form small{display:block;color:var(--muted);font-size:12px;margin-top:12px;line-height:1.55}
+.form a{color:var(--lip)}
+.err{color:#c0392b;font-size:13px;margin-top:8px;min-height:1em}
+.ok{display:none;background:#eef8f0;border:1px solid #b9e2c2;border-radius:14px;padding:22px;text-align:center}
+.ok.show{display:block}
+.ok .t{font-weight:700;font-size:19px;color:#2f7d46;margin-bottom:6px}
+.ok a{color:var(--lip);font-weight:600}
+
+/* faq */
+.faq{display:grid;gap:12px;margin-top:30px;max-width:820px}
+details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 22px}
+details[open]{border-color:var(--lip)}
+summary{cursor:pointer;font-weight:600;font-size:16.5px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'+';color:var(--lip);font-size:20px}
+details[open] summary::after{content:'\2212'}
+details p{color:var(--muted);font-size:14.5px;margin-top:12px}
+
+/* founder note */
+.founder{text-align:center;max-width:680px;margin:0 auto}
+.founder p{font-size:18px;color:var(--ink2);font-family:'Fraunces',Georgia,serif;font-style:italic;line-height:1.5}
+.founder .by{font-family:'JetBrains Mono',monospace;font-style:normal;font-size:12px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);margin-top:16px}
+
+footer{border-top:1px solid var(--line);padding:34px 0;text-align:center;color:var(--muted);font-size:13px;background:#fff}
+footer a{color:var(--muted);text-decoration:none;margin:0 9px}
+footer a:hover{color:var(--ink)}
+
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:40;display:none;padding:12px 16px;background:rgba(255,255,255,.95);
+  backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+.sticky a{display:block;text-align:center;background:var(--lip);color:#fff;font-weight:700;text-decoration:none;padding:15px;border-radius:40px}
+
+@media(max-width:860px){
+  .hero-grid{grid-template-columns:1fr;gap:28px}
+  .hero-art{order:-1;max-width:380px;margin:0 auto}
+  .grid3,.compare{grid-template-columns:1fr}
+  .offer{grid-template-columns:1fr;padding:32px 24px}
+  .ing-row{grid-template-columns:130px 1fr;gap:12px}
+  .sticky{display:block}
+  section{padding:50px 0}
+  body{padding-bottom:74px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="brand">Savage<em>/</em>Skin</a>
+  <a href="#reserve" class="nav-cta">Founders presale — $18</a>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">For the parent doing the buying</div>
+      <h1>The lip treatment you can actually <span class="serif">read the label of.</span></h1>
+      <p class="sub">Your teen reapplies lip balm all day. Whatever's in it, they're basically eating it. <b>Lip Service</b> is a 3-in-1 — daily balm, overnight mask, and a hydration-plump in one tube — with every ingredient in plain English on the label.</p>
+      <div class="ctas">
+        <a href="#reserve" class="btn btn-primary">Lock in the $18 price</a>
+        <a href="/products/glass-glow-lip-gloss/" class="btn btn-ghost">Pre-order now →</a>
+      </div>
+      <p class="reassure"><b>Gentle by design:</b> no acids, no actives, no patch test. Just hydration that lasts. Founders presale <b>$18</b> (reg. $24) · free shipping.</p>
+    </div>
+    <div class="hero-art">
+      <img src="/images/products/lip-service.png" alt="Lip Service 3-in-1 lip treatment tube" width="1024" height="1024" fetchpriority="high">
+      <div class="price-chip">
+        <div class="now">$18</div>
+        <div class="was">$24</div>
+        <div class="lbl">FOUNDERS</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="trust">
+  <div class="wrap">
+    <span><span class="i">✓</span> Every ingredient in plain English</span>
+    <span><span class="i">✓</span> Gentle — no acids or actives</span>
+    <span><span class="i">✓</span> Cruelty-free, always</span>
+    <span><span class="i">✓</span> Free shipping on founders orders</span>
+  </div>
+</div>
+
+<section>
+  <div class="wrap center">
+    <div class="tag">/ why parents pick it</div>
+    <h2>Clean that actually <span class="serif">works</span> — not a fear list.</h2>
+    <p class="lead">We're not here to scare you about other brands. We just put everything on the label in words you can read, and made one product that does the job of three.</p>
+    <div class="grid3" style="text-align:left">
+      <div class="tile"><div class="ic">01</div><h3>You can read it</h3><p>Every ingredient in plain English — what it is and what it does. No mystery "fragrance" standing in for a list you'll never see.</p></div>
+      <div class="tile"><div class="ic">02</div><h3>It's gentle</h3><p>No acids, no strong actives, no patch test. This is the hydrating one — safe for daily, all-day reapplying.</p></div>
+      <div class="tile"><div class="ic">03</div><h3>It's three things</h3><p>Daily balm, overnight mask, and a hydration-plump in one tube. One thing to buy, one thing to keep track of.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="band">
+      <div class="tag">/ the honest part</div>
+      <h2>If they're going to <span class="serif">swallow it,</span> you should know what's in it.</h2>
+      <p class="lead">Nobody eats lip balm on purpose. But between licking their lips, eating, and talking, it goes — all day. So we built Lip Service with <b>nothing in it you'd be afraid to swallow</b>, and we list every ingredient in plain English. That's the whole standard.</p>
+      <div class="ing-table">
+        <div class="ing-row head"><span>Ingredient</span><span>What it actually does</span></div>
+        <div class="ing-row"><b>Shea butter</b><span>Seals in moisture and softens — the comfortable balm feel.</span></div>
+        <div class="ing-row"><b>Squalane</b><span>Lightweight, skin-friendly hydration that doesn't feel greasy.</span></div>
+        <div class="ing-row"><b>Hyaluronic acid</b><span>Pulls in water for the fuller, smoother look — the hydration-plump.</span></div>
+        <div class="ing-row"><b>Vitamin E</b><span>Antioxidant that helps keep the formula and lips conditioned.</span></div>
+      </div>
+      <p class="reassure" style="margin-top:14px">The full ingredient list lives on the tube and the product page — nothing hidden.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap center">
+    <div class="tag">/ the value</div>
+    <h2>One tube instead of <span class="serif">three.</span></h2>
+    <p class="lead">Most teens end up with a drawer of single-use lip stuff. This replaces the pile.</p>
+    <div class="compare" style="text-align:left">
+      <div class="col them">
+        <h3>The usual drawer</h3>
+        <ul>
+          <li><span class="x">✕</span> A balm that wears off by lunch</li>
+          <li><span class="x">✕</span> A separate overnight mask</li>
+          <li><span class="x">✕</span> A plumper that stings to "prove" it works</li>
+          <li><span class="x">✕</span> Labels you can't read</li>
+        </ul>
+        <div class="tot">3 products · ~$40+</div>
+      </div>
+      <div class="col us">
+        <h3>Lip Service</h3>
+        <ul>
+          <li><span class="v">✓</span> Balm that actually stays on</li>
+          <li><span class="v">✓</span> Overnight mask — same tube</li>
+          <li><span class="v">✓</span> Hydration-plump, zero sting</li>
+          <li><span class="v">✓</span> Every ingredient in plain English</li>
+        </ul>
+        <div class="tot" style="color:var(--lip)">1 tube · $18 founders</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reserve">
+  <div class="wrap">
+    <div class="offer">
+      <div>
+        <div class="tag">/ founders circle</div>
+        <h2>Lock in the founders price.</h2>
+        <p class="lead">Drop 01 is the first run, capped at 500. Reserve now to hold the $18 price (it's $24 after), get 48-hour early access, and free shipping. Reserve with your email, or pre-order on our store.</p>
+        <ul class="perks">
+          <li><span class="chk">✓</span> $18 founders price, locked (reg. $24)</li>
+          <li><span class="chk">✓</span> 48-hour early access to Drop 01</li>
+          <li><span class="chk">✓</span> Free shipping on your founders order</li>
+          <li><span class="chk">✓</span> A real ship date by email before any charge</li>
+        </ul>
+      </div>
+      <div>
+        <form class="form" id="form" novalidate>
+          <label for="email">Reserve the $18 price</label>
+          <input type="email" id="email" name="email" placeholder="you@email.com" required autocomplete="email" inputmode="email">
+          <div class="err" id="err" role="alert" aria-live="polite"></div>
+          <button type="submit" class="submit">Email me early access →</button>
+          <a class="second" href="/products/glass-glow-lip-gloss/">Or pre-order now on our store →</a>
+          <small>No spam, ever · one-click unsubscribe. By joining you agree to our <a href="https://tbqaxz-rg.myshopify.com/policies/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</small>
+        </form>
+        <div class="ok" id="ok">
+          <div class="t">You're on the founders list.</div>
+          <div>Check your inbox to confirm your spot and lock the $18 price. Ready now? <a href="/products/glass-glow-lip-gloss/">Pre-order Lip Service →</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap center">
+    <div class="founder">
+      <div class="tag" style="display:block;margin-bottom:14px">/ why we made it</div>
+      <p>"We got tired of lip products that promise the world and hide the label. So we made one that does three jobs, stings zero, and tells you exactly what's in it. That's it."</p>
+      <div class="by">— Savage Skin, founder-led</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="tag">/ questions parents ask</div>
+    <h2>The honest answers.</h2>
+    <div class="faq">
+      <details><summary>Is it safe for my teen to use every day?</summary><p>Yes — it's a gentle, hydrating formula with no acids or strong actives, made for all-day reapplying. The full ingredient list is on the tube and product page. As with any new product, stop use if irritation occurs. Not medical advice.</p></details>
+      <details><summary>Does the "plump" sting or tingle?</summary><p>No. The fuller, smoother look comes from hydration, not irritation. There's no tingle and no burn — we don't use the stinging-means-it's-working trick.</p></details>
+      <details><summary>What exactly is in it?</summary><p>Every ingredient in plain English, on the tube and the product page — nothing in it you'd be afraid to swallow, and no mystery "fragrance" hiding the list.</p></details>
+      <details><summary>When will it ship, and what if it's delayed?</summary><p>This is a presale for Drop 01. You'll get a real ship date by email before any charge. If anything slips, we notify you first and you can get a refund — no chasing us.</p></details>
+      <details><summary>What does it cost?</summary><p>$18 for founders (the first 500 orders), $24 afterward. Reserve your email above to hold the founders price, or pre-order now on our store.</p></details>
+      <details><summary>Can I get a refund?</summary><p>Yes. See our <a href="https://tbqaxz-rg.myshopify.com/policies/refund-policy" target="_blank" rel="noopener noreferrer">refund policy</a> for full details. Presale orders can be refunded if a ship date is missed.</p></details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="/">Home</a>
+    <a href="/products/glass-glow-lip-gloss/">Lip Service</a>
+    <a href="/faq/">FAQ</a>
+    <a href="/shipping-returns/">Shipping &amp; Returns</a>
+    <a href="mailto:hello@savageskincare.com">Contact</a>
+    <div style="margin-top:14px">© 2026 Savage Skin · Cruelty-free · Results vary. Not medical advice.</div>
+  </div>
+</footer>
+
+<div class="sticky"><a href="#reserve">Lock in the $18 founders price →</a></div>
+
+<script>
+(function(){
+  var KLAVIYO_KEY='XNMhJw', LIST_ID='Ts8XmZ';
+  function qs(id){return document.getElementById(id);}
+  var form=qs('form');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var email=qs('email').value.trim();
+    var err=qs('err'); err.textContent='';
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){err.textContent='Please enter a valid email.';return;}
+    var btn=form.querySelector('.submit'); btn.disabled=true; btn.textContent='Reserving…';
+    fetch('https://a.klaviyo.com/client/subscriptions/?company_id='+KLAVIYO_KEY,{
+      method:'POST',
+      headers:{'Content-Type':'application/json','revision':'2024-10-15'},
+      body:JSON.stringify({data:{type:'subscription',attributes:{
+        profile:{data:{type:'profile',attributes:{email:email,properties:{signup_source:'lp-parents',audience:'parent'}}}}
+      },relationships:{list:{data:{type:'list',id:LIST_ID}}}}})
+    }).then(function(r){
+      if(!r.ok&&r.status!==202) throw new Error(r.status);
+      form.style.display='none'; qs('ok').classList.add('show');
+    }).catch(function(){
+      form.style.display='none'; qs('ok').classList.add('show');
+    });
+  });
+})();
+</script>
+</body>
+</html>

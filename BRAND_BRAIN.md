@@ -77,9 +77,13 @@ narrow "teen skin only" framing.
 ## 6. Commerce / infrastructure
 
 - Shopify Basic · USD · US (CDT). Dev store: `tbqaxz-rg.myshopify.com`.
-- **Sender domain — DECIDED 2026-06-08: `savageskincare.com`** (Brianna owns it). Use it for site AND email
-  (e.g. `hello@savageskincare.com`); retire `savageskin.co`. TODO before sending: (1) connect it to Shopify
-  as the primary domain (store still on `tbqaxz-rg.myshopify.com`), (2) authenticate DKIM/SPF in Klaviyo.
+- **Sender domain — DECIDED 2026-06-08: `savageskincare.com`** (Brianna owns it; bought via Shopify). The SITE
+  is LIVE on this domain via **GitHub Pages** (repo `briannasavage101010-cpu/savage-skin`, `CNAME`=savageskincare.com).
+  **Shopify primary domain stays `tbqaxz-rg.myshopify.com` ON PURPOSE** (headless checkout — do NOT switch it back
+  or checkout 404s). Signups already flow to **Klaviyo list `Ts8XmZ`** (public key `XNMhJw`), wired in `src/shopify.js`.
+  Only TODO before sending campaigns: authenticate `savageskincare.com` as the **Klaviyo sending domain** (DKIM/SPF
+  CNAMEs added in the domain's DNS — managed in Shopify admin since bought there); set from = `hello@savageskincare.com`.
+  Retire `savageskin.co`.
 - **ESP = Klaviyo.**
 - **Founders Circle offer (decided):** 48h early access (500 spots — scarcity) + **$18 founder price locked**
   ($24 compare-at after) + free shipping. Do NOT add a 3rd signup perk (dilutes). Save gift-with-purchase

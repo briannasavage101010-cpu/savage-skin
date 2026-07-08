@@ -11,8 +11,12 @@
  * - name, desc, size: copy
  * - price, sale: fallback price strings shown if Shopify data is unavailable
  *   (price = current price, sale = struck-through compare-at price)
- * - serum: gradient colors for the SVG bottle liquid (light, main, dark)
- * - cap: neon ring color on the bottle cap
+ * - image: product packshot (square 1024×1024 white-bg PNG in public/images/products/).
+ *   When set, it is shown instead of the generated SVG bottle.
+ * - accent: per-product brand accent color (BRAND_BRAIN.md §7). Drives card glow,
+ *   border, and hover via the CSS `--accent` custom property.
+ * - serum: gradient colors for the SVG bottle liquid (light, main, dark) — fallback only
+ * - cap: neon ring color on the bottle cap — fallback only
  */
 
 export const PRODUCTS = [
@@ -27,6 +31,8 @@ export const PRODUCTS = [
     size: '12ml · Day + Night',
     price: '$24',
     sale: '$18',
+    image: '/images/products/lip-service.png',
+    accent: '#D4537E',
     serum: { light: '#ffd0e6', main: '#ff7ec4', dark: '#5a0a35' },
     cap: '#b026ff',
   },
@@ -40,6 +46,8 @@ export const PRODUCTS = [
     size: '50ml · Daily',
     price: '$20',
     sale: null,
+    image: '/images/products/clean-start-cleanser.png',
+    accent: '#1D9E75',
     serum: { light: '#7cf3ff', main: '#00f0ff', dark: '#0a2a3a' },
     cap: '#ff2d95',
   },
@@ -53,6 +61,8 @@ export const PRODUCTS = [
     size: '100ml · 3x weekly',
     price: '$26',
     sale: null,
+    image: '/images/products/prime-time-toner.png',
+    accent: '#7F77DD',
     serum: { light: '#d99fff', main: '#b026ff', dark: '#3a0a5a' },
     cap: '#00f0ff',
   },
@@ -66,6 +76,8 @@ export const PRODUCTS = [
     size: '30ml · AM Treatment',
     price: '$34',
     sale: null,
+    image: '/images/products/power-fix-spot-corrector.png',
+    accent: '#EF9F27',
     serum: { light: '#ff8fc5', main: '#ff2d95', dark: '#5a0a30' },
     cap: '#e5c26b',
   },
@@ -79,6 +91,8 @@ export const PRODUCTS = [
     size: '30ml · PM Seal',
     price: '$24',
     sale: null,
+    image: '/images/products/dew-guard-moisturizer.png',
+    accent: '#378ADD',
     serum: { light: '#f3e07b', main: '#e5c26b', dark: '#4a3a0a' },
     cap: '#ff2d95',
   },
