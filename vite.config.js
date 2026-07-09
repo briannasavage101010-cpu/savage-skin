@@ -14,7 +14,10 @@ export default defineConfig({
         // Audience ad landing pages (see CLAUDE.md ad-landing-page convention)
         lpTeens: resolve(__dirname, 'lp-teens.html'),
         lpParents: resolve(__dirname, 'lp-parents.html'),
-        ingredients: resolve(__dirname, 'ingredients/index.html'),
+        // Ingredients page hidden for now (focusing on sign-ups). Files kept in
+        // ingredients/ + src/ingredients-*.js. To bring it back: uncomment this line
+        // and re-add the "Ingredients" nav link in each page + scripts/build-blog.mjs.
+        // ingredients: resolve(__dirname, 'ingredients/index.html'),
         cleanser: resolve(__dirname, 'products/clean-start-cleanser/index.html'),
         toner: resolve(__dirname, 'products/prime-time-toner/index.html'),
         serum: resolve(__dirname, 'products/power-fix-spot-corrector/index.html'),
