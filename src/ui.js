@@ -139,6 +139,8 @@ export function initCountdown() {
   const t = new Date(target).getTime();
   const $ = (id) => document.getElementById(id);
   const pad = (n) => String(Math.max(0, n)).padStart(2, '0');
+  // Countdown markup is removed until a real drop date is set — no-op if absent.
+  if (!$('cdDays')) return;
   function tick() {
     const diff = Math.max(0, t - Date.now());
     $('cdDays').textContent = pad(Math.floor(diff / 86400000));

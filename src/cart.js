@@ -151,10 +151,10 @@ function showError(msg) {
 /** Add a variant to the cart and open the drawer. */
 export async function addToCart(variantId, quantity = 1) {
   if (!shopifyConfigured || !variantId) {
-    // No Shopify variant yet — fall back to the VIP signup.
-    const vip = document.querySelector('#vip');
-    if (vip) vip.scrollIntoView({ behavior: 'smooth' });
-    else window.location.href = '/#vip';
+    // No Shopify variant yet — fall back to the reserve form (homepage).
+    const join = document.querySelector('#join');
+    if (join) join.scrollIntoView({ behavior: 'smooth' });
+    else window.location.href = '/#join';
     return;
   }
 

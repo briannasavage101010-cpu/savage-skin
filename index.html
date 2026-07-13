@@ -39,11 +39,11 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 
 /* ---------- nav ---------- */
 nav.top{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
-  padding:16px 24px;background:rgba(247,243,237,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  padding:16px 24px;background:rgba(247,243,237,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line2);box-shadow:0 1px 12px rgba(10,10,18,.05)}
 .brand{display:flex;align-items:center;gap:11px;font-family:var(--serif);font-weight:600;font-size:20px;letter-spacing:-.02em}
 .brand .mark{width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff,var(--neon) 60%,#2a0a18 100%);box-shadow:0 0 18px rgba(255,45,149,.5)}
 .brand em{font-style:normal;color:var(--neon)}
-.nav-links{display:flex;gap:30px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+.nav-links{display:flex;gap:30px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#2b2933;font-weight:500}
 .nav-links a{padding:6px 0;position:relative;transition:color .2s}
 .nav-links a:hover{color:var(--ink)}
 .nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:linear-gradient(90deg,var(--neon),var(--cyan));transition:width .35s}
@@ -54,8 +54,8 @@ nav.top{position:sticky;top:0;z-index:100;display:flex;align-items:center;justif
 .nav-toggle span{display:block;width:18px;height:2px;background:var(--ink);border-radius:2px}
 
 /* ---------- hero ---------- */
-.hero{padding:46px 0 30px}
-.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:54px;align-items:center}
+.hero{padding:20px 0 30px}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:54px;align-items:start}
 .pill{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;
   text-transform:uppercase;color:var(--dim);border:1px solid var(--line2);border-radius:999px;padding:7px 14px;background:#fff}
 .pill .dot{width:7px;height:7px;border-radius:50%;background:var(--neon);box-shadow:0 0 0 0 rgba(255,45,149,.6);animation:pulse 1.8s infinite}
@@ -70,7 +70,7 @@ h1 em{font-style:italic;font-weight:500;color:var(--neon);display:block}
 .hero-art{position:relative;display:flex;justify-content:center}
 .hero-art::before{content:"";position:absolute;top:48%;left:50%;transform:translate(-50%,-50%);width:108%;aspect-ratio:1;border-radius:50%;
   background:radial-gradient(circle at 50% 45%,rgba(212,83,126,.30),transparent 66%);filter:blur(36px)}
-.hero-art img{position:relative;z-index:1;width:100%;max-width:420px;aspect-ratio:1/1;object-fit:contain;
+.hero-art img{position:relative;z-index:1;width:auto;max-width:100%;height:auto;max-height:460px;
   filter:drop-shadow(0 26px 48px rgba(10,10,18,.16));animation:float 6.5s ease-in-out infinite}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 .scarce{font-family:var(--mono);font-size:12.5px;color:var(--mute);letter-spacing:.03em}
@@ -131,18 +131,53 @@ h3.sec{font-family:var(--serif);font-weight:500;font-size:clamp(28px,4.2vw,46px)
 .vote-count{font-family:var(--mono);font-size:12px;color:var(--mute);letter-spacing:.04em}
 .vote-count b{color:var(--ink)}
 .opts{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.opt{position:relative;text-align:left;border:1px solid var(--line2);background:#fbf9f5;border-radius:16px;padding:17px 18px;overflow:hidden;transition:border-color .2s,transform .15s}
+.opt{position:relative;display:flex;align-items:center;gap:15px;text-align:left;border:1px solid var(--line2);background:#fbf9f5;border-radius:16px;padding:14px;overflow:hidden;transition:border-color .2s,transform .15s}
 .opt:hover{border-color:var(--neon);transform:translateY(-2px)}
 .opt.chosen{border-color:var(--neon);box-shadow:0 0 0 1px var(--neon) inset}
 .opt-fill{position:absolute;inset:0 auto 0 0;width:0;background:linear-gradient(90deg,rgba(255,45,149,.14),rgba(176,38,255,.1));transition:width .7s cubic-bezier(.2,.8,.2,1);z-index:0}
+.opt-info{position:relative;z-index:1;flex:1;min-width:0}
 .opt-row{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:10px}
 .opt-name{font-weight:600;font-size:15.5px}
 .opt-pct{font-family:var(--mono);font-size:13px;color:var(--dim);font-variant-numeric:tabular-nums}
 .opt.chosen .opt-pct{color:var(--neon)}
+.opt-thumb{position:relative;z-index:1;flex:none;width:104px;height:140px;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.opt-thumb img{width:100%;height:100%;object-fit:cover;object-position:center;animation:none}
 .opt-tick{position:relative;z-index:1;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-top:4px;opacity:0;transition:opacity .2s}
 .opt.chosen .opt-tick{opacity:1;color:var(--neon)}
+.opt.chosen .opt-thumb{border-color:var(--neon)}
 .vote-nudge{margin-top:20px;display:none;align-items:center;gap:14px;flex-wrap:wrap;font-size:15px;color:var(--ink)}
 .vote-nudge.show{display:flex;animation:pop .4s ease}
+
+/* ---------- lip pod concept carousel ---------- */
+.pod-section{position:relative;margin-top:22px}
+.pv-carousel-wrap{position:relative}
+.pv-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:8px 2px 22px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.pv-track::-webkit-scrollbar{display:none}
+.pv-card{flex:0 0 78%;max-width:360px;scroll-snap-align:center;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--surface);box-shadow:0 10px 34px rgba(10,10,18,.06);transition:transform .3s ease,box-shadow .3s ease}
+@media(min-width:700px){.pv-card{flex:0 0 46%}}
+@media(min-width:1000px){.pv-card{flex:0 0 31%}}
+.pv-card.is-active{transform:scale(1.02);box-shadow:0 18px 46px rgba(255,45,149,.14)}
+.pv-img-wrap{position:relative;aspect-ratio:1/1;background:#efe9e1;overflow:hidden}
+.pv-img-wrap img{width:100%;height:100%;object-fit:cover;transform:scale(1.05);transition:transform 6s ease;animation:none}
+.pv-card.is-active .pv-img-wrap img{transform:scale(1)}
+.pv-body{padding:16px}
+.pv-name{font-family:var(--serif);font-weight:600;font-size:17px;letter-spacing:-.01em;margin-bottom:5px}
+.pv-desc{font-size:13px;color:var(--dim);line-height:1.5;margin-bottom:12px;min-height:38px}
+.pv-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;font-family:var(--mono);font-size:11px;color:var(--mute);letter-spacing:.03em}
+.pv-meta b{color:var(--ink)}
+.pv-btn{display:block;width:100%;text-align:center;background:var(--ink);color:#fff;border:none;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:13px 0;border-radius:999px;transition:background .15s ease,transform .15s ease}
+.pv-btn:hover{background:var(--neon);transform:translateY(-1px)}
+.pv-btn.voted{background:var(--neon);pointer-events:none}
+.pv-arrow{position:absolute;top:34%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:1px solid var(--line2);background:rgba(255,255,255,.94);color:var(--ink);font-size:18px;z-index:3;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(10,10,18,.12);transition:background .15s,color .15s}
+.pv-arrow:hover{background:var(--neon);color:#fff;border-color:var(--neon)}
+.pv-arrow.prev{left:2px}.pv-arrow.next{right:2px}
+@media(max-width:699px){.pv-arrow{display:none}}
+.pv-dots{display:flex;justify-content:center;gap:8px;margin-top:2px}
+.pv-dot{width:8px;height:8px;border-radius:50%;background:var(--line2);border:none;padding:0;transition:all .2s ease}
+.pv-dot.active{background:var(--ink);width:24px;border-radius:999px}
+.pod-capture{display:none;max-width:560px;margin:20px auto 0}
+.pod-capture.show{display:block;animation:pop .4s ease}
+.cap-skip{display:block;text-align:center;margin-top:12px;font-size:12.5px;color:var(--mute);text-decoration:underline;background:none;border:none;width:100%}
 
 /* ---------- value cards ---------- */
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
@@ -181,11 +216,13 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
 .sticky a{display:block;text-align:center;background:var(--neon);color:#fff;font-weight:700;padding:15px;border-radius:999px;box-shadow:0 8px 24px rgba(255,45,149,.3)}
 
 @media (max-width:920px){
-  .hero-grid{grid-template-columns:1fr;gap:30px}
-  .hero-art{order:-1;max-width:330px;margin:0 auto}
-  .opts{grid-template-columns:1fr}
+  .hero-grid{grid-template-columns:1fr;gap:24px}
+  .hero-grid>div:nth-child(2){order:-1}
+  .hero-art{max-width:330px;margin:0 auto}
+  .hero-art img{max-height:340px}
   .cards{grid-template-columns:1fr}
   .nav-links{display:none}
+  .nav-cta{display:none}
   .nav-toggle{display:flex}
   nav.top.open .nav-links{display:flex;flex-direction:column;gap:0;position:absolute;top:100%;left:0;right:0;
     background:rgba(247,243,237,.98);border-bottom:1px solid var(--line);padding:8px 24px 16px}
@@ -196,6 +233,9 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
   section{padding:46px 0}
   .vote-wrap,.band{padding:28px 22px}
   .card{padding:24px}
+}
+@media (max-width:540px){
+  .opts{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -232,7 +272,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
 
     <div>
       <div class="hero-art">
-        <img src="/images/products/lip-service.png" alt="Lip Service 3-in-1 lip treatment" width="1024" height="1024" fetchpriority="high">
+        <img src="/images/products/lip-service-hero.png" alt="Lip Service 3-in-1 lip treatment" width="560" height="900" fetchpriority="high">
       </div>
     </div>
   </div>
@@ -291,6 +331,102 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
   </div>
 </section>
 
+<!-- ================= LIP POD CONCEPT VOTE ================= -->
+<section id="lip-pod-vote">
+  <div class="wrap">
+    <div class="eyebrow">/ sneak peek · prototype</div>
+    <h3 class="sec">The Lip Pod is coming. <span class="serif">You pick the look.</span></h3>
+    <p class="lead">A wearable magnetic gloss pod — still a prototype. These are concept designs, not the final product. Vote for the one you'd actually wear. <em style="font-style:normal;color:var(--mute)">Nothing here is for sale yet.</em></p>
+
+    <div class="pod-section">
+      <div class="pv-carousel-wrap">
+        <button class="pv-arrow prev" type="button" aria-label="Previous design">&#8592;</button>
+        <button class="pv-arrow next" type="button" aria-label="Next design">&#8594;</button>
+
+        <div class="pv-track" id="pvTrack">
+          <div class="pv-card">
+            <div class="pv-img-wrap">
+              <img src="/lip-pod/concept-01-cherry-chrome.png" width="1024" height="1024" loading="lazy" alt="Concept 01 — cherry chrome lip pod phone charm (prototype)">
+            </div>
+            <div class="pv-body">
+              <div class="pv-name">Concept 01 — Cherry Chrome Charm</div>
+              <p class="pv-desc">Glossy cherry-red pod on a phone charm strap. Loud, iconic, main-character energy.</p>
+              <div class="pv-meta"><span>Phone charm</span><span><b class="pv-count" data-count>0</b> votes</span></div>
+              <button class="pv-btn" type="button" data-concept="Concept 01 — Cherry Chrome Charm">Vote this one</button>
+            </div>
+          </div>
+
+          <div class="pv-card">
+            <div class="pv-img-wrap">
+              <img src="/lip-pod/concept-02-matte-black.png" width="1024" height="1024" loading="lazy" alt="Concept 02 — matte black minimalist lip pod phone charm (prototype)">
+            </div>
+            <div class="pv-body">
+              <div class="pv-name">Concept 02 — Matte Black Minimal</div>
+              <p class="pv-desc">Stealth matte-black pod, silver magnetic seam. Understated and unisex.</p>
+              <div class="pv-meta"><span>Phone charm</span><span><b class="pv-count" data-count>0</b> votes</span></div>
+              <button class="pv-btn" type="button" data-concept="Concept 02 — Matte Black Minimal">Vote this one</button>
+            </div>
+          </div>
+
+          <div class="pv-card">
+            <div class="pv-img-wrap">
+              <img src="/lip-pod/concept-03-chrome-bracelet.png" width="1024" height="1024" loading="lazy" alt="Concept 03 — silver chain bracelet with chrome lip pod (prototype)">
+            </div>
+            <div class="pv-body">
+              <div class="pv-name">Concept 03 — Chrome Jewelry Bracelet</div>
+              <p class="pv-desc">Delicate silver chain with a polished chrome pod. Reads as fine jewelry first.</p>
+              <div class="pv-meta"><span>Bracelet</span><span><b class="pv-count" data-count>0</b> votes</span></div>
+              <button class="pv-btn" type="button" data-concept="Concept 03 — Chrome Jewelry Bracelet">Vote this one</button>
+            </div>
+          </div>
+
+          <div class="pv-card">
+            <div class="pv-img-wrap">
+              <img src="/lip-pod/concept-04-rose-gold-locket.png" width="1024" height="1024" loading="lazy" alt="Concept 04 — rose gold locket lip pod on chunky chain bracelet (prototype)">
+            </div>
+            <div class="pv-body">
+              <div class="pv-name">Concept 04 — Rose Gold Locket</div>
+              <p class="pv-desc">Pearlescent rose-gold pod on a chunky chain, clicks open like a locket.</p>
+              <div class="pv-meta"><span>Bracelet</span><span><b class="pv-count" data-count>0</b> votes</span></div>
+              <button class="pv-btn" type="button" data-concept="Concept 04 — Rose Gold Locket">Vote this one</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pv-dots" id="pvDots"></div>
+      </div>
+
+      <!-- Optional email capture — appears after the first vote. Voting works without it. -->
+      <div class="pod-capture" id="podCapture">
+        <div class="card">
+          <form id="podForm" novalidate>
+            <span class="tag">// First in line</span>
+            <h2>Want first access when the winning design drops?</h2>
+            <p style="color:var(--dim);font-size:14.5px;margin:0 0 16px;line-height:1.55">Your vote counts either way. Add your email to be <b style="color:var(--ink)">first to know</b> if the Lip Pod goes into production — optional, no spam, and it won't affect your vote.</p>
+            <div class="field">
+              <label for="podEmail">Email <span class="hint">— optional</span></label>
+              <input id="podEmail" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com">
+            </div>
+            <div class="err" id="podErr" role="alert" aria-live="polite"></div>
+            <label class="consent">
+              <input type="checkbox" id="podAgree">
+              <span>I'm 16+ (or have a parent/guardian's permission) and agree to get email updates about the Lip Pod, per the
+                <a href="/privacy/">Privacy Policy</a> &amp; <a href="/terms/">Terms</a>.</span>
+            </label>
+            <button type="submit" class="submit" id="podSubmit">Keep me posted →</button>
+            <button type="button" class="cap-skip" id="podSkip">No thanks — just count my vote</button>
+            <small class="fine">Concept test only. Nothing here is for sale, and adding your email is not an order or a promise of one.</small>
+          </form>
+          <div class="success" id="podSuccess" role="status" aria-live="polite">
+            <div class="big">Vote locked in.</div>
+            <p id="podSuccessMsg">Thanks — we saved your pick.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= THE VOTE ================= -->
 <section id="vote">
   <div class="wrap">
@@ -298,7 +434,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
       <div class="vote-head">
         <div>
           <div class="eyebrow">/ you decide</div>
-          <h3 class="sec" id="voteQ">Pick the next drop.</h3>
+          <h3 class="sec" id="voteQ">Pick the finish.</h3>
           <p class="lead" id="voteSub">Tap your favorite. Your vote helps choose what we make — and when you reserve a spot, we save your pick.</p>
         </div>
         <div class="vote-count"><b id="voteTotal">0</b> votes so far</div>
@@ -395,13 +531,13 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
         'seed' is just a starting number so the bars don't begin at zero.
      --------------------------------------------------------------------- */
   var VOTE = {
-    question: 'Pick the next drop.',
-    subtitle: 'Tap your favorite. Your vote helps choose what we make — and when you reserve a spot, we save your pick.',
+    question: 'Pick the finish.',
+    subtitle: 'This is the look of the Lip Service tube. Tap your favorite — your vote helps us choose which finish to make, and we save your pick when you reserve a spot.',
     options: [
-      { id:'holo',     label:'Holographic Chrome', seed:128 },
-      { id:'frosted',  label:'Frosted Matte',      seed:96  },
-      { id:'cleary2k', label:'Clear Y2K',          seed:142 },
-      { id:'metal',    label:'Liquid Metal',       seed:74  }
+      { id:'holo',     label:'Holographic Chrome', seed:128, img:'/images/vote-finishes/holographic-chrome.png' },
+      { id:'frosted',  label:'Frosted Matte',      seed:96,  img:'/images/vote-finishes/frosted-matte.png'      },
+      { id:'cleary2k', label:'Clear Y2K',          seed:142, img:'/images/vote-finishes/clear-y2k.png'          },
+      { id:'metal',    label:'Liquid Metal',       seed:74,  img:'/images/vote-finishes/liquid-metal.png'       }
     ]
   };
   /* ===================================================================== */
@@ -435,9 +571,13 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
     b.type='button'; b.className='opt'; b.setAttribute('data-id',o.id);
     b.innerHTML =
       '<div class="opt-fill" data-fill></div>'+
-      '<div class="opt-row"><span class="opt-name"></span><span class="opt-pct" data-pct>0%</span></div>'+
-      '<div class="opt-tick">✓ your pick</div>';
+      (o.img ? '<div class="opt-thumb"><img data-thumb alt="" loading="lazy"></div>' : '')+
+      '<div class="opt-info">'+
+        '<div class="opt-row"><span class="opt-name"></span><span class="opt-pct" data-pct>0%</span></div>'+
+        '<div class="opt-tick">✓ your pick</div>'+
+      '</div>';
     b.querySelector('.opt-name').textContent = o.label;
+    if(o.img){ var t=b.querySelector('[data-thumb]'); t.src=o.img; t.alt='Lip Service tube — '+o.label+' finish'; }
     b.addEventListener('click', function(){ choose(o.id); });
     optsEl.appendChild(b);
   });
@@ -541,6 +681,171 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
     });
 
     function done(){ form.style.display='none'; qs('success').classList.add('show'); }
+  });
+})();
+</script>
+
+<!-- ===== Lip Pod concept carousel + optional email capture (self-contained) ===== -->
+<script>
+(function(){
+  var KLAVIYO_KEY = 'XNMhJw';   // same Klaviyo public key as the reserve form
+  var LIST_ID     = 'Ts8XmZ';   // same VIP Waitlist list
+  var SHEET_ENDPOINT = '';      // optional Google Sheet mirror (see GOOGLE_SHEET_SETUP.md)
+
+  // 'seed' keeps the vote tallies from starting at a lonely zero.
+  var SEED = { 'Concept 01 — Cherry Chrome Charm':47, 'Concept 02 — Matte Black Minimal':39,
+               'Concept 03 — Chrome Jewelry Bracelet':52, 'Concept 04 — Rose Gold Locket':61 };
+
+  var CKEY = 'savage_pod_counts', VKEY = 'savage_pod_choice';
+  function qs(id){ return document.getElementById(id); }
+  function loadCounts(){ try{ return JSON.parse(localStorage.getItem(CKEY)) || {}; }catch(e){ return {}; } }
+  function saveCounts(c){ try{ localStorage.setItem(CKEY, JSON.stringify(c)); }catch(e){} }
+
+  var track = qs('pvTrack');
+  if(!track) return; // section not on this page
+  var counts = loadCounts();
+  var selected = '';
+  try{ selected = localStorage.getItem(VKEY) || ''; }catch(e){}
+
+  var cards = Array.prototype.slice.call(track.querySelectorAll('.pv-card'));
+  var dotsWrap = qs('pvDots');
+  var current = 0, autoTimer = null, userTookOver = false;
+
+  cards.forEach(function(_, i){
+    var d = document.createElement('button');
+    d.type='button'; d.className='pv-dot'+(i===0?' active':'');
+    d.setAttribute('aria-label','Go to design '+(i+1));
+    d.addEventListener('click', function(){ stopAuto(); goTo(i); });
+    dotsWrap.appendChild(d);
+  });
+  var dots = Array.prototype.slice.call(dotsWrap.children);
+
+  function goTo(i){
+    current = (i + cards.length) % cards.length;
+    var card = cards[current];
+    track.scrollTo({left: card.offsetLeft - (track.clientWidth - card.clientWidth)/2, behavior:'smooth'});
+    render();
+  }
+  function render(){
+    dots.forEach(function(d,i){ d.classList.toggle('active', i===current); });
+    cards.forEach(function(c,i){ c.classList.toggle('is-active', i===current); });
+  }
+
+  var scrollDebounce;
+  track.addEventListener('scroll', function(){
+    clearTimeout(scrollDebounce);
+    scrollDebounce = setTimeout(function(){
+      var center = track.scrollLeft + track.clientWidth/2, best=0, bestDist=Infinity;
+      cards.forEach(function(c,i){ var cc=c.offsetLeft+c.clientWidth/2, dist=Math.abs(cc-center); if(dist<bestDist){bestDist=dist;best=i;} });
+      current = best; render();
+    }, 80);
+  });
+
+  document.querySelector('.pv-arrow.prev').addEventListener('click', function(){ stopAuto(); goTo(current-1); });
+  document.querySelector('.pv-arrow.next').addEventListener('click', function(){ stopAuto(); goTo(current+1); });
+
+  function startAuto(){
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    autoTimer = setInterval(function(){ if(!userTookOver) goTo(current+1); }, 4500);
+  }
+  function stopAuto(){ userTookOver = true; if(autoTimer){ clearInterval(autoTimer); autoTimer=null; } }
+  ['touchstart','wheel','pointerdown'].forEach(function(ev){ track.addEventListener(ev, stopAuto, {passive:true, once:true}); });
+
+  /* ---------- vote counts ---------- */
+  function countFor(name){ return (SEED[name]||0) + (counts[name]||0); }
+  function renderCounts(){
+    cards.forEach(function(card){
+      var btn = card.querySelector('.pv-btn');
+      var name = btn.getAttribute('data-concept');
+      var el = card.querySelector('[data-count]');
+      if(el) el.textContent = countFor(name).toLocaleString();
+      var isMine = (name === selected);
+      btn.classList.toggle('voted', isMine);
+      btn.textContent = isMine ? 'Voted ✓' : 'Vote this one';
+    });
+  }
+
+  function castVote(name){
+    if(selected && selected !== name){ counts[selected] = Math.max(0,(counts[selected]||0)-1); }
+    if(selected !== name){ counts[name] = (counts[name]||0)+1; }
+    selected = name;
+    try{ localStorage.setItem(VKEY, name); }catch(e){}
+    saveCounts(counts);
+    renderCounts();
+    stopAuto();
+    showCapture();
+  }
+
+  cards.forEach(function(card){
+    card.querySelector('.pv-btn').addEventListener('click', function(){
+      castVote(this.getAttribute('data-concept'));
+    });
+  });
+
+  renderCounts();
+  render();
+  startAuto();
+
+  /* ---------- optional email capture ---------- */
+  var capture = qs('podCapture'), form = qs('podForm'), success = qs('podSuccess');
+  var DISMISS_KEY = 'savage_pod_captured';
+  function alreadyDone(){ try{ return localStorage.getItem(DISMISS_KEY)==='1'; }catch(e){ return false; } }
+  function showCapture(){
+    if(alreadyDone()){ return; }
+    capture.classList.add('show');
+    capture.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+
+  qs('podSkip').addEventListener('click', function(){
+    finish('Thanks — we saved your pick. You can close this now.');
+  });
+
+  function finish(msg){
+    try{ localStorage.setItem(DISMISS_KEY,'1'); }catch(e){}
+    form.style.display='none';
+    if(msg) qs('podSuccessMsg').textContent = msg;
+    success.classList.add('show');
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var email = qs('podEmail').value.trim();
+    var agree = qs('podAgree').checked;
+    var err = qs('podErr'); err.textContent='';
+
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ err.textContent='Please enter a valid email (or tap "just count my vote").'; qs('podEmail').focus(); return; }
+    if(!agree){ err.textContent='Please check the box to confirm your age and agree to updates.'; return; }
+
+    var btn = qs('podSubmit'); btn.disabled=true; btn.textContent='Saving…';
+
+    var props = {
+      signup_source:'lip-pod-vote',
+      lip_pod_vote: selected || '(no vote)',
+      lip_pod_vote_at: new Date().toISOString(),
+      age_confirmed: '16+ or guardian'
+    };
+
+    if(SHEET_ENDPOINT){
+      try{
+        fetch(SHEET_ENDPOINT, { method:'POST', mode:'no-cors',
+          headers:{'Content-Type':'application/x-www-form-urlencoded'},
+          body:new URLSearchParams({ email:email, vote:selected, source:'lip-pod-vote', ts:new Date().toISOString() }).toString()
+        }).catch(function(){});
+      }catch(e){}
+    }
+
+    function postKlaviyo(){
+      return fetch('https://a.klaviyo.com/client/subscriptions/?company_id='+KLAVIYO_KEY,{
+        method:'POST',
+        headers:{'Content-Type':'application/json','revision':'2024-10-15'},
+        body:JSON.stringify({ data:{ type:'subscription', attributes:{
+          profile:{ data:{ type:'profile', attributes:{ email:email, properties:props } } }
+        }, relationships:{ list:{ data:{ type:'list', id:LIST_ID } } } } })
+      }).then(function(r){ if(!r.ok && r.status!==202) throw new Error(r.status); return r; });
+    }
+    postKlaviyo()
+      .then(function(){ finish("You're on the list — we'll email you first if the Lip Pod drops."); })
+      .catch(function(){ finish("Vote saved. (We had trouble saving your email — you can try again later.)"); });
   });
 })();
 </script>

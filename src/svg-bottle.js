@@ -116,20 +116,17 @@ export function productVisual(product, index, opts = {}) {
  * `liveData` is optional Shopify data (price, available, variantId) — if missing,
  * falls back to the static fields in PRODUCTS.
  */
-export function renderProductCard(product, index, liveData = null) {
-  const price = liveData?.price || product.price;
-  const compareAt = liveData?.compareAtPrice || product.sale;
-  const available = liveData?.available !== false;
-  const variantId = liveData?.variantId || '';
-
+export function renderProductCard(product, index, _liveData = null) {
+  // Drop 02 routine products are NOT on sale yet. Cards are waitlist-only:
+  // no buyable price, no add-to-cart — they route to the Drop 01 list + vote.
   const detailUrl = `/products/${product.handle}/`;
   const stepNum = product.step.split(' ')[0];
   const stepLabel = product.step.split('·')[1]?.trim() || product.step;
   return `
-    <div class="product-card reveal d${index + 1}" data-product="${product.slug}" data-handle="${product.handle}" data-variant="${variantId}" style="--accent:${product.accent || '#ff2d95'}">
+    <div class="product-card reveal d${index + 1}" data-product="${product.slug}" data-handle="${product.handle}" style="--accent:${product.accent || '#ff2d95'}">
       <a class="product-visual" href="${detailUrl}" aria-label="View ${product.name}">
         <div class="float-chip"><span class="chip-step">${stepNum}</span> ${stepLabel}</div>
-        ${product.tag ? `<div class="float-chip right tag-chip">${product.tag}</div>` : ''}
+        <div class="float-chip right tag-chip">Drop 02</div>
         <div class="grid-lines"></div>
         <div class="glow-orb"></div>
         ${productVisual(product, index)}
@@ -140,10 +137,9 @@ export function renderProductCard(product, index, liveData = null) {
         <div class="product-desc">${product.desc}</div>
         <div class="product-foot">
           <div class="product-price-block">
-            ${compareAt ? `<div class="product-compare-at">${compareAt}</div>` : ''}
-            <div class="product-price">${price} <span class="presale-label">Presale</span></div>
+            <div class="product-waitlist-note">Coming in Drop 02</div>
           </div>
-          <button class="product-buy" type="button" ${available ? '' : 'disabled'}>${available ? 'Add to Cart' : 'Sold out'}</button>
+          <a class="product-buy" href="/#join">Join the waitlist</a>
         </div>
       </div>
     </div>

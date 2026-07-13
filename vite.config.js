@@ -29,8 +29,9 @@ export default defineConfig({
         faq: resolve(__dirname, 'faq/index.html'),
         shippingReturns: resolve(__dirname, 'shipping-returns/index.html'),
         founders: resolve(__dirname, 'founders/index.html'),
-        // Lip Pod concept-test page (noindex; shared to a segment to gauge demand)
-        lipPod: resolve(__dirname, 'lip-pod/index.html'),
+        // Lip Pod vote now lives directly on the homepage (section #lip-pod-vote),
+        // so the standalone lip-pod/ page is no longer built. Images stay in
+        // public/lip-pod/ because the homepage carousel references them.
         cookies: resolve(__dirname, 'cookies/index.html'),
         privacy: resolve(__dirname, 'privacy/index.html'),
         terms: resolve(__dirname, 'terms/index.html'),

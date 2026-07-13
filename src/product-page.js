@@ -31,10 +31,8 @@ function escapeHtml(s) {
 }
 
 function renderHero(live) {
-  const price = live?.price || STATIC.price;
-  const compareAt = live?.compareAtPrice || STATIC.sale;
-  const available = live?.available !== false;
-  const variantId = live?.variantId || '';
+  // These JS-rendered PDPs are all Drop 02 face products — not on sale yet.
+  // No buyable price, no add-to-cart: the hero routes to the Drop 01 list + vote.
   const title = live?.title || STATIC.name;
 
   return `
@@ -42,7 +40,7 @@ function renderHero(live) {
       <div class="container pdp-grid">
         <div class="pdp-visual reveal" style="--accent:${STATIC.accent || '#ff2d95'}">
           <div class="float-chip">/ ${STATIC.step}</div>
-          <div class="float-chip right">${escapeHtml(price)}</div>
+          <div class="float-chip right">Drop 02</div>
           <div class="grid-lines"></div>
           <div class="glow-orb"></div>
           ${productVisual(STATIC, STATIC_INDEX, { eager: true })}
@@ -56,24 +54,15 @@ function renderHero(live) {
           </div>
           <p class="pdp-tagline reveal d2">${escapeHtml(STATIC.desc)}</p>
           <div class="pdp-price-row reveal d2">
-            <div class="pdp-price">
-              ${compareAt ? `<s>${escapeHtml(compareAt)}</s>` : ''}
-              ${escapeHtml(price)}
-            </div>
-            <button
-              class="btn btn-primary magnetic pdp-buy"
-              type="button"
-              data-variant="${escapeHtml(variantId)}"
-              ${available ? '' : 'disabled'}>
-              <span>${available ? 'Add to Cart' : 'Sold Out'} ${available ? '<span class="arr">→</span>' : ''}</span>
-            </button>
+            <div class="pdp-price"><span class="pdp-waitlist-note">Coming in Drop 02</span></div>
+            <a class="btn btn-primary magnetic" href="/#join"><span>Join the waitlist <span class="arr">→</span></span></a>
           </div>
           <div class="pdp-trust reveal d3">
-            <span>✓ Clinical percentages</span>
-            <span>✓ Peer-reviewed actives</span>
+            <span>✓ Real actives, real percentages</span>
+            <span>✓ Every ingredient in plain English</span>
             <span>✓ Cruelty-free</span>
           </div>
-          <p class="pdp-help reveal d3">Free shipping over $60 · 30-day returns · <a href="/shipping-returns/">Shipping &amp; Returns</a> · <a href="/faq/">FAQ</a></p>
+          <p class="pdp-help reveal d3">Vote on what drops next · <a href="/shipping-returns/">Shipping &amp; Returns</a> · <a href="/faq/">FAQ</a></p>
         </div>
       </div>
     </section>
@@ -204,7 +193,7 @@ function bindBuy(scope) {
         label.textContent = original;
       }
     } else {
-      window.location.href = '/#vip';
+      window.location.href = '/#join';
     }
   });
 }

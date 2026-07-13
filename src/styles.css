@@ -49,11 +49,11 @@ html.lenis,html.lenis body{height:auto}
 .layer{position:relative;z-index:5}
 
 /* Nav */
-nav.top{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:22px 40px;background:rgba(247,243,237,0.85);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+nav.top{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:22px 40px;background:rgba(247,243,237,0.96);border-bottom:1px solid var(--line-2);backdrop-filter:blur(10px);box-shadow:0 1px 12px rgba(10,10,18,.05)}
 .brand{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-weight:600;letter-spacing:-.02em;font-size:20px}
 .brand .mark{width:36px;height:36px;border-radius:50%;background:radial-gradient(circle at 30% 30%, #fff, var(--neon) 60%, #2a0a18 100%);box-shadow:0 0 24px rgba(255,45,149,.55), inset 0 0 12px rgba(255,255,255,.4);position:relative}
 .brand .mark::after{content:"";position:absolute;inset:6px;border-radius:50%;border:1px solid rgba(255,255,255,.35)}
-.nav-links{display:flex;gap:36px;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--bone-dim);font-weight:400}
+.nav-links{display:flex;gap:36px;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#2b2933;font-weight:500}
 .nav-links a{position:relative;padding:6px 0;transition:color .2s}
 .nav-links a:hover{color:var(--bone)}
 .nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:linear-gradient(90deg,var(--neon),var(--cyan));transition:width .35s cubic-bezier(.2,.8,.2,1)}
@@ -631,3 +631,25 @@ html.cart-open{overflow:hidden}
 @media (prefers-reduced-motion:reduce){
   .ing-scroll-hint span::after{animation:none}
 }
+
+/* ---------- Drop 02 waitlist framing (no buyable prices) ---------- */
+a.product-buy{text-decoration:none;display:inline-flex;align-items:center;justify-content:center;text-align:center}
+.product-waitlist-note,.pdp-waitlist-note{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+.pdp-price .pdp-waitlist-note{font-family:var(--mono);font-size:13px}
+.bundle-waitlist-tag{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin-bottom:14px}
+a.bundle-buy-btn{text-decoration:none}
+
+/* ---------- PDP full-ingredient panel (transparency moat) ---------- */
+.ing-panel{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:2px;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.ing-panel{background:var(--line)}
+.ing-panel li{background:var(--surface);padding:18px 20px;display:grid;gap:6px}
+.ing-panel-name{font-family:var(--serif);font-size:19px;font-weight:500;color:var(--bone);display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.ing-inci{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:none;color:var(--mute);font-weight:400}
+.ing-panel-role{color:var(--bone-dim);font-size:15px;line-height:1.6}
+
+/* ---------- /shop VIP reserve block (links to homepage form) ---------- */
+.vip-reserve{display:flex;flex-direction:column;gap:12px}
+.vip-reserve-price{font-family:var(--serif);font-size:34px;font-weight:500;color:var(--bone);display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.vip-reserve-price s{color:var(--mute);font-size:20px;font-weight:300}
+.vip-reserve-lbl{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--neon)}
+.vip-reserve-copy{color:var(--bone-dim);font-size:15px;line-height:1.6}
