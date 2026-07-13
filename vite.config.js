@@ -29,10 +29,13 @@ export default defineConfig({
         faq: resolve(__dirname, 'faq/index.html'),
         shippingReturns: resolve(__dirname, 'shipping-returns/index.html'),
         founders: resolve(__dirname, 'founders/index.html'),
+        // Lip Pod concept-test page (noindex; shared to a segment to gauge demand)
+        lipPod: resolve(__dirname, 'lip-pod/index.html'),
         cookies: resolve(__dirname, 'cookies/index.html'),
         privacy: resolve(__dirname, 'privacy/index.html'),
         terms: resolve(__dirname, 'terms/index.html'),
         blog: resolve(__dirname, 'blog/index.html'),
+        blog_how_to_read_a_skincare_label: resolve(__dirname, 'blog/how-to-read-a-skincare-label/index.html'),
         blog_how_to_fix_chapped_lips: resolve(__dirname, 'blog/how-to-fix-chapped-lips/index.html'),
         blog_lip_balm_vs_mask_vs_oil: resolve(__dirname, 'blog/lip-balm-vs-mask-vs-oil/index.html'),
         blog_do_lip_plumpers_work: resolve(__dirname, 'blog/do-lip-plumpers-work/index.html'),
