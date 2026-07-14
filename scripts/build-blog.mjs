@@ -465,10 +465,17 @@ for (const cfg of POSTS) {
     ...cfg, ...seo, title, bodyHtml, faq, footer, readingTime, excerpt,
   };
 
+  const coverSvg = makeCover(title, cfg.category);
   const outDir = resolve(ROOT, 'blog', seo.slug);
   mkdirSync(outDir, { recursive: true });
-  writeFileSync(resolve(outDir, 'cover.svg'), makeCover(title, cfg.category));
+  writeFileSync(resolve(outDir, 'cover.svg'), coverSvg);
   writeFileSync(resolve(outDir, 'index.html'), postPage(post));
+  // Vite only copies files under public/ into the production build — a cover.svg
+  // written into blog/<slug>/ is NOT bundled and 404s on the live site. Emit a
+  // copy into public/blog/<slug>/ so the deployed pages can load it.
+  const pubCoverDir = resolve(ROOT, 'public', 'blog', seo.slug);
+  mkdirSync(pubCoverDir, { recursive: true });
+  writeFileSync(resolve(pubCoverDir, 'cover.svg'), coverSvg);
   built.push(post);
   console.log(`  ✓ blog/${seo.slug}/  (${readingTime} min, ${faq.length} FAQs)`);
 }
