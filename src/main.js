@@ -6,7 +6,6 @@ import './styles.css';
 
 import { PRODUCTS } from './products.js';
 import { renderProductCard } from './svg-bottle.js';
-import { initCart } from './cart.js';
 import { initReveal } from './reveal.js';
 import { initCookieConsent } from './cookie-consent.js';
 import { initMobileNav } from './mobile-nav.js';
@@ -44,7 +43,6 @@ function boot() {
   initScrollProgress();
   initHeroStagger();
   initStickyCta();
-  initCart();
   initCookieConsent();
   initMobileNav();
 }

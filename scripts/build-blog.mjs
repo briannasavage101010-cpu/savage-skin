@@ -135,24 +135,25 @@ function makeCover(title, category) {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#160611"/>
-      <stop offset="1" stop-color="#070409"/>
+      <stop offset="0" stop-color="#faf6f0"/>
+      <stop offset="1" stop-color="#f0e7da"/>
     </linearGradient>
     <radialGradient id="glow" cx="0.82" cy="0.18" r="0.7">
-      <stop offset="0" stop-color="#ff2d95" stop-opacity="0.55"/>
+      <stop offset="0" stop-color="#ff2d95" stop-opacity="0.20"/>
       <stop offset="1" stop-color="#ff2d95" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="glow2" cx="0.12" cy="0.95" r="0.6">
-      <stop offset="0" stop-color="#7b5cff" stop-opacity="0.4"/>
-      <stop offset="1" stop-color="#7b5cff" stop-opacity="0"/>
+      <stop offset="0" stop-color="#b026ff" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#b026ff" stop-opacity="0"/>
     </radialGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
   <rect width="1200" height="630" fill="url(#glow)"/>
   <rect width="1200" height="630" fill="url(#glow2)"/>
-  <text x="80" y="120" font-family="'JetBrains Mono', monospace" font-size="22" letter-spacing="6" fill="#ff2d95">/ ${esc(category.toUpperCase())}</text>
-  <text font-family="Georgia, 'Times New Roman', serif" font-size="58" font-weight="500" fill="#fdf8f4">${tspans}</text>
-  <text x="80" y="560" font-family="Georgia, serif" font-size="26" fill="#fdf8f4">Savage<tspan fill="#ff2d95">/</tspan>Skin</text>
+  <rect x="14" y="14" width="1172" height="602" rx="20" fill="none" stroke="#0a0a14" stroke-opacity="0.08"/>
+  <text x="80" y="120" font-family="'JetBrains Mono', monospace" font-size="22" letter-spacing="6" fill="#d81f7a">/ ${esc(category.toUpperCase())}</text>
+  <text font-family="Georgia, 'Times New Roman', serif" font-size="58" font-weight="500" fill="#0a0a14">${tspans}</text>
+  <text x="80" y="560" font-family="Georgia, serif" font-size="26" fill="#0a0a14">Savage<tspan fill="#ff2d95">/</tspan>Skin</text>
 </svg>`;
 }
 
@@ -163,17 +164,13 @@ const FONTS = `<link rel="preconnect" href="https://fonts.googleapis.com">
 const NAV = `<nav class="top">
   <a href="/" class="brand magnetic"><span class="mark"></span><span>Savage<em style="font-style:normal;color:var(--neon)">/</em>Skin</span></a>
   <div class="nav-links">
-    <a href="/shop/" class="magnetic">Shop</a>
+    <a href="/shop/" class="magnetic">Product</a>
     <a href="/shop/#science" class="magnetic">Science</a>
     <a href="/blog/" class="magnetic" aria-current="page">Journal</a>
     <a href="/founders/" class="magnetic">Story</a>
-    <a href="/#join" class="magnetic">Reserve</a>
+    <a href="/faq/" class="magnetic">FAQ</a>
   </div>
-  <button type="button" id="cartToggle" class="nav-cart" aria-label="Open cart">
-    <svg class="nav-cart-ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>
-    <span class="nav-cart-label">Cart</span>
-    <span class="nav-cart-count" data-cart-count hidden>0</span>
-  </button>
+  <a href="/#join" class="nav-cart">Join the movement</a>
 </nav>`;
 
 const FOOTER = `<footer>
@@ -182,14 +179,14 @@ const FOOTER = `<footer>
       <h3>Savage<em style="font-style:normal;color:var(--neon)">/</em>Skin</h3>
       <p>Clean, confident skincare — real actives, real percentages, in plain English on the label. Results vary. Not medical advice.</p>
     </div>
-    <div class="foot"><h5>Shop</h5><ul>
+    <div class="foot"><h5>Products</h5><ul>
       <li><a href="/products/clean-start-cleanser/">Clean Start Cleanser</a></li>
       <li><a href="/products/prime-time-toner/">Prime Time Toner</a></li>
       <li><a href="/products/power-fix-spot-corrector/">Power Fix Spot Corrector</a></li>
       <li><a href="/products/dew-guard-moisturizer/">Dew Guard Moisturizer</a></li>
       <li><a href="/products/glass-glow-lip-gloss/">Lip Service</a></li>
     </ul></div>
-    <div class="foot"><h5>Help</h5><ul><li><a href="/blog/">Journal</a></li><li><a href="/faq/">FAQ</a></li><li><a href="/shipping-returns/">Shipping &amp; Returns</a></li><li><a href="/founders/">Our Story</a></li><li><a href="/#join">Founders Circle</a></li></ul></div>
+    <div class="foot"><h5>Help</h5><ul><li><a href="/blog/">Journal</a></li><li><a href="/faq/">FAQ</a></li><li><a href="/shipping-returns/">Shipping &amp; Returns</a></li><li><a href="/founders/">Our Story</a></li><li><a href="/#join">Join the movement</a></li></ul></div>
     <div class="foot"><h5>Connect</h5><ul><li><a href="https://www.instagram.com/savageskincare_4teens/" target="_blank" rel="noopener noreferrer">Instagram</a></li><li><a href="mailto:hello@savageskincare.com">hello@savageskincare.com</a></li></ul></div>
   </div>
   <div class="foot-bottom">

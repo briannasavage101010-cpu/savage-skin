@@ -114,3 +114,22 @@ one — plan for the controllable inputs (offer, list, content cadence, conversi
 - **Cowork** picks it up via the project instructions line: *"At the start of every session, read
   savage-skin/BRAND_BRAIN.md and treat it as the authoritative source for brand, pricing, legal, and voice."*
 - If you change a core fact (price, hero, a legal rule), update it here once and both tools stay aligned.
+
+## 11. Lip Pod V2 "Slide" (in development — signed off July 13, 2026)
+
+- Concept: 1.5 ml soft squeeze tube of gloss (doe-foot tip) that magnetically snaps into a small
+  metal sleeve case worn as a bag charm. Three fidget clicks (cap off / cap on / tube seated).
+- **Colorway LOCKED: ivory + champagne gold.** Gloss shade = light pink, possibly pH-reactive
+  color-adjusting (Dior Lip Glow-style); it shows only through the kept gloss window. #FF4D7D
+  reserved for packaging/site accents. Reads jewelry (Dior / Parfums de Marly cues), not a toy.
+- Decisions July 13: window KEPT; logo "SAVAGE" on the cap face; case = coated polymer preferred
+  (confirm via blind feel test vs aluminum sample; both quoted; pick most-expensive-looking per dollar).
+- Canonical docs (root folder): `Lip_Pod_V2_Manufacturing_Spec.md` (**Rev D** — current),
+  `Lip_Pod_V2_Spec_Review_RevC.md` (engineering review), and
+  **`Lip_Pod_V2_Mechanism_Render.html` — SIGNED-OFF visual reference.** Every mockup, photo,
+  and video of this product must match that rendering exactly (dimensions, part placement,
+  magnet in case BASE, cap proud 12 mm, gold mouth rim, keyed seat).
+- Key engineering rules: force hierarchy cap 0.55–0.70 kg > case 0.25–0.35 kg; cap retention is
+  mechanical (snap-bead) + magnet for feel only; seal = plug on orifice, never the magnet;
+  zinc case forbidden (weight); stock mini tube is the sourcing baseline; bag-charm lanyard only.
+- Positioning guardrail: sell it as jewelry/fidget/ritual — never on gloss volume (1.5 ml ≈ $6–8/ml).

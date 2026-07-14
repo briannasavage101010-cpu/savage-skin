@@ -139,7 +139,7 @@ export function renderProductCard(product, index, _liveData = null) {
           <div class="product-price-block">
             <div class="product-waitlist-note">Coming in Drop 02</div>
           </div>
-          <a class="product-buy" href="/#join">Join the waitlist</a>
+          <a class="product-buy" href="/#join">Join the movement</a>
         </div>
       </div>
     </div>

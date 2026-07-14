@@ -7,8 +7,6 @@ import './styles.css';
 
 import { PRODUCTS } from './products.js';
 import { productVisual } from './svg-bottle.js';
-import { getProductDetail, shopifyConfigured } from './shopify.js';
-import { initCart, addToCart } from './cart.js';
 import { initSmoothScroll, initCursor, initScrollProgress } from './ui.js';
 import { initReveal } from './reveal.js';
 import { initCookieConsent } from './cookie-consent.js';
@@ -55,7 +53,7 @@ function renderHero(live) {
           <p class="pdp-tagline reveal d2">${escapeHtml(STATIC.desc)}</p>
           <div class="pdp-price-row reveal d2">
             <div class="pdp-price"><span class="pdp-waitlist-note">Coming in Drop 02</span></div>
-            <a class="btn btn-primary magnetic" href="/#join"><span>Join the waitlist <span class="arr">→</span></span></a>
+            <a class="btn btn-primary magnetic" href="/#join"><span>Join the movement <span class="arr">→</span></span></a>
           </div>
           <div class="pdp-trust reveal d3">
             <span>✓ Real actives, real percentages</span>
@@ -166,36 +164,6 @@ function renderPage(live) {
     renderDescription(live) +
     renderHowToUse() +
     renderRoutine();
-
-  bindBuy(root);
-}
-
-/**
- * Bind the add-to-cart button. Shared by JS-rendered pages and statically
- * authored ("custom") pages. Falls back to the VIP signup when there is no
- * Shopify variant yet, exactly like the homepage product cards.
- */
-function bindBuy(scope) {
-  const buyBtn = scope.querySelector('.pdp-buy');
-  if (!buyBtn) return;
-  buyBtn.addEventListener('click', async (e) => {
-    e.preventDefault();
-    const variantId = buyBtn.dataset.variant;
-    if (variantId) {
-      const label = buyBtn.querySelector('span');
-      const original = label.textContent;
-      buyBtn.disabled = true;
-      label.textContent = 'Adding…';
-      try {
-        await addToCart(variantId, 1);
-      } finally {
-        buyBtn.disabled = false;
-        label.textContent = original;
-      }
-    } else {
-      window.location.href = '/#join';
-    }
-  });
 }
 
 /**
@@ -211,29 +179,7 @@ function renderCustomBottle() {
   }
 }
 
-function hydrateCustom(live) {
-  if (live.price) {
-    document.querySelectorAll('[data-live-price]').forEach((el) => {
-      el.textContent = live.price;
-    });
-  }
-  if (live.compareAtPrice) {
-    document.querySelectorAll('[data-live-compare]').forEach((el) => {
-      el.textContent = live.compareAtPrice;
-    });
-  }
-  const buyBtn = document.querySelector('.pdp-buy');
-  if (buyBtn) {
-    if (live.variantId) buyBtn.dataset.variant = live.variantId;
-    if (live.available === false) {
-      buyBtn.disabled = true;
-      const label = buyBtn.querySelector('span');
-      if (label) label.textContent = 'Sold Out';
-    }
-  }
-}
-
-async function boot() {
+function boot() {
   if (!STATIC) {
     console.error('Unknown product handle:', HANDLE);
     return;
@@ -251,31 +197,19 @@ async function boot() {
 
   initSmoothScroll();
   initScrollProgress();
-  initCart();
   initCookieConsent();
   initMobileNav();
 
+  // Nothing is for sale yet — pages render from the static catalog only.
+  // Lip Service is community-only (Drop 01, coming soon); the four face SKUs
+  // are Drop 02. No Shopify fetch, no cart, no buyable prices.
   if (custom) {
     renderCustomBottle();
-    if (root) bindBuy(root);
   } else {
     renderPage(null);
   }
   initReveal();
   initCursor();
-
-  if (shopifyConfigured) {
-    const live = await getProductDetail(HANDLE);
-    if (live) {
-      if (custom) {
-        hydrateCustom(live);
-      } else {
-        renderPage(live);
-        initReveal();
-        initCursor();
-      }
-    }
-  }
 }
 
 if (document.readyState === 'loading') {
