@@ -84,7 +84,6 @@ These are non-negotiable and detailed in BRAND_BRAIN.md §5. The ones that bite 
   If you find demo "VERIFIED" / "Mokosh" reviews in markup, flag/remove — don't replicate them.
 - **No disease/drug claims.** Cosmetic claims only. Plumper = "fuller look" only.
 - Presale copy must not promise a ship date the business can't honor (FTC 30-day rule).
-- Founder is a minor → don't wire up anything that takes money, runs ads, or makes claims without flagging for guardian sign-off.
 
 ## Shopify integration
 

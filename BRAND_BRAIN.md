@@ -17,9 +17,7 @@ Last updated: 2026-06-08
   (The old "designed for teen skin" framing is retired — it's too narrow.)
 - Founder: Brianna Savage. "Savage" is also her surname.
 - **Founder presence = present but low-key.** Credit her as founder; keep personal specifics private.
-- **The founder is a minor.** A guardian must be in the loop on anything involving money, ads,
-  contracts, claims, ship dates, refunds, discounts, or review/referral incentives. Keep all
-  content age-appropriate. In AI ad/social content: **18+ talent only — never generate or depict minors.**
+- In AI ad/social content: **18+ talent only — never generate or depict minors.**
 
 ## 2. Hero product & lineup
 
