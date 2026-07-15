@@ -14,6 +14,8 @@ export default defineConfig({
         // Audience ad landing pages (see CLAUDE.md ad-landing-page convention)
         lpTeens: resolve(__dirname, 'lp-teens.html'),
         lpParents: resolve(__dirname, 'lp-parents.html'),
+        // Lip Charm teaser waitlist (bracelet prototype ads — see Ads/Lip Charm Teaser/)
+        lipCharmWaitlist: resolve(__dirname, 'lip-charm-waitlist/index.html'),
         // Ingredients page hidden for now (focusing on sign-ups). Files kept in
         // ingredients/ + src/ingredients-*.js. To bring it back: uncomment this line
         // and re-add the "Ingredients" nav link in each page + scripts/build-blog.mjs.

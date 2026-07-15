@@ -77,6 +77,10 @@ narrow "teen skin only" framing.
 ## 6. Commerce / infrastructure
 
 - Shopify Basic · USD · US (CDT). Dev store: `tbqaxz-rg.myshopify.com`.
+  - **CORRECTION (2026-07-14, autopilot-observed):** the Shopify API now reports the store domain as
+    `savageskincare-store.myshopify.com` (was `tbqaxz-rg.myshopify.com`). Unverified whether old
+    `tbqaxz-rg` URLs still redirect — Meta ad landing URLs and `dist/privacy` still use the old domain.
+    Verify and update those before trusting either domain string below.
 - **Sender domain — DECIDED 2026-06-08: `savageskincare.com`** (Brianna owns it; bought via Shopify). The SITE
   is LIVE on this domain via **GitHub Pages** (repo `briannasavage101010-cpu/savage-skin`, `CNAME`=savageskincare.com).
   **Shopify primary domain stays `tbqaxz-rg.myshopify.com` ON PURPOSE** (headless checkout — do NOT switch it back
@@ -133,3 +137,26 @@ one — plan for the controllable inputs (offer, list, content cadence, conversi
   mechanical (snap-bead) + magnet for feel only; seal = plug on orifice, never the magnet;
   zinc case forbidden (weight); stock mini tube is the sourcing baseline; bag-charm lanyard only.
 - Positioning guardrail: sell it as jewelry/fidget/ritual — never on gloss volume (1.5 ml ≈ $6–8/ml).
+
+## 12. Lip Charm V3 (in development — July 14, 2026)
+
+- Second wearable: nearly FLAT bracelet bar charm (40×12×7.5 mm, arc rise ≤2.5 mm — hard rule),
+  white opalescent moonstone-look stone (NO crystals, NO pearls — Brianna vetoed both as tacky)
+  under champagne-gold filigree cage; flush gold dome end-cap = handle of slide-out micro wand
+  (smooth tip, wiper). Reads as fine jewelry; nobody would guess it's gloss.
+- Refill = SEALED CARTRIDGE swap (vial+wiper+stem+tip in one unit; liquid never re-poured; every
+  refill = new tip+wiper). Hygiene is a core selling point.
+- Canonical docs: `Lip_Charm_V3_Manufacturing_Spec.md` (Rev A), `Lip_Charm_V3_Mechanism_Render.html`
+  (signed-off drawing incl. exploded refill view); geometry-of-record photo = hf_20260714_013227.
+- Business: charm $45–65, cartridge $10–14 subscription-able; shares formula + smooth-tip spec
+  with Lip Pod V2. Nickel-free metals mandatory; treat jewelry limits as children's-adjacent.
+
+### 12a. V3 Charm — APPROVED usage video (July 14, 2026)
+
+- **Canonical product film:** `Lip Pod V2 Renders/Lip_Charm_V3_Usage_FULL.mp4` (15s, saved locally —
+  no CDN expiry). Sequence: charm at rest as pure jewelry → hand enters, magnetic click, wand slides
+  visibly out of the bar → pan wrist-to-lips → gloss applied. Brianna: "basically perfect."
+- This video + `Lip_Charm_V3_Mechanism_Render.html` + wrist still hf_20260714_013227 together define
+  the product. All future content must match: flat filigree bar, white moonstone glow, flush gold
+  dome end-cap = wand handle, straight gold stem, smooth black doe-foot tip (gold meets black
+  directly — NO brown/wooden collar), fine gold chain, lugs both ends.

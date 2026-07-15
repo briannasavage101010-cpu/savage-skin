@@ -3,6 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xn19wal8i4");
+</script>
 <title>Savage Skin — Join the Movement</title>
 <meta name="description" content="Join the Savage Skin community. Be first to know when Lip Service drops, get 48-hour early access, and vote on what we make next." />
 <meta property="og:title" content="Savage Skin — Join the Movement" />
@@ -239,8 +247,19 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
 }
 </style>
   <script async src="https://static.klaviyo.com/onsite/js/XNMhJw/klaviyo.js"></script>
+  <!-- Meta Pixel -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '966865199562134');
+  fbq('track', 'PageView');
+  </script>
 </head>
 <body>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=966865199562134&ev=PageView&noscript=1"/></noscript>
 <div class="bg-mesh"></div>
 <div class="layer">
 
@@ -676,7 +695,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
       postKlaviyo(emailOnly).then(done).catch(done);
     });
 
-    function done(){ form.style.display='none'; qs('success').classList.add('show'); }
+    function done(){ try{ if(window.fbq) fbq('track','Lead',{content_name:'home-collector'}); }catch(e){} form.style.display='none'; qs('success').classList.add('show'); }
   });
 })();
 </script>
@@ -840,7 +859,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
       }).then(function(r){ if(!r.ok && r.status!==202) throw new Error(r.status); return r; });
     }
     postKlaviyo()
-      .then(function(){ finish("You're on the list — we'll email you first if the Lip Pod drops."); })
+      .then(function(){ try{ if(window.fbq) fbq('track','Lead',{content_name:'lip-pod-vote'}); }catch(e){} finish("You're on the list — we'll email you first if the Lip Pod drops."); })
       .catch(function(){ finish("Vote saved. (We had trouble saving your email — you can try again later.)"); });
   });
 })();
