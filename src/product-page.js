@@ -10,6 +10,7 @@ import { productVisual } from './svg-bottle.js';
 import { initSmoothScroll, initCursor, initScrollProgress } from './ui.js';
 import { initReveal } from './reveal.js';
 import { initCookieConsent } from './cookie-consent.js';
+import { initAnalytics } from './analytics.js';
 import { initMobileNav } from './mobile-nav.js';
 
 const HANDLE = window.__PRODUCT_HANDLE__;
@@ -198,6 +199,7 @@ function boot() {
   initSmoothScroll();
   initScrollProgress();
   initCookieConsent();
+  initAnalytics();
   initMobileNav();
 
   // Nothing is for sale yet — pages render from the static catalog only.

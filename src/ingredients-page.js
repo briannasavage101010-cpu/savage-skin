@@ -9,6 +9,7 @@ import './styles.css';
 import { INGREDIENT_PRODUCTS, getIngredientProduct } from './ingredients-data.js';
 import { createIngredientsVideo } from './ingredients-video.js';
 import { initCookieConsent } from './cookie-consent.js';
+import { initAnalytics } from './analytics.js';
 import { initMobileNav } from './mobile-nav.js';
 
 const video = document.getElementById('ingVideo');
@@ -147,6 +148,7 @@ function applyTint(p) {
 function init() {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   initCookieConsent();
+  initAnalytics();
   initMobileNav();
   buildSwitcher();
   controller = createIngredientsVideo(video, { reduceMotion });

@@ -8,6 +8,7 @@ import { PRODUCTS } from './products.js';
 import { renderProductCard } from './svg-bottle.js';
 import { initReveal } from './reveal.js';
 import { initCookieConsent } from './cookie-consent.js';
+import { initAnalytics } from './analytics.js';
 import { initMobileNav } from './mobile-nav.js';
 import {
   initSmoothScroll,
@@ -44,6 +45,7 @@ function boot() {
   initHeroStagger();
   initStickyCta();
   initCookieConsent();
+  initAnalytics();
   initMobileNav();
 }
 
