@@ -7,7 +7,7 @@ HERE — do not scatter brand decisions into code comments, prompt docs, or one 
 > Claude Code loads this automatically via the `@BRAND_BRAIN.md` import at the top of `CLAUDE.md`.
 > Cowork loads it because the project instructions point here.
 
-Last updated: 2026-06-08
+Last updated: 2026-08-20
 
 ---
 
@@ -75,10 +75,14 @@ narrow "teen skin only" framing.
 ## 6. Commerce / infrastructure
 
 - Shopify Basic · USD · US (CDT). Dev store: `tbqaxz-rg.myshopify.com`.
-  - **CORRECTION (2026-07-14, autopilot-observed):** the Shopify API now reports the store domain as
-    `savageskincare-store.myshopify.com` (was `tbqaxz-rg.myshopify.com`). Unverified whether old
-    `tbqaxz-rg` URLs still redirect — Meta ad landing URLs and `dist/privacy` still use the old domain.
-    Verify and update those before trusting either domain string below.
+  - **VERIFIED (2026-08-20, autopilot, live Shopify API):** the store has BOTH domain strings and they
+    are different things — `shop.myshopifyDomain` = **`tbqaxz-rg.myshopify.com`** (permanent, immutable,
+    always resolves) and `shop.primaryDomain` = **`savageskincare-store.myshopify.com`** (SSL enabled).
+    So existing `tbqaxz-rg` links (Meta ad landing URLs, `privacy/` + `dist/privacy` opt-out links) are
+    NOT broken — they resolve and redirect to the primary. Prefer `savageskincare-store.myshopify.com`
+    in NEW links; no emergency rewrite of existing ones is needed.
+    OPEN QUESTION: this contradicts the "primary stays tbqaxz-rg on purpose" line below — the primary
+    HAS changed. Nobody has smoke-tested checkout since. Do that before launch (see item auto-0820-7).
 - **Sender domain — DECIDED 2026-06-08: `savageskincare.com`** (Brianna owns it; bought via Shopify). The SITE
   is LIVE on this domain via **GitHub Pages** (repo `briannasavage101010-cpu/savage-skin`, `CNAME`=savageskincare.com).
   **Shopify primary domain stays `tbqaxz-rg.myshopify.com` ON PURPOSE** (headless checkout — do NOT switch it back
