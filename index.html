@@ -293,8 +293,8 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
           <input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" required>
         </div>
         <div class="field">
-          <label for="phone">Phone <span class="hint">— for your early-access text</span></label>
-          <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(555) 123-4567" required>
+          <label for="phone">Phone <span class="hint">— optional, for your early-access text</span></label>
+          <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(555) 123-4567">
         </div>
         <div class="err" id="formErr" role="alert" aria-live="polite"></div>
 
@@ -482,7 +482,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
     <h3 class="sec">Before you ask.</h3>
     <div class="faq">
       <details><summary>What do I get for joining?</summary><p>You're first to know the moment Lip Service drops, 48-hour early access before the public, and a vote on what we make next. Joining is free — it's the community, not an order.</p></details>
-      <details><summary>Why do you need my phone number?</summary><p>So we can text you the moment Lip Service drops — it moves fast. Texts are opt-in (the checkbox), and you can reply STOP anytime. Phone is optional; email alone works too.</p></details>
+      <details><summary>Do I have to give my phone number?</summary><p>No — phone is optional and email alone works. If you do add it, we can text you the moment Lip Service drops. Texts are opt-in (the checkbox), and you can reply STOP anytime.</p></details>
       <details><summary>Does the plump sting?</summary><p>No. The fuller look comes from hydration, not irritation. No tingle, no burn.</p></details>
       <details><summary>When does it drop?</summary><p>Lip Service is coming soon. Join the community and we'll email you the moment there's a real date — you're never charged for joining.</p></details>
     </div>
@@ -638,26 +638,28 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
     var err = qs('formErr'); err.textContent='';
 
     if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ err.textContent='Please enter a valid email.'; qs('email').focus(); return; }
-    if(!phone){ err.textContent='Please enter a valid US phone number (10 digits).'; qs('phone').focus(); return; }
+    if(phoneRaw && !phone){ err.textContent='That phone number does not look right — enter 10 digits, or leave it blank.'; qs('phone').focus(); return; }
     if(!agree){ err.textContent='Please check the box to confirm your age and agree to the terms.'; return; }
 
     var btn = qs('submitBtn'); btn.disabled=true; btn.textContent='Joining…';
 
+    var smsConsent = !!(phone && smsOk);   // no phone -> no SMS consent, ever
     var props = {
       signup_source:'home-collector',
       style_vote: voteLabel() || '(no vote)',
-      sms_consent: smsOk ? 'true' : 'false',
+      sms_consent: smsConsent ? 'true' : 'false',
       sms_consent_at: new Date().toISOString(),
       age_confirmed: '16+ or guardian'
     };
-    var profileAttrs = { email: email, phone_number: phone, properties: props };
+    var profileAttrs = { email: email, properties: props };
+    if(phone) profileAttrs.phone_number = phone;   // Klaviyo rejects a null phone_number
 
     // --- secondary: Google Sheet (fire-and-forget) ---
     if(SHEET_ENDPOINT){
       try{
         fetch(SHEET_ENDPOINT, { method:'POST', mode:'no-cors',
           headers:{'Content-Type':'application/x-www-form-urlencoded'},
-          body:new URLSearchParams({ email:email, phone:phone, sms_consent:smsOk?'yes':'no', vote:voteLabel(), source:'home-collector', ts:new Date().toISOString() }).toString()
+          body:new URLSearchParams({ email:email, phone:phone||'', sms_consent:smsConsent?'yes':'no', vote:voteLabel(), source:'home-collector', ts:new Date().toISOString() }).toString()
         }).catch(function(){});
       }catch(e){}
     }
