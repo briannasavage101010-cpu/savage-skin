@@ -183,6 +183,18 @@ h3.sec{font-family:var(--serif);font-weight:500;font-size:clamp(28px,4.2vw,46px)
 .vote-nudge{margin-top:20px;display:none;align-items:center;gap:14px;flex-wrap:wrap;font-size:15px;color:var(--ink)}
 .vote-nudge.show{display:flex;animation:pop .4s ease}
 
+/* ---------- production status ---------- */
+.prod{border:1px solid var(--line);border-radius:26px;background:var(--surface);padding:32px;box-shadow:0 14px 50px rgba(10,10,18,.06)}
+.ps-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+.ps-step{border:1px solid var(--line2);border-radius:18px;padding:18px;background:#fbf9f5}
+.ps-step.now{border-color:var(--neon);background:#fff;box-shadow:0 10px 34px rgba(255,45,149,.12)}
+.ps-tag{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.ps-step.now .ps-tag{color:var(--neon)}
+.ps-tag .dot{width:7px;height:7px;border-radius:50%;background:var(--neon);animation:pulse 1.8s infinite}
+.ps-step b{display:block;font-size:16.5px;font-weight:600;letter-spacing:-.01em;margin:10px 0 6px}
+.ps-step .d{display:block;font-size:14px;color:var(--dim);line-height:1.5}
+.ps-note{margin-top:22px;font-family:var(--mono);font-size:11.5px;letter-spacing:.03em;line-height:1.6;color:var(--mute)}
+@media(max-width:760px){.ps-steps{grid-template-columns:1fr}.prod{padding:24px}}
 /* ---------- lip pod concept carousel ---------- */
 .pod-section{position:relative;margin-top:22px}
 .pv-carousel-wrap{position:relative}
@@ -419,7 +431,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
         <a href="https://www.foundersweekends.com/api/pay?venture=1e3b7f39-179f-4624-beed-87c49d3fba01&amp;amount=1800&amp;name=Savage+Lips" class="btn btn-primary"><span>Preorder the Lip Pod — $18 <span class="arr">→</span></span></a>
         <a href="#join" style="font-size:14px;color:var(--dim);text-decoration:underline;text-underline-offset:3px">or join free, no Pod reserved</a>
       </div>
-      <p style="font-family:var(--mono);font-size:11.5px;color:var(--mute);letter-spacing:.03em">Charged today · est. shipping early 2027 · full refund anytime before it ships</p>
+      <p style="font-family:var(--mono);font-size:11.5px;color:var(--mute);letter-spacing:.03em">In design right now · charged today · est. shipping early 2027 · full refund anytime before it ships</p>
     </div>
 
     <div>
@@ -430,6 +442,35 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
     </div>
   </div>
 </header>
+
+<!-- ================= PROGRESS / WHERE WE ARE ================= -->
+<section id="progress" style="padding:34px 0 6px">
+  <div class="wrap">
+    <div class="prod">
+      <div class="eyebrow">/ where we actually are</div>
+      <h3 class="sec" style="margin-bottom:10px">It&rsquo;s actually <span class="serif">being made.</span></h3>
+      <p class="lead">The Lip Pod is officially in development &mdash; we&rsquo;re working with designers right now to turn it into something a factory can actually build. Here&rsquo;s exactly how far along it is, including the parts that aren&rsquo;t done. Based on where things stand today, we estimate Pods could start shipping in <b style="color:var(--ink);font-weight:600">2027</b>.</p>
+      <div class="ps-steps">
+        <div class="ps-step">
+          <span class="ps-tag">&#10003; Done</span>
+          <b>The concept is locked</b>
+          <span class="d">What the Pod has to do, what goes in the gloss, and the problem it solves &mdash; settled, with your votes shaping it.</span>
+        </div>
+        <div class="ps-step now">
+          <span class="ps-tag"><span class="dot"></span> Happening now</span>
+          <b>In design, for real</b>
+          <span class="d">We&rsquo;re working with designers on the shape, the clip, and the materials &mdash; turning the concept into specs a factory can build from.</span>
+        </div>
+        <div class="ps-step">
+          <span class="ps-tag">Next</span>
+          <b>Manufacturing, then shipping &mdash; est. 2027</b>
+          <span class="d">No manufacturer is locked in yet &mdash; that comes once the design is final. Preorders ship first, free. It&rsquo;s an estimate, not a promise: if it moves, we email you and you can take a full refund instead of waiting.</span>
+        </div>
+      </div>
+      <p class="ps-note">Because the Pod isn&rsquo;t finished yet, every image on this site is still a concept render and the final product may differ. You&rsquo;re charged today, and refundable anytime before it ships.</p>
+    </div>
+  </div>
+</section>
 
 <!-- ================= PROBLEM / AGITATE ================= -->
 <section id="problem" style="padding:30px 0 10px">
@@ -553,6 +594,11 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
           <li><span class="chk">&middot;</span><div><b>You're charged today.</b> <span class="d">Not at shipping — today, when you order.</span></div></li>
           <li><span class="chk">&middot;</span><div><b>Shipping is estimated for early 2027.</b> <span class="d">It's an estimate, not a promise. If it moves, we'll email you, and you can take a full refund instead of waiting.</span></div></li>
         </ul>
+      </div>
+
+      <div class="fnote">
+        <b>Where I'm at, honestly.</b>
+        <span>I&rsquo;m actually building this &mdash; I&rsquo;m working with designers on the Pod right now. It&rsquo;s past the sketch stage, but it isn&rsquo;t finished, and I haven&rsquo;t picked a manufacturer yet. I'm passionate about getting this right, and that's exactly why you're seeing an honest concept render instead of a faked finished photo. &mdash; Brianna, founder</span>
       </div>
 
       <div class="guar">
@@ -863,7 +909,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
       <details><summary>What's the difference between preordering and joining?</summary><p>Preordering means you pay $18 today and we send you a Lip Pod when the first run is made. Joining the community is free — no card, no order — and just puts you on the list. Preorder if you want the Pod and the $18 price. Join if you want to watch first and decide later.</p></details>
       <details><summary>Am I being charged?</summary><p>If you preorder, yes — $18 goes through today, on a secure Stripe checkout. If you only join the community, no, and there's no card field on that form at all.</p></details>
       <details><summary>Is the Lip Pod actually real?</summary><p>It's real, and it's not finished. Every photo on this site is a concept render, the design is still being tooled, and the vote above genuinely decides parts of it. We'd rather show you the unfinished version than a fake finished one — which is also why the preorder terms say all of this out loud.</p></details>
-      <details><summary>When does it ship?</summary><p>Our estimate is early 2027. That's an estimate, not a promise — it depends on tooling and the factory. If it slips, we email everyone who preordered and you can take a full refund instead of waiting.</p></details>
+      <details><summary>When does it ship?</summary><p>The Pod is in design right now &mdash; we haven&rsquo;t locked in a manufacturer yet, that comes once the design is final. Our estimate is that shipping could begin in early 2027. That's an estimate, not a promise — it depends on tooling and the factory. If it slips, we email everyone who preordered and you can take a full refund instead of waiting.</p></details>
       <details><summary>What if I change my mind?</summary><p>Email <a href="mailto:hello@savageskincare.com">hello@savageskincare.com</a> any time before your Pod ships and we refund you in full. You don't have to give a reason and we won't try to talk you out of it.</p></details>
       <details><summary>Why is it $18 now and $24 later?</summary><p>Because preorders fund the first production run, and money now is worth more to us than money later. That's the whole trade — you take the risk that it's early, we take $6 off.</p></details>
       <details><summary>Do I have to give my phone number?</summary><p>No — phone is optional on the community form and email alone works. If you do add it, we can text you the moment the Pod ships. Texts are opt-in (the checkbox), and you can reply STOP anytime.</p></details>
@@ -896,7 +942,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
       <a href="/founders/">Story</a>
       <a href="/faq/">FAQ</a>
       <a href="/shipping-returns/">Shipping &amp; Returns</a>
-      <a href="mailto:hello@savageskincare.com">Contact</a>
+      <a href="mailto:hello@savageskincare.com">hello@savageskincare.com</a>
     </div>
     <div class="foot-policies">
       <a href="/privacy/">Privacy</a>
@@ -1249,5 +1295,64 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
 })();
 </script>
 <script type="module" src="/src/consent-boot.js"></script>
+<style>
+/* ---------- founder note ---------- */
+.fnote{display:flex;flex-direction:column;gap:6px;margin-top:18px;padding:16px 18px;border-radius:16px;
+  background:linear-gradient(135deg,rgba(255,45,149,.06),rgba(229,194,107,.07));
+  border:1px solid rgba(255,45,149,.18)}
+.fnote b{font-size:14px;letter-spacing:.01em}
+.fnote span{font-size:13.5px;line-height:1.6;color:var(--dim)}
+
+/* ---------- glossy CTA ---------- */
+.btn-primary{position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#ff2d95 0%,#ff62b2 48%,#ff2d95 100%)}
+.btn-primary>span{position:relative;z-index:1}
+.btn-primary::after{content:"";position:absolute;top:0;left:-130%;width:65%;height:100%;pointer-events:none;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);
+  transform:skewX(-18deg);transition:left .65s cubic-bezier(.22,.61,.36,1)}
+.btn-primary:hover::after{left:150%}
+.btn-primary:hover{box-shadow:0 16px 44px rgba(255,45,149,.48),inset 0 0 0 1px rgba(255,255,255,.28)}
+
+/* ---------- reveal on scroll (class added by JS, so no-JS still shows everything) ---------- */
+@media(prefers-reduced-motion:no-preference){
+  .rv{opacity:0;transform:translateY(20px);
+    transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1)}
+  .rv.in{opacity:1;transform:none}
+}
+</style>
+<script>
+(function(){
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  if(!window.innerHeight)return; // unknown viewport: never hide content
+  var sel='section .wrap > h2, section .wrap > .lead, .card, .h2h-col, .guar, .fnote';
+  var els=[].slice.call(document.querySelectorAll(sel));
+  if(!els.length)return;
+  els.forEach(function(el){el.classList.add('rv')});
+  function vh(){return window.innerHeight||document.documentElement.clientHeight||800}
+  function check(){
+    var h=vh(),left=0;
+    for(var i=0;i<els.length;i++){
+      var el=els[i];
+      if(el.classList.contains('in'))continue;
+      left++;
+      if(el.getBoundingClientRect().top < h*0.92)el.classList.add('in');
+    }
+    if(!left)teardown();
+  }
+  function teardown(){
+    window.removeEventListener('scroll',check);
+    window.removeEventListener('resize',check);
+  }
+  window.addEventListener('scroll',check,{passive:true});
+  window.addEventListener('resize',check);
+  check();
+  window.addEventListener('load',check);
+  // last-resort: never leave copy invisible
+  setTimeout(function(){
+    if(!document.querySelectorAll('.rv.in').length)
+      els.forEach(function(el){el.classList.add('in')});
+  },2500);
+})();
+</script>
 </body>
 </html>
