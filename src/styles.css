@@ -355,14 +355,9 @@ footer .foot-bottom{color:#7a7686;border-top-color:rgba(255,255,255,0.08)}
 .pdp-crumb .sep{color:var(--mute)}
 .pdp-crumb .current{color:var(--bone)}
 
-/* Cookie consent banner */
-.cookie-banner{position:fixed;left:16px;right:16px;bottom:16px;z-index:300;max-width:760px;margin:0 auto;display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:space-between;padding:18px 22px;background:#fff;border:1px solid var(--line-2);border-radius:18px;box-shadow:0 16px 48px rgba(10,10,18,.16)}
-.cookie-banner-text{font-size:13px;line-height:1.55;color:var(--bone-dim);flex:1 1 320px;margin:0}
-.cookie-banner-text a{color:var(--neon);text-decoration:underline}
-.cookie-banner-actions{display:flex;gap:10px;flex-wrap:wrap}
-.cookie-banner .btn{padding:12px 20px;font-size:11px}
+/* Cookie consent modal styles now live inside src/cookie-consent.js — it must stay
+   self-contained because index.html does not load this stylesheet. Don't re-add them here. */
 .link-btn{background:none;border:0;padding:0;color:var(--neon);text-decoration:underline;cursor:pointer;font:inherit}
-@media (max-width:600px){.cookie-banner{flex-direction:column;align-items:stretch;text-align:left}.cookie-banner-actions{justify-content:stretch}.cookie-banner .btn{flex:1;justify-content:center}}
 
 /* The Full Ritual bundle — dominant buy option */
 .bundle-hero{margin:0 0 44px;border:1.5px solid var(--neon);border-radius:24px;background:linear-gradient(180deg,rgba(255,45,149,.06),rgba(255,255,255,.9));box-shadow:0 16px 48px rgba(255,45,149,.12);overflow:hidden}
