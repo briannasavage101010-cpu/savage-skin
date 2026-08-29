@@ -54,7 +54,7 @@ function renderHero(live) {
           <p class="pdp-tagline reveal d2">${escapeHtml(STATIC.desc)}</p>
           <div class="pdp-price-row reveal d2">
             <div class="pdp-price"><span class="pdp-waitlist-note">Coming in Drop 02</span></div>
-            <a class="btn btn-primary magnetic" href="/#join"><span>Join the movement <span class="arr">→</span></span></a>
+            <a class="btn btn-primary magnetic" href="/#join"><span>Join the list <span class="arr">→</span></span></a>
           </div>
           <div class="pdp-trust reveal d3">
             <span>✓ Real actives, real percentages</span>
