@@ -355,7 +355,7 @@ footer .foot-bottom{color:#7a7686;border-top-color:rgba(255,255,255,0.08)}
 .pdp-crumb .sep{color:var(--mute)}
 .pdp-crumb .current{color:var(--bone)}
 
-/* Cookie consent modal styles now live inside src/cookie-consent.js — it must stay
+/* Cookie consent bar styles now live inside src/cookie-consent.js — it must stay
    self-contained because index.html does not load this stylesheet. Don't re-add them here. */
 .link-btn{background:none;border:0;padding:0;color:var(--neon);text-decoration:underline;cursor:pointer;font:inherit}
 
