@@ -27,10 +27,13 @@ export default defineConfig({
         lipgloss: resolve(__dirname, 'products/glass-glow-lip-gloss/index.html'),
         // NOTE: lip-service entry removed — products/lip-service/index.html is an
         // unfinished stub and isn't committed. Finish + commit that page, then
-        // re-add this input to publish the Lip Service PDP.
+        // re-add this input to publish that PDP. (The live Lip Pod PDP is products/glass-glow-lip-gloss/.)
         faq: resolve(__dirname, 'faq/index.html'),
         shippingReturns: resolve(__dirname, 'shipping-returns/index.html'),
         founders: resolve(__dirname, 'founders/index.html'),
+        // Post-purchase landing page — where the Shopify order-status page sends
+        // preorderers so they can opt into the community (marketing) list.
+        welcome: resolve(__dirname, 'welcome/index.html'),
         // Lip Pod vote now lives directly on the homepage (section #lip-pod-vote),
         // so the standalone lip-pod/ page is no longer built. Images stay in
         // public/lip-pod/ because the homepage carousel references them.
@@ -55,7 +58,7 @@ export default defineConfig({
     },
   },
   server: {
-    port: 5173,
+    port: Number(process.env.PORT) || 5173,
     host: true,
   },
 });

@@ -15,7 +15,8 @@ A marketing site + storefront for **Savage Skin**, a Gen Z skincare brand (teens
 Built with Vite (vanilla JS, no framework). Deploys to GitHub Pages via GitHub Actions. Checkout is
 wired to Shopify via the Storefront API.
 
-**Drop 01 hero = Lip Service (3-in-1 lip treatment).** It launches first and alone. The 4 face SKUs
+**Drop 01 hero = the Lip Pod (wearable gloss).** Renamed from "Lip Service" on 2026-08-29 — same
+product, one name. It launches first and alone. The 4 face SKUs
 are Drop 02. See BRAND_BRAIN.md §2 for the full lineup and pricing.
 
 ## Tech stack
@@ -90,7 +91,8 @@ These are non-negotiable and detailed in BRAND_BRAIN.md §5. The ones that bite 
 Products are fetched by handle on page load. If `VITE_SHOPIFY_DOMAIN` or `VITE_SHOPIFY_STOREFRONT_TOKEN` is missing, the site falls back to static product data in `src/products.js`. This means the site always renders even without Shopify configured.
 
 Product handles in `src/products.js` MUST match the handles in Shopify admin exactly:
-- `glass-glow-lip-gloss`   ← **Lip Service, the Drop 01 hero** (legacy handle; SKU SS-LIP-01)
+- `glass-glow-lip-gloss`   ← **the Lip Pod, the Drop 01 hero** (legacy handle; SKU SS-LIP-01).
+  Keep this handle — renaming it breaks checkout. Shopify still titles the product "Lip Service".
 - `clean-start-cleanser`
 - `prime-time-toner`
 - `power-fix-spot-corrector`

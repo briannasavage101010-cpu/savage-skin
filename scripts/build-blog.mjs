@@ -184,7 +184,7 @@ const FOOTER = `<footer>
       <li><a href="/products/prime-time-toner/">Prime Time Toner</a></li>
       <li><a href="/products/power-fix-spot-corrector/">Power Fix Spot Corrector</a></li>
       <li><a href="/products/dew-guard-moisturizer/">Dew Guard Moisturizer</a></li>
-      <li><a href="/products/glass-glow-lip-gloss/">Lip Service</a></li>
+      <li><a href="/products/glass-glow-lip-gloss/">Lip Pod</a></li>
     </ul></div>
     <div class="foot"><h5>Help</h5><ul><li><a href="/blog/">Journal</a></li><li><a href="/faq/">FAQ</a></li><li><a href="/shipping-returns/">Shipping &amp; Returns</a></li><li><a href="/founders/">Our Story</a></li><li><a href="/#join">Join the list</a></li></ul></div>
     <div class="foot"><h5>Connect</h5><ul><li><a href="https://www.instagram.com/savageskincare_4teens/" target="_blank" rel="noopener noreferrer">Instagram</a></li><li><a href="mailto:hello@savageskincare.com">hello@savageskincare.com</a></li></ul></div>
@@ -205,7 +205,7 @@ const FOOTER = `<footer>
 function postPage(p) {
   const url = `${SITE}/blog/${p.slug}/`;
   const cta = p.category === 'Lip Care'
-    ? { href: '/products/glass-glow-lip-gloss/', label: 'Shop Lip Service' }
+    ? { href: '/products/glass-glow-lip-gloss/', label: 'Shop Lip Pod' }
     : { href: '/shop/', label: 'See the lineup' };
 
   const articleLd = {

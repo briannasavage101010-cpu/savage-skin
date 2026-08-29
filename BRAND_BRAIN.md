@@ -7,7 +7,7 @@ HERE — do not scatter brand decisions into code comments, prompt docs, or one 
 > Claude Code loads this automatically via the `@BRAND_BRAIN.md` import at the top of `CLAUDE.md`.
 > Cowork loads it because the project instructions point here.
 
-Last updated: 2026-08-20
+Last updated: 2026-08-29
 
 ---
 
@@ -21,10 +21,22 @@ Last updated: 2026-08-20
 
 ## 2. Hero product & lineup
 
-**HERO — Drop 01 (the ONLY thing launching first): Lip Service — 3-in-1 Lip Treatment.**
-A hybrid: daily lip balm/treatment + intensive overnight lip mask + plumper, in one.
-Positioning: **"skincare for your lips."**
-- Price: **$18 presale / $24 compare-at.** SKU `SS-LIP-01`. Shopify handle: `glass-glow-lip-gloss` (legacy).
+**HERO — Drop 01 (the ONLY thing launching first): the Lip Pod — a wearable gloss.**
+A refillable gloss tube that snaps magnetically into an ivory + champagne-gold case, worn clipped to
+a phone, a bag, or a wrist. Positioning: **"skincare for your lips" + you stop losing it.**
+
+> **RENAMED 2026-08-29 (Brianna's call).** "Lip Service" and the Lip Pod are now ONE product, and its
+> name is **Lip Pod**. The old Lip Service framing — a 12ml 3-in-1 tube (daily balm + overnight mask +
+> plumper) — is RETIRED; do not reintroduce it. Full product mechanics are in §11, which now describes
+> the hero, not a side concept.
+> **Shopify:** the product is titled **"Lip Pod — Wearable Gloss Case"** and live at **$24.00**
+> (verified in checkout 2026-08-29). It still sits on handle `glass-glow-lip-gloss` / SKU `SS-LIP-01` —
+> the site code points at that handle on purpose, so do NOT change it or checkout breaks.
+
+- Price: **$24 founder preorder / $32 at launch** — live on the site and in Shopify as of 2026-08-29.
+  SKU `SS-LIP-01`. Shopify handle: `glass-glow-lip-gloss` (legacy).
+  *(Superseded the earlier $18 presale / $24 compare-at plan. Preorder is charged at purchase, with
+  estimated shipping early 2027 and a full refund available any time before it ships.)*
 - The "you swallow your lip products every day" insight is what makes clean undeniable.
   Standard line: **"nothing in it you'd be afraid to swallow."** This is NOT a literal edible / eat-it claim.
 - Plumper = cosmetic **"fuller look"** claims only. No sting / irritant / injury / active-drug claims.
@@ -91,9 +103,13 @@ narrow "teen skin only" framing.
   CNAMEs added in the domain's DNS — managed in Shopify admin since bought there); set from = `hello@savageskincare.com`.
   Retire `savageskin.co`.
 - **ESP = Klaviyo.**
-- **Founders Circle offer (decided):** 48h early access (500 spots — scarcity) + **$18 founder price locked**
-  ($24 compare-at after) + free shipping. Do NOT add a 3rd signup perk (dilutes). Save gift-with-purchase
-  for the launch-day buy moment. In winback, do NOT undercut $18 for non-buyers — use access/scarcity only.
+- **Founder preorder offer (live 2026-08-29):** 500-unit first run + **$24 founder price** ($32 at launch)
+  + free shipping + full refund any time before it ships. Do NOT add a 3rd signup perk (dilutes). Save
+  gift-with-purchase for the launch-day buy moment. In winback, do NOT undercut $24 for non-buyers —
+  use access/scarcity only.
+  **TODO:** confirm a free-shipping rate is actually configured in Shopify. The site promises "nothing
+  added at checkout", but checkout currently shows shipping as "Enter shipping address" — if a rate gets
+  added there, that claim is false.
 
 ## 7. Per-product accent colors (used in code + packshots)
 
@@ -106,7 +122,7 @@ Pair every criticism with a concrete next step. No padding, no flattery.
 
 ## 9. Goals (honest framing)
 
-Launch Drop 01 (Lip Service) with strong presales. Ambition: $500k in 6 months; billion-dollar long game.
+Launch Drop 01 (the Lip Pod) with strong presales. Ambition: $500k in 6 months; billion-dollar long game.
 Budget $1k–$10k. Honest read: $500k/6mo on a sub-$10k budget is a viral-lottery outcome, not a plannable
 one — plan for the controllable inputs (offer, list, content cadence, conversion), treat virality as upside.
 

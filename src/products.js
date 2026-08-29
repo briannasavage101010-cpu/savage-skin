@@ -26,7 +26,7 @@ export const PRODUCTS = [
     hero: true,
     step: '01 · LIPS',
     tag: 'Hero',
-    name: 'Lip Service',
+    name: 'Lip Pod',
     desc: 'Daily balm, overnight mask, and hydration-plumper in one tube. Skincare for your lips — not another wax stick that quits by 10am.',
     size: '12ml · Day + Night',
     price: '$24',

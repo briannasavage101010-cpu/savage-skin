@@ -22,7 +22,7 @@ async function renderProducts() {
   const grid = document.getElementById('productsGrid');
   if (!grid) return;
 
-  // The hero product (Lip Service) leads the homepage hero section, so the grid
+  // The hero product (Lip Pod) leads the homepage hero section, so the grid
   // below shows only the secondary skincare routine.
   const routine = PRODUCTS.filter((p) => !p.hero);
 

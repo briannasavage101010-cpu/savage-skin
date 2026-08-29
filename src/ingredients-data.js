@@ -74,7 +74,7 @@ export const INGREDIENT_PRODUCTS = [
   {
     slug: 'lipgloss',
     handle: 'glass-glow-lip-gloss',
-    name: 'Lip Service',
+    name: 'Lip Pod',
     tagline: 'Step 01 · Lips',
     accent: '#ff7ec4',
     layers: [

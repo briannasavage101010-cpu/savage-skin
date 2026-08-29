@@ -203,7 +203,7 @@ function boot() {
   initMobileNav();
 
   // Nothing is for sale yet — pages render from the static catalog only.
-  // Lip Service is community-only (Drop 01, coming soon); the four face SKUs
+  // Lip Pod is community-only (Drop 01, coming soon); the four face SKUs
   // are Drop 02. No Shopify fetch, no cart, no buyable prices.
   if (custom) {
     renderCustomBottle();

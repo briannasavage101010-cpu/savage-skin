@@ -122,7 +122,7 @@ h1.hero-title .word{display:inline-block;will-change:transform,opacity}
 .spec-card .row:last-child{border-bottom:0}
 .spec-card .row b{font-weight:500;color:var(--bone)}
 .spec-card .row span{color:var(--bone-dim);font-family:var(--mono)}
-/* Lip Service packshot in the hero (Drop 01 launch product) */
+/* Lip Pod packshot in the hero (Drop 01 launch product) */
 .hero-product{position:relative;z-index:2;width:100%;max-width:340px;display:flex;align-items:center;justify-content:center}
 .hero-product::before{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:116%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 50% 45%, color-mix(in srgb, #D4537E 30%, transparent), transparent 68%);filter:blur(40px);z-index:0}
 .hero-product-img{position:relative;z-index:1;width:100%;height:auto;aspect-ratio:1/1;object-fit:contain;border-radius:18px;filter:drop-shadow(0 24px 44px rgba(10,10,18,.16))}
@@ -464,6 +464,10 @@ footer .foot-bottom{color:#7a7686;border-top-color:rgba(255,255,255,0.08)}
 .pdp-price s{color:var(--mute);font-size:22px;margin-right:14px;font-weight:300}
 .pdp-buy{padding:18px 32px;cursor:pointer}
 .pdp-buy:disabled{opacity:.5;cursor:not-allowed}
+a.pdp-buy{text-decoration:none}
+/* Preorder risk disclosure under the buy button */
+.pdp-buy-note{margin:-16px 0 18px;max-width:52ch;font-size:13px;line-height:1.6;color:var(--mute)}
+.pdp-buy-note a{color:inherit;text-decoration:underline}
 .pdp-trust{display:flex;gap:18px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--bone-dim)}
 .pdp-trust span{display:inline-flex;align-items:center;gap:6px}
 
