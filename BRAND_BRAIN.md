@@ -29,14 +29,14 @@ a phone, a bag, or a wrist. Positioning: **"skincare for your lips" + you stop l
 > name is **Lip Pod**. The old Lip Service framing — a 12ml 3-in-1 tube (daily balm + overnight mask +
 > plumper) — is RETIRED; do not reintroduce it. Full product mechanics are in §11, which now describes
 > the hero, not a side concept.
-> **Shopify:** the product is titled **"Lip Pod — Wearable Gloss Case"** and live at **$24.00**
-> (verified in checkout 2026-08-29). It still sits on handle `glass-glow-lip-gloss` / SKU `SS-LIP-01` —
+> **Shopify:** the product is titled **"Lip Pod — Wearable Gloss Case"**. It still sits on handle `glass-glow-lip-gloss` / SKU `SS-LIP-01` —
 > the site code points at that handle on purpose, so do NOT change it or checkout breaks.
 
-- Price: **$24 founder preorder / $32 at launch** — live on the site and in Shopify as of 2026-08-29.
-  SKU `SS-LIP-01`. Shopify handle: `glass-glow-lip-gloss` (legacy).
-  *(Superseded the earlier $18 presale / $24 compare-at plan. Preorder is charged at purchase, with
-  estimated shipping early 2027 and a full refund available any time before it ships.)*
+- Price: **$18 founder preorder / $24 at launch.** SKU `SS-LIP-01`. Shopify handle:
+  `glass-glow-lip-gloss` (legacy). Preorder is charged at purchase, with estimated shipping early 2027
+  and a full refund available any time before it ships.
+  *(A $24/$32 scheme briefly appeared in the site copy on 2026-08-29; Brianna reverted it to $18/$24,
+  which has always been the documented offer. Do not reintroduce $24/$32.)*
 - The "you swallow your lip products every day" insight is what makes clean undeniable.
   Standard line: **"nothing in it you'd be afraid to swallow."** This is NOT a literal edible / eat-it claim.
 - Plumper = cosmetic **"fuller look"** claims only. No sting / irritant / injury / active-drug claims.
@@ -103,10 +103,9 @@ narrow "teen skin only" framing.
   CNAMEs added in the domain's DNS — managed in Shopify admin since bought there); set from = `hello@savageskincare.com`.
   Retire `savageskin.co`.
 - **ESP = Klaviyo.**
-- **Founder preorder offer (live 2026-08-29):** 500-unit first run + **$24 founder price** ($32 at launch)
-  + free shipping + full refund any time before it ships. Do NOT add a 3rd signup perk (dilutes). Save
-  gift-with-purchase for the launch-day buy moment. In winback, do NOT undercut $24 for non-buyers —
-  use access/scarcity only.
+- **Founder preorder offer:** 500-unit first run + **$18 founder price** ($24 at launch) + free shipping
+  + full refund any time before it ships. Do NOT add a 3rd signup perk (dilutes). Save gift-with-purchase
+  for the launch-day buy moment. In winback, do NOT undercut $18 for non-buyers — use access/scarcity only.
   **TODO:** confirm a free-shipping rate is actually configured in Shopify. The site promises "nothing
   added at checkout", but checkout currently shows shipping as "Enter shipping address" — if a rate gets
   added there, that claim is false.
