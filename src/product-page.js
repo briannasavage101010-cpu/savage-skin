@@ -137,7 +137,7 @@ function renderRoutine() {
           ${others
             .map(
               (p, i) => `
-              <a class="pdp-routine-card reveal d${i + 1} magnetic" href="/products/${p.handle}/" style="--accent:${p.accent || '#ff2d95'}">
+              <a class="pdp-routine-card reveal d${i + 1} magnetic" href="${p.url || `/products/${p.handle}/`}" style="--accent:${p.accent || '#ff2d95'}">
                 <div class="pdp-routine-visual">
                   <div class="grid-lines"></div>
                   <div class="glow-orb"></div>

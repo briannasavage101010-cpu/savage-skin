@@ -66,7 +66,7 @@ function buildBlocks(product) {
       <div class="ing-outro-inner">
         <h2>That's the whole formula.</h2>
         <p>No filler, no mystery. Just actives that are designed to help — results vary.</p>
-        <a class="btn btn-primary" href="/products/${product.handle}/"><span>Shop ${product.name} <span class="arr">&#8594;</span></span></a>
+        <a class="btn btn-primary" href="${product.url || `/products/${product.handle}/`}"><span>Shop ${product.name} <span class="arr">&#8594;</span></span></a>
       </div>
     </section>
   `;

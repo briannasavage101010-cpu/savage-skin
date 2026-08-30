@@ -24,10 +24,13 @@ export default defineConfig({
         toner: resolve(__dirname, 'products/prime-time-toner/index.html'),
         serum: resolve(__dirname, 'products/power-fix-spot-corrector/index.html'),
         moisturizer: resolve(__dirname, 'products/dew-guard-moisturizer/index.html'),
-        lipgloss: resolve(__dirname, 'products/glass-glow-lip-gloss/index.html'),
+        lipgloss: resolve(__dirname, 'products/lip-pod/index.html'),
+        // Old slug kept as a redirect stub so existing links and search results
+        // still land on the Lip Pod PDP. The Shopify handle is unchanged.
+        lipglossLegacy: resolve(__dirname, 'products/glass-glow-lip-gloss/index.html'),
         // NOTE: lip-service entry removed — products/lip-service/index.html is an
         // unfinished stub and isn't committed. Finish + commit that page, then
-        // re-add this input to publish that PDP. (The live Lip Pod PDP is products/glass-glow-lip-gloss/.)
+        // re-add this input to publish that PDP. (The live Lip Pod PDP is products/lip-pod/.)
         faq: resolve(__dirname, 'faq/index.html'),
         shippingReturns: resolve(__dirname, 'shipping-returns/index.html'),
         founders: resolve(__dirname, 'founders/index.html'),

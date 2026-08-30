@@ -4,6 +4,7 @@
  * Each product has:
  * - slug: internal identifier
  * - handle: Shopify product handle (URL slug in Shopify admin). Must match exactly.
+ * - url: optional page URL override. Defaults to /products/<handle>/ when absent.
  * - hero: optional flag — the hero launch product. Shown in the homepage hero
  *   section, so it is filtered OUT of the secondary "routine" grid.
  * - step: visual step label on the product card
@@ -23,6 +24,10 @@ export const PRODUCTS = [
   {
     slug: 'lipgloss',
     handle: 'glass-glow-lip-gloss',
+    // Page URL is decoupled from the Shopify handle: the handle is a legacy name
+    // ("Glass Glow Lip Gloss") that must not change or checkout breaks, but the
+    // page lives at the product's real name. Old slug 302s here via a stub.
+    url: '/products/lip-pod/',
     hero: true,
     step: '01 · LIPS',
     tag: 'Hero',

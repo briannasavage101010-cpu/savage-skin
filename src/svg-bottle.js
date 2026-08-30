@@ -119,7 +119,7 @@ export function productVisual(product, index, opts = {}) {
 export function renderProductCard(product, index, _liveData = null) {
   // Drop 02 routine products are NOT on sale yet. Cards are waitlist-only:
   // no buyable price, no add-to-cart — they route to the Drop 01 list + vote.
-  const detailUrl = `/products/${product.handle}/`;
+  const detailUrl = product.url || `/products/${product.handle}/`;
   const stepNum = product.step.split(' ')[0];
   const stepLabel = product.step.split('·')[1]?.trim() || product.step;
   return `
