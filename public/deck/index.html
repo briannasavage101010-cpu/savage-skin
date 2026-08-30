@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Savage Lips — Pitch</title>
+<style>
+  :root{
+    --bg:#06060a;
+    --ink:#f2f1ec;
+    --accent:#ff2d95;
+    --muted:#8e8e99;
+    --line:rgba(242,241,236,.22);
+    --pad:clamp(1.5rem,5vw,6rem);
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow:hidden;
+  }
+  #deck{
+    height:100dvh;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+  }
+  .slide{
+    display:none;
+    flex:1;
+    flex-direction:column;
+    justify-content:center;
+    gap:clamp(1rem,2.5vh,2.5rem);
+    padding:var(--pad);
+    padding-bottom:calc(var(--pad) + 4rem);
+  }
+  .slide.is-active{display:flex}
+
+  .label{
+    font-size:clamp(.75rem,1.5vw,1.35rem);
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin:0;
+  }
+  h1{
+    font-size:clamp(3rem,13vw,11rem);
+    line-height:.92;
+    letter-spacing:-.03em;
+    font-weight:800;
+    margin:0;
+  }
+  .lead{
+    font-size:clamp(1.4rem,4.2vw,3.6rem);
+    line-height:1.15;
+    font-weight:500;
+    margin:0;
+    max-width:24ch;
+  }
+  .big{
+    font-size:clamp(2.2rem,8vw,7rem);
+    line-height:1.02;
+    letter-spacing:-.02em;
+    font-weight:700;
+    margin:0;
+    max-width:18ch;
+  }
+  .sub{
+    font-size:clamp(1.1rem,2.8vw,2.2rem);
+    line-height:1.25;
+    color:var(--muted);
+    margin:0;
+    max-width:26ch;
+  }
+  .facts{
+    display:flex;
+    flex-wrap:wrap;
+    gap:clamp(1rem,4vw,3.5rem);
+    font-size:clamp(1rem,2.4vw,1.9rem);
+    color:var(--muted);
+    margin:0;
+    padding:0;
+    list-style:none;
+  }
+  .facts b{color:var(--ink);font-weight:600}
+
+  .stats{
+    display:flex;
+    flex-wrap:wrap;
+    gap:clamp(1.5rem,7vw,6rem);
+  }
+  .stat{display:flex;flex-direction:column;gap:.15em}
+  .num{
+    font-size:clamp(4.5rem,17vw,15rem);
+    line-height:.85;
+    font-weight:800;
+    letter-spacing:-.04em;
+  }
+  .cap{
+    font-size:clamp(.85rem,1.8vw,1.6rem);
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+
+  /* Square-bracket placeholders for Brianna to fill in */
+  .ph{
+    color:var(--accent);
+    border-bottom:.06em dashed rgba(255,45,149,.45);
+    padding-bottom:.04em;
+  }
+
+  #bar{
+    position:fixed;
+    left:0;right:0;bottom:0;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:1rem;
+    padding:clamp(.75rem,2vw,1.5rem) var(--pad);
+    background:linear-gradient(to top,var(--bg) 55%,transparent);
+  }
+  #bar .group{display:flex;align-items:center;gap:.6rem}
+  button{
+    font:inherit;
+    font-size:clamp(1rem,2vw,1.5rem);
+    line-height:1;
+    color:var(--ink);
+    background:transparent;
+    border:1px solid var(--line);
+    border-radius:999px;
+    padding:.55em .95em;
+    cursor:pointer;
+  }
+  button:hover:not(:disabled){border-color:var(--ink)}
+  button:disabled{opacity:.25;cursor:default}
+  #count{
+    font-size:clamp(.9rem,1.8vw,1.4rem);
+    letter-spacing:.14em;
+    color:var(--muted);
+    font-variant-numeric:tabular-nums;
+  }
+  #full{font-size:clamp(.8rem,1.5vw,1.15rem);letter-spacing:.12em;text-transform:uppercase}
+  @media (max-width:600px){#full{display:none}}
+</style>
+</head>
+<body>
+
+<div id="deck">
+
+  <!-- 1. Title -->
+  <section class="slide" aria-label="Slide 1">
+    <p class="label">Savage Lips</p>
+    <h1>Savage&nbsp;Lips</h1>
+    <p class="lead">The lip pod &mdash; for anyone who uses lipgloss and finds themselves constantly losing it.</p>
+    <p class="sub"><span class="ph">[my name]</span></p>
+  </section>
+
+  <!-- 2. The problem -->
+  <section class="slide" aria-label="Slide 2">
+    <p class="label">The problem</p>
+    <p class="big"><span class="ph">[the problem I saw]</span></p>
+  </section>
+
+  <!-- 3. What I built -->
+  <section class="slide" aria-label="Slide 3">
+    <p class="label">What I built</p>
+    <p class="big"><span class="ph">[what I made]</span></p>
+    <ul class="facts">
+      <li><b>$18</b> early preorder</li>
+      <li><b>$24</b> after preorder</li>
+      <li><b>savageskincare.com</b></li>
+    </ul>
+  </section>
+
+  <!-- 4. What happened with strangers -->
+  <section class="slide" aria-label="Slide 4">
+    <p class="label">What happened with strangers</p>
+    <div class="stats">
+      <div class="stat"><span class="num">0</span><span class="cap">Reached</span></div>
+      <div class="stat"><span class="num">0</span><span class="cap">Replied</span></div>
+      <div class="stat"><span class="num">0</span><span class="cap">Paid</span></div>
+    </div>
+  </section>
+
+  <!-- 5. My decision -->
+  <section class="slide" aria-label="Slide 5">
+    <p class="label">My decision</p>
+    <p class="big"><span class="ph">[continue, pivot, or stop]</span></p>
+    <p class="sub"><span class="ph">[why]</span></p>
+  </section>
+
+  <!-- 6. My plan -->
+  <section class="slide" aria-label="Slide 6">
+    <p class="label">My plan</p>
+    <p class="big"><span class="ph">[what I choose to do next]</span></p>
+  </section>
+
+</div>
+
+<div id="bar">
+  <div class="group">
+    <button id="prev" type="button" aria-label="Previous slide">&#8592;</button>
+    <button id="next" type="button" aria-label="Next slide">&#8594;</button>
+  </div>
+  <span id="count">1 / 6</span>
+  <div class="group">
+    <button id="full" type="button">Full screen</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var prev = document.getElementById('prev');
+  var next = document.getElementById('next');
+  var full = document.getElementById('full');
+  var count = document.getElementById('count');
+  var i = 0;
+
+  function fromHash(){
+    var n = parseInt((location.hash || '').replace('#',''), 10);
+    return (n >= 1 && n <= slides.length) ? n - 1 : 0;
+  }
+
+  function show(n){
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    for (var k = 0; k < slides.length; k++){
+      slides[k].classList.toggle('is-active', k === i);
+    }
+    count.textContent = (i + 1) + ' / ' + slides.length;
+    prev.disabled = (i === 0);
+    next.disabled = (i === slides.length - 1);
+    if (history.replaceState) history.replaceState(null, '', '#' + (i + 1));
+  }
+
+  prev.addEventListener('click', function(){ show(i - 1); });
+  next.addEventListener('click', function(){ show(i + 1); });
+
+  full.addEventListener('click', toggleFull);
+  function toggleFull(){
+    if (document.fullscreenElement) { document.exitFullscreen(); }
+    else if (document.documentElement.requestFullscreen) { document.documentElement.requestFullscreen(); }
+  }
+
+  document.addEventListener('keydown', function(e){
+    var k = e.key;
+    if (k === 'ArrowRight' || k === 'ArrowDown' || k === 'PageDown' || k === ' ' || k === 'Spacebar'){ show(i + 1); e.preventDefault(); }
+    else if (k === 'ArrowLeft' || k === 'ArrowUp' || k === 'PageUp'){ show(i - 1); e.preventDefault(); }
+    else if (k === 'Home'){ show(0); e.preventDefault(); }
+    else if (k === 'End'){ show(slides.length - 1); e.preventDefault(); }
+    else if (k === 'f' || k === 'F'){ toggleFull(); e.preventDefault(); }
+  });
+
+  window.addEventListener('hashchange', function(){ show(fromHash()); });
+
+  var x0 = null;
+  document.addEventListener('touchstart', function(e){ x0 = e.changedTouches[0].clientX; }, {passive:true});
+  document.addEventListener('touchend', function(e){
+    if (x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 50) show(dx < 0 ? i + 1 : i - 1);
+    x0 = null;
+  }, {passive:true});
+
+  show(fromHash());
+})();
+</script>
+
+</body>
+</html>
