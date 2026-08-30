@@ -31,6 +31,10 @@ export default defineConfig({
         faq: resolve(__dirname, 'faq/index.html'),
         shippingReturns: resolve(__dirname, 'shipping-returns/index.html'),
         founders: resolve(__dirname, 'founders/index.html'),
+        // Shipping-address step. Every preorder button points here; this page
+        // collects the address (the Stripe checkout has no address field) and
+        // then forwards to payment. See scripts/set-checkout.mjs.
+        preorder: resolve(__dirname, 'preorder/index.html'),
         // Post-purchase landing page — where the Shopify order-status page sends
         // preorderers so they can opt into the community (marketing) list.
         welcome: resolve(__dirname, 'welcome/index.html'),

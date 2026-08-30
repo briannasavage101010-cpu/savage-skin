@@ -6,9 +6,15 @@
  * swaps that URL across all pages in one shot, and swaps it back just as
  * easily — nothing else about the pages changes.
  *
- *   node scripts/set-checkout.mjs stripe    -> Founders Weekend / Stripe pay link
+ *   node scripts/set-checkout.mjs stripe    -> /preorder/ (address step, then Stripe)
  *   node scripts/set-checkout.mjs shopify   -> original Shopify cart permalink
  *   node scripts/set-checkout.mjs status    -> report which one is live
+ *
+ * Note on the "stripe" target: buttons point at /preorder/, not straight at the
+ * payment page. The Stripe checkout has no shipping-address field, so /preorder/
+ * collects the address into Klaviyo first and then forwards to Stripe. The real
+ * pay URL lives in ONE place — preorder/index.html, as PAY_URL. If you ever point
+ * buttons back at the pay link directly, you stop collecting addresses.
  *
  * Ampersands are written as &amp; inside href="" because that is what HTML
  * requires; browsers send the real & to the payment page.
@@ -21,9 +27,15 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
 const TARGETS = {
   shopify: 'https://savageskincare-store.myshopify.com/cart/53828394680685:1',
-  stripe:
-    'https://www.foundersweekends.com/api/pay?venture=1e3b7f39-179f-4624-beed-87c49d3fba01&amount=1800&name=Savage+Lips',
+  stripe: '/preorder/',
 };
+
+// URLs buttons used to point at. Always swapped over to whatever is selected, so
+// an older page can't quietly keep sending people to a checkout you've moved off.
+const LEGACY = [
+  'https://www.foundersweekends.com/api/pay?venture=1e3b7f39-179f-4624-beed-87c49d3fba01&amount=1800&name=Savage+Lips',
+  'https://www.foundersweekends.com/api/pay?venture=1e3b7f39-179f-4624-beed-87c49d3fba01&amount=2399&name=Savage+Lips',
+];
 
 // Copy that names the payment processor by name. Flips with the link so the
 // page never claims a checkout it isn't actually using.
@@ -77,7 +89,10 @@ function run(mode) {
     console.error('Usage: node scripts/set-checkout.mjs <stripe|shopify|status>');
     process.exit(1);
   }
-  const from = Object.entries(TARGETS).filter(([k]) => k !== mode).map(([, v]) => v);
+  const from = [
+    ...Object.entries(TARGETS).filter(([k]) => k !== mode).map(([, v]) => v),
+    ...LEGACY,
+  ];
 
   let total = 0;
   for (const f of FILES) {

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Where should we ship it? — Savage Skin</title>
+<meta name="description" content="Tell us where your Lip Pod should go, then finish your preorder on Stripe." />
+<meta name="robots" content="noindex, follow" />
+<link rel="canonical" href="https://savageskincare.com/preorder/" />
+<meta property="og:title" content="Preorder the Lip Pod — Savage Skin" />
+<meta property="og:description" content="Tell us where it ships, then pay $18 on Stripe." />
+<meta property="og:type" content="website" />
+<link rel="icon" type="image/png" href="/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#f7f3ed; --surface:#ffffff; --line:rgba(10,10,18,.08); --line2:rgba(10,10,18,.16);
+  --ink:#0a0a14; --dim:#4a4858; --mute:#8a8898;
+  --neon:#ff2d95; --cyan:#00f0ff; --violet:#b026ff; --lip:#D4537E; --gold:#e5c26b;
+  --serif:'Fraunces',Georgia,serif; --sans:'Inter',system-ui,sans-serif; --mono:'JetBrains Mono',monospace;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.bg-mesh{position:fixed;inset:-10%;z-index:0;pointer-events:none;filter:blur(40px);
+  background:radial-gradient(40% 40% at 18% 12%,rgba(255,45,149,.13),transparent 70%),
+  radial-gradient(42% 42% at 84% 78%,rgba(176,38,255,.11),transparent 70%)}
+.layer{position:relative;z-index:5}
+nav.top{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
+  padding:16px 24px;background:rgba(247,243,237,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:11px;font-family:var(--serif);font-weight:600;font-size:20px;letter-spacing:-.02em}
+.brand .mark{width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff,var(--neon) 60%,#2a0a18 100%);box-shadow:0 0 18px rgba(255,45,149,.5)}
+.brand em{font-style:normal;color:var(--neon)}
+.nav-links{display:flex;gap:26px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-family:var(--mono);color:var(--dim)}
+.nav-links a:hover{color:var(--ink)}
+@media(max-width:760px){.nav-links{display:none}}
+
+section{padding:44px 0 56px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:30px;box-shadow:0 14px 50px rgba(10,10,18,.07)}
+
+.hero{padding:46px 0 6px;text-align:center}
+.pill{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;
+  text-transform:uppercase;border:1px solid var(--line2);border-radius:999px;padding:8px 15px;color:var(--dim);background:rgba(255,255,255,.6)}
+.pill .dot{width:7px;height:7px;border-radius:50%;background:var(--neon);box-shadow:0 0 0 0 rgba(255,45,149,.6);animation:pulse 1.8s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,45,149,.55)}70%{box-shadow:0 0 0 12px rgba(255,45,149,0)}100%{box-shadow:0 0 0 0 rgba(255,45,149,0)}}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(34px,5.6vw,60px);line-height:1;letter-spacing:-.035em;margin:18px 0 14px}
+h1 em{font-style:italic;color:var(--neon)}
+.sub{font-size:16.5px;color:var(--dim);max-width:33em;margin:0 auto;line-height:1.6}
+
+.rail{display:flex;align-items:center;justify-content:center;gap:10px;margin:26px auto 0;flex-wrap:wrap}
+.rail .s{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.rail .s b{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font-size:10px;border:1px solid var(--line2);color:var(--mute);font-weight:500}
+.rail .s.on{color:var(--ink)}
+.rail .s.on b{background:var(--neon);border-color:var(--neon);color:#fff}
+.rail .bar{width:26px;height:1px;background:var(--line2)}
+
+.field{margin-bottom:14px}
+.field label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:8px}
+.field label .hint{text-transform:none;letter-spacing:0;color:var(--mute);font-family:var(--sans);font-size:12px}
+.field input,.field select{width:100%;background:#fbf9f5;border:1px solid var(--line2);border-radius:13px;padding:15px 16px;font-size:16px;font-family:inherit;color:var(--ink);transition:border-color .2s;-webkit-appearance:none;appearance:none}
+.field select{background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath fill='%238a8898' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;background-size:11px;padding-right:40px}
+.field input:focus,.field select:focus{outline:none;border-color:var(--neon);background:#fff}
+.row3{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:12px}
+@media(max-width:620px){.row3{grid-template-columns:1fr}}
+.consent{display:flex;gap:11px;align-items:flex-start;margin:14px 0;font-size:13px;color:var(--dim);line-height:1.5}
+.consent input{margin-top:2px;width:18px;height:18px;flex-shrink:0;accent-color:var(--neon)}
+.consent a{color:var(--neon);text-decoration:underline}
+.submit{width:100%;margin-top:6px;border:none;background:var(--neon);color:#fff;font-weight:700;font-size:15px;letter-spacing:.04em;
+  padding:17px;border-radius:999px;cursor:pointer;font-family:inherit;transition:transform .2s,box-shadow .2s,opacity .2s;box-shadow:0 8px 26px rgba(255,45,149,.3)}
+.submit:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(255,45,149,.4)}
+.submit[disabled]{opacity:.6;cursor:default;transform:none}
+.fine{display:block;color:var(--mute);font-size:11.5px;margin-top:12px;line-height:1.55}
+.fine a{color:var(--neon);text-decoration:underline}
+.err{color:#c0264e;font-size:13px;margin:8px 0 0;display:none;line-height:1.5}
+.err.show{display:block}
+.err .again{display:inline-block;margin-top:8px;color:var(--neon);text-decoration:underline;cursor:pointer;font-weight:600}
+
+.grid{display:grid;grid-template-columns:1.35fr .85fr;gap:22px;align-items:start;max-width:1000px;margin:0 auto}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+.receipt{border:1px solid var(--line2);background:rgba(255,255,255,.55);border-radius:20px;padding:22px 24px}
+.receipt .rh{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:14px}
+.receipt .line{display:flex;justify-content:space-between;gap:12px;font-size:14.5px;padding:9px 0;border-bottom:1px solid var(--line)}
+.receipt .line:last-of-type{border-bottom:none}
+.receipt .line b{font-weight:600}
+.receipt .tot{display:flex;justify-content:space-between;gap:12px;font-size:17px;font-weight:600;padding-top:13px;margin-top:6px;border-top:1px solid var(--line2)}
+.receipt ul{list-style:none;display:grid;gap:9px;margin-top:16px}
+.receipt li{display:flex;gap:10px;font-size:13.5px;color:var(--dim);line-height:1.5}
+.receipt li i{font-style:normal;color:var(--neon);flex-shrink:0}
+.note{background:#fbf9f5;border:1px solid var(--line);border-radius:13px;padding:13px 14px;font-size:13px;color:var(--dim);line-height:1.55;margin:16px 0 4px}
+.note b{color:var(--ink);font-weight:600}
+
+footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-size:13px;margin-top:40px}
+.foot-row{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between}
+.foot-row a{color:var(--dim)}
+.foot-row a:hover{color:var(--neon)}
+</style>
+<script async src="https://static.klaviyo.com/onsite/js/XNMhJw/klaviyo.js"></script>
+</head>
+<body>
+<div class="bg-mesh"></div>
+<div class="layer">
+
+<nav class="top" aria-label="Primary">
+  <a href="/" class="brand" aria-label="Savage Skin home"><span class="mark" aria-hidden="true"></span><span>Savage<em>/</em>Skin</span></a>
+  <div class="nav-links">
+    <a href="/shop/">Product</a>
+    <a href="/blog/">Journal</a>
+    <a href="/founders/">Story</a>
+    <a href="/faq/">FAQ</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="pill"><span class="dot"></span> Step 1 of 2</span>
+    <h1>Where should we <em>ship it?</em></h1>
+    <p class="sub">Payment happens on Stripe in a second — but Stripe won't ask for your address, so we need it here first. Takes about twenty seconds.</p>
+    <div class="rail" aria-hidden="true">
+      <span class="s on"><b>1</b> Shipping address</span>
+      <span class="bar"></span>
+      <span class="s"><b>2</b> Pay on Stripe</span>
+    </div>
+  </div>
+</header>
+
+<section style="padding-top:26px">
+  <div class="wrap">
+    <div class="grid">
+
+      <div class="card">
+        <form id="addrForm" novalidate>
+          <div class="field">
+            <label for="name">Full name</label>
+            <input type="text" id="name" name="name" autocomplete="name" placeholder="Alex Rivera" required>
+          </div>
+
+          <div class="field">
+            <label for="email">Email <span class="hint">— use this same email on the payment page</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" inputmode="email" placeholder="you@email.com" required>
+          </div>
+
+          <div class="field">
+            <label for="addr1">Street address</label>
+            <input type="text" id="addr1" name="addr1" autocomplete="shipping address-line1" placeholder="1400 Rio Grande St" required>
+          </div>
+
+          <div class="field">
+            <label for="addr2">Apartment, suite, unit <span class="hint">— optional</span></label>
+            <input type="text" id="addr2" name="addr2" autocomplete="shipping address-line2" placeholder="Apt 3B">
+          </div>
+
+          <div class="row3">
+            <div class="field">
+              <label for="city">City</label>
+              <input type="text" id="city" name="city" autocomplete="shipping address-level2" placeholder="Austin" required>
+            </div>
+            <div class="field">
+              <label for="state">State</label>
+              <select id="state" name="state" autocomplete="shipping address-level1" required>
+                <option value="">Choose…</option>
+                <option>AL</option><option>AK</option><option>AZ</option><option>AR</option><option>CA</option>
+                <option>CO</option><option>CT</option><option>DE</option><option>DC</option><option>FL</option>
+                <option>GA</option><option>HI</option><option>ID</option><option>IL</option><option>IN</option>
+                <option>IA</option><option>KS</option><option>KY</option><option>LA</option><option>ME</option>
+                <option>MD</option><option>MA</option><option>MI</option><option>MN</option><option>MS</option>
+                <option>MO</option><option>MT</option><option>NE</option><option>NV</option><option>NH</option>
+                <option>NJ</option><option>NM</option><option>NY</option><option>NC</option><option>ND</option>
+                <option>OH</option><option>OK</option><option>OR</option><option>PA</option><option>PR</option>
+                <option>RI</option><option>SC</option><option>SD</option><option>TN</option><option>TX</option>
+                <option>UT</option><option>VT</option><option>VA</option><option>WA</option><option>WV</option>
+                <option>WI</option><option>WY</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="zip">ZIP</label>
+              <input type="text" id="zip" name="zip" autocomplete="shipping postal-code" inputmode="numeric" maxlength="10" placeholder="78701" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone <span class="hint">— optional, for delivery updates</span></label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="(512) 555-0134">
+          </div>
+
+          <label class="consent">
+            <input type="checkbox" id="agree">
+            <span>I'm 16+ (or have a parent/guardian's permission), and I agree to the
+              <a href="/privacy/">Privacy Policy</a> &amp; <a href="/terms/">Terms</a>. Use my address to ship my order and email me about it.</span>
+          </label>
+
+          <button type="submit" class="submit" id="submitBtn">Continue to payment — $18 →</button>
+          <p class="err" id="formErr" role="alert"></p>
+          <small class="fine">Next page is a secure Stripe checkout. Nothing is charged until you finish there. <a href="/shipping-returns/">Shipping &amp; Returns</a></small>
+        </form>
+      </div>
+
+      <aside>
+        <div class="receipt">
+          <div class="rh">Your order</div>
+          <div class="line"><span>Lip Pod — Wearable Gloss Case<br><small style="color:var(--mute)">Founder preorder</small></span> <b>$18</b></div>
+          <div class="line"><span>Shipping</span> <b>Free</b></div>
+          <div class="tot"><span>Total today</span><span>$18</span></div>
+          <ul>
+            <li><i>◆</i> <span>Charged today, not when it ships.</span></li>
+            <li><i>◆</i> <span>Refundable anytime before it ships.</span></li>
+            <li><i>◆</i> <span>$18 now; $24 after launch.</span></li>
+            <li><i>◆</i> <span>We currently ship within the United States.</span></li>
+          </ul>
+        </div>
+        <div class="note"><b>Why two steps?</b> The payment page only asks for your email and card — it has no address field. Rather than chase you for it later, we ask here. Use the <b>same email</b> on both pages so we can match your address to your order.</div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-row">
+    <div style="display:flex;flex-wrap:wrap;gap:16px">
+      <a href="/shop/">Product</a>
+      <a href="/blog/">Journal</a>
+      <a href="/founders/">Story</a>
+      <a href="/faq/">FAQ</a>
+      <a href="/shipping-returns/">Shipping &amp; Returns</a>
+      <a href="mailto:hello@savageskincare.com">Contact</a>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:16px">
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/cookies/">Cookies</a>
+    </div>
+  </div>
+  <div class="wrap" style="margin-top:14px;color:var(--mute)">© 2026 Savage Skin · Patent pending · Results vary. Not medical advice.</div>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  /* The real payment link. Every preorder button on the site points at THIS page;
+     this page is the only thing that points at the payment page. Keep it that way,
+     or people reach checkout without giving us an address. The amount here must
+     match the price shown on the rest of the site (see scripts/set-checkout.mjs). */
+  var PAY_URL = 'https://www.foundersweekends.com/api/pay?venture=1e3b7f39-179f-4624-beed-87c49d3fba01&amount=1800&name=Savage+Lips';
+
+  var KLAVIYO_KEY = 'XNMhJw';   // Klaviyo public key — same as every other form on the site
+  var LIST_ID     = 'Ts8XmZ';   // VIP list
+  var SHEET_ENDPOINT = '';      // optional Google Sheet mirror (see SHIPPING_ADDRESSES.md)
+
+  function qs(id){ return document.getElementById(id); }
+
+  // Let a campaign link prefill the email: /preorder/?email=...
+  try{
+    var pre = new URLSearchParams(location.search).get('email');
+    if(pre && qs('email')) qs('email').value = pre;
+  }catch(e){}
+
+  function e164(raw){
+    var d = (raw||'').replace(/[^0-9]/g,'');
+    if(!d) return '';
+    if(d.length === 10) return '+1' + d;
+    if(d.length === 11 && d.charAt(0) === '1') return '+' + d;
+    return (raw||'').charAt(0) === '+' ? '+' + d : '';
+  }
+
+  var form = qs('addrForm'), btn = qs('submitBtn'), err = qs('formErr');
+  var attempts = 0;
+
+  function fail(msg, allowSkip){
+    err.innerHTML = msg + (allowSkip ? ' <span class="again" id="skipBtn">Continue to payment anyway →</span>' : '');
+    err.classList.add('show');
+    btn.disabled = false;
+    btn.textContent = 'Continue to payment — $18 →';
+    var s = qs('skipBtn');
+    if(s) s.addEventListener('click', function(){ location.href = PAY_URL; });
+  }
+
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    err.classList.remove('show');
+
+    var name  = (qs('name').value  || '').trim();
+    var email = (qs('email').value || '').trim();
+    var addr1 = (qs('addr1').value || '').trim();
+    var addr2 = (qs('addr2').value || '').trim();
+    var city  = (qs('city').value  || '').trim();
+    var state = (qs('state').value || '').trim();
+    var zip   = (qs('zip').value   || '').trim();
+    var phoneRaw = (qs('phone').value || '').trim();
+
+    if(name.length < 2){ return fail('We need a name for the shipping label.'); }
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ return fail('That email doesn’t look right — mind checking it?'); }
+    if(addr1.length < 4){ return fail('Please add your street address.'); }
+    if(city.length < 2){ return fail('Please add your city.'); }
+    if(!state){ return fail('Please pick your state.'); }
+    if(!/^\d{5}(-\d{4})?$/.test(zip)){ return fail('That ZIP doesn’t look right — 5 digits, like 78701.'); }
+    if(!qs('agree').checked){ return fail('Please tick the box so we can ship to you and email you about the order.'); }
+
+    var phone = e164(phoneRaw);
+    if(phoneRaw && !phone){ return fail('That phone number doesn’t look right — use a 10-digit US number, or leave it blank.'); }
+
+    btn.disabled = true;
+    btn.textContent = 'Saving your address…';
+
+    var now = new Date().toISOString();
+    var oneLine = addr1 + (addr2 ? ', ' + addr2 : '') + ', ' + city + ', ' + state + ' ' + zip + ', US';
+
+    var attrs = {
+      email: email,
+      first_name: name.split(/\s+/)[0],
+      last_name: name.split(/\s+/).slice(1).join(' '),
+      location: {
+        address1: addr1,
+        address2: addr2,
+        city: city,
+        region: state,
+        zip: zip,
+        country: 'US'
+      },
+      properties: {
+        source: 'preorder-address',
+        preorder_intent: true,
+        preorder_product: 'Lip Pod',
+        preorder_price: 18,
+        shipping_name: name,
+        shipping_address: oneLine,
+        address_captured_at: now
+      }
+    };
+    if(phone) attrs.phone_number = phone;
+
+    function postKlaviyo(a){
+      return fetch('https://a.klaviyo.com/client/subscriptions/?company_id=' + KLAVIYO_KEY, {
+        method:'POST',
+        headers:{'Content-Type':'application/json','revision':'2024-10-15'},
+        body: JSON.stringify({ data:{ type:'subscription', attributes:{
+          profile:{ data:{ type:'profile', attributes: a } }
+        }, relationships:{ list:{ data:{ type:'list', id: LIST_ID } } } } })
+      }).then(function(r){ if(!r.ok && r.status !== 202) throw new Error(r.status); return r; });
+    }
+
+    function mirror(){
+      if(!SHEET_ENDPOINT) return;
+      try{
+        // Form-encoded, matching the homepage collector and the Apps Script in
+        // SHIPPING_ADDRESSES.md (which reads e.parameter).
+        fetch(SHEET_ENDPOINT, { method:'POST', mode:'no-cors',
+          headers:{'Content-Type':'application/x-www-form-urlencoded'},
+          body: new URLSearchParams({ ts:now, name:name, email:email, phone:phone||'',
+            address1:addr1, address2:addr2||'', city:city, state:state, zip:zip, country:'US',
+            source:'preorder-address' }).toString()
+        }).catch(function(){});
+      }catch(e){}
+    }
+
+    function go(){
+      mirror();
+      // Keep a local copy so a refresh doesn't make them retype it.
+      try{ localStorage.setItem('savage_ship_addr', JSON.stringify({ name:name, email:email, addr1:addr1, addr2:addr2, city:city, state:state, zip:zip, phone:phone, at:now })); }catch(e){}
+      try{ if(window.fbq) fbq('track','AddPaymentInfo',{content_name:'lip-pod-preorder',value:18,currency:'USD'}); }catch(e){}
+      btn.textContent = 'Taking you to payment…';
+      location.href = PAY_URL;
+    }
+
+    attempts++;
+    postKlaviyo(attrs).then(go).catch(function(){
+      // One retry without the phone number, in case that's what Klaviyo rejected.
+      var lean = JSON.parse(JSON.stringify(attrs)); delete lean.phone_number;
+      postKlaviyo(lean).then(go).catch(function(){
+        if(attempts < 2){
+          fail('We couldn’t save your address just then. Tap the button to try again.');
+        } else {
+          fail('Your address still isn’t saving — that’s on us, not you. Email it to <a href="mailto:hello@savageskincare.com?subject=My%20Lip%20Pod%20shipping%20address" style="color:var(--neon);text-decoration:underline">hello@savageskincare.com</a> and we\'ll add it by hand.', true);
+        }
+      });
+    });
+  });
+
+  // Repopulate if they come back to this page.
+  try{
+    var saved = JSON.parse(localStorage.getItem('savage_ship_addr') || 'null');
+    if(saved){
+      ['name','email','addr1','addr2','city','state','zip','phone'].forEach(function(k){
+        if(saved[k] && qs(k) && !qs(k).value) qs(k).value = saved[k];
+      });
+    }
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
