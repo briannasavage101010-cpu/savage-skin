@@ -56,7 +56,7 @@ const FILES = [
   'shop/index.html',
   'lp-teens.html',
   'lp-parents.html',
-  'products/glass-glow-lip-gloss/index.html',
+  'products/lip-pod/index.html',
 ];
 
 const forHtml = (url) => url.replace(/&/g, '&amp;');

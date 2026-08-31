@@ -23,7 +23,7 @@
 export const PRODUCTS = [
   {
     slug: 'lipgloss',
-    handle: 'glass-glow-lip-gloss',
+    handle: 'lip-pod-wearable-gloss-case',
     // Page URL is decoupled from the Shopify handle: the handle is a legacy name
     // ("Glass Glow Lip Gloss") that must not change or checkout breaks, but the
     // page lives at the product's real name. Old slug 302s here via a stub.
