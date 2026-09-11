@@ -29,9 +29,11 @@ function escapeHtml(s) {
     .replace(/"/g, '&quot;');
 }
 
+// NOTE: renderHero/renderDescription/renderHowToUse/renderRoutine/renderPage are
+// currently unreachable. They drove the four Drop 02 face SKUs, which were pulled
+// on 2026-09-11. The only PDP left — the Lip Pod — sets data-custom on #pdpRoot and
+// takes the renderCustomBottle() path below. Kept for when a second SKU lands.
 function renderHero(live) {
-  // These JS-rendered PDPs are all Drop 02 face products — not on sale yet.
-  // No buyable price, no add-to-cart: the hero routes to the Drop 01 list + vote.
   const title = live?.title || STATIC.name;
 
   return `
@@ -39,7 +41,7 @@ function renderHero(live) {
       <div class="container pdp-grid">
         <div class="pdp-visual reveal" style="--accent:${STATIC.accent || '#ff2d95'}">
           <div class="float-chip">/ ${STATIC.step}</div>
-          <div class="float-chip right">Drop 02</div>
+          <div class="float-chip right">Coming soon</div>
           <div class="grid-lines"></div>
           <div class="glow-orb"></div>
           ${productVisual(STATIC, STATIC_INDEX, { eager: true })}
@@ -53,11 +55,11 @@ function renderHero(live) {
           </div>
           <p class="pdp-tagline reveal d2">${escapeHtml(STATIC.desc)}</p>
           <div class="pdp-price-row reveal d2">
-            <div class="pdp-price"><span class="pdp-waitlist-note">Coming in Drop 02</span></div>
+            <div class="pdp-price"><span class="pdp-waitlist-note">Coming soon</span></div>
             <a class="btn btn-primary magnetic" href="/#join"><span>Join the list <span class="arr">→</span></span></a>
           </div>
           <div class="pdp-trust reveal d3">
-            <span>✓ Real actives, real percentages</span>
+            <span>✓ Clean, plant-based ingredients</span>
             <span>✓ Every ingredient in plain English</span>
             <span>✓ Cruelty-free</span>
           </div>
@@ -85,21 +87,10 @@ function renderDescription(live) {
 
 function renderHowToUse() {
   const usage = {
-    'clean-start-cleanser': [
-      ['AM + PM', 'Massage onto damp skin in circular motions. Rinse with lukewarm water.'],
-      ['Pair with', 'Prime Time Toner three nights a week.'],
-    ],
-    'prime-time-toner': [
-      ['3x weekly · PM only', 'Apply with cotton pad after cleansing. Avoid the eye area.'],
-      ['Always follow with', 'Dew Guard Moisturizer to seal in hydration.'],
-    ],
-    'power-fix-spot-corrector': [
-      ['AM · daily', '3–4 drops onto clean, dry skin before moisturizer.'],
-      ['Always layer', 'SPF 30+ during the day. Vitamin C + sun = your team.'],
-    ],
-    'dew-guard-moisturizer': [
-      ['AM + PM', 'A pearl-sized amount, pressed into skin as the last step.'],
-      ['Bonus', 'Use over Power Fix in the morning to lock in actives.'],
+    'lip-pod-wearable-gloss-case': [
+      ['Wear it', 'Clip the Pod to your phone strap, your bag or your wrist. That is the whole trick — it stays on you.'],
+      ['Use it', 'Swipe on whenever. The tube snaps back into the case magnetically, so the two halves stay together.'],
+      ['Refill it', 'When the tube runs out, swap it and keep the case. One refill ships in the box; extras come in $11 packs of three.'],
     ],
   };
   const steps = usage[HANDLE] || [['Apply', 'Use as part of your daily routine.']];
@@ -120,7 +111,7 @@ function renderHowToUse() {
             )
             .join('')}
         </div>
-        <p class="pdp-safety">New to active ingredients? Patch-test before first use, introduce one product at a time, and always wear a broad-spectrum SPF during the day — acids and vitamin C can increase sun sensitivity. Results vary. Not medical advice.</p>
+        <p class="pdp-safety">Patch-test before first use if you have sensitive skin or a known allergy, and stop if it irritates. The full ingredient list goes on the label in plain English. Results vary. Not medical advice.</p>
       </div>
     </section>
   `;
@@ -128,6 +119,9 @@ function renderHowToUse() {
 
 function renderRoutine() {
   const others = PRODUCTS.filter((p) => p.handle !== HANDLE);
+  // Drop 01 is a single product. With nothing to pair, skip the section entirely
+  // rather than rendering an empty "Pair it up." heading.
+  if (!others.length) return '';
   return `
     <section class="pdp-section">
       <div class="container">

@@ -52,12 +52,11 @@ const humanDate = (iso) =>
     year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC',
   });
 
+// Drop 01 is the Lip Pod and nothing else. The four face SKUs (Clean Start,
+// Prime Time, Power Fix, Dew Guard) were pulled on 2026-09-11 — their PDPs are
+// gone, so any product link in a post routes to the Pod or the shop instead.
 function productHref(text) {
   const t = text.toLowerCase();
-  if (t.includes('clean start')) return '/products/clean-start-cleanser/';
-  if (t.includes('dew guard')) return '/products/dew-guard-moisturizer/';
-  if (t.includes('prime time')) return '/products/prime-time-toner/';
-  if (t.includes('power fix')) return '/products/power-fix-spot-corrector/';
   if (t.includes('lip')) return '/products/lip-pod/';
   return '/shop/';
 }
@@ -164,27 +163,27 @@ const FONTS = `<link rel="preconnect" href="https://fonts.googleapis.com">
 const NAV = `<nav class="top">
   <a href="/" class="brand magnetic"><span class="mark"></span><span>Savage<em style="font-style:normal;color:var(--neon)">/</em>Skin</span></a>
   <div class="nav-links">
+    <a href="/" class="magnetic">Home</a>
     <a href="/shop/" class="magnetic">Product</a>
     <a href="/shop/#science" class="magnetic">Science</a>
     <a href="/blog/" class="magnetic" aria-current="page">Journal</a>
     <a href="/founders/" class="magnetic">Story</a>
     <a href="/faq/" class="magnetic">FAQ</a>
   </div>
-  <a href="/#join" class="nav-cart">Join the list</a>
+  <a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1" class="nav-cart">Preorder &mdash; $24</a>
 </nav>`;
 
 const FOOTER = `<footer>
   <div class="foot-grid">
     <div class="foot-brand">
       <h3>Savage<em style="font-style:normal;color:var(--neon)">/</em>Skin</h3>
-      <p>Clean, confident skincare — real actives, real percentages, in plain English on the label. Results vary. Not medical advice.</p>
+      <p>The Lip Pod — a wearable, refillable gloss. Clean, plant-based ingredients, every one in plain English on the label. Results vary. Not medical advice.</p>
     </div>
     <div class="foot"><h5>Products</h5><ul>
-      <li><a href="/products/clean-start-cleanser/">Clean Start Cleanser</a></li>
-      <li><a href="/products/prime-time-toner/">Prime Time Toner</a></li>
-      <li><a href="/products/power-fix-spot-corrector/">Power Fix Spot Corrector</a></li>
-      <li><a href="/products/dew-guard-moisturizer/">Dew Guard Moisturizer</a></li>
       <li><a href="/products/lip-pod/">Lip Pod</a></li>
+      <li><a href="/shop/#refills">Lip Pod Refills</a></li>
+      <li><a href="/shop/">Shop Drop 01</a></li>
+      <li><a href="/#join">Join the list</a></li>
     </ul></div>
     <div class="foot"><h5>Help</h5><ul><li><a href="/blog/">Journal</a></li><li><a href="/faq/">FAQ</a></li><li><a href="/shipping-returns/">Shipping &amp; Returns</a></li><li><a href="/founders/">Our Story</a></li><li><a href="/#join">Join the list</a></li></ul></div>
     <div class="foot"><h5>Connect</h5><ul><li><a href="https://www.instagram.com/savageskincare_4teens/" target="_blank" rel="noopener noreferrer">Instagram</a></li><li><a href="mailto:hello@savageskincare.com">hello@savageskincare.com</a></li></ul></div>
@@ -206,7 +205,7 @@ function postPage(p) {
   const url = `${SITE}/blog/${p.slug}/`;
   const cta = p.category === 'Lip Care'
     ? { href: '/products/lip-pod/', label: 'Shop Lip Pod' }
-    : { href: '/shop/', label: 'See the lineup' };
+    : { href: '/shop/', label: 'Meet the Lip Pod' };
 
   const articleLd = {
     '@context': 'https://schema.org',

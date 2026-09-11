@@ -100,6 +100,19 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
 .foot-row{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between}
 .foot-row a{color:var(--dim)}
 .foot-row a:hover{color:var(--neon)}
+
+/* Breadcrumb — same shape as the shared stylesheet, inlined because this page
+   is self-contained and doesn't load src/styles.css. */
+.pdp-crumb{padding:20px 0 0;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+.pdp-crumb .container{display:flex;align-items:center;gap:10px;flex-wrap:wrap;max-width:1100px;margin:0 auto;padding:0 24px}
+.pdp-crumb a{color:var(--dim);transition:color .2s}
+.pdp-crumb a:hover{color:var(--neon)}
+.pdp-crumb .sep{color:var(--mute)}
+.pdp-crumb .current{color:var(--ink)}
+
+/* Nav call to action — inlined because this page is self-contained. */
+.nav-cart{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--neon);
+  padding:10px 16px;border-radius:999px;white-space:nowrap;box-shadow:0 6px 18px rgba(255,45,149,.28)}
 </style>
 <script async src="https://static.klaviyo.com/onsite/js/XNMhJw/klaviyo.js"></script>
 </head>
@@ -110,12 +123,23 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
 <nav class="top" aria-label="Primary">
   <a href="/" class="brand" aria-label="Savage Skin home"><span class="mark" aria-hidden="true"></span><span>Savage<em>/</em>Skin</span></a>
   <div class="nav-links">
+    <a href="/">Home</a>
     <a href="/shop/">Product</a>
+    <a href="/shop/#science">Science</a>
     <a href="/blog/">Journal</a>
     <a href="/founders/">Story</a>
     <a href="/faq/">FAQ</a>
   </div>
+  <a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1" class="nav-cart">Preorder &mdash; $24</a>
 </nav>
+
+<div class="pdp-crumb">
+  <div class="container">
+    <a href="/">Home</a>
+    <span class="sep">/</span>
+    <span class="current">Welcome</span>
+  </div>
+</div>
 
 <!-- ================= HERO ================= -->
 <header class="hero">
@@ -151,7 +175,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
       <div class="rh">// Your preorder, in plain English</div>
       <ul>
         <li><i>✓</i><span><b>You can cancel any time before it ships</b> — full refund, any reason or none. Email <a href="mailto:hello@savageskincare.com" style="color:var(--neon);text-decoration:underline">hello@savageskincare.com</a> with your order number and we send it back. You will not have to argue with anyone.</span></li>
-        <li><i>✓</i><span><b>Early 2027 is an estimate, not a promise.</b> The Lip Pod is still being tooled. If the date slips we email everyone and you can take the refund instead of waiting.</span></li>
+        <li><i>✓</i><span><b>Early 2027 is an estimate, not a promise.</b> The Lip Pod is still in design. If the date slips we email everyone and you can take the refund instead of waiting.</span></li>
         <li><i>✓</i><span><b>The final Pod may differ from the renders.</b> If it changes in a way that matters, we'll tell you before we ship and you can cancel.</span></li>
         <li><i>✓</i><span>Full terms live on <a href="/shipping-returns/#preorder" style="color:var(--neon);text-decoration:underline">Shipping &amp; Returns</a>.</span></li>
       </ul>

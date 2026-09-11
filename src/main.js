@@ -22,13 +22,12 @@ async function renderProducts() {
   const grid = document.getElementById('productsGrid');
   if (!grid) return;
 
-  // The hero product (Lip Pod) leads the homepage hero section, so the grid
-  // below shows only the secondary skincare routine.
+  // The hero product (Lip Pod) leads the hero section, so the grid below shows
+  // only non-hero SKUs. Empty since the Drop 02 face line was pulled (2026-09-11).
   const routine = PRODUCTS.filter((p) => !p.hero);
 
-  // Drop 02 routine products are waitlist-only (not on sale yet). Cards render
-  // once from static data and route to the Drop 01 list — no Shopify fetch,
-  // no add-to-cart, no buyable prices.
+  // Non-hero cards are waitlist-only: they render once from static data and route
+  // to the list — no Shopify fetch, no add-to-cart, no buyable prices.
   grid.innerHTML = routine.map((p, i) => renderProductCard(p, i)).join('');
 }
 

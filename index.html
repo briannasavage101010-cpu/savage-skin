@@ -43,11 +43,13 @@ nav.top{position:sticky;top:0;z-index:100;display:flex;align-items:center;justif
 .brand{display:flex;align-items:center;gap:11px;font-family:var(--serif);font-weight:600;font-size:20px;letter-spacing:-.02em}
 .brand .mark{width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff,var(--neon) 60%,#2a0a18 100%);box-shadow:0 0 18px rgba(255,45,149,.5)}
 .brand em{font-style:normal;color:var(--neon)}
-.nav-links{display:flex;gap:30px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#2b2933;font-weight:500}
+.nav-links{display:flex;gap:clamp(16px,2vw,28px);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#2b2933;font-weight:500}
 .nav-links a{padding:6px 0;position:relative;transition:color .2s}
 .nav-links a:hover{color:var(--ink)}
 .nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:linear-gradient(90deg,var(--neon),var(--cyan));transition:width .35s}
 .nav-links a:hover::after{width:100%}
+.nav-links a[aria-current="page"]{color:var(--neon)}
+.nav-links a[aria-current="page"]::after{width:100%}
 .nav-cta{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--neon);
   padding:10px 16px;border-radius:999px;white-space:nowrap;box-shadow:0 6px 18px rgba(255,45,149,.28)}
 .nav-toggle{display:none;flex-direction:column;gap:5px;width:42px;height:42px;align-items:center;justify-content:center;border:1px solid var(--line2);border-radius:12px;background:transparent}
@@ -405,12 +407,14 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
 <nav class="top" id="nav" aria-label="Primary">
   <a href="/" class="brand" aria-label="Savage Skin home"><span class="mark" aria-hidden="true"></span><span>Savage<em>/</em>Skin</span></a>
   <div class="nav-links" id="navLinks">
+    <a href="/" aria-current="page">Home</a>
     <a href="/shop/">Product</a>
+    <a href="/shop/#science">Science</a>
     <a href="/blog/">Journal</a>
     <a href="/founders/">Story</a>
     <a href="/faq/">FAQ</a>
   </div>
-  <a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1" class="nav-cta">Preorder — $24</a>
+  <a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1" class="nav-cta">Preorder &mdash; $24</a>
   <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 
@@ -422,10 +426,10 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
       <h1>Tired of losing <em>your lip gloss?</em></h1>
       <p class="sub">You've replaced the same gloss three times this year. It's in a coat pocket, a car seat, the bottom of a bag you haven't used since April. <b style="color:var(--ink);font-weight:500">The Lip Pod doesn't get lost, because it doesn't live loose.</b> It clips to your phone, your bag, your wrist — the things you never put down.</p>
       <ul class="perks">
-        <li><span class="chk">✓</span> <b style="font-weight:600">$24 instead of $32</b> — $8 off, locked in forever</li>
-        <li><span class="chk">✓</span> <b style="font-weight:600">Free shipping — limited-time preorder offer</b> (normally $4.90), so you save <b style="font-weight:600">$12.90 in total</b></li>
-        <li><span class="chk">✓</span> <b style="font-weight:600">Refundable anytime</b> before it ships — no reason needed</li>
-        <li><span class="chk">✓</span> <b style="font-weight:600">Clean, plant-based gloss</b> inside — every ingredient in plain English</li>
+        <li><span class="chk">✓</span> <span><b style="font-weight:600">$24 instead of $32</b> — $8 off, locked in forever</span></li>
+        <li><span class="chk">✓</span> <span><b style="font-weight:600">Free shipping — limited-time preorder offer</b> (normally $4.90), so you save <b style="font-weight:600">$12.90 in total</b></span></li>
+        <li><span class="chk">✓</span> <span><b style="font-weight:600">Refundable anytime</b> before it ships — no reason needed</span></li>
+        <li><span class="chk">✓</span> <span><b style="font-weight:600">Clean, plant-based gloss</b> inside — every ingredient in plain English</span></li>
       </ul>
       <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-bottom:14px">
         <a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1" class="btn btn-primary"><span>Preorder the Lip Pod — $24 <span class="arr">→</span></span></a>
@@ -438,7 +442,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
       <div class="hero-art">
         <img src="/lip-pod/pod-hero.jpg" alt="Lip Pod concept render — the ivory case on a rose lanyard beside the Savage Lips gloss tube" width="1200" height="1200" fetchpriority="high">
       </div>
-      <p class="concept-cap">Pictured: the Lip Pod — concept render, not a finished product. The design is still being tooled, and the final Pod may differ. Read the <a href="#preorder" style="color:inherit;text-decoration:underline">preorder terms</a> before you buy.</p>
+      <p class="concept-cap">Pictured: the Lip Pod — concept render, not a finished product. The design is still being worked on, and the final Pod may differ. Read the <a href="#preorder" style="color:inherit;text-decoration:underline">preorder terms</a> before you buy.</p>
     </div>
   </div>
 </header>
@@ -591,7 +595,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
       <div class="offer" style="border-color:var(--line2);background:rgba(255,255,255,.5)">
         <div class="oh">// The honest part</div>
         <ul>
-          <li><span class="chk">&middot;</span><div><b>It's not made yet.</b> <span class="d">Every image here is a concept render. We're still tooling the design, so the final Pod may differ a little from what you see.</span></div></li>
+          <li><span class="chk">&middot;</span><div><b>It's not made yet.</b> <span class="d">Every image here is a concept render. The design is still being worked out with our designers, so the final Pod may differ a little from what you see.</span></div></li>
           <li><span class="chk">&middot;</span><div><b>You're charged today.</b> <span class="d">Not at shipping — today, when you order.</span></div></li>
           <li><span class="chk">&middot;</span><div><b>Shipping is estimated for early 2027.</b> <span class="d">It's an estimate, not a promise. If it moves, we'll email you, and you can take a full refund instead of waiting.</span></div></li>
         </ul>
@@ -781,7 +785,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
           </div>
           <div class="build-cap">
             <b>The drawing behind it</b>
-            <span>The same assembly as a technical drawing. Dimensions are still moving while we tool it.</span>
+            <span>The same assembly as a technical drawing. Dimensions are still moving while the design is being finalised.</span>
           </div>
         </div>
       </div>
@@ -916,7 +920,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
     <div class="faq">
       <details><summary>What's the difference between preordering and joining?</summary><p>Preordering means you pay $24 today and we send you a Lip Pod when the first run is made. Joining the community is free — no card, no order — and just puts you on the list. Preorder if you want the Pod and the $24 price. Join if you want to watch first and decide later.</p></details>
       <details><summary>Am I being charged?</summary><p>If you preorder, yes — $24 goes through today, on Shopify's checkout. If you only join the community, no, and there's no card field on that form at all.</p></details>
-      <details><summary>Is the Lip Pod actually real?</summary><p>It's real, and it's not finished. Every photo on this site is a concept render, the design is still being tooled, and the vote above genuinely decides parts of it. We'd rather show you the unfinished version than a fake finished one — which is also why the preorder terms say all of this out loud.</p></details>
+      <details><summary>Is the Lip Pod actually real?</summary><p>It's real, and it's not finished. Every photo on this site is a concept render, the design is still being worked on, and the vote above genuinely decides parts of it. We'd rather show you the unfinished version than a fake finished one — which is also why the preorder terms say all of this out loud.</p></details>
       <details><summary>When does it ship?</summary><p>The Pod is in design right now &mdash; we haven&rsquo;t locked in a manufacturer yet, that comes once the design is final. Our estimate is that shipping could begin in early 2027. That's an estimate, not a promise — it depends on tooling and the factory. If it slips, we email everyone who preordered and you can take a full refund instead of waiting.</p></details>
       <details><summary>What if I change my mind?</summary><p>Email <a href="mailto:hello@savageskincare.com">hello@savageskincare.com</a> any time before your Pod ships and we refund you in full. You don't have to give a reason and we won't try to talk you out of it.</p></details>
       <details><summary>Do I pay for shipping?</summary><p>Not right now. Shipping is <b>free on every preorder</b>, with no minimum spend &mdash; it's a limited-time offer that runs while preorders are open. Shipping normally costs $4.90. Put together with the $8 off the price, preordering today saves you <b>$12.90</b> against the $32-plus-shipping launch price.</p></details>

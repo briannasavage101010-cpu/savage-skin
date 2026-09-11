@@ -144,13 +144,19 @@ a phone, a bag, or a wrist. Positioning: **"skincare for your lips" + you stop l
   Standard line: **"nothing in it you'd be afraid to swallow."** This is NOT a literal edible / eat-it claim.
 - Plumper = cosmetic **"fuller look"** claims only. No sting / irritant / injury / active-drug claims.
 
-**Drop 02 (later / secondary) — the 4 face SKUs.** Do not lead with these; strong acids hold for Drop 02.
-- Clean Start Cleanser (50ml)
-- Prime Time Toner (100ml, 10% glycolic + lactic)
-- Power Fix Spot Corrector (30ml, 15% L-Ascorbic + Matrixyl) — airless packaging mandatory (vit C oxidizes)
-- Dew Guard Moisturizer (30ml, squalane + bakuchiol)
-- Recommended face pricing (not yet final): cleanser $20, toner $26, Power Fix $34, moisturizer $24; founders bundle ~$84.
-- Gap/risk: **no SPF in the lineup** yet, while marketing strong actives. Flagged.
+**Face skincare — SHELVED as of 2026-09-11. Do not put it back without Brianna saying so.**
+Brianna is not doing the skincare line for now, so the four face SKUs (Clean Start Cleanser,
+Prime Time Toner, Power Fix Spot Corrector, Dew Guard Moisturizer) were pulled off the site
+entirely: product pages deleted, Routine / Ritual / Science sections rewritten around the Pod,
+footer and nav links repointed. **Savage Skin is a one-product brand right now: the Lip Pod.**
+
+- Do NOT reintroduce those four names, their prices, or "Drop 02" framing in site copy, ads,
+  email or the Journal. Generic skincare advice in the Journal is fine — naming our own face
+  products is not, because they don't exist and aren't coming.
+- The Journal keeps its skincare-education posts (teen routine, teen acne, actives, reading a
+  label) as search traffic; they now give generic advice and their CTAs point at the Lip Pod.
+- No SPF in the lineup, and no face actives either — so no "real actives / real percentages /
+  clinical percentages" claims anywhere. That copy is retired sitewide.
 
 ## 3. Positioning
 
@@ -216,7 +222,7 @@ narrow "teen skin only" framing.
 
 ## 7. Per-product accent colors (used in code + packshots)
 
-- Cleanser `#1D9E75` · Toner `#7F77DD` · Power Fix corrector `#EF9F27` · Moisturizer `#378ADD` · Lip `#D4537E`
+- Lip Pod `#D4537E` (the only live SKU). Shelved face accents, kept for reference only: cleanser `#1D9E75`, toner `#7F77DD`, Power Fix `#EF9F27`, moisturizer `#378ADD`.
 
 ## 8. How to work with the founder
 

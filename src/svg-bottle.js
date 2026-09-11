@@ -117,8 +117,9 @@ export function productVisual(product, index, opts = {}) {
  * falls back to the static fields in PRODUCTS.
  */
 export function renderProductCard(product, index, _liveData = null) {
-  // Drop 02 routine products are NOT on sale yet. Cards are waitlist-only:
-  // no buyable price, no add-to-cart — they route to the Drop 01 list + vote.
+  // Waitlist-style card: no buyable price, no add-to-cart — it routes to the list.
+  // Currently unused: the four Drop 02 face SKUs were pulled on 2026-09-11 and the
+  // Lip Pod leads the hero, so nothing feeds this grid. Kept for the next drop.
   const detailUrl = product.url || `/products/${product.handle}/`;
   const stepNum = product.step.split(' ')[0];
   const stepLabel = product.step.split('·')[1]?.trim() || product.step;
@@ -126,7 +127,7 @@ export function renderProductCard(product, index, _liveData = null) {
     <div class="product-card reveal d${index + 1}" data-product="${product.slug}" data-handle="${product.handle}" style="--accent:${product.accent || '#ff2d95'}">
       <a class="product-visual" href="${detailUrl}" aria-label="View ${product.name}">
         <div class="float-chip"><span class="chip-step">${stepNum}</span> ${stepLabel}</div>
-        <div class="float-chip right tag-chip">Drop 02</div>
+        <div class="float-chip right tag-chip">Coming soon</div>
         <div class="grid-lines"></div>
         <div class="glow-orb"></div>
         ${productVisual(product, index)}
@@ -137,7 +138,7 @@ export function renderProductCard(product, index, _liveData = null) {
         <div class="product-desc">${product.desc}</div>
         <div class="product-foot">
           <div class="product-price-block">
-            <div class="product-waitlist-note">Coming in Drop 02</div>
+            <div class="product-waitlist-note">Coming soon</div>
           </div>
           <a class="product-buy" href="/#join">Join the list</a>
         </div>

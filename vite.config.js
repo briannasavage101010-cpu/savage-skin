@@ -20,10 +20,6 @@ export default defineConfig({
         // ingredients/ + src/ingredients-*.js. To bring it back: uncomment this line
         // and re-add the "Ingredients" nav link in each page + scripts/build-blog.mjs.
         // ingredients: resolve(__dirname, 'ingredients/index.html'),
-        cleanser: resolve(__dirname, 'products/clean-start-cleanser/index.html'),
-        toner: resolve(__dirname, 'products/prime-time-toner/index.html'),
-        serum: resolve(__dirname, 'products/power-fix-spot-corrector/index.html'),
-        moisturizer: resolve(__dirname, 'products/dew-guard-moisturizer/index.html'),
         lipgloss: resolve(__dirname, 'products/lip-pod/index.html'),
         // Old slug kept as a redirect stub so existing links and search results
         // still land on the Lip Pod PDP. The Shopify handle is unchanged.
