@@ -8,7 +8,7 @@
 <meta name="robots" content="noindex, follow" />
 <link rel="canonical" href="https://savageskincare.com/preorder/" />
 <meta property="og:title" content="Preorder the Lip Pod — Savage Skin" />
-<meta property="og:description" content="Tell us where it ships, then pay $18 on Stripe." />
+<meta property="og:description" content="Tell us where it ships, then pay $24 on Stripe." />
 <meta property="og:type" content="website" />
 <link rel="icon" type="image/png" href="/logo.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -192,7 +192,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
               <a href="/privacy/">Privacy Policy</a> &amp; <a href="/terms/">Terms</a>. Use my address to ship my order and email me about it.</span>
           </label>
 
-          <button type="submit" class="submit" id="submitBtn">Continue to payment — $18 →</button>
+          <button type="submit" class="submit" id="submitBtn">Continue to payment — $24 →</button>
           <p class="err" id="formErr" role="alert"></p>
           <small class="fine">Next page is a secure Stripe checkout. Nothing is charged until you finish there. <a href="/shipping-returns/">Shipping &amp; Returns</a></small>
         </form>
@@ -201,13 +201,13 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
       <aside>
         <div class="receipt">
           <div class="rh">Your order</div>
-          <div class="line"><span>Lip Pod — Wearable Gloss Case<br><small style="color:var(--mute)">Founder preorder</small></span> <b>$18</b></div>
+          <div class="line"><span>Lip Pod — Wearable Gloss Case<br><small style="color:var(--mute)">Founder preorder</small></span> <b>$24</b></div>
           <div class="line"><span>Shipping</span> <b>Free</b></div>
-          <div class="tot"><span>Total today</span><span>$18</span></div>
+          <div class="tot"><span>Total today</span><span>$24</span></div>
           <ul>
             <li><i>◆</i> <span>Charged today, not when it ships.</span></li>
             <li><i>◆</i> <span>Refundable anytime before it ships.</span></li>
-            <li><i>◆</i> <span>$18 now; $24 after launch.</span></li>
+            <li><i>◆</i> <span>$24 now; $32 after launch.</span></li>
             <li><i>◆</i> <span>We currently ship within the United States.</span></li>
           </ul>
         </div>
@@ -245,7 +245,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
      this page is the only thing that points at the payment page. Keep it that way,
      or people reach checkout without giving us an address. The amount here must
      match the price shown on the rest of the site (see scripts/set-checkout.mjs). */
-  var PAY_URL = 'https://www.foundersweekends.com/api/pay?venture=1e3b7f39-179f-4624-beed-87c49d3fba01&amount=1800&name=Savage+Lips';
+  var PAY_URL = 'https://www.foundersweekends.com/api/pay?venture=1e3b7f39-179f-4624-beed-87c49d3fba01&amount=2400&name=Savage+Lips';
 
   var KLAVIYO_KEY = 'XNMhJw';   // Klaviyo public key — same as every other form on the site
   var LIST_ID     = 'Ts8XmZ';   // VIP list
@@ -274,7 +274,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
     err.innerHTML = msg + (allowSkip ? ' <span class="again" id="skipBtn">Continue to payment anyway →</span>' : '');
     err.classList.add('show');
     btn.disabled = false;
-    btn.textContent = 'Continue to payment — $18 →';
+    btn.textContent = 'Continue to payment — $24 →';
     var s = qs('skipBtn');
     if(s) s.addEventListener('click', function(){ location.href = PAY_URL; });
   }

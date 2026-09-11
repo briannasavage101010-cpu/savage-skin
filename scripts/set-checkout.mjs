@@ -45,8 +45,8 @@ const COPY = [
     stripe: 'Secure checkout on Stripe',
   },
   {
-    shopify: "$18 goes through today, on Shopify's checkout.",
-    stripe: '$18 goes through today, on a secure Stripe checkout.',
+    shopify: "$24 goes through today, on Shopify's checkout.",
+    stripe: '$24 goes through today, on a secure Stripe checkout.',
   },
 ];
 
