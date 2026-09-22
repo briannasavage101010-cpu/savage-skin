@@ -23,6 +23,12 @@ let blocks = [];
 let activeIndex = -1;
 
 function buildSwitcher() {
+  // One-product brand (the Lip Pod): a single-tab switcher is noise, so hide it.
+  if (INGREDIENT_PRODUCTS.length < 2) {
+    switchEl.innerHTML = '';
+    switchEl.hidden = true;
+    return;
+  }
   switchEl.innerHTML = INGREDIENT_PRODUCTS.map(
     (p) => `<button type="button" class="ing-tab" role="tab" data-slug="${p.slug}" style="--accent:${p.accent}">${p.name}</button>`
   ).join('');
