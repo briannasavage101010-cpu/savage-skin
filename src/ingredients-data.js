@@ -31,8 +31,9 @@ export const INGREDIENT_PRODUCTS = [
     tagline: 'Step 01 · Lips',
     accent: '#ff7ec4',
     layers: [
+      { name: 'Shea Butter', pct: '', type: 'solid', color: '#efe4cf', effect: 'Plant-based butter that seals the surface and softens — the part you feel first.' },
       { name: 'Hyaluronic Acid', pct: '', type: 'liquid', color: '#d6e6ee', effect: 'Draws water into lips for a cushioned, hydrated plump — no sting, no irritation.' },
-      { name: 'Squalane', pct: '', type: 'liquid', color: '#ecdfc8', effect: 'A weightless emollient that seals everything in — the overnight-mask step, in one tube.' },
+      { name: 'Squalane', pct: '', type: 'liquid', color: '#ecdfc8', effect: 'A weightless emollient that seals moisture in without any greasy weight.' },
       { name: 'Glycerin', pct: '', type: 'liquid', color: '#d3e4ea', effect: 'A humectant that keeps lips soft and hydrated all day — your daily balm.' },
       { name: 'Vitamin E', pct: '', type: 'powder', color: '#e0a94f', effect: 'An antioxidant that conditions and softens lips against daily wear.' },
     ],

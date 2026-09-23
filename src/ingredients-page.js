@@ -52,7 +52,7 @@ function buildBlocks(product) {
           <div class="ing-card-num">/ ${String(i + 1).padStart(2, '0')}</div>
           <h2 class="ing-card-name">${l.name}${l.pct ? `<span class="ing-card-pct">${l.pct}</span>` : ''}</h2>
           <p class="ing-card-effect">${l.effect}</p>
-          <div class="ing-card-type">${l.type === 'powder' ? 'Powder / extract' : 'Active liquid'}</div>
+          <div class="ing-card-type">${l.type === 'powder' ? 'Powder / extract' : l.type === 'solid' ? 'Butter / solid' : 'Active liquid'}</div>
         </div>
       </section>`
     )
