@@ -9,6 +9,23 @@
 This file gives Claude Code the context it needs to be useful in this project. Read it (and the
 imported BRAND_BRAIN) before making changes.
 
+## Shipping — push automatically, don't ask
+
+Brianna does not want to be asked "should I push this?" / "commit it?" /
+"ready to deploy?". Standing approval, 2026-10-30: **make the change, build it,
+commit it, push it, then tell her what shipped.** She reviews on the live site
+and tells you what to change. Don't leave work staged and waiting, and don't ask
+a softened version of the same question.
+
+Deploying this repo is NOT a plain `git push` — live `main` is a locked `/tmp`
+worktree and history drifts, so deploy by cherry-picking onto `origin/main`.
+Re-diff right before committing: other sessions edit this repo at the same time,
+and stage + commit in one shell call or the index gets cleared under you.
+
+Still ask first only for the things a later edit can't undo: publishing the
+Shopify theme to live customers, emailing or texting a real Klaviyo list,
+touching live keys, spending money, or force-pushing.
+
 ## What this is
 
 A marketing site + storefront for **Savage Skin**, a Gen Z skincare brand (teens AND young adults).
