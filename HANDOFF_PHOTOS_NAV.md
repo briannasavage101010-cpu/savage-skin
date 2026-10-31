@@ -21,7 +21,7 @@ standardized the top nav across every page. **Nothing is committed yet** (per Br
 ### 1. Real product photos (replaces the generated SVG bottles)
 - Downloaded the five 1024×1024 white-background packshots to `public/images/products/`:
   `clean-start-cleanser.png`, `prime-time-toner.png`, `power-fix-spot-corrector.png`,
-  `dew-guard-moisturizer.png`, `lip-service.png`.
+  `dew-guard-moisturizer.png`, `lip-pod.png`.
 - **Single source of truth:** added `image` + `accent` to each product in `src/products.js`.
 - Added `productVisual(product, index, {eager})` in `src/svg-bottle.js`: returns an `<img>` when the
   product has an `image`, otherwise falls back to the old `svgBottle()`. Every render path now uses it:
