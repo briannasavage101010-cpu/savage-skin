@@ -16,8 +16,10 @@ the work.
   honest part: this is the drawing the designers work from.
 - **Motion verb:** *settle, like a pendant coming to rest on its chain.* Weighted ease-out, no
   bounce, no overshoot.
-- **First 3 seconds:** calm, expensive, a little cheeky. A huge serif question beside the Pod
-  hanging off a phone.
+- **First 3 seconds:** a poster, not a template. The question is set edge to edge like the
+  footer wordmark, the photo of the Pod hanging off a phone stands on the baseline of
+  "lip gloss?", and the question mark swings on its hook and comes to rest (the motion verb,
+  in type). Bold first, then calm.
 
 ## Palette (sampled from the renders, contrast computed)
 
@@ -59,9 +61,11 @@ No gradients, no glows, no glass blur, no tinted-grey shadows.
 ## Layout (a different family per section, one 12-column grid, 4/8/16/24/40/64/104 px spacing)
 
 ```
-HERO          | huge question, clean line,    |  phone + Pod photo,      |
-(split)       | CTA, one text link, trust row |  full height, bleeds off |
-              | "What is the Lip Pod?" answer |                          |
+HERO          "Tired of losing your" (1/3 size) / "lip gloss?" set to the full column width
+(poster)      clean line + CTA + link | phone + Pod photo in front of the words, top edge on | trust row as
+              (cols 1-3)              | their baseline, g's tail tucked behind it (4-9)     | ruled list (10-12)
+              Phones: the same two lines edge to edge, the photo full bleed under them, then the copy.
+DEFINE        "What is the Lip Pod?" label | the quotable definition, set large
 PROBLEM       H2 + answer (sticky) | four moments as a typographic 2x2, no cards, no numbers; punchline
 HOW IT WORKS  H2 + answer, then the sticky stage: drawing -> render wipe | three question answers scroll
 INGREDIENTS   specimen list (name / one plain line) | gloss macro render + the leave-out list
@@ -104,7 +108,24 @@ Changed during the build (measured, not guessed):
   simulated mobile LCP from 1.8 s to 2.7 s; without it CLS stays 0 thanks to the metric-matched
   fallback faces.
 - The "What is the Lip Pod?" answer moved into the hero's lower left, where the old layout left
-  a dead gap. It is the first thing under the fold on phones.
+  a dead gap. It is the first thing under the fold on phones. (Later moved to its own band under
+  the hero, see the layout above.)
+
+Changed after Brianna's review, 2026-11-18 ("plain and basic in the front, with very basic text"):
+- The split hero (copy left, photo right) was the template look. It became a poster built from
+  the page's own strongest move, the edge-to-edge footer wordmark: "lip gloss?" at the full column
+  width (29.6cqi in Boska, capped by screen height on short laptops), "Tired of losing your" at a
+  third of that, and the photo standing on the baseline in front of the words. Same fonts, same
+  colours, no new effects.
+- Phones now get the Pod in the first screen: the two lines run edge to edge, the photo bleeds
+  full width right under them, and the button sits just below.
+- Motion added: the question mark swings on its hook after the lines rise and settles (CSS, once);
+  it swings again when the pointer comes onto the headline (desktop); on scroll the words lag a
+  little, so the photo slides up over them. All off under reduced motion.
+- The trust row is a ruled list (a spec sheet) instead of dotted words: a column at the right on
+  wide screens, one strip under the photo on small laptops, two columns on phones.
+- Measured after: Lighthouse mobile 99/100/100/100 with LCP 1.8 s (unchanged), desktop 100 x 4,
+  CLS 0, axe clean, all 25 integrity checks and 24 structured-data checks pass.
 
 ## Honesty rules this build follows
 

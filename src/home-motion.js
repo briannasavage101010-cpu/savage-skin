@@ -42,6 +42,17 @@ mm.add(
       });
     }
 
+    // Hero: the giant question lags a little behind the page as you leave it, so
+    // the photo (which stands in front of the words) slides up over them.
+    const heroTitle = document.querySelector('.hero-title');
+    if (heroTitle) {
+      gsap.to(heroTitle, {
+        yPercent: wide ? 14 : 9,
+        ease: 'none',
+        scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true },
+      });
+    }
+
     // Signature: the design drawing develops into the concept render.
     const stage = document.getElementById('stage');
     if (stage) {
@@ -151,6 +162,30 @@ mm.add(
       gsap.ticker.remove(tick);
       lenis.destroy();
     });
+
+    // Hero: the question mark swings on its hook again when the pointer comes onto
+    // the headline, and settles. (The load swing is CSS on the inner span; this
+    // turns the outer one, so the two never fight over the same transform.)
+    const q = document.querySelector('.t-key .q');
+    const title = document.querySelector('.hero-title');
+    if (q && title) {
+      let swing = null;
+      const onEnter = () => {
+        if (swing && swing.isActive()) return;
+        swing = gsap.timeline({ defaults: { ease: 'sine.inOut' } })
+          .to(q, { rotation: 7, duration: 0.32 })
+          .to(q, { rotation: -4.4, duration: 0.5 })
+          .to(q, { rotation: 2.4, duration: 0.46 })
+          .to(q, { rotation: -1, duration: 0.42 })
+          .to(q, { rotation: 0, duration: 0.4 });
+      };
+      title.addEventListener('pointerenter', onEnter);
+      cleanups.push(() => {
+        title.removeEventListener('pointerenter', onEnter);
+        if (swing) swing.kill();
+        gsap.set(q, { clearProps: 'transform' });
+      });
+    }
 
     // Hero: a slight float under the pointer.
     if (wide) {
