@@ -21,8 +21,8 @@
 <meta name="twitter:description" content="Clean, plant-based gloss in a refillable case that clips to your phone, bag or wrist. Preorder the founder run for $24." />
 <meta name="twitter:image" content="https://savageskincare.com/og/lip-pod-clean-lip-gloss-share.jpg" />
 <meta name="twitter:image:alt" content="Concept render of the Lip Pod clipped to a phone, beside the words Tired of losing your lip gloss?" />
-<link rel="icon" type="image/png" href="/logo.png" />
-<link rel="apple-touch-icon" href="/logo.png" />
+<link rel="icon" type="image/png" sizes="64x64" href="/icons/favicon-64.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon-180.png" />
 <link rel="preload" as="image" type="image/avif" fetchpriority="high"
   imagesrcset="/images/home/lip-pod-clipped-to-phone-concept-render-560.avif 560w, /images/home/lip-pod-clipped-to-phone-concept-render-800.avif 800w, /images/home/lip-pod-clipped-to-phone-concept-render-1100.avif 1100w"
   imagesizes="(min-width: 900px) 54vw, 100vw" />
@@ -152,12 +152,16 @@ p,li{text-wrap:pretty}
 .nav-open .nav-toggle i::after{transform:translateY(-4.25px) rotate(-45deg)}
 
 /* ===================== hero ===================== */
-.hero{position:relative;display:grid;grid-template-columns:minmax(0,46fr) minmax(0,54fr);grid-template-rows:1fr auto;
-  grid-template-areas:"copy media" "def media";min-height:calc(100svh - var(--head-h));max-height:1040px}
-.hero-copy{grid-area:copy;container-type:inline-size;padding:clamp(24px,5vh,60px) var(--s5) var(--s4) var(--gutter)}
-.hero-def{grid-area:def;padding:0 var(--s5) clamp(24px,4.5vh,48px) var(--gutter);max-width:40rem}
-.hero-def h2{margin-bottom:var(--s2)}
-.hero-def p{font-size:var(--t-body);line-height:1.5;color:var(--garnet);max-width:30em}
+.hero{position:relative;display:grid;grid-template-columns:minmax(0,46fr) minmax(0,54fr);grid-template-areas:"copy media";
+  min-height:calc(100svh - var(--head-h));max-height:1040px}
+/* the hero copy starts on the same left edge as the nav and every .wrap section */
+.hero-copy{grid-area:copy;container-type:inline-size;display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(24px,5vh,60px) var(--s5) clamp(24px,5vh,60px) max(var(--gutter),calc((100vw - 1360px) / 2 + var(--gutter)))}
+.define{padding:clamp(44px,5.5vw,80px) 0;border-bottom:1px solid var(--line)}
+.define-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--s3) var(--s4);align-items:baseline}
+.define h2{grid-column:1 / span 3}
+.define-answer{grid-column:4 / span 9;font-family:var(--f-display);font-weight:500;font-size:clamp(1.6rem,1.05rem + 1.7vw,2.7rem);
+  line-height:1.15;letter-spacing:-.012em;max-width:30em}
 .hero-title{font-family:var(--f-display);font-weight:500;font-size:clamp(3.4rem,20.5cqi,8.2rem);line-height:.92;letter-spacing:-.03em;margin-left:-.04em}
 .hero-title .line{display:block;overflow:hidden;padding-bottom:.1em;margin-bottom:-.1em}
 .hero-title .line>span{display:block}
@@ -176,7 +180,6 @@ p,li{text-wrap:pretty}
 @media (min-width:901px) and (max-height:820px){
   .hero-title{font-size:clamp(3.2rem,min(20.5cqi,11.7vh),8.2rem)}
   .hero-lede{margin-top:var(--s3)}
-  .hero-def p{font-size:1rem}
 }
 /* hero intro: one orchestrated load (CSS, runs before any JS) */
 @media (prefers-reduced-motion:no-preference){
@@ -185,7 +188,7 @@ p,li{text-wrap:pretty}
   .hero-title .line:nth-child(3)>span{animation-delay:.14s}
   .hero-lede,.hero-actions{animation:riseIn .9s var(--ease) both;animation-delay:.3s}
   .hero-actions{animation-delay:.38s}
-  .trust,.hero-def{animation:riseIn .9s var(--ease) both;animation-delay:.5s}
+  .trust{animation:riseIn .9s var(--ease) both;animation-delay:.5s}
   /* No load animation on the hero photo: it is the LCP element, and a 1.7s
      settle on it held the LCP paint back by 1.7s on mobile. It moves on scroll. */
 }
@@ -210,7 +213,7 @@ p,li{text-wrap:pretty}
 .how-head{grid-column:1 / span 6;grid-row:1;margin-bottom:var(--s4)}
 .how-head .answer{margin-top:var(--s4)}
 .stage{grid-column:1 / span 6;grid-row:2;align-self:start;position:sticky;top:calc(var(--head-h) + 20px)}
-.stage-frame{position:relative;max-width:100%;aspect-ratio:885 / 1100;max-height:calc(100svh - var(--head-h) - 150px);margin-inline:auto}
+.stage-frame{position:relative;max-width:100%;aspect-ratio:885 / 1100;max-height:calc(100svh - var(--head-h) - 210px);margin-inline:auto}
 .stage-frame picture{position:absolute;inset:0}
 .stage-frame img{width:100%;height:100%;object-fit:contain;
   -webkit-mask-image:linear-gradient(to right,transparent,#000 7%,#000 93%,transparent),linear-gradient(to bottom,transparent,#000 4%,#000 96%,transparent);
@@ -219,9 +222,9 @@ p,li{text-wrap:pretty}
 .stage figcaption{display:flex;gap:var(--s3);align-items:flex-start;margin-top:var(--s3);font-size:var(--t-small);color:var(--cocoa);max-width:34em;margin-inline:auto}
 .stage figcaption .tag{position:static;flex:none;background:var(--porcelain)}
 .how-steps{grid-column:8 / span 5;grid-row:1 / span 2;display:flex;flex-direction:column;padding-top:.6em}
-.step{min-height:34svh;display:flex;flex-direction:column;justify-content:center;padding:var(--s4) 0}
-.step:first-child{min-height:26svh;justify-content:flex-start;padding-top:var(--s3)}
-.step:last-child{min-height:30svh}
+.step{min-height:40svh;display:flex;flex-direction:column;justify-content:center;padding:var(--s4) 0}
+.step:first-child{min-height:30svh;justify-content:flex-start;padding-top:var(--s3)}
+.step:last-child{min-height:44svh}
 .step p{margin-top:var(--s3);color:var(--cocoa);max-width:30em}
 .step .h3{max-width:12em}
 
@@ -247,7 +250,9 @@ p,li{text-wrap:pretty}
 .leave li{font-family:var(--f-display);font-weight:500;font-size:clamp(1.55rem,1.15rem + 1.1vw,2.3rem);line-height:1.12;letter-spacing:-.012em;color:var(--garnet)}
 .leave li::before{content:"No ";color:var(--rose-ink)}
 .leave p{margin-top:var(--s3);color:var(--cocoa)}
-.clean-foot{grid-column:1 / -1;display:flex;flex-wrap:wrap;gap:var(--s2) var(--s5);margin-top:var(--s4);color:var(--cocoa);font-size:var(--t-ui)}
+.clean-foot{grid-column:1 / -1;margin-top:var(--s4);color:var(--cocoa);font-size:var(--t-ui)}
+.clean-foot .more{margin-top:var(--s2);line-height:2}
+.clean-foot .more .link{margin-right:1.4em}
 
 /* ===================== founder + status ===================== */
 .founder{padding:var(--section) 0}
@@ -297,6 +302,7 @@ p,li{text-wrap:pretty}
 .wear{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s4)}
 .wear-opt{position:relative;display:block;text-align:left;color:var(--garnet)}
 .wear-opt .ph{position:relative;display:block;overflow:hidden;aspect-ratio:4 / 5;background:#e9dbd1}
+.wear-opt .ph picture{position:absolute;inset:0}
 .wear-opt img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
 .wear-opt:hover img{transform:scale(1.035)}
 .wear-opt .ring{position:absolute;inset:0;box-shadow:inset 0 0 0 0 var(--garnet);transition:box-shadow .3s var(--ease);z-index:2;pointer-events:none}
@@ -308,7 +314,7 @@ p,li{text-wrap:pretty}
 .wear-opt[aria-pressed="true"] .pick{background:var(--garnet);border-color:var(--garnet);color:var(--porcelain)}
 .wear-opt .ds{display:block;margin-top:6px;color:var(--cocoa);font-size:var(--t-ui);max-width:24em}
 .flavors{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:1fr;gap:var(--s3)}
-.flavor{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:var(--s4);min-height:132px;padding:var(--s4);text-align:left;
+.flavor{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:var(--s3);min-height:104px;padding:var(--s3) var(--s4);text-align:left;
   border:1px solid var(--line-ui);border-radius:2px;background:var(--sweep);overflow:hidden;isolation:isolate;transition:border-color .25s var(--ease)}
 .flavor::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--gloss);transform:translateY(101%);transition:transform .45s var(--ease)}
 .flavor:hover{border-color:var(--garnet)}
@@ -368,7 +374,8 @@ p,li{text-wrap:pretty}
 .facts dt,.facts .k{font-weight:600}
 .facts .v{color:var(--cocoa)}
 .offer-ctas{display:flex;flex-wrap:wrap;gap:var(--s3);margin-top:var(--s5)}
-.offer-fine{margin-top:var(--s4);font-size:var(--t-ui);color:var(--cocoa);display:flex;flex-wrap:wrap;gap:6px var(--s4)}
+.offer-fine{margin-top:var(--s3);font-size:var(--t-ui);color:var(--cocoa)}
+.offer-ctas+.offer-fine{margin-top:var(--s4)}
 
 /* ===================== faq ===================== */
 .faq-sec{padding:var(--section) 0}
@@ -377,15 +384,15 @@ p,li{text-wrap:pretty}
 .faq-side .body{margin-top:var(--s4)}
 .faq{grid-column:6 / span 7;border-top:1px solid var(--line-strong)}
 .faq details{border-bottom:1px solid var(--line-strong)}
-.faq summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:var(--s4);padding:18px 0;cursor:pointer;
-  font-family:var(--f-display);font-weight:500;font-size:clamp(1.25rem,1.05rem + .55vw,1.6rem);line-height:1.2;letter-spacing:-.008em;transition:color .2s}
+.faq summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:var(--s4);padding:18px 14px;cursor:pointer;
+  background:linear-gradient(var(--gloss),var(--gloss)) 0 100%/100% 0 no-repeat;transition:background-size .45s var(--ease);
+  font-family:var(--f-display);font-weight:500;font-size:clamp(1.25rem,1.05rem + .55vw,1.6rem);line-height:1.2;letter-spacing:-.008em}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary::after{content:"";flex:none;width:14px;height:14px;background:
   linear-gradient(currentColor,currentColor) center/14px 1.5px no-repeat,linear-gradient(currentColor,currentColor) center/1.5px 14px no-repeat;transition:transform .4s var(--ease)}
 .faq details[open] summary::after{transform:rotate(45deg)}
-.faq details:not([open]) summary:hover::after{transform:rotate(90deg)}
-.faq summary:hover{color:var(--rose-ink)}
-.faq details p{padding:0 0 24px;max-width:40em;color:var(--cocoa)}
+.faq summary:hover,.faq summary:focus-visible{background-size:100% 100%}
+.faq details p{padding:0 14px 24px;max-width:40em;color:var(--cocoa)}
 .faq details p a{color:var(--garnet)}
 .faq details p b{color:var(--garnet);font-weight:600}
 .faq details[open] p{animation:riseIn .45s var(--ease) both}
@@ -465,8 +472,9 @@ body .cookie-btn-ghost:hover{background:var(--sweep)}
   .hero-copy .trust{margin-top:var(--s4)}
   .hero-media{aspect-ratio:1 / 1;margin-top:var(--s5)}
   .hero{display:flex;flex-direction:column}
-  .hero-def{padding:var(--s5) var(--gutter) 0}
+  .define h2,.define-answer{grid-column:1 / -1}
   .problem-head{grid-column:1 / -1;position:static}
+  .problem-grid{row-gap:0}
   .problem-body{grid-column:1 / -1;margin-top:var(--s5)}
   .punch{margin-top:var(--s5)}
   .how-head,.stage,.how-steps{grid-column:1 / -1;grid-row:auto}
@@ -474,7 +482,7 @@ body .cookie-btn-ghost:hover{background:var(--sweep)}
   .founder-col{position:static}
   .stage{position:relative;top:0}
   .stage-frame{max-height:none;max-width:520px}
-  .step,.step:first-child{min-height:0;padding:var(--s5) 0 0}
+  .step,.step:first-child,.step:last-child{min-height:0;justify-content:flex-start;padding:var(--s5) 0 0}
   .clean-main,.clean-side{grid-column:1 / -1}
   .clean-side{margin-top:var(--s5);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s4);align-items:end}
   .macro{aspect-ratio:4 / 5}
@@ -710,9 +718,13 @@ body .cookie-btn-ghost:hover{background:var(--sweep)}
     </div>
     <figcaption class="tag">Concept render</figcaption>
   </figure>
-  <div class="hero-def">
+</section>
+
+<!-- ================= WHAT IS IT (quotable definition, right under the hero) ================= -->
+<section class="define" aria-labelledby="what-title">
+  <div class="wrap define-grid">
     <h2 class="q-label" id="what-title">What is the Lip Pod?</h2>
-    <p>The Lip Pod by Savage Skincare is a clean, plant-based lip gloss in a refillable case that clips to your phone, bag or wrist so you never lose it.</p>
+    <p class="define-answer">The Lip Pod by Savage Skincare is a clean, plant-based lip gloss in a refillable case that clips to your phone, bag or wrist so you never lose it.</p>
   </div>
 </section>
 
@@ -788,7 +800,7 @@ body .cookie-btn-ghost:hover{background:var(--sweep)}
     <div class="clean-main">
       <div class="clean-head">
         <h2 class="display" id="clean-title">Is the Lip Pod gloss clean?</h2>
-        <p class="answer">It’s made to be: a plant-based gloss with no fragrance and no parabens, built from ingredients you can pronounce and listed in plain English.</p>
+        <p class="answer">It’s made to be: a plant-based gloss built from ingredients you can pronounce, every one of them listed in plain English.</p>
         <p class="clean-standard"><b>Nothing in it you’d be afraid to swallow.</b> You lick your lips, you eat, you talk, and it’s on you all day. So what goes in it isn’t an afterthought.</p>
       </div>
       <div class="specimen">
@@ -826,7 +838,10 @@ body .cookie-btn-ghost:hover{background:var(--sweep)}
         <p>And no fear list. We tell you what’s in it instead.</p>
       </div>
     </div>
-    <p class="clean-foot"><span>Sourced organic wherever we can get it.</span> <span>Cruelty-free, always.</span> <span>The full list goes on the label, not in the fine print.</span> <a class="link" href="/shop/#science">See what each ingredient does on the Science page</a> <a class="link" href="/blog/">Read lip care guides in the Journal</a></p>
+    <div class="clean-foot">
+      <p>Sourced organic wherever we can get it. Cruelty-free, always. The full list goes on the label, not in the fine print.</p>
+      <p class="more"><a class="link" href="/shop/#science">See what each ingredient does on the Science page</a> <a class="link" href="/blog/">Read lip care guides in the Journal</a></p>
+    </div>
   </div>
 </section>
 
@@ -994,7 +1009,8 @@ body .cookie-btn-ghost:hover{background:var(--sweep)}
       <a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1" class="btn btn-primary" id="offerCta"><span>Preorder the Lip Pod — $24</span></a>
       <a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1,53831245955437:1" class="btn btn-outline"><span>Preorder Pod + 3 refills — $35</span></a>
     </div>
-    <p class="offer-fine"><a class="link" href="https://savageskincare-store.myshopify.com/cart/53831245955437:1">Or get refills on their own, $11</a> <span>Secure checkout on Shopify. Each link opens its own checkout.</span> <a class="link" href="#terms">Read the preorder terms</a></p>
+    <p class="offer-fine"><a class="link" href="https://savageskincare-store.myshopify.com/cart/53831245955437:1">Or get refills on their own, $11</a></p>
+    <p class="offer-fine">Secure checkout on Shopify. Each link opens its own checkout. <a class="link" href="#terms">Read the preorder terms</a></p>
   </div>
 </section>
 

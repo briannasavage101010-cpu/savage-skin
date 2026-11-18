@@ -72,19 +72,19 @@ function hoistCookieBar() {
 hoistCookieBar();
 new MutationObserver(hoistCookieBar).observe(document.body, { childList: true });
 
-/* ---------- motion layer: after first paint, only if motion is welcome ---------- */
+/* ---------- motion layer: on the visitor's first interaction, only if motion is welcome ----------
+   Everything the motion layer animates (reveals below the fold, scroll parallax,
+   the drawing-to-render wipe, the pointer float, smooth wheel scrolling) only
+   matters once someone scrolls, touches, types or moves the pointer, and the hero
+   intro is plain CSS. So the GSAP bundle waits for that first interaction and
+   never competes with the hero image for the first paint. */
 const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+const FIRST = ['scroll', 'wheel', 'pointermove', 'pointerdown', 'touchstart', 'keydown'];
 let motionStarted = false;
 function startMotion() {
   if (motionStarted || reduce.matches) return;
   motionStarted = true;
-  ['scroll', 'pointermove', 'touchstart', 'keydown'].forEach((ev) => window.removeEventListener(ev, startMotion));
+  FIRST.forEach((ev) => window.removeEventListener(ev, startMotion));
   import('./home-motion.js').catch(() => { /* motion is optional; the page is complete without it */ });
 }
-function scheduleMotion() {
-  ['scroll', 'pointermove', 'touchstart', 'keydown'].forEach((ev) => window.addEventListener(ev, startMotion, { passive: true, once: true }));
-  if ('requestIdleCallback' in window) requestIdleCallback(startMotion, { timeout: 2500 });
-  else setTimeout(startMotion, 1200);
-}
-if (document.readyState === 'complete') scheduleMotion();
-else window.addEventListener('load', scheduleMotion, { once: true });
+FIRST.forEach((ev) => window.addEventListener(ev, startMotion, { passive: true }));
