@@ -88,3 +88,17 @@ function startMotion() {
   import('./home-motion.js').catch(() => { /* motion is optional; the page is complete without it */ });
 }
 FIRST.forEach((ev) => window.addEventListener(ev, startMotion, { passive: true }));
+
+/* ---------- gloss on the headline (src/gloss.js) ----------
+   Loads on the first interaction, or a little after the page has finished
+   loading, whichever comes first: never while the hero image is still painting. */
+let glossStarted = false;
+function startGloss() {
+  if (glossStarted) return;
+  glossStarted = true;
+  FIRST.forEach((ev) => window.removeEventListener(ev, startGloss));
+  import('./gloss.js').catch(() => { /* the headline is complete without it */ });
+}
+FIRST.forEach((ev) => window.addEventListener(ev, startGloss, { passive: true }));
+if (document.readyState === 'complete') setTimeout(startGloss, 1800);
+else window.addEventListener('load', () => setTimeout(startGloss, 1800), { once: true });

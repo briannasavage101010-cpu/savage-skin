@@ -208,6 +208,20 @@ p,li{text-wrap:pretty}
   .trust{margin-top:var(--s4);grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--s4)}
   .trust li:last-child{grid-column:1 / -1}
 }
+/* gloss on the headline (src/gloss.js): the film is drawn on a canvas inside the h1, so it moves
+   with the words and stays under the photo. Only once the script has found WebGL does the
+   headline get the applicator cursor, lose text selection and pass sideways swipes to it. */
+.gloss-layer{position:absolute;left:0;top:0;width:100%;height:100%;z-index:1;pointer-events:none}
+.has-gloss .hero-title{-webkit-user-select:none;user-select:none;touch-action:pan-y pinch-zoom;
+  cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Ccircle cx='15' cy='15' r='10.5' fill='%23F0B5B4' fill-opacity='.6' stroke='%232A1519' stroke-width='1.5'/%3E%3C/svg%3E") 15 15,crosshair}
+.gloss-hint{grid-column:9 / -1;grid-row:1;justify-self:end;align-self:start;position:relative;z-index:2;max-width:17.5em;
+  margin-top:calc(var(--key) * var(--lead-r) * .16);text-align:right;font-size:.875rem;line-height:1.35;font-weight:500;color:var(--garnet);
+  opacity:0;transform:translateY(6px);transition:opacity .7s var(--ease),transform .7s var(--ease);pointer-events:none}
+.gloss-hint small{display:block;margin-top:5px;font-size:.75rem;font-weight:500;color:var(--cocoa)}
+.gloss-hint.on{opacity:1;transform:none}
+.gloss-hint .gh-touch{display:none}
+@media (hover:none){.gloss-hint .gh-mouse{display:none}.gloss-hint .gh-touch{display:inline}}
+@media (max-width:900px){.gloss-hint{display:none}}
 /* tablets: a wider crop, so the button still lands in the first screen */
 @media (min-width:601px) and (max-width:900px){
   .hero-media{aspect-ratio:3 / 2}

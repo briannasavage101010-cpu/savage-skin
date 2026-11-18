@@ -127,6 +127,27 @@ Changed after Brianna's review, 2026-11-18 ("plain and basic in the front, with 
 - Measured after: Lighthouse mobile 99/100/100/100 with LCP 1.8 s (unchanged), desktop 100 x 4,
   CLS 0, axe clean, all 25 integrity checks and 24 structured-data checks pass.
 
+Second review, same day ("some cool element ... that isn't just another basic movement"):
+- **Gloss on the headline** (`src/gloss.js`). The giant "lip gloss?" can be swatched like gloss on
+  skin: on desktop the cursor lays a gloss trail over the words (pressing lays it thicker), on
+  touch a sideways swipe does (an up-down swipe still scrolls, pinch-zoom still works). Once, after
+  the intro, a swatch swooshes up across "gloss" on its own and knocks the question mark, which
+  swings and settles. The film dries off a few seconds after you stop.
+- How it's made: a small height field on the CPU (each stroke stamps flat-topped bumps capped at one
+  thickness, so it reads as a film, not a blob), turned into slope + thickness each frame and lit in
+  one WebGL pass: sheer pink tint, a crisp edge, a soft shadow cast away from the light, and a
+  highlight from a long strip light that rides above and left of the cursor, so the shine runs
+  along a stroke and slides as you move. 9 KB, loads after the page (first interaction or 1.8 s
+  after load), idles at zero cost when nothing is wet or the hero is off screen. 60 fps measured on
+  desktop and on a phone profile with the CPU slowed 4x.
+- Rejected on the way: a swinging Pod you could fling (the best studio render has the strap at the
+  case's base, so hanging it from the top meant editing a product image); a straight swatch band
+  through the words (it read as crossing them out); a light directly over the film (a flat film
+  mirrored it and turned white).
+- Honesty: the hint says "Concept shade. The formula isn't final." Reduced motion: no automatic
+  swatch or flick, painting by hand still works. No WebGL: nothing is added and the headline
+  behaves exactly as before.
+
 ## Honesty rules this build follows
 
 - Prices, shipping, refund policy, ingredient claims, hello@savageskincare.com, checkout links,
