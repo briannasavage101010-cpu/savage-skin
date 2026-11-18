@@ -73,11 +73,11 @@ export function svgBottle(product, index) {
     </circle>
   </g>
   <rect x="62" y="180" width="76" height="78" rx="2" fill="rgba(10,10,18,0.65)" stroke="${cap}" stroke-width="0.4" opacity="0.95"/>
-  <text x="100" y="200" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6" fill="#f2f1ec" letter-spacing="1.5">SAVAGE / SKIN</text>
+  <text x="100" y="200" text-anchor="middle" font-family="'Schibsted Grotesk', sans-serif" font-size="6" font-weight="700" fill="#f2f1ec" letter-spacing="0.8">SAVAGE / SKIN</text>
   <line x1="68" y1="206" x2="132" y2="206" stroke="${cap}" stroke-width="0.4"/>
-  <text x="100" y="226" text-anchor="middle" font-family="Fraunces, serif" font-size="14" font-style="italic" font-weight="600" fill="${serumMain}">${headline}</text>
-  <text x="100" y="244" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="4.5" fill="#9a98a8" letter-spacing="1">${subtitle}</text>
-  <text x="100" y="254" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="4.5" fill="#9a98a8" letter-spacing="1">${sizeShort}</text>
+  <text x="100" y="226" text-anchor="middle" font-family="'Schibsted Grotesk', sans-serif" font-size="14" font-weight="800" fill="${serumMain}">${headline}</text>
+  <text x="100" y="244" text-anchor="middle" font-family="'Schibsted Grotesk', sans-serif" font-size="4.5" fill="#9a98a8" letter-spacing="1">${subtitle}</text>
+  <text x="100" y="254" text-anchor="middle" font-family="'Schibsted Grotesk', sans-serif" font-size="4.5" fill="#9a98a8" letter-spacing="1">${sizeShort}</text>
   <path d="M 50 110 Q 50 105 55 100 L 75 88 L 125 88 L 145 100 Q 150 105 150 110 L 150 280 Q 150 295 135 295 L 65 295 Q 50 295 50 280 Z" fill="url(#gradShine-${id})" opacity="0.6"/>
   <path d="M 52 115 L 52 280" stroke="rgba(255,255,255,0.25)" stroke-width="0.8" fill="none"/>
   <path d="M 148 115 L 148 280" stroke="rgba(0,0,0,0.4)" stroke-width="0.8" fill="none"/>

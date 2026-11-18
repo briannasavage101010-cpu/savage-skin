@@ -78,7 +78,9 @@ No framework. No TypeScript. No CSS framework. Pure vanilla. Keep it that way un
 - Short, clear, direct sentences. Honest. Confident.
 - **Do NOT** write: fear/disease language, "peer-reviewed", invented testimonials, soft influencer fluff
   ("luxurious self-care moment," "treat yourself"), or "teen skin only" framing.
-- Italics + serif (Fraunces) for emphasis words in headlines.
+- Type is one family, **Schibsted Grotesk** (headlines 800, body 400, labels 600 caps). Emphasis words
+  in headlines go pink via `<em>`, upright, never italic. Don't bring back Fraunces, Inter, JetBrains Mono,
+  italics, glow shadows, or "/ " / "// " label prefixes (changed 2026-11-18 to stop the site reading as AI-made).
 
 > Note: earlier versions of this file told you to ban "savage attitude" copy and to write "peer-reviewed /
 > designed for teen skin." That guidance is RETIRED — see BRAND_BRAIN.md §4.

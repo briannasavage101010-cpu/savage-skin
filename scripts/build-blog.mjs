@@ -158,7 +158,7 @@ function makeCover(title, category) {
 
 const FONTS = `<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">`;
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..900&display=swap" rel="stylesheet">`;
 
 const NAV = `<nav class="top">
   <a href="/" class="brand magnetic"><span class="mark"></span><span>Savage<em style="font-style:normal;color:var(--neon)">/</em>Skin</span></a>
@@ -300,7 +300,7 @@ ${NAV}
 <main>
   <article class="content-page blog-post">
     <div class="container content-narrow">
-      <div class="reveal"><div class="section-tag">/ ${esc(p.category)}</div></div>
+      <div class="reveal"><div class="section-tag">${esc(p.category)}</div></div>
       <h1 class="content-title reveal d1">${esc(p.title)}</h1>
       <div class="post-meta reveal d2">
         <span>By <strong>${AUTHOR}</strong>, Founder of Savage Skin</span>
@@ -408,7 +408,7 @@ ${NAV}
   <section class="content-page">
     <div class="container">
       <div class="blog-head content-narrow">
-        <div class="reveal"><div class="section-tag">/ The Journal</div></div>
+        <div class="reveal"><div class="section-tag">The Journal</div></div>
         <h1 class="content-title reveal d1">Skincare for your lips, <em>decoded.</em></h1>
         <p class="content-lead reveal d2">Honest, science-backed guides on lip care and teen skincare — what actually works, what's a waste, and how to do it without wrecking your skin.</p>
       </div>

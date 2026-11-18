@@ -13,7 +13,7 @@
 <link rel="icon" type="image/png" href="/logo.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..900&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#06060a; --bg2:#0c0b13; --neon:#ff2d95; --cyan:#00f0ff; --violet:#b026ff;
@@ -24,11 +24,11 @@
 html{scroll-behavior:smooth}
 body{
   background:var(--bg); color:var(--bone);
-  font-family:'Inter',system-ui,sans-serif; line-height:1.5;
+  font-family:'Schibsted Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; line-height:1.5;
   -webkit-font-smoothing:antialiased; overflow-x:hidden;
 }
-.serif{font-family:'Fraunces',Georgia,serif; font-style:italic}
-.mono{font-family:'JetBrains Mono',monospace}
+.serif{font-family:'Schibsted Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-style:normal}
+.mono{font-family:'Schibsted Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
 a{color:inherit}
 img{max-width:100%;display:block}
 .wrap{max-width:1120px;margin:0 auto;padding:0 22px}
@@ -43,16 +43,16 @@ img{max-width:100%;display:block}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;max-width:1120px;margin:0 auto}
 .brand{font-weight:700;letter-spacing:-.02em;font-size:19px;text-decoration:none}
 .brand em{font-style:normal;color:var(--neon)}
-.nav-pill{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;color:var(--neon);
+.nav-pill{font-family:'Schibsted Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:.048em;color:var(--neon);
   border:1px solid rgba(255,45,149,.4);border-radius:30px;padding:6px 12px}
 
 /* hero */
 .hero{padding:30px 0 50px}
 .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
-.pill{display:inline-flex;align-items:center;gap:9px;font-family:'JetBrains Mono',monospace;
-  font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--bone);
-  background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:30px;padding:8px 14px}
-.dot{width:7px;height:7px;border-radius:50%;background:var(--neon);box-shadow:0 0 10px var(--neon);animation:pulse 1.8s infinite}
+.pill{display:inline-flex;align-items:center;gap:9px;font-family:'Schibsted Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--bone);
+  background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:30px;padding:8px 14px;font-weight:600}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--neon);box-shadow:none;animation:pulse 1.8s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
 h1{font-size:clamp(44px,7vw,82px);line-height:.96;letter-spacing:-.03em;font-weight:700;margin:20px 0 18px}
 h1 .l2{display:block;color:var(--neon)}
@@ -60,32 +60,32 @@ h1 .l2{display:block;color:var(--neon)}
 .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}
 .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15.5px;text-decoration:none;
   padding:15px 26px;border-radius:40px;border:1px solid transparent;cursor:pointer;transition:.2s;white-space:nowrap}
-.btn-primary{background:var(--neon);color:#0a0a0f;box-shadow:0 8px 30px rgba(255,45,149,.4)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(255,45,149,.55)}
+.btn-primary{background:var(--neon);color:#0a0a0f;box-shadow:none}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:none}
 .btn-ghost{background:transparent;color:var(--bone);border-color:var(--line)}
 .btn-ghost:hover{border-color:var(--neon);color:var(--neon)}
-.scarce{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--muted);letter-spacing:.04em}
+.scarce{font-family:'Schibsted Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:12.5px;color:var(--muted);letter-spacing:0}
 .scarce b{color:var(--bone)}
 .bar{height:6px;width:200px;max-width:60vw;background:rgba(255,255,255,.08);border-radius:6px;overflow:hidden;margin-top:9px}
 .bar i{display:block;height:100%;width:84%;background:linear-gradient(90deg,var(--neon),var(--violet))}
 .hero-art{position:relative}
-.hero-art img{height:auto;filter:drop-shadow(0 30px 60px rgba(255,45,149,.35));margin:0 auto;animation:float 6s ease-in-out infinite}
+.hero-art img{height:auto;filter:drop-shadow(0 22px 48px rgba(0,0,0,.45));margin:0 auto;animation:float 6s ease-in-out infinite}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
 .price-chip{position:absolute;right:6%;bottom:8%;background:rgba(12,11,19,.85);backdrop-filter:blur(8px);
   border:1px solid var(--line);border-radius:16px;padding:14px 18px;text-align:center}
 .price-chip .now{font-size:30px;font-weight:700;color:var(--neon);line-height:1}
 .price-chip .was{font-size:13px;color:var(--muted);text-decoration:line-through}
-.price-chip .lbl{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;color:var(--muted);margin-top:4px}
+.price-chip .lbl{font-family:'Schibsted Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:.048em;color:var(--muted);margin-top:4px}
 
 /* strip */
 .strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;margin:8px 0 0}
-.strip .wrap{display:flex;gap:26px;flex-wrap:wrap;justify-content:center;font-family:'JetBrains Mono',monospace;
-  font-size:12px;letter-spacing:.06em;color:var(--muted)}
+.strip .wrap{display:flex;gap:26px;flex-wrap:wrap;justify-content:center;font-family:'Schibsted Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  font-size:12px;letter-spacing:0;color:var(--muted)}
 .strip b{color:var(--bone);font-weight:500}
 
 /* sections */
 section{padding:64px 0}
-.tag{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--neon)}
+.tag{font-family:'Schibsted Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--neon);font-weight:600}
 h2{font-size:clamp(30px,4.4vw,50px);line-height:1.02;letter-spacing:-.02em;font-weight:700;margin:12px 0 16px}
 .lead{font-size:17px;color:#cfced8;max-width:34em}
 
@@ -93,7 +93,7 @@ h2{font-size:clamp(30px,4.4vw,50px);line-height:1.02;letter-spacing:-.02em;font-
 .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));
   border:1px solid var(--line);border-radius:18px;padding:26px 22px;transition:.25s}
 .card:hover{border-color:rgba(255,45,149,.5);transform:translateY(-4px)}
-.card .n{font-family:'JetBrains Mono',monospace;color:var(--neon);font-size:13px;margin-bottom:14px}
+.card .n{font-family:'Schibsted Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:var(--neon);font-size:13px;margin-bottom:14px}
 .card h3{font-size:20px;margin-bottom:8px;letter-spacing:-.01em}
 .card p{color:var(--muted);font-size:14.5px}
 
@@ -103,7 +103,7 @@ h2{font-size:clamp(30px,4.4vw,50px);line-height:1.02;letter-spacing:-.02em;font-
 .band h2{margin-top:6px}
 .band .lead{margin:0 auto}
 .ing{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:26px}
-.ing span{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#d7d6df;
+.ing span{font-family:'Schibsted Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:12.5px;color:#d7d6df;
   background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:30px;padding:9px 15px}
 
 /* offer + form */
@@ -113,14 +113,14 @@ h2{font-size:clamp(30px,4.4vw,50px);line-height:1.02;letter-spacing:-.02em;font-
 .perks{list-style:none;margin:22px 0 0;display:grid;gap:13px}
 .perks li{display:flex;gap:11px;align-items:flex-start;font-size:15.5px}
 .chk{color:var(--neon);font-weight:700}
-.form label{display:block;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--muted);margin-bottom:9px}
+.form label{display:block;font-family:'Schibsted Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:12px;letter-spacing:.05em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:9px;font-weight:600}
 .form input{width:100%;background:rgba(0,0,0,.35);border:1px solid var(--line);border-radius:12px;
   padding:15px 16px;color:var(--bone);font-size:16px;font-family:inherit}
 .form input:focus{outline:none;border-color:var(--neon)}
 .form .submit{width:100%;margin-top:12px;border:none;background:var(--neon);color:#0a0a0f;font-weight:700;
   font-size:16px;padding:16px;border-radius:40px;cursor:pointer;transition:.2s;font-family:inherit}
-.form .submit:hover{transform:translateY(-2px);box-shadow:0 10px 34px rgba(255,45,149,.5)}
+.form .submit:hover{transform:translateY(-2px);box-shadow:none}
 .form small{display:block;color:var(--muted);font-size:12px;margin-top:11px;line-height:1.55}
 .form a{color:var(--neon)}
 .err{color:#ff6b6b;font-size:13px;margin-top:8px;min-height:1em}
@@ -164,6 +164,8 @@ footer a:hover{color:var(--bone)}
   section{padding:48px 0}
   body{padding-bottom:74px}
 }
+h1,h2,h3,h4,summary{text-wrap:balance}p,li{text-wrap:pretty}
+em,i,cite,dfn{font-style:normal}
 </style>
   <script async src="https://static.klaviyo.com/onsite/js/XNMhJw/klaviyo.js"></script>
 </head>
@@ -206,13 +208,13 @@ footer a:hover{color:var(--bone)}
 
 <section>
   <div class="wrap">
-    <div class="tag">/ why it hits</div>
+    <div class="tag">why it hits</div>
     <h2>A gloss you <span class="serif">wear.</span></h2>
     <p class="lead">You’ve re-bought the same gloss three times this year. It was never used up — it’s in a coat pocket, a car seat, a bag you haven’t opened since April.</p>
     <div class="cards">
-      <div class="card"><div class="n">/ 01 · wear it</div><h3>It clips on</h3><p>The gloss tube snaps magnetically into a case you wear — on your phone, your bag, or your wrist. It doesn’t live loose in the bottom of a backpack, so it doesn’t vanish there either.</p></div>
-      <div class="card"><div class="n">/ 02 · refill it</div><h3>You swap the tube</h3><p>When it runs out you drop in a refill instead of buying the whole thing again. The case is the part you keep.</p></div>
-      <div class="card"><div class="n">/ 03 · inside</div><h3>A hydrating gloss</h3><p>Comfortable and glossy, not greasy, and no tingle or burn — we don’t do the sketchy “stinging means it’s working” thing.</p></div>
+      <div class="card"><div class="n">01 · wear it</div><h3>It clips on</h3><p>The gloss tube snaps magnetically into a case you wear — on your phone, your bag, or your wrist. It doesn’t live loose in the bottom of a backpack, so it doesn’t vanish there either.</p></div>
+      <div class="card"><div class="n">02 · refill it</div><h3>You swap the tube</h3><p>When it runs out you drop in a refill instead of buying the whole thing again. The case is the part you keep.</p></div>
+      <div class="card"><div class="n">03 · inside</div><h3>A hydrating gloss</h3><p>Comfortable and glossy, not greasy, and no tingle or burn — we don’t do the sketchy “stinging means it’s working” thing.</p></div>
     </div>
   </div>
 </section>
@@ -220,7 +222,7 @@ footer a:hover{color:var(--bone)}
 <section>
   <div class="wrap">
     <div class="band">
-      <div class="tag">/ the savage standard</div>
+      <div class="tag">the savage standard</div>
       <h2>You <span class="serif">eat</span> your lip balm.</h2>
       <p class="lead">Not on purpose — but you lick your lips, you eat, you talk, it goes. You do it all day without thinking. So we made one with <b>nothing in it you'd be afraid to swallow</b>, and we put every ingredient in plain English on the label. Clean that actually works — not a fear list, just the truth.</p>
       <div class="ing">
@@ -237,7 +239,7 @@ footer a:hover{color:var(--bone)}
   <div class="wrap">
     <div class="offer">
       <div>
-        <div class="tag">/ the list</div>
+        <div class="tag">the list</div>
         <h2>Get in <span class="serif">48 hours</span> early.</h2>
         <p class="lead">Preorders for the Lip Pod are open at $24 (it's $32 at launch), and shipping is <b>free while the preorder offer lasts</b> &mdash; normally $4.90, so you're saving <b>$12.90 in total</b>. Shipping early 2027, refundable anytime before then. Not ready to pay? Drop your email below and just join the community — free, no card.</p>
         <ul class="perks">
@@ -277,7 +279,7 @@ footer a:hover{color:var(--bone)}
 
 <section>
   <div class="wrap">
-    <div class="tag">/ real questions</div>
+    <div class="tag">real questions</div>
     <h2>Before you ask.</h2>
     <div class="faq">
       <details><summary>Does it sting or tingle?</summary><p>No. No tingle, no burn, no acids. If a lip product “works” by stinging, that’s just irritation — we don’t do that.</p></details>

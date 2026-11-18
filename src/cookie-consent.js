@@ -23,8 +23,8 @@ const STYLE_ID = 'cookieConsentStyles';
 
 const CSS = `
 .cookie-bar{position:fixed;left:0;right:0;bottom:0;z-index:2147483000;background:#fff;
-  border-top:1px solid rgba(10,10,18,.14);box-shadow:0 -10px 40px rgba(10,10,18,.16);
-  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  border-top:1px solid rgba(10,10,18,.14);box-shadow:0 -8px 32px rgba(10,10,18,.096);
+  font-family:'Schibsted Grotesk',system-ui,-apple-system,sans-serif;
   animation:cookieUp .3s cubic-bezier(.2,.7,.3,1)}
 .cookie-inner{max-width:1180px;margin:0 auto;padding:16px 24px;
   display:flex;align-items:center;gap:24px;flex-wrap:wrap}
@@ -33,8 +33,8 @@ const CSS = `
 .cookie-bar-text a{color:#ff2d95;text-decoration:underline}
 .cookie-bar-actions{display:flex;gap:10px;flex:0 0 auto}
 .cookie-btn{box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;
-  padding:13px 22px;border-radius:999px;font-family:'JetBrains Mono',ui-monospace,monospace;
-  font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;
+  padding:13px 22px;border-radius:999px;font-family:'Schibsted Grotesk',system-ui,-apple-system,sans-serif;
+  font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;
   transition:background .15s ease,color .15s ease,transform .15s ease}
 .cookie-btn:focus-visible{outline:2px solid #ff2d95;outline-offset:3px}
 .cookie-btn-ghost{background:#fff;color:#0a0a14;border:1.5px solid rgba(10,10,18,.22)}

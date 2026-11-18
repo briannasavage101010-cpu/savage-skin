@@ -12,22 +12,22 @@
 <link rel="icon" type="image/png" href="/logo.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..900&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#f7f3ed; --surface:#ffffff; --line:rgba(10,10,18,.08); --line2:rgba(10,10,18,.16);
-  --ink:#0a0a14; --dim:#4a4858; --mute:#8a8898;
+  --ink:#0a0a14; --dim:#4a4858; --mute:#6b6878;
   --neon:#ff2d95; --cyan:#00f0ff; --violet:#b026ff; --lip:#D4537E; --gold:#e5c26b;
-  --serif:'Fraunces',Georgia,serif; --sans:'Inter',system-ui,sans-serif; --mono:'JetBrains Mono',monospace;
+  --serif:'Schibsted Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; --sans:'Schibsted Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; --mono:'Schibsted Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:400;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer}
 ::selection{background:var(--neon);color:#fff}
-.serif{font-family:var(--serif);font-style:italic}
+.serif{font-family:var(--serif);font-style:normal}
 .mono{font-family:var(--mono)}
 .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
 a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--neon);outline-offset:3px;border-radius:6px}
@@ -39,31 +39,31 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 
 /* ---------- nav ---------- */
 nav.top{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
-  padding:16px 24px;background:rgba(247,243,237,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line2);box-shadow:0 1px 12px rgba(10,10,18,.05)}
-.brand{display:flex;align-items:center;gap:11px;font-family:var(--serif);font-weight:600;font-size:20px;letter-spacing:-.02em}
-.brand .mark{width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff,var(--neon) 60%,#2a0a18 100%);box-shadow:0 0 18px rgba(255,45,149,.5)}
+  padding:16px 24px;background:rgba(247,243,237,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line2);box-shadow:0 1px 10px rgba(10,10,18,.03)}
+.brand{display:flex;align-items:center;gap:11px;font-family:var(--serif);font-weight:800;font-size:20px;letter-spacing:-.02em}
+.brand .mark{width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff,var(--neon) 60%,#2a0a18 100%);box-shadow:none}
 .brand em{font-style:normal;color:var(--neon)}
-.nav-links{display:flex;gap:clamp(16px,2vw,28px);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#2b2933;font-weight:500}
+.nav-links{display:flex;gap:clamp(16px,2vw,28px);font-size:12px;letter-spacing:.072em;text-transform:uppercase;color:#2b2933;font-weight:500}
 .nav-links a{padding:6px 0;position:relative;transition:color .2s}
 .nav-links a:hover{color:var(--ink)}
-.nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:linear-gradient(90deg,var(--neon),var(--cyan));transition:width .35s}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--neon);transition:width .35s}
 .nav-links a:hover::after{width:100%}
 .nav-links a[aria-current="page"]{color:var(--neon)}
 .nav-links a[aria-current="page"]::after{width:100%}
-.nav-cta{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--neon);
-  padding:10px 16px;border-radius:999px;white-space:nowrap;box-shadow:0 6px 18px rgba(255,45,149,.28)}
+.nav-cta{font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#fff;background:var(--neon);
+  padding:10px 16px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 14px rgba(255,45,149,.126);font-weight:600}
 .nav-toggle{display:none;flex-direction:column;gap:5px;width:42px;height:42px;align-items:center;justify-content:center;border:1px solid var(--line2);border-radius:12px;background:transparent}
 .nav-toggle span{display:block;width:18px;height:2px;background:var(--ink);border-radius:2px}
 
 /* ---------- hero ---------- */
 .hero{padding:20px 0 30px}
 .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:54px;align-items:start}
-.pill{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;
-  text-transform:uppercase;color:var(--dim);border:1px solid var(--line2);border-radius:999px;padding:7px 14px;background:#fff}
+.pill{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--dim);border:1px solid var(--line2);border-radius:999px;padding:7px 14px;background:#fff;font-weight:600}
 .pill .dot{width:7px;height:7px;border-radius:50%;background:var(--neon);box-shadow:0 0 0 0 rgba(255,45,149,.6);animation:pulse 1.8s infinite}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,45,149,.55)}70%{box-shadow:0 0 0 11px rgba(255,45,149,0)}100%{box-shadow:0 0 0 0 rgba(255,45,149,0)}}
-h1{font-family:var(--serif);font-weight:400;line-height:.95;letter-spacing:-.035em;font-size:clamp(46px,7.4vw,92px);margin:20px 0 18px}
-h1 em{font-style:italic;font-weight:500;color:var(--neon);display:block}
+h1{font-family:var(--serif);font-weight:800;line-height:.98;letter-spacing:-.03em;font-size:clamp(46px,5.4vw,74px);margin:20px 0 18px}
+h1 em{font-style:normal;font-weight:inherit;color:var(--neon);display:block}
 .sub{font-size:17.5px;color:var(--dim);max-width:30em;margin-bottom:22px;line-height:1.65}
 .perks{list-style:none;display:grid;gap:11px;margin-bottom:26px;max-width:30em}
 .perks li{display:flex;gap:11px;align-items:flex-start;font-size:15.5px;color:var(--ink);font-weight:400}
@@ -73,32 +73,32 @@ h1 em{font-style:italic;font-weight:500;color:var(--neon);display:block}
 .hero-art::before{content:"";position:absolute;top:48%;left:50%;transform:translate(-50%,-50%);width:108%;aspect-ratio:1;border-radius:50%;
   background:radial-gradient(circle at 50% 45%,rgba(212,83,126,.30),transparent 66%);filter:blur(36px)}
 .hero-art img{position:relative;z-index:1;width:auto;max-width:100%;height:auto;max-height:460px;
-  border-radius:24px;box-shadow:0 26px 48px rgba(10,10,18,.16);animation:float 6.5s ease-in-out infinite}
+  border-radius:24px;box-shadow:0 20px 38px rgba(10,10,18,.096);animation:float 6.5s ease-in-out infinite}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-.scarce{font-family:var(--mono);font-size:12.5px;color:var(--mute);letter-spacing:.03em}
+.scarce{font-family:var(--mono);font-size:12.5px;color:var(--mute);letter-spacing:0}
 .scarce b{color:var(--ink)}
 .bar-track{height:6px;width:220px;max-width:60vw;background:rgba(10,10,18,.08);border-radius:6px;overflow:hidden;margin-top:9px}
 .bar-track i{display:block;height:100%;width:84%;background:linear-gradient(90deg,var(--neon),var(--violet))}
 
-.btn{display:inline-flex;align-items:center;gap:9px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;
+.btn{display:inline-flex;align-items:center;gap:9px;font-size:12px;letter-spacing:.09em;text-transform:uppercase;font-weight:600;
   padding:16px 28px;border-radius:999px;border:1px solid transparent;transition:transform .2s,box-shadow .2s}
-.btn-primary{background:var(--neon);color:#fff;box-shadow:0 8px 24px rgba(255,45,149,.26)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(255,45,149,.36)}
+.btn-primary{background:var(--neon);color:#fff;box-shadow:0 6px 19px rgba(255,45,149,.117)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 29px rgba(255,45,149,.162)}
 .btn-ghost{background:#fff;border-color:var(--line2);color:var(--ink)}
 .btn-ghost:hover{border-color:var(--ink)}
 .btn .arr{transition:transform .3s}.btn:hover .arr{transform:translateX(4px)}
 
 /* ---------- form card ---------- */
-.card{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:30px;box-shadow:0 14px 50px rgba(10,10,18,.07)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:30px;box-shadow:0 10px 40px rgba(10,10,18,.042)}
 .card-top{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:6px}
-.card-top .tag{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--neon)}
+.card-top .tag{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--neon);font-weight:600}
 .price-chip{text-align:right;line-height:1}
-.price-chip .now{font-family:var(--serif);font-size:30px;font-weight:600;color:var(--ink)}
+.price-chip .now{font-family:var(--serif);font-size:30px;font-weight:700;color:var(--ink)}
 .price-chip .was{font-size:13px;color:var(--mute);text-decoration:line-through;margin-left:5px}
-.price-chip .lbl{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;color:var(--mute);text-transform:uppercase;margin-top:3px}
-.card h2{font-family:var(--serif);font-weight:500;font-size:26px;letter-spacing:-.02em;margin:6px 0 16px;line-height:1.1}
+.price-chip .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:var(--mute);text-transform:uppercase;margin-top:3px;font-weight:600}
+.card h2{font-family:var(--serif);font-weight:700;font-size:26px;letter-spacing:-.02em;margin:6px 0 16px;line-height:1.1}
 .field{margin-bottom:14px}
-.field label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:8px}
+.field label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--dim);margin-bottom:8px;font-weight:600}
 .field label .hint{text-transform:none;letter-spacing:0;color:var(--mute);font-family:var(--sans);font-size:12px}
 .field input{width:100%;background:#fbf9f5;border:1px solid var(--line2);border-radius:13px;padding:15px 16px;font-size:16px;font-family:inherit;color:var(--ink);transition:border-color .2s}
 .field input:focus{outline:none;border-color:var(--neon);background:#fff}
@@ -108,14 +108,14 @@ h1 em{font-style:italic;font-weight:500;color:var(--neon);display:block}
 .consent.sms{background:#fbf9f5;border:1px solid var(--line);border-radius:13px;padding:13px 14px}
 .err{color:#d12c5e;font-size:13px;margin:4px 0 8px;min-height:1em}
 .submit{width:100%;margin-top:6px;border:none;background:var(--neon);color:#fff;font-weight:700;font-size:15px;letter-spacing:.04em;
-  padding:17px;border-radius:999px;transition:transform .2s,box-shadow .2s;box-shadow:0 8px 24px rgba(255,45,149,.28)}
-.submit:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(255,45,149,.4)}
+  padding:17px;border-radius:999px;transition:transform .2s,box-shadow .2s;box-shadow:0 6px 19px rgba(255,45,149,.126)}
+.submit:hover{transform:translateY(-2px);box-shadow:0 10px 29px rgba(255,45,149,.18)}
 .submit:disabled{opacity:.6;cursor:default;transform:none}
 .fine{display:block;color:var(--mute);font-size:11.5px;margin-top:12px;line-height:1.55}
 .success{display:none;text-align:center}
 .success.show{display:block;animation:pop .4s ease}
 @keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-.success .big{font-family:var(--serif);font-style:italic;font-size:30px;color:var(--neon);margin-bottom:6px}
+.success .big{font-family:var(--serif);font-style:normal;font-size:30px;color:var(--neon);margin-bottom:6px;font-weight:700}
 .success p{color:var(--dim);font-size:14.5px;margin-bottom:16px}
 .mini-btns{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
 .mini-btn{font-size:13px;font-weight:600;border:1px solid var(--line2);border-radius:999px;padding:11px 16px;background:#fff;color:var(--ink);transition:.2s}
@@ -123,19 +123,19 @@ h1 em{font-style:italic;font-weight:500;color:var(--neon);display:block}
 
 /* ---------- sections ---------- */
 section{padding:60px 0}
-.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--neon)}
-h3.sec{font-family:var(--serif);font-weight:500;font-size:clamp(28px,4.2vw,46px);line-height:1.04;letter-spacing:-.02em;margin:12px 0 14px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--neon);font-weight:600}
+h3.sec{font-family:var(--serif);font-weight:800;font-size:clamp(28px,4.2vw,46px);line-height:1.04;letter-spacing:-.02em;margin:12px 0 14px}
 .lead{font-size:16.5px;color:var(--dim);max-width:34em}
 
 /* ---------- concept labelling ---------- */
-.concept-cap{margin:14px auto 0;max-width:430px;text-align:center;font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;line-height:1.55;color:var(--mute)}
-.concept-badge{position:absolute;left:10px;top:10px;z-index:2;background:rgba(255,255,255,.93);border:1px solid var(--line2);color:var(--ink);font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:5px 9px;border-radius:999px;pointer-events:none}
+.concept-cap{margin:14px auto 0;max-width:430px;text-align:center;font-family:var(--mono);font-size:11.5px;letter-spacing:0;line-height:1.55;color:var(--mute)}
+.concept-badge{position:absolute;left:10px;top:10px;z-index:2;background:rgba(255,255,255,.93);border:1px solid var(--line2);color:var(--ink);font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;padding:5px 9px;border-radius:999px;pointer-events:none;font-weight:600}
 
 /* ---------- lip pod build grid ---------- */
 .build-head{margin-top:46px}
 .build-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px}
 @media(max-width:699px){.build-grid{grid-template-columns:1fr}}
-.build-item{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--surface);box-shadow:0 10px 34px rgba(10,10,18,.06)}
+.build-item{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--surface);box-shadow:0 8px 27px rgba(10,10,18,.036)}
 .build-ph{position:relative;aspect-ratio:1127/1400;background:#efe9e1}
 .build-ph img{width:100%;height:100%;object-fit:cover;display:block}
 .build-cap{padding:15px 17px 17px}
@@ -143,7 +143,7 @@ h3.sec{font-family:var(--serif);font-weight:500;font-size:clamp(28px,4.2vw,46px)
 .build-cap span{display:block;font-size:13px;color:var(--dim);line-height:1.55}
 
 /* ---------- never-lose-it focus band ---------- */
-.keep{margin-top:52px;border:1px solid var(--line);border-radius:26px;overflow:hidden;background:var(--surface);box-shadow:0 14px 50px rgba(10,10,18,.06)}
+.keep{margin-top:52px;border:1px solid var(--line);border-radius:26px;overflow:hidden;background:var(--surface);box-shadow:0 10px 40px rgba(10,10,18,.036)}
 .keep-grid{display:grid;grid-template-columns:.92fr 1.08fr;align-items:stretch}
 @media(max-width:820px){.keep-grid{grid-template-columns:1fr}}
 .keep-ph{position:relative;min-height:340px;background:#efe9e1}
@@ -163,9 +163,9 @@ h3.sec{font-family:var(--serif);font-weight:500;font-size:clamp(28px,4.2vw,46px)
 .flavor-band img{width:100%;height:100%;object-fit:cover;display:block}
 
 /* ---------- vote ---------- */
-.vote-wrap{background:var(--surface);border:1px solid var(--line);border-radius:26px;padding:38px;box-shadow:0 14px 50px rgba(10,10,18,.06)}
+.vote-wrap{background:var(--surface);border:1px solid var(--line);border-radius:26px;padding:38px;box-shadow:0 10px 40px rgba(10,10,18,.036)}
 .vote-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:24px}
-.vote-count{font-family:var(--mono);font-size:12px;color:var(--mute);letter-spacing:.04em}
+.vote-count{font-family:var(--mono);font-size:12px;color:var(--mute);letter-spacing:0}
 .vote-count b{color:var(--ink)}
 .opts{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
 .opt{position:relative;display:flex;align-items:center;gap:15px;text-align:left;border:1px solid var(--line2);background:#fbf9f5;border-radius:16px;padding:14px;overflow:hidden;transition:border-color .2s,transform .15s}
@@ -179,45 +179,45 @@ h3.sec{font-family:var(--serif);font-weight:500;font-size:clamp(28px,4.2vw,46px)
 .opt.chosen .opt-pct{color:var(--neon)}
 .opt-thumb{position:relative;z-index:1;flex:none;width:104px;height:140px;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
 .opt-thumb img{width:100%;height:100%;object-fit:cover;object-position:center;animation:none}
-.opt-tick{position:relative;z-index:1;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-top:4px;opacity:0;transition:opacity .2s}
+.opt-tick{position:relative;z-index:1;font-family:var(--mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--mute);margin-top:4px;opacity:0;transition:opacity .2s;font-weight:600}
 .opt.chosen .opt-tick{opacity:1;color:var(--neon)}
 .opt.chosen .opt-thumb{border-color:var(--neon)}
 .vote-nudge{margin-top:20px;display:none;align-items:center;gap:14px;flex-wrap:wrap;font-size:15px;color:var(--ink)}
 .vote-nudge.show{display:flex;animation:pop .4s ease}
 
 /* ---------- production status ---------- */
-.prod{border:1px solid var(--line);border-radius:26px;background:var(--surface);padding:32px;box-shadow:0 14px 50px rgba(10,10,18,.06)}
+.prod{border:1px solid var(--line);border-radius:26px;background:var(--surface);padding:32px;box-shadow:0 10px 40px rgba(10,10,18,.036)}
 .ps-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
 .ps-step{border:1px solid var(--line2);border-radius:18px;padding:18px;background:#fbf9f5}
-.ps-step.now{border-color:var(--neon);background:#fff;box-shadow:0 10px 34px rgba(255,45,149,.12)}
-.ps-tag{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.ps-step.now{border-color:var(--neon);background:#fff;box-shadow:0 8px 27px rgba(255,45,149,.054)}
+.ps-tag{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--mute);font-weight:600}
 .ps-step.now .ps-tag{color:var(--neon)}
 .ps-tag .dot{width:7px;height:7px;border-radius:50%;background:var(--neon);animation:pulse 1.8s infinite}
 .ps-step b{display:block;font-size:16.5px;font-weight:600;letter-spacing:-.01em;margin:10px 0 6px}
 .ps-step .d{display:block;font-size:14px;color:var(--dim);line-height:1.5}
-.ps-note{margin-top:22px;font-family:var(--mono);font-size:11.5px;letter-spacing:.03em;line-height:1.6;color:var(--mute)}
+.ps-note{margin-top:22px;font-family:var(--mono);font-size:11.5px;letter-spacing:0;line-height:1.6;color:var(--mute)}
 @media(max-width:760px){.ps-steps{grid-template-columns:1fr}.prod{padding:24px}}
 /* ---------- lip pod concept carousel ---------- */
 .pod-section{position:relative;margin-top:22px}
 .pv-carousel-wrap{position:relative}
 .pv-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:8px 2px 22px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .pv-track::-webkit-scrollbar{display:none}
-.pv-card{flex:0 0 78%;max-width:360px;scroll-snap-align:center;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--surface);box-shadow:0 10px 34px rgba(10,10,18,.06);transition:transform .3s ease,box-shadow .3s ease}
+.pv-card{flex:0 0 78%;max-width:360px;scroll-snap-align:center;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--surface);box-shadow:0 8px 27px rgba(10,10,18,.036);transition:transform .3s ease,box-shadow .3s ease}
 @media(min-width:700px){.pv-card{flex:0 0 46%}}
 @media(min-width:1000px){.pv-card{flex:0 0 31%}}
-.pv-card.is-active{transform:scale(1.02);box-shadow:0 18px 46px rgba(255,45,149,.14)}
+.pv-card.is-active{transform:scale(1.02);box-shadow:0 14px 37px rgba(255,45,149,.063)}
 .pv-img-wrap{position:relative;aspect-ratio:1/1;background:#efe9e1;overflow:hidden}
 .pv-img-wrap img{width:100%;height:100%;object-fit:cover;transform:scale(1.05);transition:transform 6s ease;animation:none}
 .pv-card.is-active .pv-img-wrap img{transform:scale(1)}
 .pv-body{padding:16px}
 .pv-name{font-family:var(--serif);font-weight:600;font-size:17px;letter-spacing:-.01em;margin-bottom:5px}
 .pv-desc{font-size:13px;color:var(--dim);line-height:1.5;margin-bottom:12px;min-height:38px}
-.pv-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;font-family:var(--mono);font-size:11px;color:var(--mute);letter-spacing:.03em}
+.pv-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;font-family:var(--mono);font-size:11px;color:var(--mute);letter-spacing:0}
 .pv-meta b{color:var(--ink)}
-.pv-btn{display:block;width:100%;text-align:center;background:var(--ink);color:#fff;border:none;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:13px 0;border-radius:999px;transition:background .15s ease,transform .15s ease}
+.pv-btn{display:block;width:100%;text-align:center;background:var(--ink);color:#fff;border:none;font-size:12px;font-weight:700;letter-spacing:.063em;text-transform:uppercase;padding:13px 0;border-radius:999px;transition:background .15s ease,transform .15s ease}
 .pv-btn:hover{background:var(--neon);transform:translateY(-1px)}
 .pv-btn.voted{background:var(--neon);pointer-events:none}
-.pv-arrow{position:absolute;top:34%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:1px solid var(--line2);background:rgba(255,255,255,.94);color:var(--ink);font-size:18px;z-index:3;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(10,10,18,.12);transition:background .15s,color .15s}
+.pv-arrow{position:absolute;top:34%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:1px solid var(--line2);background:rgba(255,255,255,.94);color:var(--ink);font-size:18px;z-index:3;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(10,10,18,.072);transition:background .15s,color .15s}
 .pv-arrow:hover{background:var(--neon);color:#fff;border-color:var(--neon)}
 .pv-arrow.prev{left:2px}.pv-arrow.next{right:2px}
 @media(max-width:699px){.pv-arrow{display:none}}
@@ -233,7 +233,7 @@ h3.sec{font-family:var(--serif);font-weight:500;font-size:clamp(28px,4.2vw,46px)
 .vcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px 22px;transition:.2s}
 .vcard:hover{border-color:rgba(255,45,149,.4);transform:translateY(-3px)}
 .vcard .n{font-family:var(--mono);font-size:12px;color:var(--neon);margin-bottom:12px}
-.vcard h4{font-family:var(--serif);font-weight:500;font-size:20px;margin-bottom:7px}
+.vcard h4{font-family:var(--serif);font-weight:700;font-size:20px;margin-bottom:7px}
 .vcard p{color:var(--dim);font-size:14.5px}
 
 /* ---------- band ---------- */
@@ -261,39 +261,39 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
 .foot-policies a:hover{color:var(--ink)}
 
 /* ---------- problem / agitate ---------- */
-.prob{background:var(--surface);border:1px solid var(--line);border-radius:26px;padding:40px 38px;box-shadow:0 14px 50px rgba(10,10,18,.06)}
+.prob{background:var(--surface);border:1px solid var(--line);border-radius:26px;padding:40px 38px;box-shadow:0 10px 40px rgba(10,10,18,.036)}
 .prob-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
 .prob-item{border:1px solid var(--line);background:#fbf9f5;border-radius:16px;padding:18px 16px}
-.prob-item .n{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--neon);display:block;margin-bottom:10px}
+.prob-item .n{font-family:var(--mono);font-size:11px;letter-spacing:.056em;color:var(--neon);display:block;margin-bottom:10px}
 .prob-item b{display:block;font-size:15px;margin-bottom:4px;letter-spacing:-.005em}
 .prob-item span{font-size:13.5px;color:var(--dim);line-height:1.5}
 .prob-punch{margin-top:28px;padding-top:24px;border-top:1px solid var(--line);font-family:var(--serif);
-  font-size:clamp(21px,2.7vw,28px);line-height:1.28;letter-spacing:-.015em;max-width:22em}
-.prob-punch em{font-style:italic;color:var(--neon)}
+  font-size:clamp(21px,2.7vw,28px);line-height:1.28;letter-spacing:-.015em;max-width:22em;font-weight:700}
+.prob-punch em{font-style:normal;color:var(--neon)}
 .prob-cta{margin-top:22px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
-.prob-cta .note{font-family:var(--mono);font-size:11.5px;color:var(--mute);letter-spacing:.03em}
+.prob-cta .note{font-family:var(--mono);font-size:11.5px;color:var(--mute);letter-spacing:0}
 @media(max-width:900px){.prob-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.prob{padding:28px 22px}.prob-grid{grid-template-columns:1fr}}
 
 /* ---------- offer stack (inside the form card) ---------- */
 .offer{border:1px solid rgba(255,45,149,.32);background:linear-gradient(135deg,rgba(255,45,149,.07),rgba(176,38,255,.05));
   border-radius:18px;padding:18px 20px;margin:0 0 20px}
-.offer .oh{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--neon);margin-bottom:13px}
+.offer .oh{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--neon);margin-bottom:13px;font-weight:600}
 .offer ul{list-style:none;display:grid;gap:10px}
 .offer li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;line-height:1.45;color:var(--ink)}
 .offer li .chk{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;
   background:rgba(255,45,149,.14);color:var(--neon);font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px}
 .offer li span.d{color:var(--dim)}
 .spots{display:flex;align-items:center;gap:10px;margin-top:14px;padding-top:13px;border-top:1px solid rgba(255,45,149,.2);
-  font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:var(--dim)}
+  font-family:var(--mono);font-size:11.5px;letter-spacing:0;color:var(--dim)}
 .spots b{color:var(--ink)}
 
 /* ---------- old way vs lip pod ---------- */
 .vs{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px}
 .vs-col{border:1px solid var(--line);border-radius:20px;padding:26px 24px;background:var(--surface)}
-.vs-col.now{border-color:rgba(255,45,149,.34);box-shadow:0 14px 44px rgba(255,45,149,.10)}
-.vs-col h4{font-family:var(--serif);font-weight:500;font-size:21px;margin-bottom:4px;letter-spacing:-.01em}
-.vs-col .tagline{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:18px;display:block}
+.vs-col.now{border-color:rgba(255,45,149,.34);box-shadow:0 10px 35px rgba(255,45,149,.045)}
+.vs-col h4{font-family:var(--serif);font-weight:700;font-size:21px;margin-bottom:4px;letter-spacing:-.01em}
+.vs-col .tagline{font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--mute);margin-bottom:18px;display:block;font-weight:600}
 .vs-col.now .tagline{color:var(--neon)}
 .vs-col ul{list-style:none;display:grid;gap:12px}
 .vs-col li{display:flex;gap:11px;align-items:flex-start;font-size:14.5px;line-height:1.5;color:var(--dim)}
@@ -310,28 +310,28 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
   radial-gradient(45% 45% at 74% 82%,rgba(176,38,255,.28),transparent 68%);filter:blur(30px);pointer-events:none}
 .close>*{position:relative;z-index:1}
 .close .eyebrow{color:#ff86bf}
-.close h3{font-family:var(--serif);font-weight:500;font-size:clamp(28px,4.4vw,48px);line-height:1.03;
+.close h3{font-family:var(--serif);font-weight:800;font-size:clamp(28px,4.4vw,48px);line-height:1.03;
   letter-spacing:-.025em;margin:12px 0 14px;color:#fff}
-.close h3 em{font-style:italic;color:#ff86bf}
+.close h3 em{font-style:normal;color:#ff86bf}
 .close p{color:rgba(255,255,255,.74);font-size:16.5px;max-width:32em;margin:0 auto 26px;line-height:1.6}
-.close .btn-primary{background:#fff;color:var(--ink);box-shadow:0 12px 34px rgba(0,0,0,.34)}
-.close .btn-primary:hover{box-shadow:0 18px 44px rgba(0,0,0,.44)}
+.close .btn-primary{background:#fff;color:var(--ink);box-shadow:0 9px 27px rgba(0,0,0,.204)}
+.close .btn-primary:hover{box-shadow:0 14px 35px rgba(0,0,0,.264)}
 .close .fine{color:rgba(255,255,255,.5);margin-top:16px}
 @media(max-width:600px){.close{padding:38px 24px}}
 
 /* ---------- preorder vs join: head-to-head ---------- */
 .h2h{display:grid;grid-template-columns:1.25fr 1fr;gap:0;border:1px solid var(--line2);border-radius:22px;
-  overflow:hidden;background:var(--surface);margin-bottom:30px;box-shadow:0 14px 50px rgba(10,10,18,.07)}
+  overflow:hidden;background:var(--surface);margin-bottom:30px;box-shadow:0 10px 40px rgba(10,10,18,.042)}
 .h2h-col{padding:0 0 22px}
 .h2h-col.win{background:linear-gradient(180deg,rgba(255,45,149,.075),rgba(255,45,149,.02));
   box-shadow:inset 0 0 0 2px var(--neon);border-radius:22px;position:relative;z-index:1}
 .h2h-hd{padding:22px 24px 18px;border-bottom:1px solid var(--line)}
 .h2h-col.win .h2h-hd{border-bottom-color:rgba(255,45,149,.24)}
-.h2h-badge{display:inline-block;font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
-  background:var(--neon);color:#fff;padding:5px 10px;border-radius:999px;margin-bottom:11px}
+.h2h-badge{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
+  background:var(--neon);color:#fff;padding:5px 10px;border-radius:999px;margin-bottom:11px;font-weight:600}
 .h2h-badge.mute{background:transparent;color:var(--mute);border:1px solid var(--line2)}
-.h2h-hd h4{font-family:var(--serif);font-weight:600;font-size:21px;letter-spacing:-.015em;margin-bottom:3px}
-.h2h-hd .p{font-family:var(--serif);font-size:30px;font-weight:600;letter-spacing:-.02em;line-height:1.1}
+.h2h-hd h4{font-family:var(--serif);font-weight:700;font-size:21px;letter-spacing:-.015em;margin-bottom:3px}
+.h2h-hd .p{font-family:var(--serif);font-size:30px;font-weight:700;letter-spacing:-.02em;line-height:1.1}
 .h2h-hd .p s{color:var(--mute);font-size:17px;font-weight:400;margin-left:7px}
 .h2h-hd .sub{font-size:13px;color:var(--dim);margin-top:4px}
 .h2h ul{list-style:none;padding:16px 24px 0;display:grid;gap:13px}
@@ -344,13 +344,13 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
 .h2h-col.alt li i{background:rgba(10,10,18,.06);color:var(--mute)}
 .h2h-cta{padding:20px 24px 0}
 .h2h-cta .btn{width:100%;justify-content:center}
-.h2h-note{font-family:var(--mono);font-size:10.5px;letter-spacing:.03em;color:var(--mute);text-align:center;margin-top:10px;line-height:1.5}
+.h2h-note{font-family:var(--mono);font-size:10.5px;letter-spacing:0;color:var(--mute);text-align:center;margin-top:10px;line-height:1.5}
 @media(max-width:780px){.h2h{grid-template-columns:1fr}.h2h-col.win{border-radius:22px 22px 0 0}}
 
 /* ---------- money-saved flag ---------- */
-.save{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;
+.save{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;
   text-transform:uppercase;background:rgba(255,45,149,.12);color:#c11d6d;border:1px solid rgba(255,45,149,.3);
-  padding:6px 12px;border-radius:999px}
+  padding:6px 12px;border-radius:999px;font-weight:600}
 
 /* ---------- guarantee strip ---------- */
 .guar{display:flex;gap:13px;align-items:flex-start;border:1px solid rgba(29,158,117,.34);background:rgba(29,158,117,.07);
@@ -372,7 +372,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
 
 /* ---------- sticky mobile cta ---------- */
 .sticky{position:fixed;left:0;right:0;bottom:0;z-index:80;display:none;padding:12px 16px;background:rgba(247,243,237,.94);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
-.sticky a{display:block;text-align:center;background:var(--neon);color:#fff;font-weight:700;padding:15px;border-radius:999px;box-shadow:0 8px 24px rgba(255,45,149,.3)}
+.sticky a{display:block;text-align:center;background:var(--neon);color:#fff;font-weight:700;padding:15px;border-radius:999px;box-shadow:0 6px 19px rgba(255,45,149,.135)}
 
 @media (max-width:920px){
   .hero-grid{grid-template-columns:1fr;gap:24px}
@@ -397,6 +397,8 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
 @media (max-width:540px){
   .opts{grid-template-columns:1fr}
 }
+h1,h2,h3,h4,summary{text-wrap:balance}p,li{text-wrap:pretty}
+em,i,cite,dfn{font-style:normal}
 </style>
   <script async src="https://static.klaviyo.com/onsite/js/XNMhJw/klaviyo.js"></script>
 </head>
@@ -435,7 +437,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
         <a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1" class="btn btn-primary"><span>Preorder the Lip Pod — $24 <span class="arr">→</span></span></a>
         <a href="#join" style="font-size:14px;color:var(--dim);text-decoration:underline;text-underline-offset:3px">or join free, no Pod reserved</a>
       </div>
-      <p style="font-family:var(--mono);font-size:11.5px;color:var(--mute);letter-spacing:.03em">In design right now · charged today · est. shipping early 2027 · full refund anytime before it ships</p>
+      <p style="font-family:var(--mono);font-size:11.5px;color:var(--mute);letter-spacing:0">In design right now · charged today · est. shipping early 2027 · full refund anytime before it ships</p>
     </div>
 
     <div>
@@ -451,7 +453,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
 <section id="progress" style="padding:34px 0 6px">
   <div class="wrap">
     <div class="prod">
-      <div class="eyebrow">/ where we actually are</div>
+      <div class="eyebrow">where we actually are</div>
       <h3 class="sec" style="margin-bottom:10px">It&rsquo;s actually <span class="serif">being made.</span></h3>
       <p class="lead">The Lip Pod is officially in development &mdash; we&rsquo;re working with designers right now to turn it into something a factory can actually build. Here&rsquo;s exactly how far along it is, including the parts that aren&rsquo;t done. Based on where things stand today, we estimate Pods could start shipping in <b style="color:var(--ink);font-weight:600">2027</b>.</p>
       <div class="ps-steps">
@@ -480,27 +482,27 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
 <section id="problem" style="padding:30px 0 10px">
   <div class="wrap">
     <div class="prob">
-      <div class="eyebrow">/ be honest</div>
+      <div class="eyebrow">be honest</div>
       <h3 class="sec" style="margin-bottom:10px">Where did it <span class="serif">actually go?</span></h3>
       <p class="lead">Nobody loses their phone. Everybody loses their gloss. It's not you — it's that gloss is designed to live loose in a bag, and loose things disappear.</p>
       <div class="prob-grid">
         <div class="prob-item">
-          <span class="n">/ 01</span>
+          <span class="n">01</span>
           <b>The bag black hole</b>
           <span>You know it's in there. You've had your whole arm in there. It is not in there.</span>
         </div>
         <div class="prob-item">
-          <span class="n">/ 02</span>
+          <span class="n">02</span>
           <b>The jacket you switched</b>
           <span>It's in the pocket of the coat you stopped wearing when it got warm. You'll find it in October.</span>
         </div>
         <div class="prob-item">
-          <span class="n">/ 03</span>
+          <span class="n">03</span>
           <b>The borrow that never came back</b>
           <span>"I'll give it back at lunch." That was two weeks ago and she's moved on with her life.</span>
         </div>
         <div class="prob-item">
-          <span class="n">/ 04</span>
+          <span class="n">04</span>
           <b>The one you re-bought</b>
           <span>So you bought it again. And again. Same tube, same shade, three separate times.</span>
         </div>
@@ -519,7 +521,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
   <div class="wrap" style="max-width:900px">
 
     <div style="text-align:center;margin-bottom:26px">
-      <div class="eyebrow">/ two ways in</div>
+      <div class="eyebrow">two ways in</div>
       <h3 class="sec" style="margin-bottom:8px">Both get you early. <span class="serif">Only one gets you the Pod.</span></h3>
       <p class="lead" style="margin:0 auto">Here's the honest difference, side by side.</p>
     </div>
@@ -574,14 +576,14 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
   <div class="wrap" style="max-width:620px">
     <div class="card">
       <div class="card-top">
-        <span class="tag">// Founder preorder</span>
+        <span class="tag">Founder preorder</span>
         <span class="save">You save $12.90</span>
       </div>
       <h2>Preorder the Lip Pod.</h2>
       <p class="lead" style="margin-bottom:18px">The first production run is 500 units. Preordering is what pays for that run — so we're telling you exactly what you're buying and exactly where it stands.</p>
 
       <div class="offer">
-        <div class="oh">// What you're paying</div>
+        <div class="oh">What you're paying</div>
         <ul>
           <li><span class="chk">1</span><div><b>One of the 500, reserved for you.</b> <span class="d">Preorders are how the first run gets allocated — this is the only way to be certain you get one.</span></div></li>
           <li><span class="chk">2</span><div><b>$24 instead of $32.</b> <span class="d">That's $8 off, and it never goes back down after launch week.</span></div></li>
@@ -593,7 +595,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
       </div>
 
       <div class="offer" style="border-color:var(--line2);background:rgba(255,255,255,.5)">
-        <div class="oh">// The honest part</div>
+        <div class="oh">The honest part</div>
         <ul>
           <li><span class="chk">&middot;</span><div><b>It's not made yet.</b> <span class="d">Every image here is a concept render. The design is still being worked out with our designers, so the final Pod may differ a little from what you see.</span></div></li>
           <li><span class="chk">&middot;</span><div><b>You're charged today.</b> <span class="d">Not at shipping — today, when you order.</span></div></li>
@@ -618,7 +620,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
       <small class="fine">Secure checkout on Shopify · charged today · refundable anytime before shipping · <a href="/shipping-returns/">Shipping &amp; Returns</a></small>
 
       <div class="offer" style="margin-top:20px;border-style:dashed">
-        <div class="oh">// Add refills</div>
+        <div class="oh">Add refills</div>
         <p style="margin:0 0 14px;font-size:15px;line-height:1.6;color:var(--dim)">Your Pod already comes with a refill in the box. When those run out, the tube swaps and the Pod stays &mdash; refills are <b style="color:var(--ink)">$11 for a 3-pack</b> while preorders are open, <b style="color:var(--ink)">$15</b> after launch.</p>
         <a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1,53831245955437:1" class="btn btn-primary" style="width:100%;justify-content:center"><span>Preorder Pod + 3 refills — $35 <span class="arr">&#8594;</span></span></a>
         <small class="fine" style="margin-top:10px">Or <a href="https://savageskincare-store.myshopify.com/cart/53831245955437:1" style="color:var(--neon);font-weight:600">grab refills on their own — $11 &#8594;</a> &middot; each link opens its own Shopify checkout.</small>
@@ -634,13 +636,13 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
   <div class="wrap" style="max-width:560px">
     <div class="card lite">
       <div class="card-top">
-        <span class="tag">// Free · no card</span>
+        <span class="tag">Free · no card</span>
       </div>
       <h2>Or just join the community.</h2>
       <p class="lead" style="margin-bottom:18px">Not everyone wants to prepay for something that isn't made yet — completely fair. Get on the list instead and you still get a real say in what we build. You just don't get a Pod reserved, and you'll pay $32 when it launches.</p>
 
       <div class="offer">
-        <div class="oh">// What you get</div>
+        <div class="oh">What you get</div>
         <ul>
           <li><span class="chk">1</span><div><b>First to know when it ships.</b> <span class="d">Before any ad, any post, anyone else.</span></div></li>
           <li><span class="chk">2</span><div><b>A vote on what we make.</b> <span class="d">Colorway, finish, what comes after the Pod — the votes on this page are real.</span></div></li>
@@ -692,7 +694,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
 <!-- ================= LIP POD CONCEPT VOTE ================= -->
 <section id="lip-pod-vote">
   <div class="wrap">
-    <div class="eyebrow">/ sneak peek · concept</div>
+    <div class="eyebrow">sneak peek · concept</div>
     <h3 class="sec">The Lip Pod is coming. <span class="serif">You pick how you'd wear it.</span></h3>
     <p class="lead">A wearable magnetic gloss pod — still in development. Every photo in this section is a concept render, not the final product. Tell us how you'd actually carry it. <em style="font-style:normal;color:var(--mute)">Nothing here is for sale yet.</em></p>
 
@@ -750,7 +752,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
             <img src="/lip-pod/wear-phone.jpg" width="1100" height="1100" loading="lazy" alt="Lip Pod concept render — the pod clipped to a phone strap and looped around a wrist">
           </div>
           <div class="keep-copy">
-            <div class="eyebrow">/ the whole point</div>
+            <div class="eyebrow">the whole point</div>
             <h3 class="sec">You won't lose this one. <span class="serif">It's attached to you.</span></h3>
             <p class="lead">Lip gloss goes missing because it lives loose at the bottom of a bag. The Lip Pod doesn't live there. It clips onto the things you already never put down — so it's on you, not lost in something.</p>
             <ul class="keep-list">
@@ -763,7 +765,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
       </div>
 
       <div class="build-head">
-        <div class="eyebrow">/ radical transparency</div>
+        <div class="eyebrow">radical transparency</div>
         <h3 class="sec">How it comes apart.</h3>
         <p class="lead">No mystery parts. Here's the whole thing, and the drawing our factory works from.</p>
       </div>
@@ -794,7 +796,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
       <div class="pod-capture" id="podCapture">
         <div class="card">
           <form id="podForm" novalidate>
-            <span class="tag">// First in line</span>
+            <span class="tag">First in line</span>
             <h2>Want first access when the winning design drops?</h2>
             <p style="color:var(--dim);font-size:14.5px;margin:0 0 16px;line-height:1.55">Your vote counts either way. Add your email to be <b style="color:var(--ink)">first to know</b> if the Lip Pod goes into production — optional, no spam, and it won't affect your vote.</p>
             <div class="field">
@@ -827,7 +829,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
     <div class="vote-wrap">
       <div class="vote-head">
         <div>
-          <div class="eyebrow">/ you decide</div>
+          <div class="eyebrow">you decide</div>
           <h3 class="sec" id="voteQ">Pick the finish.</h3>
           <p class="lead" id="voteSub">Tap your favorite. Your vote helps choose what we make — and when you join, we save your pick.</p>
         </div>
@@ -849,13 +851,13 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
 <!-- ================= WHY ================= -->
 <section style="padding-top:10px">
   <div class="wrap">
-    <div class="eyebrow">/ why it hits</div>
+    <div class="eyebrow">why it hits</div>
     <h3 class="sec">Three things a tube <span class="serif">can't do.</span></h3>
     <p class="lead">The Pod is the whole idea. It's not a gloss you carry — it's a gloss you wear, refill, and stop re-buying.</p>
     <div class="cards">
-      <div class="vcard"><div class="n">/ 01 · wear it</div><h4>It clips on</h4><p>Phone strap, bag, wrist. It rides on the outside of your life instead of sinking into the bottom of a bag you'll empty in October.</p></div>
-      <div class="vcard"><div class="n">/ 02 · refill it</div><h4>The tube swaps out</h4><p>The gloss snaps into the case magnetically. When it runs out you replace the tube, not the whole thing — the Pod keeps going.</p></div>
-      <div class="vcard"><div class="n">/ 03 · trust it</div><h4>Clean stuff inside</h4><p>Plant-based, food-simple ingredients you can pronounce. It's on your lips all day, so what's in it isn't an afterthought.</p></div>
+      <div class="vcard"><div class="n">01 · wear it</div><h4>It clips on</h4><p>Phone strap, bag, wrist. It rides on the outside of your life instead of sinking into the bottom of a bag you'll empty in October.</p></div>
+      <div class="vcard"><div class="n">02 · refill it</div><h4>The tube swaps out</h4><p>The gloss snaps into the case magnetically. When it runs out you replace the tube, not the whole thing — the Pod keeps going.</p></div>
+      <div class="vcard"><div class="n">03 · trust it</div><h4>Clean stuff inside</h4><p>Plant-based, food-simple ingredients you can pronounce. It's on your lips all day, so what's in it isn't an afterthought.</p></div>
     </div>
   </div>
 </section>
@@ -863,13 +865,13 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
 <!-- ================= OLD WAY VS LIP POD ================= -->
 <section style="padding-top:10px">
   <div class="wrap">
-    <div class="eyebrow">/ the switch</div>
+    <div class="eyebrow">the switch</div>
     <h3 class="sec">Same lips. <span class="serif">Completely different math.</span></h3>
     <p class="lead">Here's what you're actually choosing between.</p>
     <div class="vs">
       <div class="vs-col old">
         <h4>The tube you keep re-buying</h4>
-        <span class="tagline">// what you do now</span>
+        <span class="tagline">what you do now</span>
         <ul>
           <li><i>&#215;</i><div>Lives loose in a bag, so it's gone within weeks</div></li>
           <li><i>&#215;</i><div>Wax stick that quits by second period</div></li>
@@ -880,7 +882,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
       </div>
       <div class="vs-col now">
         <h4>The Lip Pod</h4>
-        <span class="tagline">// what we're building</span>
+        <span class="tagline">what we're building</span>
         <ul>
           <li><i>&#10003;</i><div>Clips to your phone, bag or wrist — it can't sink to the bottom of anything</div></li>
           <li><i>&#10003;</i><div>Actually stays put through class, practice and your whole camera roll</div></li>
@@ -898,7 +900,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
 <section>
   <div class="wrap">
     <div class="band">
-      <div class="eyebrow">/ the savage standard</div>
+      <div class="eyebrow">the savage standard</div>
       <h3 class="sec">Nothing in it you'd be <span class="serif">afraid to swallow.</span></h3>
       <p class="lead">The Pod is the point — but we didn't cut corners on what goes in it. You lick your lips, you eat, you talk, and it's on you all day. So the gloss is clean and plant-based, sourced organic wherever we can get it, with every single ingredient in plain English on the label. No fragrance, no mystery filler, no fear list.</p>
       <div class="ing">
@@ -908,7 +910,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
         <span>Glycerin — plant-based, all-day soft</span>
         <span>Vitamin E — natural antioxidant</span>
       </div>
-      <p style="font-family:var(--mono);font-size:12px;color:var(--mute);letter-spacing:.03em;margin-top:14px">Cruelty-free, always · no fragrance · no parabens · the full list goes on the label, not in the fine print</p>
+      <p style="font-family:var(--mono);font-size:12px;color:var(--mute);letter-spacing:0;margin-top:14px">Cruelty-free, always · no fragrance · no parabens · the full list goes on the label, not in the fine print</p>
     </div>
   </div>
 </section>
@@ -916,7 +918,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
 <!-- ================= FAQ ================= -->
 <section style="padding-top:10px">
   <div class="wrap">
-    <div class="eyebrow">/ real questions</div>
+    <div class="eyebrow">real questions</div>
     <h3 class="sec">Before you ask.</h3>
     <div class="faq">
       <details><summary>What's the difference between preordering and joining?</summary><p>Preordering means you pay $24 today and we send you a Lip Pod when the first run is made. Joining the community is free — no card, no order — and just puts you on the list. Preorder if you want the Pod and the $24 price. Join if you want to watch first and decide later.</p></details>
@@ -936,7 +938,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
 <section style="padding-top:20px">
   <div class="wrap">
     <div class="close">
-      <div class="eyebrow">/ last thing</div>
+      <div class="eyebrow">last thing</div>
       <h3>Stop buying the same gloss <em>over and over.</em></h3>
       <p>500 units in the founder run. $24 instead of $32, and free shipping while the preorder offer lasts — <b>$12.90 saved</b> — yours ships first, and a full refund anytime before it ships, for any reason. The only thing you're committing to is changing your mind later if you want to.</p>
       <div style="display:flex;flex-direction:column;gap:14px;align-items:center">
@@ -1325,7 +1327,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-si
   background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);
   transform:skewX(-18deg);transition:left .65s cubic-bezier(.22,.61,.36,1)}
 .btn-primary:hover::after{left:150%}
-.btn-primary:hover{box-shadow:0 16px 44px rgba(255,45,149,.48),inset 0 0 0 1px rgba(255,255,255,.28)}
+.btn-primary:hover{box-shadow:0 12px 35px rgba(255,45,149,.216), inset 0 0 0 1px rgba(255,255,255,.28)}
 
 /* ---------- reveal on scroll (class added by JS, so no-JS still shows everything) ---------- */
 @media(prefers-reduced-motion:no-preference){
