@@ -93,6 +93,16 @@ and Lenis load lazily after first paint, so they never touch LCP. Transform, opa
 clip-path only. One clock (GSAP ticker drives Lenis). `gsap.matchMedia()` gates everything on
 `prefers-reduced-motion`.
 
+Changed during the build (measured, not guessed):
+- The hero photo's 1.6 s "settle" on load was dropped. It is the LCP element, and it was not the
+  cause of a slow LCP after all, but a load animation on the LCP image is a risk with no payoff.
+  The photo still drifts on scroll and floats under the pointer on desktop.
+- Only the headline font is preloaded. Preloading the body font as well pushed Lighthouse's
+  simulated mobile LCP from 1.8 s to 2.7 s; without it CLS stays 0 thanks to the metric-matched
+  fallback faces.
+- The "What is the Lip Pod?" answer moved into the hero's lower left, where the old layout left
+  a dead gap. It is the first thing under the fold on phones.
+
 ## Honesty rules this build follows
 
 - Prices, shipping, refund policy, ingredient claims, hello@savageskincare.com, checkout links,

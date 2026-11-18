@@ -60,6 +60,18 @@ document.addEventListener('savage:consent', () => setTimeout(update, 0));
 document.addEventListener('focusin', update);
 document.addEventListener('focusout', () => setTimeout(update, 0));
 
+/* ---------- cookie banner: early in the keyboard order ----------
+   The shared banner (src/cookie-consent.js) appends itself at the end of <body>,
+   so keyboard users reached it last. Here it is moved to sit right after the
+   skip link. Its wording, choices and behaviour are untouched. */
+const skip = document.querySelector('.skip');
+function hoistCookieBar() {
+  const bar = document.getElementById('cookieBar');
+  if (bar && skip && skip.nextElementSibling !== bar) skip.after(bar);
+}
+hoistCookieBar();
+new MutationObserver(hoistCookieBar).observe(document.body, { childList: true });
+
 /* ---------- motion layer: after first paint, only if motion is welcome ---------- */
 const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
 let motionStarted = false;

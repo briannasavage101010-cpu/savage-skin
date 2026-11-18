@@ -51,6 +51,7 @@
   --gloss:#F0B5B4;      /* the gloss itself: selected fills */
   --line:rgba(42,21,25,.14);
   --line-strong:rgba(42,21,25,.3);
+  --line-ui:rgba(42,21,25,.56);   /* control boundaries: 3.6:1 on sweep */
   --f-display:'Boska','Boska Fallback',Georgia,'Times New Roman',serif;
   --f-text:'Schibsted Grotesk','Schibsted Fallback',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
   --ease:cubic-bezier(.16,1,.3,1);
@@ -101,9 +102,13 @@ p,li{text-wrap:pretty}
 .q-label{font-family:var(--f-text);font-weight:600;font-size:1.0625rem;letter-spacing:0;color:var(--rose-ink)}
 
 /* links + buttons */
-.link{color:var(--garnet);text-decoration:none;font-weight:500;background:linear-gradient(currentColor,currentColor) 0 100%/100% 1px no-repeat;
-  padding-bottom:2px;transition:background-size .45s var(--ease),color .2s}
-.link:hover{background-size:0 1px;background-position:100% 100%;color:var(--pink-ink)}
+/* text links keep their underline; on hover a gloss highlight rises from it (one hover voice: the gloss fills) */
+.link{color:var(--garnet);text-decoration:none;font-weight:500;
+  background-image:linear-gradient(currentColor,currentColor),linear-gradient(var(--gloss),var(--gloss));
+  background-size:100% 1px,100% 0;background-position:0 100%,0 100%;background-repeat:no-repeat;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;padding:1px 3px 3px;margin:0 -3px;
+  transition:background-size .45s var(--ease)}
+.link:hover,.link:focus-visible{background-size:100% 1px,100% 100%}
 .btn{position:relative;display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 28px;border-radius:2px;
   font-family:var(--f-text);font-weight:600;font-size:1rem;letter-spacing:.005em;text-decoration:none;overflow:hidden;isolation:isolate;
   transition:color .32s var(--ease),border-color .32s var(--ease),transform .2s var(--ease)}
@@ -112,10 +117,10 @@ p,li{text-wrap:pretty}
 .btn:hover::before,.btn:focus-visible::before{transform:none}
 .btn:active{transform:scale(.985)}
 .btn-primary{background:var(--garnet);color:var(--porcelain)}
-.btn-primary::before{background:var(--rose-ink)}
+.btn-primary::before{background:var(--gloss)}
+.btn-primary:hover,.btn-primary:focus-visible{color:var(--garnet)}
 .btn-outline{border:1.5px solid var(--garnet);color:var(--garnet);background:transparent}
-.btn-outline::before{background:var(--garnet)}
-.btn-outline:hover,.btn-outline:focus-visible{color:var(--porcelain)}
+.btn-outline::before{background:var(--gloss)}
 .btn-light{background:var(--porcelain);color:var(--garnet)}
 .btn-light::before{background:var(--gloss)}
 
@@ -135,9 +140,10 @@ p,li{text-wrap:pretty}
 .nav-links{display:flex;gap:2px;margin-left:auto}
 .nav-links a{display:block;padding:10px 13px;border-radius:2px;font-size:var(--t-ui);font-weight:500;text-decoration:none;color:var(--garnet);
   transition:background-color .2s,color .2s}
-.nav-links a:hover{background:rgba(42,21,25,.07)}
-.nav-links a[aria-current="page"]{background:rgba(42,21,25,.09)}
+.nav-links a:hover{background:rgba(240,181,180,.55)}
+.nav-links a[aria-current="page"]{box-shadow:inset 0 -2px 0 var(--garnet);border-radius:0}
 .nav-cta{min-height:44px;padding:0 18px;font-size:var(--t-ui)}
+.menu-cta{display:none}
 .nav-toggle{display:none;min-height:44px;padding:0 4px 0 12px;font-weight:600;font-size:var(--t-ui);align-items:center;gap:10px}
 .nav-toggle i{position:relative;display:block;width:20px;height:10px}
 .nav-toggle i::before,.nav-toggle i::after{content:"";position:absolute;left:0;right:0;height:1.5px;background:currentColor;transition:transform .35s var(--ease)}
@@ -148,18 +154,18 @@ p,li{text-wrap:pretty}
 /* ===================== hero ===================== */
 .hero{position:relative;display:grid;grid-template-columns:minmax(0,46fr) minmax(0,54fr);grid-template-rows:1fr auto;
   grid-template-areas:"copy media" "def media";min-height:calc(100svh - var(--head-h));max-height:1040px}
-.hero-copy{grid-area:copy;container-type:inline-size;padding:clamp(28px,6vh,72px) var(--s5) var(--s5) var(--gutter)}
-.hero-def{grid-area:def;padding:0 var(--s5) clamp(28px,5vh,56px) var(--gutter);max-width:40rem}
+.hero-copy{grid-area:copy;container-type:inline-size;padding:clamp(24px,5vh,60px) var(--s5) var(--s4) var(--gutter)}
+.hero-def{grid-area:def;padding:0 var(--s5) clamp(24px,4.5vh,48px) var(--gutter);max-width:40rem}
 .hero-def h2{margin-bottom:var(--s2)}
 .hero-def p{font-size:var(--t-body);line-height:1.5;color:var(--garnet);max-width:30em}
-.hero-title{font-family:var(--f-display);font-weight:500;font-size:clamp(3.4rem,22cqi,8.6rem);line-height:.92;letter-spacing:-.03em;margin-left:-.04em}
+.hero-title{font-family:var(--f-display);font-weight:500;font-size:clamp(3.4rem,20.5cqi,8.2rem);line-height:.92;letter-spacing:-.03em;margin-left:-.04em}
 .hero-title .line{display:block;overflow:hidden;padding-bottom:.1em;margin-bottom:-.1em}
 .hero-title .line>span{display:block}
 .hero-lede{margin-top:var(--s4);font-size:var(--t-lede);line-height:1.4;max-width:22em}
-.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s3) var(--s4);margin-top:var(--s5)}
-.hero-copy .trust{margin-top:var(--s5)}
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s3) var(--s4);margin-top:var(--s4)}
+.hero-copy .trust{margin-top:var(--s4)}
 .hero-media{grid-area:media}
-.trust{display:flex;flex-wrap:wrap;gap:10px 20px;font-size:var(--t-small);font-weight:500;color:var(--cocoa);max-width:40em}
+.trust{display:flex;flex-wrap:wrap;gap:10px 20px;font-size:.875rem;font-weight:500;color:var(--cocoa);max-width:40em}
 .trust li{display:inline-flex;align-items:center;gap:8px;line-height:1.2}
 .trust li::before{content:"";flex:none;width:5px;height:5px;border-radius:50%;background:var(--rose)}
 .hero-media{position:relative;overflow:hidden;background:#d9c7b8}
@@ -167,6 +173,11 @@ p,li{text-wrap:pretty}
 .hero-media picture,.hero-media img{width:100%;height:100%}
 .hero-media img{object-fit:cover;object-position:52% 50%}
 
+@media (min-width:901px) and (max-height:820px){
+  .hero-title{font-size:clamp(3.2rem,min(20.5cqi,11.7vh),8.2rem)}
+  .hero-lede{margin-top:var(--s3)}
+  .hero-def p{font-size:1rem}
+}
 /* hero intro: one orchestrated load (CSS, runs before any JS) */
 @media (prefers-reduced-motion:no-preference){
   .hero-title .line>span{animation:lineUp .95s var(--ease) both}
@@ -196,11 +207,10 @@ p,li{text-wrap:pretty}
 /* ===================== how it works (signature) ===================== */
 .how{padding:var(--section) 0}
 .how-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--s4)}
-.how-head{grid-column:1 / span 8;margin-bottom:var(--s5)}
+.how-head{grid-column:1 / span 6;grid-row:1;margin-bottom:var(--s4)}
 .how-head .answer{margin-top:var(--s4)}
-.how-more{display:inline-block;margin-top:var(--s4)}
-.stage{grid-column:1 / span 6;align-self:start;position:sticky;top:calc(var(--head-h) + 20px)}
-.stage-frame{position:relative;aspect-ratio:885 / 1100;max-height:calc(100svh - var(--head-h) - 120px);margin-inline:auto}
+.stage{grid-column:1 / span 6;grid-row:2;align-self:start;position:sticky;top:calc(var(--head-h) + 20px)}
+.stage-frame{position:relative;max-width:100%;aspect-ratio:885 / 1100;max-height:calc(100svh - var(--head-h) - 150px);margin-inline:auto}
 .stage-frame picture{position:absolute;inset:0}
 .stage-frame img{width:100%;height:100%;object-fit:contain;
   -webkit-mask-image:linear-gradient(to right,transparent,#000 7%,#000 93%,transparent),linear-gradient(to bottom,transparent,#000 4%,#000 96%,transparent);
@@ -208,7 +218,7 @@ p,li{text-wrap:pretty}
 .stage-line{position:absolute;left:6%;right:6%;top:0;height:1px;background:var(--rose);opacity:0;pointer-events:none}
 .stage figcaption{display:flex;gap:var(--s3);align-items:flex-start;margin-top:var(--s3);font-size:var(--t-small);color:var(--cocoa);max-width:34em;margin-inline:auto}
 .stage figcaption .tag{position:static;flex:none;background:var(--porcelain)}
-.how-steps{grid-column:8 / span 5;display:flex;flex-direction:column}
+.how-steps{grid-column:8 / span 5;grid-row:1 / span 2;display:flex;flex-direction:column;padding-top:.6em}
 .step{min-height:34svh;display:flex;flex-direction:column;justify-content:center;padding:var(--s4) 0}
 .step:first-child{min-height:26svh;justify-content:flex-start;padding-top:var(--s3)}
 .step:last-child{min-height:30svh}
@@ -242,18 +252,18 @@ p,li{text-wrap:pretty}
 /* ===================== founder + status ===================== */
 .founder{padding:var(--section) 0}
 .founder-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--s4);align-items:start}
-.founder-col{grid-column:1 / span 6}
-.founder-photo{position:relative;aspect-ratio:16 / 9;border:1px dashed var(--rose);background:
-  repeating-linear-gradient(135deg,rgba(169,112,95,.07) 0 1px,transparent 1px 14px),var(--porcelain);display:flex;flex-direction:column;
-  align-items:center;justify-content:center;gap:var(--s2);text-align:center;padding:var(--s4)}
-.founder-photo .mono{font-family:var(--f-display);font-size:4.2rem;line-height:1;color:var(--rose)}
-.founder-photo p{font-size:var(--t-small);font-weight:600;color:var(--rose-ink);max-width:18em}
-.founder-note{margin-top:var(--s5)}
+.founder-col{grid-column:1 / span 6;align-self:start;position:sticky;top:calc(var(--head-h) + 32px)}
+.founder-photo{flex:none;position:relative;width:112px;aspect-ratio:4 / 5;border:1px dashed var(--rose);background:
+  repeating-linear-gradient(135deg,rgba(169,112,95,.08) 0 1px,transparent 1px 10px),var(--porcelain);display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:6px;text-align:center;padding:8px}
+.founder-photo .mono{font-family:var(--f-display);font-size:2.6rem;line-height:1;color:var(--rose)}
+.founder-photo .ph-label{font-size:.6875rem;line-height:1.25;font-weight:600;color:var(--rose-ink)}
 .founder-note blockquote{margin-top:var(--s4);font-family:var(--f-display);font-weight:500;font-size:clamp(1.3rem,1rem + .85vw,1.8rem);line-height:1.34;letter-spacing:-.006em}
 .founder-note blockquote p+p{margin-top:.7em}
-.founder-sign{margin-top:var(--s4);font-weight:600}
-.founder-sign span{display:block;font-weight:400;color:var(--cocoa);font-size:var(--t-ui)}
-.founder-note .link{display:inline-block;margin-top:var(--s3)}
+.founder-sign{display:flex;align-items:center;gap:var(--s4);margin-top:var(--s5)}
+.founder-sign b{display:block;font-weight:600}
+.founder-sign span:not(.mono):not(.ph-label){display:block;color:var(--cocoa);font-size:var(--t-ui)}
+.more{margin-top:var(--s4)}
 .status{grid-column:8 / span 5}
 .status-head .answer{margin-top:var(--s4)}
 .timeline{position:relative;margin-top:var(--s5);padding-left:34px}
@@ -280,7 +290,7 @@ p,li{text-wrap:pretty}
 .vote-head h2{grid-column:1 / span 6}
 .vote-head .answer{grid-column:7 / span 6;align-self:end}
 .vote-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--s4);margin-top:var(--s5)}
-.vote-grid .vote-block:first-child{grid-column:1 / span 7}
+.vote-grid .vote-block:first-child{grid-column:1 / span 8}
 .vote-grid .vote-block:last-child{grid-column:9 / span 4}
 .vote-block>h3{margin-bottom:var(--s4)}
 .vote-grid .flavors{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -293,13 +303,13 @@ p,li{text-wrap:pretty}
 .wear-opt[aria-pressed="true"] .ring{box-shadow:inset 0 0 0 3px var(--garnet)}
 .wear-opt .meta{display:flex;justify-content:space-between;align-items:baseline;gap:var(--s3);margin-top:var(--s3)}
 .wear-opt .nm{font-family:var(--f-display);font-weight:500;font-size:clamp(1.35rem,1.1rem + .6vw,1.7rem);line-height:1.1;letter-spacing:-.01em}
-.wear-opt .pick{flex:none;font-size:var(--t-small);font-weight:600;color:var(--cocoa);padding:6px 10px;border:1px solid var(--line-strong);border-radius:2px;transition:all .25s var(--ease)}
-.wear-opt:hover .pick{border-color:var(--garnet);color:var(--garnet)}
+.wear-opt .pick{flex:none;font-size:var(--t-small);font-weight:600;color:var(--cocoa);padding:6px 10px;border:1px solid var(--line-ui);border-radius:2px;transition:all .25s var(--ease)}
+.wear-opt:hover .pick{border-color:var(--garnet);color:var(--garnet);background:var(--gloss)}
 .wear-opt[aria-pressed="true"] .pick{background:var(--garnet);border-color:var(--garnet);color:var(--porcelain)}
 .wear-opt .ds{display:block;margin-top:6px;color:var(--cocoa);font-size:var(--t-ui);max-width:24em}
-.flavors{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s3)}
+.flavors{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:1fr;gap:var(--s3)}
 .flavor{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:var(--s4);min-height:132px;padding:var(--s4);text-align:left;
-  border:1px solid var(--line-strong);border-radius:2px;background:var(--sweep);overflow:hidden;isolation:isolate;transition:border-color .25s var(--ease)}
+  border:1px solid var(--line-ui);border-radius:2px;background:var(--sweep);overflow:hidden;isolation:isolate;transition:border-color .25s var(--ease)}
 .flavor::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--gloss);transform:translateY(101%);transition:transform .45s var(--ease)}
 .flavor:hover{border-color:var(--garnet)}
 .flavor:hover::before{transform:translateY(86%)}
@@ -320,7 +330,7 @@ p,li{text-wrap:pretty}
 .field{margin-bottom:var(--s3)}
 .field label{display:block;font-size:var(--t-ui);font-weight:600;margin-bottom:8px}
 .field label .hint{font-weight:400;color:var(--cocoa)}
-.field input{width:100%;min-height:52px;padding:14px 16px;font-size:1rem;background:var(--porcelain);border:1px solid var(--line-strong);border-radius:2px;
+.field input{width:100%;min-height:52px;padding:14px 16px;font-size:1rem;background:var(--porcelain);border:1px solid var(--line-ui);border-radius:2px;
   color:var(--garnet);transition:border-color .2s,box-shadow .2s}
 .field input:hover{border-color:var(--garnet)}
 .field input:focus{outline:none;border-color:var(--garnet);box-shadow:0 0 0 3px rgba(209,0,110,.28)}
@@ -346,7 +356,7 @@ p,li{text-wrap:pretty}
 .offer{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:var(--porcelain)}
 .offer-media{position:relative;width:100%;background:var(--sweep);overflow:hidden;min-height:560px}
 .offer-media picture{position:absolute;inset:0}
-.offer-media img{width:100%;height:100%;object-fit:cover;object-position:44% 66%}
+.offer-media img{width:100%;height:100%;object-fit:cover;object-position:46% 58%}
 .offer-sheet{padding:calc(var(--section) * .8) var(--gutter) calc(var(--section) * .8) clamp(32px,5vw,88px)}
 .offer-sheet .answer{margin-top:var(--s4)}
 .price{display:flex;align-items:baseline;gap:var(--s4);margin-top:var(--s5)}
@@ -365,7 +375,6 @@ p,li{text-wrap:pretty}
 .faq-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--s4)}
 .faq-side{grid-column:1 / span 4;align-self:start;position:sticky;top:calc(var(--head-h) + 32px)}
 .faq-side .body{margin-top:var(--s4)}
-.faq-side .link{display:inline-block;margin-top:var(--s4)}
 .faq{grid-column:6 / span 7;border-top:1px solid var(--line-strong)}
 .faq details{border-bottom:1px solid var(--line-strong)}
 .faq summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:var(--s4);padding:18px 0;cursor:pointer;
@@ -393,7 +402,8 @@ p,li{text-wrap:pretty}
 .join .perks{margin:var(--s3) 0 var(--s4);color:var(--cocoa);font-size:var(--t-ui)}
 .close .btn-light:focus-visible{outline-color:var(--pink)}
 .site-foot{background:var(--garnet);color:#E9D7D2;padding:var(--s6) 0 calc(var(--s5) + env(safe-area-inset-bottom))}
-.foot-mark{font-family:var(--f-display);font-weight:500;color:var(--porcelain);font-size:clamp(3.2rem,12.4vw,14rem);line-height:.82;letter-spacing:-.045em;
+.foot-mark-wrap{container-type:inline-size}
+.foot-mark{font-family:var(--f-display);font-weight:500;color:var(--porcelain);font-size:17.3cqi;line-height:.82;letter-spacing:-.045em;
   margin-left:-.05em;white-space:nowrap;padding-bottom:.1em}
 .foot-cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s5) var(--s4);margin-top:var(--s6);padding-top:var(--s5);border-top:1px solid rgba(252,246,242,.18)}
 .foot-cols p{font-size:var(--t-small);font-weight:600;color:var(--gloss);margin-bottom:var(--s3)}
@@ -429,7 +439,6 @@ body .cookie-btn-ghost:hover{background:var(--sweep)}
   .nav-links a{padding:10px 9px}
   .moments{grid-template-columns:repeat(2,minmax(0,1fr))}
   .moments li:nth-child(even){margin-top:0}
-  .leave{grid-column:9 / span 4}
 }
 @media (max-width:960px){
   :root{--head-h:60px}
@@ -440,6 +449,10 @@ body .cookie-btn-ghost:hover{background:var(--sweep)}
   .nav-open .nav-links{visibility:visible;opacity:1;transform:none;transition:opacity .3s var(--ease),transform .3s var(--ease)}
   .nav-links a{font-family:var(--f-display);font-size:2.25rem;line-height:1.1;padding:12px 0;border-bottom:1px solid var(--line);border-radius:0;background:none!important}
   .nav-links a[aria-current="page"]{color:var(--rose-ink)}
+  .nav-links .menu-cta{display:block;margin-top:var(--s5)}
+  .nav-links .menu-cta a{display:flex;font-family:var(--f-text);font-size:1rem;font-weight:600;line-height:1;padding:0 28px;border-bottom:0;border-radius:2px;
+    background:var(--garnet)!important;color:var(--porcelain)}
+  .nav-links .menu-cta a:hover,.nav-links .menu-cta a:focus-visible{color:var(--garnet)}
   .nav-cta{margin-left:auto}
   .nav-toggle{margin-left:4px}
 }
@@ -456,7 +469,9 @@ body .cookie-btn-ghost:hover{background:var(--sweep)}
   .problem-head{grid-column:1 / -1;position:static}
   .problem-body{grid-column:1 / -1;margin-top:var(--s5)}
   .punch{margin-top:var(--s5)}
-  .how-head,.stage,.how-steps{grid-column:1 / -1}
+  .how-head,.stage,.how-steps{grid-column:1 / -1;grid-row:auto}
+  .how-steps{padding-top:0}
+  .founder-col{position:static}
   .stage{position:relative;top:0}
   .stage-frame{max-height:none;max-width:520px}
   .step,.step:first-child{min-height:0;padding:var(--s5) 0 0}
@@ -494,6 +509,9 @@ body .cookie-btn-ghost:hover{background:var(--sweep)}
   .facts li{grid-template-columns:1fr;gap:2px}
   .price{flex-direction:column;gap:var(--s2)}
   body .cookie-bar{left:10px;right:10px;bottom:10px!important;width:auto}
+  .clean-side{grid-template-columns:1fr}
+  .macro{aspect-ratio:4 / 3}
+  .offer-ctas .btn,.close-copy .btn{width:100%}
   body .cookie-inner{padding:12px 14px}
   body .cookie-bar-text{font-size:12.5px;line-height:1.42}
 }
@@ -651,6 +669,7 @@ body .cookie-btn-ghost:hover{background:var(--sweep)}
       <li><a href="/blog/">Journal</a></li>
       <li><a href="/founders/">Story</a></li>
       <li><a href="/faq/">FAQ</a></li>
+      <li class="menu-cta"><a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1" class="btn btn-primary"><span>Preorder the Lip Pod — $24</span></a></li>
     </ul>
     <a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1" class="btn btn-primary nav-cta"><span>Preorder &mdash; $24</span></a>
     <button class="nav-toggle" id="navToggle" type="button" aria-controls="navLinks" aria-expanded="false"><span id="navToggleLabel">Menu</span><i aria-hidden="true"></i></button>
@@ -722,7 +741,7 @@ body .cookie-btn-ghost:hover{background:var(--sweep)}
     <div class="how-head">
       <h2 class="display" id="how-title">How does the Lip Pod work?</h2>
       <p class="answer">A refillable gloss tube snaps magnetically into a small case, and the case clips to your phone, your bag or your wrist.</p>
-      <a class="link how-more" href="/shop/">See every detail on the Lip Pod product page</a>
+      <p class="more"><a class="link" href="/shop/">See every detail on the Lip Pod product page</a></p>
     </div>
     <figure class="stage" id="stage">
       <div class="stage-frame">
@@ -815,18 +834,20 @@ body .cookie-btn-ghost:hover{background:var(--sweep)}
 <section class="founder" id="status" aria-labelledby="founder-title">
   <div class="wrap founder-grid">
     <div class="founder-col">
-      <figure class="founder-photo" aria-label="Placeholder: a photo of Brianna is coming soon">
-        <span class="mono" aria-hidden="true">B</span>
-        <p>Placeholder. A photo of Brianna is coming soon.</p>
-      </figure>
       <div class="founder-note">
         <h2 class="display" id="founder-title">A note from the founder</h2>
         <blockquote>
           <p>I’m actually building this. I’m working with designers on the Pod right now. It’s past the sketch stage, but it isn’t finished, and I haven’t picked a manufacturer yet.</p>
           <p>I want the gloss inside to be clean and plant-based, because it’s on your lips all day. I’m passionate about getting this right, and that’s exactly why you’re seeing an honest concept render instead of a faked finished photo.</p>
         </blockquote>
-        <p class="founder-sign">Brianna Savage<span>Founder, Savage Skincare</span></p>
-        <a class="link" href="/founders/">Read Brianna’s founder story</a>
+        <div class="founder-sign">
+          <figure class="founder-photo" aria-label="Placeholder: a photo of Brianna is coming soon">
+            <span class="mono" aria-hidden="true">B</span>
+            <span class="ph-label">Photo coming soon</span>
+          </figure>
+          <p><b>Brianna Savage</b><span>Founder, Savage Skincare</span></p>
+        </div>
+        <p class="more"><a class="link" href="/founders/">Read Brianna’s founder story</a></p>
       </div>
     </div>
 
@@ -862,7 +883,7 @@ body .cookie-btn-ghost:hover{background:var(--sweep)}
   <div class="wrap">
     <div class="vote-head">
       <h2 class="display" id="vote-title">Help decide the final design</h2>
-      <p class="answer">Two choices are still open. Pick one of each. Your picks are saved on this device, and they’re counted when you join the list.</p>
+      <p class="answer">Two choices are still open. Pick one of each. Your picks are saved on this device and counted when you add your email, whether or not you preorder.</p>
     </div>
 
     <div class="vote-grid">
@@ -951,10 +972,10 @@ body .cookie-btn-ghost:hover{background:var(--sweep)}
   <figure class="offer-media" data-reveal>
     <picture>
       <source type="image/avif" sizes="(min-width: 900px) 50vw, 100vw"
-        srcset="/images/home/lip-pod-case-and-gloss-tube-concept-render-600.avif 600w, /images/home/lip-pod-case-and-gloss-tube-concept-render-900.avif 900w, /images/home/lip-pod-case-and-gloss-tube-concept-render-1200.avif 1200w">
+        srcset="/images/home/lip-pod-case-and-gloss-tube-portrait-concept-render-600.avif 600w, /images/home/lip-pod-case-and-gloss-tube-portrait-concept-render-900.avif 900w">
       <source type="image/webp" sizes="(min-width: 900px) 50vw, 100vw"
-        srcset="/images/home/lip-pod-case-and-gloss-tube-concept-render-600.webp 600w, /images/home/lip-pod-case-and-gloss-tube-concept-render-900.webp 900w, /images/home/lip-pod-case-and-gloss-tube-concept-render-1200.webp 1200w">
-      <img src="/images/home/lip-pod-case-and-gloss-tube-concept-render-900.jpg" width="1200" height="1200" loading="lazy" decoding="async"
+        srcset="/images/home/lip-pod-case-and-gloss-tube-portrait-concept-render-600.webp 600w, /images/home/lip-pod-case-and-gloss-tube-portrait-concept-render-900.webp 900w">
+      <img src="/images/home/lip-pod-case-and-gloss-tube-portrait-concept-render-900.jpg" width="900" height="970" loading="lazy" decoding="async"
         alt="Concept render of what comes in the box: the ivory Lip Pod case on its rose cord, standing beside the pink gloss tube">
     </picture>
     <figcaption class="tag">Concept render</figcaption>
@@ -983,7 +1004,7 @@ body .cookie-btn-ghost:hover{background:var(--sweep)}
     <div class="faq-side">
       <h2 class="display" id="faq-title">Questions, answered</h2>
       <p class="body">Straight answers about the Lip Pod, the preorder and the gloss.</p>
-      <a class="link" href="/faq/">More answers on the FAQ page</a>
+      <p class="more"><a class="link" href="/faq/">More answers on the FAQ page</a></p>
     </div>
     <div class="faq">
       <details><summary>What's the difference between preordering and joining?</summary><p>Preordering means you pay $24 today and we send you a Lip Pod when the first run is made. Joining the community is free — no card, no order — and just puts you on the list. Preorder if you want the Pod and the $24 price. Join if you want to watch first and decide later.</p></details>
@@ -1055,7 +1076,7 @@ body .cookie-btn-ghost:hover{background:var(--sweep)}
 
 <footer class="site-foot">
   <div class="wrap">
-    <p class="foot-mark" aria-hidden="true">Savage Skincare</p>
+    <div class="foot-mark-wrap"><p class="foot-mark" aria-hidden="true">Savage Skincare</p></div>
     <div class="foot-cols">
       <div><p>The Lip Pod</p><ul><li><a href="/shop/">Product</a></li><li><a href="/shop/#science">Science</a></li><li><a href="#terms">Preorder terms</a></li></ul></div>
       <div><p>Read</p><ul><li><a href="/blog/">Journal</a></li><li><a href="/founders/">Story</a></li><li><a href="/faq/">FAQ</a></li></ul></div>

@@ -51,16 +51,15 @@ mm.add(
       gsap.set(render, { clipPath: 'inset(0% 0% 100% 0%)' });
       const tl = gsap.timeline({
         defaults: { ease: 'none' },
-        scrollTrigger: {
-          trigger: wide ? '.how-steps' : stage,
-          start: wide ? 'top 55%' : 'top 78%',
-          end: wide ? 'bottom 80%' : 'bottom 40%',
-          scrub: 0.6,
-          invalidateOnRefresh: true,
-        },
+        scrollTrigger: wide
+          ? { trigger: stage, start: 'top 72%', endTrigger: '.how-steps', end: 'bottom bottom', scrub: 0.6, invalidateOnRefresh: true }
+          : { trigger: stage, start: 'top 78%', end: 'bottom 40%', scrub: 0.6, invalidateOnRefresh: true },
       });
+      // The scan line fades in as the wipe starts and out as it lands, so it is
+      // never a stray rule sitting on the drawing at rest.
       tl.to(render, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1 }, 0)
-        .fromTo(line, { y: 0, autoAlpha: 1 }, { y: () => frame.offsetHeight, duration: 1 }, 0)
+        .fromTo(line, { y: 0 }, { y: () => frame.offsetHeight, duration: 1 }, 0)
+        .fromTo(line, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.05 }, 0)
         .to(line, { autoAlpha: 0, duration: 0.08 }, 0.92);
     }
 
