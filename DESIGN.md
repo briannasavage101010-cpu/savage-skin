@@ -61,16 +61,19 @@ No gradients, no glows, no glass blur, no tinted-grey shadows.
 ```
 HERO          | huge question, clean line,    |  phone + Pod photo,      |
 (split)       | CTA, one text link, trust row |  full height, bleeds off |
-DEFINITION    one large serif statement = "What is the Lip Pod?" answer, studio render beside it
-PROBLEM       H2 + answer | four moments as a typographic 2x2, no cards, no numbers | bag photo
-HOW IT WORKS  sticky stage: drawing -> render wipe (left)  |  three question answers scroll (right)
-INGREDIENTS   full-bleed gloss macro band, then a specimen list (name / one plain line) + leave-out list
-FOUNDER       letter: photo placeholder | Brianna's note in serif; then ONE timeline + the terms, once
+              | "What is the Lip Pod?" answer |                          |
+PROBLEM       H2 + answer (sticky) | four moments as a typographic 2x2, no cards, no numbers; punchline
+HOW IT WORKS  H2 + answer, then the sticky stage: drawing -> render wipe | three question answers scroll
+INGREDIENTS   specimen list (name / one plain line) | gloss macro render + the leave-out list
+FOUNDER       Brianna's note in serif, small marked photo placeholder at the signature
+  + STATUS    | where it is now: ONE vertical timeline, then the preorder terms, once
 VOTE          two pickers side by side: how you'd wear it (3 renders), which flavor (4 type toggles)
-OFFER         price sheet: $24 vs $32 set big, the facts once, buy buttons | studio render
+OFFER         studio render, full bleed | price sheet: $24 vs $32 set big, the facts once, buy buttons
 FAQ           H2 rail left | all nine existing questions, native <details>, right
 CLOSE         garnet band: last line + CTA | the join form as a rail; giant wordmark footer
 ```
+(As built. The first draft had a separate definition band and a large photo placeholder; the
+jury review and the length target moved both.)
 
 Radius rule: 0 on images, 2 px on controls. Hairlines only where a list needs scanning.
 
