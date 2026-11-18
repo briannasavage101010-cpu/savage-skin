@@ -2,655 +2,1015 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Tired of Losing Your Lip Gloss? — Savage Skin</title>
-<meta name="description" content="You've re-bought the same lip gloss three times. The Lip Pod clips to your phone, bag or wrist so it can't get lost. Preorder now at $24 (goes to $32 at launch) — or just join the community." />
-<meta property="og:title" content="Tired of losing your lip gloss?" />
-<meta property="og:description" content="The Lip Pod clips to the things you never put down. Preorder the founder run at $24 — it’s $32 at launch. Refundable anytime before it ships." />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Lip Pod: Clean Lip Gloss You Can’t Lose | Savage Skincare</title>
+<meta name="description" content="A clean, plant-based lip gloss in a refillable case that clips to your phone, bag or wrist. Preorder the Lip Pod for $24, shipping free." />
+<link rel="canonical" href="https://savageskincare.com/" />
+<meta name="theme-color" content="#F7EAE4" />
 <meta property="og:type" content="website" />
-<meta property="og:image" content="https://savageskincare.com/lip-pod/pod-hero.jpg" />
+<meta property="og:site_name" content="Savage Skincare" />
+<meta property="og:url" content="https://savageskincare.com/" />
+<meta property="og:title" content="Tired of losing your lip gloss? Meet the Lip Pod." />
+<meta property="og:description" content="Clean, plant-based gloss in a refillable case that clips to your phone, bag or wrist. Preorder the founder run for $24." />
+<meta property="og:image" content="https://savageskincare.com/og/lip-pod-clean-lip-gloss-share.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Concept render of the Lip Pod clipped to a phone, beside the words Tired of losing your lip gloss?" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Tired of losing your lip gloss? Meet the Lip Pod." />
+<meta name="twitter:description" content="Clean, plant-based gloss in a refillable case that clips to your phone, bag or wrist. Preorder the founder run for $24." />
+<meta name="twitter:image" content="https://savageskincare.com/og/lip-pod-clean-lip-gloss-share.jpg" />
+<meta name="twitter:image:alt" content="Concept render of the Lip Pod clipped to a phone, beside the words Tired of losing your lip gloss?" />
 <link rel="icon" type="image/png" href="/logo.png" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..900&display=swap" rel="stylesheet">
+<link rel="apple-touch-icon" href="/logo.png" />
+<link rel="preload" as="image" type="image/avif" fetchpriority="high"
+  imagesrcset="/images/home/lip-pod-clipped-to-phone-concept-render-560.avif 560w, /images/home/lip-pod-clipped-to-phone-concept-render-800.avif 800w, /images/home/lip-pod-clipped-to-phone-concept-render-1100.avif 1100w"
+  imagesizes="(min-width: 900px) 54vw, 100vw" />
+<!-- Only the headline face is preloaded: preloading the body font too pushed mobile LCP from 1.8s to 2.7s. -->
+<link rel="preload" href="/fonts/boska-500.woff2" as="font" type="font/woff2" crossorigin />
 <style>
+/* ===================== fonts ===================== */
+@font-face{font-family:'Boska';src:url('/fonts/boska-500.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Schibsted Grotesk';src:url('/fonts/schibsted-grotesk-latin-var.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap;
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+/* metric-matched fallbacks so the swap to the web fonts barely moves anything */
+@font-face{font-family:'Boska Fallback';src:local('Georgia'),local('Times New Roman');size-adjust:86%;ascent-override:96%;descent-override:26%;line-gap-override:0%}
+@font-face{font-family:'Schibsted Fallback';src:local('Arial'),local('Helvetica Neue'),local('Helvetica');size-adjust:101%;ascent-override:96%;descent-override:26%;line-gap-override:0%}
+
+/* ===================== tokens ===================== */
 :root{
-  --bg:#f7f3ed; --surface:#ffffff; --line:rgba(10,10,18,.08); --line2:rgba(10,10,18,.16);
-  --ink:#0a0a14; --dim:#4a4858; --mute:#6b6878;
-  --neon:#ff2d95; --cyan:#00f0ff; --violet:#b026ff; --lip:#D4537E; --gold:#e5c26b;
-  --serif:'Schibsted Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; --sans:'Schibsted Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; --mono:'Schibsted Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --sweep:#F7EAE4;      /* the renders' paper sweep: page ground */
+  --porcelain:#FCF6F2;  /* raised ground */
+  --garnet:#2A1519;     /* ink */
+  --cocoa:#6E5156;      /* secondary text, 6.0:1 on sweep */
+  --mute:#6E5156;       /* kept: the SMS consent line references it */
+  --rose:#A9705F;       /* rose-gold hardware: lines + large details only */
+  --rose-ink:#8E5546;   /* rose that passes as text, 5.0:1 */
+  --pink:#FF2D95;       /* Savage pink, sparingly */
+  --pink-ink:#D1006E;   /* pink that passes on light grounds, 4.5:1 */
+  --gloss:#F0B5B4;      /* the gloss itself: selected fills */
+  --line:rgba(42,21,25,.14);
+  --line-strong:rgba(42,21,25,.3);
+  --f-display:'Boska','Boska Fallback',Georgia,'Times New Roman',serif;
+  --f-text:'Schibsted Grotesk','Schibsted Fallback',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --s1:4px;--s2:8px;--s3:16px;--s4:24px;--s5:40px;--s6:64px;--s7:104px;
+  --gutter:clamp(20px,4.2vw,60px);
+  --head-h:64px;
+  --t-statement:clamp(1.85rem,1.05rem + 2.6vw,3.6rem);
+  --t-display:clamp(2.35rem,1.2rem + 4vw,5.1rem);
+  --t-h3:clamp(1.55rem,1.15rem + 1.15vw,2.3rem);
+  --t-lede:clamp(1.18rem,1.05rem + .5vw,1.45rem);
+  --t-body:clamp(1.0625rem,1.02rem + .18vw,1.125rem);
+  --t-ui:.9375rem;
+  --t-small:.8125rem;
+  --section:clamp(56px,7.2vw,112px);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:400;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img{display:block;max-width:100%}
-a{color:inherit;text-decoration:none}
-button{font-family:inherit;cursor:pointer}
-::selection{background:var(--neon);color:#fff}
-.serif{font-family:var(--serif);font-style:normal}
-.mono{font-family:var(--mono)}
-.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
-a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--neon);outline-offset:3px;border-radius:6px}
 
-.bg-mesh{position:fixed;inset:-10%;z-index:0;pointer-events:none;filter:blur(40px);
-  background:radial-gradient(45% 40% at 12% 18%,rgba(255,45,149,.10),transparent 70%),
-             radial-gradient(50% 45% at 88% 78%,rgba(176,38,255,.07),transparent 70%)}
-.layer{position:relative;z-index:5}
-
-/* ---------- nav ---------- */
-nav.top{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
-  padding:16px 24px;background:rgba(247,243,237,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line2);box-shadow:0 1px 10px rgba(10,10,18,.03)}
-.brand{display:flex;align-items:center;gap:11px;font-family:var(--serif);font-weight:800;font-size:20px;letter-spacing:-.02em}
-.brand .mark{width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff,var(--neon) 60%,#2a0a18 100%);box-shadow:none}
-.brand em{font-style:normal;color:var(--neon)}
-.nav-links{display:flex;gap:clamp(16px,2vw,28px);font-size:12px;letter-spacing:.072em;text-transform:uppercase;color:#2b2933;font-weight:500}
-.nav-links a{padding:6px 0;position:relative;transition:color .2s}
-.nav-links a:hover{color:var(--ink)}
-.nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--neon);transition:width .35s}
-.nav-links a:hover::after{width:100%}
-.nav-links a[aria-current="page"]{color:var(--neon)}
-.nav-links a[aria-current="page"]::after{width:100%}
-.nav-cta{font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#fff;background:var(--neon);
-  padding:10px 16px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 14px rgba(255,45,149,.126);font-weight:600}
-.nav-toggle{display:none;flex-direction:column;gap:5px;width:42px;height:42px;align-items:center;justify-content:center;border:1px solid var(--line2);border-radius:12px;background:transparent}
-.nav-toggle span{display:block;width:18px;height:2px;background:var(--ink);border-radius:2px}
-
-/* ---------- hero ---------- */
-.hero{padding:20px 0 30px}
-.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:54px;align-items:start}
-.pill{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;letter-spacing:.09em;
-  text-transform:uppercase;color:var(--dim);border:1px solid var(--line2);border-radius:999px;padding:7px 14px;background:#fff;font-weight:600}
-.pill .dot{width:7px;height:7px;border-radius:50%;background:var(--neon);box-shadow:0 0 0 0 rgba(255,45,149,.6);animation:pulse 1.8s infinite}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,45,149,.55)}70%{box-shadow:0 0 0 11px rgba(255,45,149,0)}100%{box-shadow:0 0 0 0 rgba(255,45,149,0)}}
-h1{font-family:var(--serif);font-weight:800;line-height:.98;letter-spacing:-.03em;font-size:clamp(46px,5.4vw,74px);margin:20px 0 18px}
-h1 em{font-style:normal;font-weight:inherit;color:var(--neon);display:block}
-.sub{font-size:17.5px;color:var(--dim);max-width:30em;margin-bottom:22px;line-height:1.65}
-.perks{list-style:none;display:grid;gap:11px;margin-bottom:26px;max-width:30em}
-.perks li{display:flex;gap:11px;align-items:flex-start;font-size:15.5px;color:var(--ink);font-weight:400}
-.perks .chk{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;
-  background:rgba(255,45,149,.12);color:var(--neon);font-size:12px;font-weight:700;border:1px solid rgba(255,45,149,.3);flex-shrink:0}
-.hero-art{position:relative;display:flex;justify-content:center}
-.hero-art::before{content:"";position:absolute;top:48%;left:50%;transform:translate(-50%,-50%);width:108%;aspect-ratio:1;border-radius:50%;
-  background:radial-gradient(circle at 50% 45%,rgba(212,83,126,.30),transparent 66%);filter:blur(36px)}
-.hero-art img{position:relative;z-index:1;width:auto;max-width:100%;height:auto;max-height:460px;
-  border-radius:24px;box-shadow:0 20px 38px rgba(10,10,18,.096);animation:float 6.5s ease-in-out infinite}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-.scarce{font-family:var(--mono);font-size:12.5px;color:var(--mute);letter-spacing:0}
-.scarce b{color:var(--ink)}
-.bar-track{height:6px;width:220px;max-width:60vw;background:rgba(10,10,18,.08);border-radius:6px;overflow:hidden;margin-top:9px}
-.bar-track i{display:block;height:100%;width:84%;background:linear-gradient(90deg,var(--neon),var(--violet))}
-
-.btn{display:inline-flex;align-items:center;gap:9px;font-size:12px;letter-spacing:.09em;text-transform:uppercase;font-weight:600;
-  padding:16px 28px;border-radius:999px;border:1px solid transparent;transition:transform .2s,box-shadow .2s}
-.btn-primary{background:var(--neon);color:#fff;box-shadow:0 6px 19px rgba(255,45,149,.117)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 29px rgba(255,45,149,.162)}
-.btn-ghost{background:#fff;border-color:var(--line2);color:var(--ink)}
-.btn-ghost:hover{border-color:var(--ink)}
-.btn .arr{transition:transform .3s}.btn:hover .arr{transform:translateX(4px)}
-
-/* ---------- form card ---------- */
-.card{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:30px;box-shadow:0 10px 40px rgba(10,10,18,.042)}
-.card-top{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:6px}
-.card-top .tag{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--neon);font-weight:600}
-.price-chip{text-align:right;line-height:1}
-.price-chip .now{font-family:var(--serif);font-size:30px;font-weight:700;color:var(--ink)}
-.price-chip .was{font-size:13px;color:var(--mute);text-decoration:line-through;margin-left:5px}
-.price-chip .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:var(--mute);text-transform:uppercase;margin-top:3px;font-weight:600}
-.card h2{font-family:var(--serif);font-weight:700;font-size:26px;letter-spacing:-.02em;margin:6px 0 16px;line-height:1.1}
-.field{margin-bottom:14px}
-.field label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--dim);margin-bottom:8px;font-weight:600}
-.field label .hint{text-transform:none;letter-spacing:0;color:var(--mute);font-family:var(--sans);font-size:12px}
-.field input{width:100%;background:#fbf9f5;border:1px solid var(--line2);border-radius:13px;padding:15px 16px;font-size:16px;font-family:inherit;color:var(--ink);transition:border-color .2s}
-.field input:focus{outline:none;border-color:var(--neon);background:#fff}
-.consent{display:flex;gap:11px;align-items:flex-start;margin:14px 0;font-size:13px;color:var(--dim);line-height:1.5}
-.consent input{margin-top:2px;width:18px;height:18px;flex-shrink:0;accent-color:var(--neon)}
-.consent a{color:var(--neon);text-decoration:underline}
-.consent.sms{background:#fbf9f5;border:1px solid var(--line);border-radius:13px;padding:13px 14px}
-.err{color:#d12c5e;font-size:13px;margin:4px 0 8px;min-height:1em}
-.submit{width:100%;margin-top:6px;border:none;background:var(--neon);color:#fff;font-weight:700;font-size:15px;letter-spacing:.04em;
-  padding:17px;border-radius:999px;transition:transform .2s,box-shadow .2s;box-shadow:0 6px 19px rgba(255,45,149,.126)}
-.submit:hover{transform:translateY(-2px);box-shadow:0 10px 29px rgba(255,45,149,.18)}
-.submit:disabled{opacity:.6;cursor:default;transform:none}
-.fine{display:block;color:var(--mute);font-size:11.5px;margin-top:12px;line-height:1.55}
-.success{display:none;text-align:center}
-.success.show{display:block;animation:pop .4s ease}
-@keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-.success .big{font-family:var(--serif);font-style:normal;font-size:30px;color:var(--neon);margin-bottom:6px;font-weight:700}
-.success p{color:var(--dim);font-size:14.5px;margin-bottom:16px}
-.mini-btns{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
-.mini-btn{font-size:13px;font-weight:600;border:1px solid var(--line2);border-radius:999px;padding:11px 16px;background:#fff;color:var(--ink);transition:.2s}
-.mini-btn:hover{border-color:var(--neon);color:var(--neon)}
-
-/* ---------- sections ---------- */
-section{padding:60px 0}
-.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--neon);font-weight:600}
-h3.sec{font-family:var(--serif);font-weight:800;font-size:clamp(28px,4.2vw,46px);line-height:1.04;letter-spacing:-.02em;margin:12px 0 14px}
-.lead{font-size:16.5px;color:var(--dim);max-width:34em}
-
-/* ---------- concept labelling ---------- */
-.concept-cap{margin:14px auto 0;max-width:430px;text-align:center;font-family:var(--mono);font-size:11.5px;letter-spacing:0;line-height:1.55;color:var(--mute)}
-.concept-badge{position:absolute;left:10px;top:10px;z-index:2;background:rgba(255,255,255,.93);border:1px solid var(--line2);color:var(--ink);font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;padding:5px 9px;border-radius:999px;pointer-events:none;font-weight:600}
-
-/* ---------- lip pod build grid ---------- */
-.build-head{margin-top:46px}
-.build-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px}
-@media(max-width:699px){.build-grid{grid-template-columns:1fr}}
-.build-item{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--surface);box-shadow:0 8px 27px rgba(10,10,18,.036)}
-.build-ph{position:relative;aspect-ratio:1127/1400;background:#efe9e1}
-.build-ph img{width:100%;height:100%;object-fit:cover;display:block}
-.build-cap{padding:15px 17px 17px}
-.build-cap b{display:block;font-family:var(--serif);font-weight:600;font-size:16px;letter-spacing:-.01em;margin-bottom:5px}
-.build-cap span{display:block;font-size:13px;color:var(--dim);line-height:1.55}
-
-/* ---------- never-lose-it focus band ---------- */
-.keep{margin-top:52px;border:1px solid var(--line);border-radius:26px;overflow:hidden;background:var(--surface);box-shadow:0 10px 40px rgba(10,10,18,.036)}
-.keep-grid{display:grid;grid-template-columns:.92fr 1.08fr;align-items:stretch}
-@media(max-width:820px){.keep-grid{grid-template-columns:1fr}}
-.keep-ph{position:relative;min-height:340px;background:#efe9e1}
-.keep-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-.keep-copy{padding:40px 38px}
-@media(max-width:600px){.keep-copy{padding:30px 24px}.keep-ph{min-height:300px}}
-.keep-copy h3{margin:10px 0 12px}
-.keep-list{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:16px}
-.keep-list li{display:flex;gap:13px;align-items:flex-start}
-.keep-list .n{flex:none;width:26px;height:26px;border-radius:50%;background:rgba(255,45,149,.10);color:var(--neon);
-  font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px}
-.keep-list b{display:block;font-size:15.5px;letter-spacing:-.005em;margin-bottom:3px}
-.keep-list span{display:block;font-size:14px;color:var(--dim);line-height:1.55}
-
-/* ---------- flavor band ---------- */
-.flavor-band{position:relative;border-radius:18px;overflow:hidden;margin-bottom:24px;aspect-ratio:1400/520;background:#efe9e1}
-.flavor-band img{width:100%;height:100%;object-fit:cover;display:block}
-
-/* ---------- vote ---------- */
-.vote-wrap{background:var(--surface);border:1px solid var(--line);border-radius:26px;padding:38px;box-shadow:0 10px 40px rgba(10,10,18,.036)}
-.vote-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:24px}
-.vote-count{font-family:var(--mono);font-size:12px;color:var(--mute);letter-spacing:0}
-.vote-count b{color:var(--ink)}
-.opts{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.opt{position:relative;display:flex;align-items:center;gap:15px;text-align:left;border:1px solid var(--line2);background:#fbf9f5;border-radius:16px;padding:14px;overflow:hidden;transition:border-color .2s,transform .15s}
-.opt:hover{border-color:var(--neon);transform:translateY(-2px)}
-.opt.chosen{border-color:var(--neon);box-shadow:0 0 0 1px var(--neon) inset}
-.opt-fill{position:absolute;inset:0 auto 0 0;width:0;background:linear-gradient(90deg,rgba(255,45,149,.14),rgba(176,38,255,.1));transition:width .7s cubic-bezier(.2,.8,.2,1);z-index:0}
-.opt-info{position:relative;z-index:1;flex:1;min-width:0}
-.opt-row{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:10px}
-.opt-name{font-weight:600;font-size:15.5px}
-.opt-pct{font-family:var(--mono);font-size:13px;color:var(--dim);font-variant-numeric:tabular-nums}
-.opt.chosen .opt-pct{color:var(--neon)}
-.opt-thumb{position:relative;z-index:1;flex:none;width:104px;height:140px;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
-.opt-thumb img{width:100%;height:100%;object-fit:cover;object-position:center;animation:none}
-.opt-tick{position:relative;z-index:1;font-family:var(--mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--mute);margin-top:4px;opacity:0;transition:opacity .2s;font-weight:600}
-.opt.chosen .opt-tick{opacity:1;color:var(--neon)}
-.opt.chosen .opt-thumb{border-color:var(--neon)}
-.vote-nudge{margin-top:20px;display:none;align-items:center;gap:14px;flex-wrap:wrap;font-size:15px;color:var(--ink)}
-.vote-nudge.show{display:flex;animation:pop .4s ease}
-
-/* ---------- production status ---------- */
-.prod{border:1px solid var(--line);border-radius:26px;background:var(--surface);padding:32px;box-shadow:0 10px 40px rgba(10,10,18,.036)}
-.ps-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
-.ps-step{border:1px solid var(--line2);border-radius:18px;padding:18px;background:#fbf9f5}
-.ps-step.now{border-color:var(--neon);background:#fff;box-shadow:0 8px 27px rgba(255,45,149,.054)}
-.ps-tag{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--mute);font-weight:600}
-.ps-step.now .ps-tag{color:var(--neon)}
-.ps-tag .dot{width:7px;height:7px;border-radius:50%;background:var(--neon);animation:pulse 1.8s infinite}
-.ps-step b{display:block;font-size:16.5px;font-weight:600;letter-spacing:-.01em;margin:10px 0 6px}
-.ps-step .d{display:block;font-size:14px;color:var(--dim);line-height:1.5}
-.ps-note{margin-top:22px;font-family:var(--mono);font-size:11.5px;letter-spacing:0;line-height:1.6;color:var(--mute)}
-@media(max-width:760px){.ps-steps{grid-template-columns:1fr}.prod{padding:24px}}
-/* ---------- lip pod concept carousel ---------- */
-.pod-section{position:relative;margin-top:22px}
-.pv-carousel-wrap{position:relative}
-.pv-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:8px 2px 22px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-.pv-track::-webkit-scrollbar{display:none}
-.pv-card{flex:0 0 78%;max-width:360px;scroll-snap-align:center;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--surface);box-shadow:0 8px 27px rgba(10,10,18,.036);transition:transform .3s ease,box-shadow .3s ease}
-@media(min-width:700px){.pv-card{flex:0 0 46%}}
-@media(min-width:1000px){.pv-card{flex:0 0 31%}}
-.pv-card.is-active{transform:scale(1.02);box-shadow:0 14px 37px rgba(255,45,149,.063)}
-.pv-img-wrap{position:relative;aspect-ratio:1/1;background:#efe9e1;overflow:hidden}
-.pv-img-wrap img{width:100%;height:100%;object-fit:cover;transform:scale(1.05);transition:transform 6s ease;animation:none}
-.pv-card.is-active .pv-img-wrap img{transform:scale(1)}
-.pv-body{padding:16px}
-.pv-name{font-family:var(--serif);font-weight:600;font-size:17px;letter-spacing:-.01em;margin-bottom:5px}
-.pv-desc{font-size:13px;color:var(--dim);line-height:1.5;margin-bottom:12px;min-height:38px}
-.pv-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;font-family:var(--mono);font-size:11px;color:var(--mute);letter-spacing:0}
-.pv-meta b{color:var(--ink)}
-.pv-btn{display:block;width:100%;text-align:center;background:var(--ink);color:#fff;border:none;font-size:12px;font-weight:700;letter-spacing:.063em;text-transform:uppercase;padding:13px 0;border-radius:999px;transition:background .15s ease,transform .15s ease}
-.pv-btn:hover{background:var(--neon);transform:translateY(-1px)}
-.pv-btn.voted{background:var(--neon);pointer-events:none}
-.pv-arrow{position:absolute;top:34%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:1px solid var(--line2);background:rgba(255,255,255,.94);color:var(--ink);font-size:18px;z-index:3;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(10,10,18,.072);transition:background .15s,color .15s}
-.pv-arrow:hover{background:var(--neon);color:#fff;border-color:var(--neon)}
-.pv-arrow.prev{left:2px}.pv-arrow.next{right:2px}
-@media(max-width:699px){.pv-arrow{display:none}}
-.pv-dots{display:flex;justify-content:center;gap:8px;margin-top:2px}
-.pv-dot{width:8px;height:8px;border-radius:50%;background:var(--line2);border:none;padding:0;transition:all .2s ease}
-.pv-dot.active{background:var(--ink);width:24px;border-radius:999px}
-.pod-capture{display:none;max-width:560px;margin:20px auto 0}
-.pod-capture.show{display:block;animation:pop .4s ease}
-.cap-skip{display:block;text-align:center;margin-top:12px;font-size:12.5px;color:var(--mute);text-decoration:underline;background:none;border:none;width:100%}
-
-/* ---------- value cards ---------- */
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
-.vcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px 22px;transition:.2s}
-.vcard:hover{border-color:rgba(255,45,149,.4);transform:translateY(-3px)}
-.vcard .n{font-family:var(--mono);font-size:12px;color:var(--neon);margin-bottom:12px}
-.vcard h4{font-family:var(--serif);font-weight:700;font-size:20px;margin-bottom:7px}
-.vcard p{color:var(--dim);font-size:14.5px}
-
-/* ---------- band ---------- */
-.band{background:linear-gradient(135deg,rgba(255,45,149,.07),rgba(176,38,255,.05));border:1px solid var(--line);border-radius:26px;padding:44px 38px;text-align:center}
-.band .lead{margin:0 auto}
-.ing{display:flex;gap:11px;flex-wrap:wrap;justify-content:center;margin-top:24px}
-.ing span{font-family:var(--mono);font-size:12.5px;color:var(--dim);background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 15px}
-
-/* ---------- faq ---------- */
-.faq{display:grid;gap:11px;margin-top:26px;max-width:780px}
-details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 22px}
-details[open]{border-color:rgba(255,45,149,.4)}
-summary{cursor:pointer;font-weight:600;font-size:16px;list-style:none;display:flex;justify-content:space-between;gap:14px}
-summary::-webkit-details-marker{display:none}
-summary::after{content:'+';color:var(--neon);font-size:20px}
-details[open] summary::after{content:'\2212'}
-details p{color:var(--dim);font-size:14.5px;margin-top:12px}
-
-/* ---------- footer ---------- */
-footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-size:13px}
-.foot-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
-.foot-links a{margin-right:16px;color:var(--dim)}
-.foot-links a:hover{color:var(--ink)}
-.foot-policies a{margin-left:14px}
-.foot-policies a:hover{color:var(--ink)}
-
-/* ---------- problem / agitate ---------- */
-.prob{background:var(--surface);border:1px solid var(--line);border-radius:26px;padding:40px 38px;box-shadow:0 10px 40px rgba(10,10,18,.036)}
-.prob-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
-.prob-item{border:1px solid var(--line);background:#fbf9f5;border-radius:16px;padding:18px 16px}
-.prob-item .n{font-family:var(--mono);font-size:11px;letter-spacing:.056em;color:var(--neon);display:block;margin-bottom:10px}
-.prob-item b{display:block;font-size:15px;margin-bottom:4px;letter-spacing:-.005em}
-.prob-item span{font-size:13.5px;color:var(--dim);line-height:1.5}
-.prob-punch{margin-top:28px;padding-top:24px;border-top:1px solid var(--line);font-family:var(--serif);
-  font-size:clamp(21px,2.7vw,28px);line-height:1.28;letter-spacing:-.015em;max-width:22em;font-weight:700}
-.prob-punch em{font-style:normal;color:var(--neon)}
-.prob-cta{margin-top:22px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
-.prob-cta .note{font-family:var(--mono);font-size:11.5px;color:var(--mute);letter-spacing:0}
-@media(max-width:900px){.prob-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.prob{padding:28px 22px}.prob-grid{grid-template-columns:1fr}}
-
-/* ---------- offer stack (inside the form card) ---------- */
-.offer{border:1px solid rgba(255,45,149,.32);background:linear-gradient(135deg,rgba(255,45,149,.07),rgba(176,38,255,.05));
-  border-radius:18px;padding:18px 20px;margin:0 0 20px}
-.offer .oh{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--neon);margin-bottom:13px;font-weight:600}
-.offer ul{list-style:none;display:grid;gap:10px}
-.offer li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;line-height:1.45;color:var(--ink)}
-.offer li .chk{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;
-  background:rgba(255,45,149,.14);color:var(--neon);font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px}
-.offer li span.d{color:var(--dim)}
-.spots{display:flex;align-items:center;gap:10px;margin-top:14px;padding-top:13px;border-top:1px solid rgba(255,45,149,.2);
-  font-family:var(--mono);font-size:11.5px;letter-spacing:0;color:var(--dim)}
-.spots b{color:var(--ink)}
-
-/* ---------- old way vs lip pod ---------- */
-.vs{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px}
-.vs-col{border:1px solid var(--line);border-radius:20px;padding:26px 24px;background:var(--surface)}
-.vs-col.now{border-color:rgba(255,45,149,.34);box-shadow:0 10px 35px rgba(255,45,149,.045)}
-.vs-col h4{font-family:var(--serif);font-weight:700;font-size:21px;margin-bottom:4px;letter-spacing:-.01em}
-.vs-col .tagline{font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--mute);margin-bottom:18px;display:block;font-weight:600}
-.vs-col.now .tagline{color:var(--neon)}
-.vs-col ul{list-style:none;display:grid;gap:12px}
-.vs-col li{display:flex;gap:11px;align-items:flex-start;font-size:14.5px;line-height:1.5;color:var(--dim)}
-.vs-col.now li{color:var(--ink)}
-.vs-col li i{font-style:normal;flex:none;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;
-  justify-content:center;font-size:11px;font-weight:700;margin-top:1px}
-.vs-col.old li i{background:rgba(10,10,18,.06);color:var(--mute)}
-.vs-col.now li i{background:rgba(255,45,149,.13);color:var(--neon)}
-@media(max-width:760px){.vs{grid-template-columns:1fr}}
-
-/* ---------- closing cta ---------- */
-.close{background:var(--ink);color:#fff;border-radius:26px;padding:52px 44px;text-align:center;position:relative;overflow:hidden}
-.close::before{content:"";position:absolute;inset:-40%;background:radial-gradient(45% 45% at 30% 20%,rgba(255,45,149,.34),transparent 68%),
-  radial-gradient(45% 45% at 74% 82%,rgba(176,38,255,.28),transparent 68%);filter:blur(30px);pointer-events:none}
-.close>*{position:relative;z-index:1}
-.close .eyebrow{color:#ff86bf}
-.close h3{font-family:var(--serif);font-weight:800;font-size:clamp(28px,4.4vw,48px);line-height:1.03;
-  letter-spacing:-.025em;margin:12px 0 14px;color:#fff}
-.close h3 em{font-style:normal;color:#ff86bf}
-.close p{color:rgba(255,255,255,.74);font-size:16.5px;max-width:32em;margin:0 auto 26px;line-height:1.6}
-.close .btn-primary{background:#fff;color:var(--ink);box-shadow:0 9px 27px rgba(0,0,0,.204)}
-.close .btn-primary:hover{box-shadow:0 14px 35px rgba(0,0,0,.264)}
-.close .fine{color:rgba(255,255,255,.5);margin-top:16px}
-@media(max-width:600px){.close{padding:38px 24px}}
-
-/* ---------- preorder vs join: head-to-head ---------- */
-.h2h{display:grid;grid-template-columns:1.25fr 1fr;gap:0;border:1px solid var(--line2);border-radius:22px;
-  overflow:hidden;background:var(--surface);margin-bottom:30px;box-shadow:0 10px 40px rgba(10,10,18,.042)}
-.h2h-col{padding:0 0 22px}
-.h2h-col.win{background:linear-gradient(180deg,rgba(255,45,149,.075),rgba(255,45,149,.02));
-  box-shadow:inset 0 0 0 2px var(--neon);border-radius:22px;position:relative;z-index:1}
-.h2h-hd{padding:22px 24px 18px;border-bottom:1px solid var(--line)}
-.h2h-col.win .h2h-hd{border-bottom-color:rgba(255,45,149,.24)}
-.h2h-badge{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
-  background:var(--neon);color:#fff;padding:5px 10px;border-radius:999px;margin-bottom:11px;font-weight:600}
-.h2h-badge.mute{background:transparent;color:var(--mute);border:1px solid var(--line2)}
-.h2h-hd h4{font-family:var(--serif);font-weight:700;font-size:21px;letter-spacing:-.015em;margin-bottom:3px}
-.h2h-hd .p{font-family:var(--serif);font-size:30px;font-weight:700;letter-spacing:-.02em;line-height:1.1}
-.h2h-hd .p s{color:var(--mute);font-size:17px;font-weight:400;margin-left:7px}
-.h2h-hd .sub{font-size:13px;color:var(--dim);margin-top:4px}
-.h2h ul{list-style:none;padding:16px 24px 0;display:grid;gap:13px}
-.h2h li{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.45}
-.h2h li i{font-style:normal;flex:none;width:19px;height:19px;border-radius:50%;display:flex;align-items:center;
-  justify-content:center;font-size:10.5px;font-weight:700;margin-top:1px}
-.h2h .win li{color:var(--ink)}
-.h2h-col.win li i{background:rgba(255,45,149,.14);color:var(--neon)}
-.h2h-col.alt li{color:var(--dim)}
-.h2h-col.alt li i{background:rgba(10,10,18,.06);color:var(--mute)}
-.h2h-cta{padding:20px 24px 0}
-.h2h-cta .btn{width:100%;justify-content:center}
-.h2h-note{font-family:var(--mono);font-size:10.5px;letter-spacing:0;color:var(--mute);text-align:center;margin-top:10px;line-height:1.5}
-@media(max-width:780px){.h2h{grid-template-columns:1fr}.h2h-col.win{border-radius:22px 22px 0 0}}
-
-/* ---------- money-saved flag ---------- */
-.save{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;
-  text-transform:uppercase;background:rgba(255,45,149,.12);color:#c11d6d;border:1px solid rgba(255,45,149,.3);
-  padding:6px 12px;border-radius:999px;font-weight:600}
-
-/* ---------- guarantee strip ---------- */
-.guar{display:flex;gap:13px;align-items:flex-start;border:1px solid rgba(29,158,117,.34);background:rgba(29,158,117,.07);
-  border-radius:16px;padding:15px 17px;margin-top:18px}
-.guar .ic{flex:none;width:26px;height:26px;border-radius:50%;background:rgba(29,158,117,.16);color:#12805d;
-  display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;margin-top:1px}
-.guar b{display:block;font-size:14.5px;margin-bottom:2px}
-.guar span{display:block;font-size:13.5px;color:var(--dim);line-height:1.5}
-
-/* ---------- the quieter "just join" card ---------- */
-.card.lite{box-shadow:none;background:#fbf9f5;border-color:var(--line2)}
-.card.lite h2{font-size:22px}
-.card.lite .submit{background:var(--ink);box-shadow:none}
-.card.lite .submit:hover{background:#25232f;box-shadow:none}
-.card.lite .offer{border-color:var(--line2);background:rgba(10,10,18,.025)}
-.card.lite .offer .oh{color:var(--dim)}
-.card.lite .offer li .chk{background:rgba(10,10,18,.07);color:var(--dim)}
-.card.lite .spots{border-top-color:var(--line)}
-
-/* ---------- sticky mobile cta ---------- */
-.sticky{position:fixed;left:0;right:0;bottom:0;z-index:80;display:none;padding:12px 16px;background:rgba(247,243,237,.94);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
-.sticky a{display:block;text-align:center;background:var(--neon);color:#fff;font-weight:700;padding:15px;border-radius:999px;box-shadow:0 6px 19px rgba(255,45,149,.135)}
-
-@media (max-width:920px){
-  .hero-grid{grid-template-columns:1fr;gap:24px}
-  .hero-grid>div:nth-child(2){order:-1}
-  .hero-art{max-width:330px;margin:0 auto}
-  .hero-art img{max-height:340px}
-  .concept-cap{font-size:10.5px;max-width:330px;margin-top:11px}
-  .cards{grid-template-columns:1fr}
-  .nav-links{display:none}
-  .nav-cta{display:none}
-  .nav-toggle{display:flex}
-  nav.top.open .nav-links{display:flex;flex-direction:column;gap:0;position:absolute;top:100%;left:0;right:0;
-    background:rgba(247,243,237,.98);border-bottom:1px solid var(--line);padding:8px 24px 16px}
-  nav.top.open .nav-links a{padding:14px 0;border-top:1px solid var(--line)}
-  nav.top.open .nav-links a::after{display:none}
-  .sticky{display:block}
-  body{padding-bottom:76px}
-  section{padding:46px 0}
-  .vote-wrap,.band{padding:28px 22px}
-  .card{padding:24px}
-}
-@media (max-width:540px){
-  .opts{grid-template-columns:1fr}
-}
-h1,h2,h3,h4,summary{text-wrap:balance}p,li{text-wrap:pretty}
+/* ===================== base ===================== */
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{background:var(--sweep);color:var(--garnet);font-family:var(--f-text);font-size:var(--t-body);line-height:1.55;font-weight:400;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:clip;font-synthesis:none}
+img,picture{display:block;max-width:100%}
+img{height:auto}
+a{color:inherit}
+button,input{font:inherit;color:inherit}
+button{cursor:pointer;background:none;border:0}
+ul,ol{list-style:none}
 em,i,cite,dfn{font-style:normal}
+::selection{background:var(--gloss);color:var(--garnet)}
+h1,h2,h3,summary{text-wrap:balance}
+p,li{text-wrap:pretty}
+:focus-visible{outline:2px solid var(--pink-ink);outline-offset:3px;border-radius:2px}
+[id]{scroll-margin-top:calc(var(--head-h) + 24px)}
+.wrap{width:100%;max-width:1360px;margin-inline:auto;padding-inline:var(--gutter)}
+.vh{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:fixed;left:12px;top:12px;z-index:1000;background:var(--garnet);color:var(--porcelain);padding:12px 16px;font-weight:600;
+  text-decoration:none;transform:translateY(-160%);transition:transform .2s var(--ease)}
+.skip:focus-visible{transform:none;outline-color:var(--pink)}
+
+/* type roles */
+.display{font-family:var(--f-display);font-weight:500;letter-spacing:-.022em;line-height:1;font-size:var(--t-display);font-kerning:normal}
+.h3{font-family:var(--f-display);font-weight:500;font-size:var(--t-h3);line-height:1.08;letter-spacing:-.012em}
+.answer{font-size:var(--t-lede);line-height:1.45;max-width:34em;color:var(--garnet)}
+.body{color:var(--cocoa);max-width:36em}
+.q-label{font-family:var(--f-text);font-weight:600;font-size:1.0625rem;letter-spacing:0;color:var(--rose-ink)}
+
+/* links + buttons */
+.link{color:var(--garnet);text-decoration:none;font-weight:500;background:linear-gradient(currentColor,currentColor) 0 100%/100% 1px no-repeat;
+  padding-bottom:2px;transition:background-size .45s var(--ease),color .2s}
+.link:hover{background-size:0 1px;background-position:100% 100%;color:var(--pink-ink)}
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 28px;border-radius:2px;
+  font-family:var(--f-text);font-weight:600;font-size:1rem;letter-spacing:.005em;text-decoration:none;overflow:hidden;isolation:isolate;
+  transition:color .32s var(--ease),border-color .32s var(--ease),transform .2s var(--ease)}
+.btn>span{position:relative;z-index:1}
+.btn::before{content:"";position:absolute;inset:0;z-index:0;transform:translateY(101%);transition:transform .42s var(--ease)}
+.btn:hover::before,.btn:focus-visible::before{transform:none}
+.btn:active{transform:scale(.985)}
+.btn-primary{background:var(--garnet);color:var(--porcelain)}
+.btn-primary::before{background:var(--rose-ink)}
+.btn-outline{border:1.5px solid var(--garnet);color:var(--garnet);background:transparent}
+.btn-outline::before{background:var(--garnet)}
+.btn-outline:hover,.btn-outline:focus-visible{color:var(--porcelain)}
+.btn-light{background:var(--porcelain);color:var(--garnet)}
+.btn-light::before{background:var(--gloss)}
+
+/* concept-render label (required on every product image) */
+.tag{position:absolute;left:14px;bottom:14px;z-index:2;font:600 .75rem/1 var(--f-text);letter-spacing:.02em;color:var(--garnet);
+  background:rgba(252,246,242,.94);padding:7px 9px;border-radius:2px;pointer-events:none}
+
+/* ===================== header ===================== */
+.site-head{position:sticky;top:0;z-index:50;background:var(--sweep);transition:background-color .35s var(--ease),box-shadow .35s var(--ease)}
+.site-head::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--line);opacity:0;transition:opacity .35s var(--ease)}
+.site-head.is-condensed{background:var(--porcelain);box-shadow:0 6px 24px rgba(42,21,25,.05)}
+.site-head.is-condensed::after{opacity:1}
+.nav{display:flex;align-items:center;gap:var(--s4);height:var(--head-h)}
+.wordmark{font-family:var(--f-display);font-weight:500;font-size:1.6rem;letter-spacing:-.02em;line-height:1;text-decoration:none;white-space:nowrap;padding:10px 0;
+  transform-origin:left center;transition:transform .35s var(--ease)}
+.is-condensed .wordmark{transform:scale(.92)}
+.nav-links{display:flex;gap:2px;margin-left:auto}
+.nav-links a{display:block;padding:10px 13px;border-radius:2px;font-size:var(--t-ui);font-weight:500;text-decoration:none;color:var(--garnet);
+  transition:background-color .2s,color .2s}
+.nav-links a:hover{background:rgba(42,21,25,.07)}
+.nav-links a[aria-current="page"]{background:rgba(42,21,25,.09)}
+.nav-cta{min-height:44px;padding:0 18px;font-size:var(--t-ui)}
+.nav-toggle{display:none;min-height:44px;padding:0 4px 0 12px;font-weight:600;font-size:var(--t-ui);align-items:center;gap:10px}
+.nav-toggle i{position:relative;display:block;width:20px;height:10px}
+.nav-toggle i::before,.nav-toggle i::after{content:"";position:absolute;left:0;right:0;height:1.5px;background:currentColor;transition:transform .35s var(--ease)}
+.nav-toggle i::before{top:0}.nav-toggle i::after{bottom:0}
+.nav-open .nav-toggle i::before{transform:translateY(4.25px) rotate(45deg)}
+.nav-open .nav-toggle i::after{transform:translateY(-4.25px) rotate(-45deg)}
+
+/* ===================== hero ===================== */
+.hero{position:relative;display:grid;grid-template-columns:minmax(0,46fr) minmax(0,54fr);grid-template-rows:1fr auto;
+  grid-template-areas:"copy media" "def media";min-height:calc(100svh - var(--head-h));max-height:1040px}
+.hero-copy{grid-area:copy;container-type:inline-size;padding:clamp(28px,6vh,72px) var(--s5) var(--s5) var(--gutter)}
+.hero-def{grid-area:def;padding:0 var(--s5) clamp(28px,5vh,56px) var(--gutter);max-width:40rem}
+.hero-def h2{margin-bottom:var(--s2)}
+.hero-def p{font-size:var(--t-body);line-height:1.5;color:var(--garnet);max-width:30em}
+.hero-title{font-family:var(--f-display);font-weight:500;font-size:clamp(3.4rem,22cqi,8.6rem);line-height:.92;letter-spacing:-.03em;margin-left:-.04em}
+.hero-title .line{display:block;overflow:hidden;padding-bottom:.1em;margin-bottom:-.1em}
+.hero-title .line>span{display:block}
+.hero-lede{margin-top:var(--s4);font-size:var(--t-lede);line-height:1.4;max-width:22em}
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s3) var(--s4);margin-top:var(--s5)}
+.hero-copy .trust{margin-top:var(--s5)}
+.hero-media{grid-area:media}
+.trust{display:flex;flex-wrap:wrap;gap:10px 20px;font-size:var(--t-small);font-weight:500;color:var(--cocoa);max-width:40em}
+.trust li{display:inline-flex;align-items:center;gap:8px;line-height:1.2}
+.trust li::before{content:"";flex:none;width:5px;height:5px;border-radius:50%;background:var(--rose)}
+.hero-media{position:relative;overflow:hidden;background:#d9c7b8}
+.hero-media .float{position:absolute;inset:-6% -3%}
+.hero-media picture,.hero-media img{width:100%;height:100%}
+.hero-media img{object-fit:cover;object-position:52% 50%}
+
+/* hero intro: one orchestrated load (CSS, runs before any JS) */
+@media (prefers-reduced-motion:no-preference){
+  .hero-title .line>span{animation:lineUp .95s var(--ease) both}
+  .hero-title .line:nth-child(2)>span{animation-delay:.07s}
+  .hero-title .line:nth-child(3)>span{animation-delay:.14s}
+  .hero-lede,.hero-actions{animation:riseIn .9s var(--ease) both;animation-delay:.3s}
+  .hero-actions{animation-delay:.38s}
+  .trust,.hero-def{animation:riseIn .9s var(--ease) both;animation-delay:.5s}
+  /* No load animation on the hero photo: it is the LCP element, and a 1.7s
+     settle on it held the LCP paint back by 1.7s on mobile. It moves on scroll. */
+}
+@keyframes lineUp{from{transform:translateY(108%)}to{transform:none}}
+@keyframes riseIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* ===================== problem ===================== */
+.problem{background:var(--porcelain);padding:var(--section) 0}
+.problem-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--s4)}
+.problem-head{grid-column:1 / span 5;align-self:start;position:sticky;top:calc(var(--head-h) + 32px)}
+.problem-head .answer{margin-top:var(--s4)}
+.problem-body{grid-column:7 / span 6}
+.moments{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s5) var(--s5)}
+.moments li{padding-top:var(--s3);border-top:1px solid var(--line-strong)}
+.moments h3{font-family:var(--f-display);font-weight:500;font-size:clamp(1.45rem,1.1rem + .9vw,2rem);line-height:1.08;letter-spacing:-.01em}
+.moments p{margin-top:var(--s2);color:var(--cocoa)}
+.punch{margin-top:var(--s6);font-family:var(--f-display);font-weight:500;font-size:var(--t-statement);line-height:1.1;letter-spacing:-.015em}
+
+/* ===================== how it works (signature) ===================== */
+.how{padding:var(--section) 0}
+.how-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--s4)}
+.how-head{grid-column:1 / span 8;margin-bottom:var(--s5)}
+.how-head .answer{margin-top:var(--s4)}
+.how-more{display:inline-block;margin-top:var(--s4)}
+.stage{grid-column:1 / span 6;align-self:start;position:sticky;top:calc(var(--head-h) + 20px)}
+.stage-frame{position:relative;aspect-ratio:885 / 1100;max-height:calc(100svh - var(--head-h) - 120px);margin-inline:auto}
+.stage-frame picture{position:absolute;inset:0}
+.stage-frame img{width:100%;height:100%;object-fit:contain;
+  -webkit-mask-image:linear-gradient(to right,transparent,#000 7%,#000 93%,transparent),linear-gradient(to bottom,transparent,#000 4%,#000 96%,transparent);
+  -webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent,#000 7%,#000 93%,transparent),linear-gradient(to bottom,transparent,#000 4%,#000 96%,transparent);mask-composite:intersect}
+.stage-line{position:absolute;left:6%;right:6%;top:0;height:1px;background:var(--rose);opacity:0;pointer-events:none}
+.stage figcaption{display:flex;gap:var(--s3);align-items:flex-start;margin-top:var(--s3);font-size:var(--t-small);color:var(--cocoa);max-width:34em;margin-inline:auto}
+.stage figcaption .tag{position:static;flex:none;background:var(--porcelain)}
+.how-steps{grid-column:8 / span 5;display:flex;flex-direction:column}
+.step{min-height:34svh;display:flex;flex-direction:column;justify-content:center;padding:var(--s4) 0}
+.step:first-child{min-height:26svh;justify-content:flex-start;padding-top:var(--s3)}
+.step:last-child{min-height:30svh}
+.step p{margin-top:var(--s3);color:var(--cocoa);max-width:30em}
+.step .h3{max-width:12em}
+
+/* ===================== ingredients ===================== */
+.clean{background:var(--porcelain);padding:var(--section) 0}
+.clean-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--s4) var(--s4)}
+.clean-main{grid-column:1 / span 7}
+.clean-head .answer{margin-top:var(--s4)}
+.clean-standard{margin-top:var(--s4);color:var(--cocoa);max-width:34em}
+.clean-standard b{color:var(--garnet);font-weight:600}
+.specimen{margin-top:var(--s5)}
+.specimen h3,.leave h3{font-family:var(--f-text);font-weight:600;font-size:1.0625rem;color:var(--rose-ink);margin-bottom:var(--s2)}
+.specimen li{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:var(--s4);align-items:baseline;padding:16px 0;border-top:1px solid var(--line)}
+.specimen li:last-child{border-bottom:1px solid var(--line)}
+.specimen .name{font-family:var(--f-display);font-weight:500;font-size:clamp(1.55rem,1.15rem + 1.1vw,2.3rem);line-height:1;letter-spacing:-.012em}
+.specimen .does{color:var(--cocoa)}
+.clean-side{grid-column:9 / span 4;display:flex;flex-direction:column;gap:var(--s5)}
+.macro{position:relative;width:100%;aspect-ratio:4 / 5;overflow:hidden;background:#efe0d5}
+.macro picture,.macro img{width:100%;height:100%}
+.macro img{object-fit:cover;object-position:34% 62%}
+.macro .inner{position:absolute;inset:-7% 0}
+.leave ul{display:grid;gap:2px}
+.leave li{font-family:var(--f-display);font-weight:500;font-size:clamp(1.55rem,1.15rem + 1.1vw,2.3rem);line-height:1.12;letter-spacing:-.012em;color:var(--garnet)}
+.leave li::before{content:"No ";color:var(--rose-ink)}
+.leave p{margin-top:var(--s3);color:var(--cocoa)}
+.clean-foot{grid-column:1 / -1;display:flex;flex-wrap:wrap;gap:var(--s2) var(--s5);margin-top:var(--s4);color:var(--cocoa);font-size:var(--t-ui)}
+
+/* ===================== founder + status ===================== */
+.founder{padding:var(--section) 0}
+.founder-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--s4);align-items:start}
+.founder-col{grid-column:1 / span 6}
+.founder-photo{position:relative;aspect-ratio:16 / 9;border:1px dashed var(--rose);background:
+  repeating-linear-gradient(135deg,rgba(169,112,95,.07) 0 1px,transparent 1px 14px),var(--porcelain);display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:var(--s2);text-align:center;padding:var(--s4)}
+.founder-photo .mono{font-family:var(--f-display);font-size:4.2rem;line-height:1;color:var(--rose)}
+.founder-photo p{font-size:var(--t-small);font-weight:600;color:var(--rose-ink);max-width:18em}
+.founder-note{margin-top:var(--s5)}
+.founder-note blockquote{margin-top:var(--s4);font-family:var(--f-display);font-weight:500;font-size:clamp(1.3rem,1rem + .85vw,1.8rem);line-height:1.34;letter-spacing:-.006em}
+.founder-note blockquote p+p{margin-top:.7em}
+.founder-sign{margin-top:var(--s4);font-weight:600}
+.founder-sign span{display:block;font-weight:400;color:var(--cocoa);font-size:var(--t-ui)}
+.founder-note .link{display:inline-block;margin-top:var(--s3)}
+.status{grid-column:8 / span 5}
+.status-head .answer{margin-top:var(--s4)}
+.timeline{position:relative;margin-top:var(--s5);padding-left:34px}
+.timeline ol{display:grid;gap:var(--s4)}
+.timeline .track{position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.timeline .bar{position:absolute;left:6px;top:6px;width:2px;height:46%;background:var(--garnet);transform-origin:center top}
+.timeline li{position:relative}
+.timeline li::before{content:"";position:absolute;top:3px;left:-34px;width:14px;height:14px;border-radius:50%;background:var(--sweep);border:2px solid var(--garnet)}
+.timeline li.done::before{background:var(--garnet)}
+.timeline li.now::before{background:var(--pink);border-color:var(--pink)}
+.timeline .state{display:block;font-size:var(--t-small);font-weight:600;color:var(--rose-ink);margin-bottom:4px}
+.timeline .now .state{color:var(--pink-ink)}
+.timeline b{display:block;font-family:var(--f-display);font-weight:500;font-size:clamp(1.35rem,1.1rem + .7vw,1.75rem);line-height:1.1;letter-spacing:-.01em}
+.timeline p{margin-top:6px;color:var(--cocoa);max-width:26em}
+.terms{margin-top:var(--s5);background:var(--porcelain);padding:var(--s4) var(--s4) var(--s4)}
+.terms ul{display:grid;gap:14px;margin-top:var(--s3)}
+.terms li b{display:block;font-weight:600}
+.terms li span{color:var(--cocoa)}
+.terms .terms-foot{margin-top:var(--s3);font-size:var(--t-ui);color:var(--cocoa)}
+
+/* ===================== vote ===================== */
+.vote{background:var(--porcelain);padding:var(--section) 0}
+.vote-head{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--s4)}
+.vote-head h2{grid-column:1 / span 6}
+.vote-head .answer{grid-column:7 / span 6;align-self:end}
+.vote-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--s4);margin-top:var(--s5)}
+.vote-grid .vote-block:first-child{grid-column:1 / span 7}
+.vote-grid .vote-block:last-child{grid-column:9 / span 4}
+.vote-block>h3{margin-bottom:var(--s4)}
+.vote-grid .flavors{grid-template-columns:repeat(2,minmax(0,1fr))}
+.wear{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s4)}
+.wear-opt{position:relative;display:block;text-align:left;color:var(--garnet)}
+.wear-opt .ph{position:relative;display:block;overflow:hidden;aspect-ratio:4 / 5;background:#e9dbd1}
+.wear-opt img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+.wear-opt:hover img{transform:scale(1.035)}
+.wear-opt .ring{position:absolute;inset:0;box-shadow:inset 0 0 0 0 var(--garnet);transition:box-shadow .3s var(--ease);z-index:2;pointer-events:none}
+.wear-opt[aria-pressed="true"] .ring{box-shadow:inset 0 0 0 3px var(--garnet)}
+.wear-opt .meta{display:flex;justify-content:space-between;align-items:baseline;gap:var(--s3);margin-top:var(--s3)}
+.wear-opt .nm{font-family:var(--f-display);font-weight:500;font-size:clamp(1.35rem,1.1rem + .6vw,1.7rem);line-height:1.1;letter-spacing:-.01em}
+.wear-opt .pick{flex:none;font-size:var(--t-small);font-weight:600;color:var(--cocoa);padding:6px 10px;border:1px solid var(--line-strong);border-radius:2px;transition:all .25s var(--ease)}
+.wear-opt:hover .pick{border-color:var(--garnet);color:var(--garnet)}
+.wear-opt[aria-pressed="true"] .pick{background:var(--garnet);border-color:var(--garnet);color:var(--porcelain)}
+.wear-opt .ds{display:block;margin-top:6px;color:var(--cocoa);font-size:var(--t-ui);max-width:24em}
+.flavors{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s3)}
+.flavor{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:var(--s4);min-height:132px;padding:var(--s4);text-align:left;
+  border:1px solid var(--line-strong);border-radius:2px;background:var(--sweep);overflow:hidden;isolation:isolate;transition:border-color .25s var(--ease)}
+.flavor::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--gloss);transform:translateY(101%);transition:transform .45s var(--ease)}
+.flavor:hover{border-color:var(--garnet)}
+.flavor:hover::before{transform:translateY(86%)}
+.flavor[aria-pressed="true"]{border-color:var(--garnet)}
+.flavor[aria-pressed="true"]::before{transform:none}
+.flavor .nm{font-family:var(--f-display);font-weight:500;font-size:clamp(1.4rem,1.1rem + .8vw,1.9rem);line-height:1.05;letter-spacing:-.01em}
+.flavor .pick{font-size:var(--t-small);font-weight:600;color:var(--cocoa)}
+.flavor[aria-pressed="true"] .pick{color:var(--garnet)}
+.vote-saved{margin-top:var(--s4);min-height:1.6em;font-size:var(--t-ui);color:var(--cocoa)}
+.pod-capture{display:none;margin-top:var(--s5)}
+.pod-capture.show{display:block;animation:riseIn .6s var(--ease) both}
+.capture{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--s4);border-top:1px solid var(--line-strong);padding-top:var(--s5)}
+.capture-copy{grid-column:1 / span 5}
+.capture-copy p{margin-top:var(--s2);color:var(--cocoa)}
+.capture form,.capture .success{grid-column:7 / span 6}
+
+/* ===================== forms (shared) ===================== */
+.field{margin-bottom:var(--s3)}
+.field label{display:block;font-size:var(--t-ui);font-weight:600;margin-bottom:8px}
+.field label .hint{font-weight:400;color:var(--cocoa)}
+.field input{width:100%;min-height:52px;padding:14px 16px;font-size:1rem;background:var(--porcelain);border:1px solid var(--line-strong);border-radius:2px;
+  color:var(--garnet);transition:border-color .2s,box-shadow .2s}
+.field input:hover{border-color:var(--garnet)}
+.field input:focus{outline:none;border-color:var(--garnet);box-shadow:0 0 0 3px rgba(209,0,110,.28)}
+.consent{display:flex;gap:12px;align-items:flex-start;margin:var(--s3) 0;font-size:var(--t-small);line-height:1.5;color:var(--cocoa);cursor:pointer}
+.consent input{flex:none;width:20px;height:20px;margin-top:1px;accent-color:var(--garnet);cursor:pointer}
+.consent a{color:var(--garnet);text-underline-offset:2px}
+.err{color:#B3123F;font-size:var(--t-small);font-weight:600;min-height:1.2em;margin:4px 0 6px}
+.submit{width:100%;margin-top:var(--s2)}
+.submit:disabled{opacity:.6;cursor:default}
+.fine{display:block;margin-top:var(--s3);font-size:var(--t-small);color:var(--cocoa)}
+.cap-skip{margin-top:var(--s3);font-size:var(--t-ui);font-weight:500;color:var(--cocoa);text-decoration:underline;text-underline-offset:3px;min-height:44px}
+.cap-skip:hover{color:var(--garnet)}
+.success{display:none}
+.success.show{display:block;animation:riseIn .5s var(--ease) both}
+.success .big{font-family:var(--f-display);font-weight:500;font-size:clamp(2rem,1.4rem + 1.6vw,2.8rem);line-height:1}
+.success p{margin-top:var(--s3);color:var(--cocoa)}
+.mini-btns{display:flex;gap:var(--s2);flex-wrap:wrap;margin-top:var(--s4)}
+.mini-btn{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid var(--line-strong);border-radius:2px;font-size:var(--t-ui);font-weight:600;
+  text-decoration:none;transition:border-color .2s,background-color .2s}
+.mini-btn:hover{border-color:currentColor}
+
+/* ===================== offer ===================== */
+.offer{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:var(--porcelain)}
+.offer-media{position:relative;width:100%;background:var(--sweep);overflow:hidden;min-height:560px}
+.offer-media picture{position:absolute;inset:0}
+.offer-media img{width:100%;height:100%;object-fit:cover;object-position:44% 66%}
+.offer-sheet{padding:calc(var(--section) * .8) var(--gutter) calc(var(--section) * .8) clamp(32px,5vw,88px)}
+.offer-sheet .answer{margin-top:var(--s4)}
+.price{display:flex;align-items:baseline;gap:var(--s4);margin-top:var(--s5)}
+.price .now{font-family:var(--f-display);font-weight:500;font-size:clamp(4.5rem,2.6rem + 6vw,8.5rem);line-height:.85;letter-spacing:-.035em}
+.price .then{font-size:var(--t-lede);color:var(--cocoa)}
+.price .then s{text-decoration-thickness:1.5px}
+.facts{margin-top:var(--s5);border-top:1px solid var(--line)}
+.facts li{display:grid;grid-template-columns:9.5rem minmax(0,1fr);gap:var(--s3);padding:14px 0;border-bottom:1px solid var(--line)}
+.facts dt,.facts .k{font-weight:600}
+.facts .v{color:var(--cocoa)}
+.offer-ctas{display:flex;flex-wrap:wrap;gap:var(--s3);margin-top:var(--s5)}
+.offer-fine{margin-top:var(--s4);font-size:var(--t-ui);color:var(--cocoa);display:flex;flex-wrap:wrap;gap:6px var(--s4)}
+
+/* ===================== faq ===================== */
+.faq-sec{padding:var(--section) 0}
+.faq-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--s4)}
+.faq-side{grid-column:1 / span 4;align-self:start;position:sticky;top:calc(var(--head-h) + 32px)}
+.faq-side .body{margin-top:var(--s4)}
+.faq-side .link{display:inline-block;margin-top:var(--s4)}
+.faq{grid-column:6 / span 7;border-top:1px solid var(--line-strong)}
+.faq details{border-bottom:1px solid var(--line-strong)}
+.faq summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:var(--s4);padding:18px 0;cursor:pointer;
+  font-family:var(--f-display);font-weight:500;font-size:clamp(1.25rem,1.05rem + .55vw,1.6rem);line-height:1.2;letter-spacing:-.008em;transition:color .2s}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";flex:none;width:14px;height:14px;background:
+  linear-gradient(currentColor,currentColor) center/14px 1.5px no-repeat,linear-gradient(currentColor,currentColor) center/1.5px 14px no-repeat;transition:transform .4s var(--ease)}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details:not([open]) summary:hover::after{transform:rotate(90deg)}
+.faq summary:hover{color:var(--rose-ink)}
+.faq details p{padding:0 0 24px;max-width:40em;color:var(--cocoa)}
+.faq details p a{color:var(--garnet)}
+.faq details p b{color:var(--garnet);font-weight:600}
+.faq details[open] p{animation:riseIn .45s var(--ease) both}
+
+/* ===================== close + join + footer (garnet) ===================== */
+.close{background:var(--garnet);color:var(--porcelain);padding:var(--section) 0 var(--s6)}
+.close-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--s4) var(--s4);align-items:start}
+.close-copy{grid-column:1 / span 6}
+.close-copy h2{font-size:clamp(2.6rem,1.4rem + 4.6vw,5.6rem);line-height:.98;color:var(--porcelain)}
+.close-copy p{margin-top:var(--s4);font-size:var(--t-lede);line-height:1.45;color:#E9D7D2;max-width:24em}
+.close-copy .btn{margin-top:var(--s5)}
+.join{grid-column:8 / span 5;background:var(--porcelain);color:var(--garnet);padding:var(--s5)}
+.join h3{font-family:var(--f-display);font-weight:500;font-size:clamp(1.6rem,1.2rem + 1vw,2.2rem);line-height:1.05;letter-spacing:-.012em}
+.join .perks{margin:var(--s3) 0 var(--s4);color:var(--cocoa);font-size:var(--t-ui)}
+.close .btn-light:focus-visible{outline-color:var(--pink)}
+.site-foot{background:var(--garnet);color:#E9D7D2;padding:var(--s6) 0 calc(var(--s5) + env(safe-area-inset-bottom))}
+.foot-mark{font-family:var(--f-display);font-weight:500;color:var(--porcelain);font-size:clamp(3.2rem,12.4vw,14rem);line-height:.82;letter-spacing:-.045em;
+  margin-left:-.05em;white-space:nowrap;padding-bottom:.1em}
+.foot-cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s5) var(--s4);margin-top:var(--s6);padding-top:var(--s5);border-top:1px solid rgba(252,246,242,.18)}
+.foot-cols p{font-size:var(--t-small);font-weight:600;color:var(--gloss);margin-bottom:var(--s3)}
+.foot-cols ul{display:grid;gap:4px}
+.foot-cols a{display:inline-block;padding:8px 0;min-height:36px;text-decoration:none;color:var(--porcelain);font-size:var(--t-ui);
+  background:linear-gradient(currentColor,currentColor) 0 calc(100% - 4px)/0 1px no-repeat;transition:background-size .4s var(--ease)}
+.foot-cols a:hover{background-size:100% 1px}
+.site-foot :focus-visible{outline-color:var(--pink)}
+.foot-legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--s2) var(--s4);margin-top:var(--s6);font-size:var(--t-small);color:#CDB4AE}
+
+/* ===================== sticky CTA (mobile) ===================== */
+.sticky-cta{position:fixed;left:50%;bottom:calc(14px + env(safe-area-inset-bottom));z-index:60;display:none;transform:translate(-50%,180%);
+  min-height:52px;padding:0 26px;box-shadow:0 10px 28px rgba(42,21,25,.22);visibility:hidden;
+  transition:transform .45s var(--ease),visibility 0s linear .45s}
+.sticky-cta.show{transform:translate(-50%,0);visibility:visible;transition:transform .45s var(--ease)}
+
+/* ===================== cookie banner: same choices, smaller footprint ===================== */
+body .cookie-bar{left:auto;right:16px;bottom:16px!important;width:min(520px,calc(100% - 32px));background:var(--porcelain);border:1px solid var(--line-strong);border-radius:2px;
+  box-shadow:0 14px 40px rgba(42,21,25,.14);font-family:var(--f-text)}
+body .cookie-inner{padding:14px 16px;gap:12px 18px}
+body .cookie-bar-text{flex:1 1 100%;font-size:13px;line-height:1.45;color:var(--cocoa)}
+body .cookie-bar-text b{color:var(--garnet)}
+body .cookie-bar-text a{color:var(--garnet)}
+body .cookie-bar-actions{width:100%;gap:8px}
+body .cookie-btn{flex:1 1 0;min-height:44px;padding:0 12px;border-radius:2px;font-family:var(--f-text);font-size:13px;font-weight:600;letter-spacing:0;text-transform:none}
+body .cookie-btn-primary{background:var(--garnet);border-color:var(--garnet);color:var(--porcelain)}
+body .cookie-btn-primary:hover{background:var(--rose-ink);border-color:var(--rose-ink)}
+body .cookie-btn-ghost{background:transparent;border-color:var(--line-strong);color:var(--garnet)}
+body .cookie-btn-ghost:hover{background:var(--sweep)}
+
+/* ===================== responsive ===================== */
+@media (max-width:1100px){
+  .nav-links a{padding:10px 9px}
+  .moments{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .moments li:nth-child(even){margin-top:0}
+  .leave{grid-column:9 / span 4}
+}
+@media (max-width:960px){
+  :root{--head-h:60px}
+  .nav-toggle{display:inline-flex}
+  .nav-links{position:fixed;left:0;right:0;top:var(--head-h);bottom:0;z-index:49;margin:0;flex-direction:column;gap:0;
+    padding:var(--s4) var(--gutter) var(--s6);background:var(--porcelain);visibility:hidden;opacity:0;transform:translateY(-8px);
+    transition:opacity .3s var(--ease),transform .3s var(--ease),visibility 0s linear .3s}
+  .nav-open .nav-links{visibility:visible;opacity:1;transform:none;transition:opacity .3s var(--ease),transform .3s var(--ease)}
+  .nav-links a{font-family:var(--f-display);font-size:2.25rem;line-height:1.1;padding:12px 0;border-bottom:1px solid var(--line);border-radius:0;background:none!important}
+  .nav-links a[aria-current="page"]{color:var(--rose-ink)}
+  .nav-cta{margin-left:auto}
+  .nav-toggle{margin-left:4px}
+}
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;min-height:0;max-height:none}
+  .hero-copy{padding:var(--s4) var(--gutter) 0;gap:0}
+  .hero-title{font-size:clamp(3.1rem,20.5cqi,5.8rem)}
+  .hero-actions{margin-top:var(--s4)}
+  .hero-actions .btn{flex:1 1 100%}
+  .hero-copy .trust{margin-top:var(--s4)}
+  .hero-media{aspect-ratio:1 / 1;margin-top:var(--s5)}
+  .hero{display:flex;flex-direction:column}
+  .hero-def{padding:var(--s5) var(--gutter) 0}
+  .problem-head{grid-column:1 / -1;position:static}
+  .problem-body{grid-column:1 / -1;margin-top:var(--s5)}
+  .punch{margin-top:var(--s5)}
+  .how-head,.stage,.how-steps{grid-column:1 / -1}
+  .stage{position:relative;top:0}
+  .stage-frame{max-height:none;max-width:520px}
+  .step,.step:first-child{min-height:0;padding:var(--s5) 0 0}
+  .clean-main,.clean-side{grid-column:1 / -1}
+  .clean-side{margin-top:var(--s5);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s4);align-items:end}
+  .macro{aspect-ratio:4 / 5}
+  .founder-col,.status{grid-column:1 / -1}
+  .status{margin-top:var(--s6)}
+  .founder-note{margin-top:var(--s4)}
+  .vote-head h2,.vote-head .answer{grid-column:1 / -1}
+  .vote-grid .vote-block:first-child,.vote-grid .vote-block:last-child{grid-column:1 / -1}
+  .vote-grid .vote-block:last-child{margin-top:var(--s4)}
+  .wear{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:var(--s3);margin-inline:calc(var(--gutter) * -1);padding:0 var(--gutter) var(--s2);scrollbar-width:none}
+  .wear::-webkit-scrollbar{display:none}
+  .wear-opt{flex:0 0 74%;scroll-snap-align:center}
+  .flavors{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .flavor{min-height:112px;padding:var(--s3)}
+  .capture-copy,.capture form,.capture .success{grid-column:1 / -1}
+  .offer{grid-template-columns:1fr}
+  .offer-media{min-height:0;aspect-ratio:1 / 1}
+  .offer-sheet{padding:var(--s6) var(--gutter)}
+  .faq-side,.faq{grid-column:1 / -1}
+  .faq-side{position:static;margin-bottom:var(--s4)}
+  .close-copy,.join{grid-column:1 / -1}
+  .join{margin-top:var(--s5);padding:var(--s4)}
+  .foot-cols{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .foot-help{grid-column:1 / -1}
+  .sticky-cta{display:inline-flex}
+}
+@media (max-width:600px){
+  .nav-cta{display:none}
+  .nav-toggle{margin-left:auto}
+  .moments{grid-template-columns:1fr;gap:var(--s4);margin-top:var(--s5)}
+  .specimen li{grid-template-columns:1fr;gap:6px}
+  .facts li{grid-template-columns:1fr;gap:2px}
+  .price{flex-direction:column;gap:var(--s2)}
+  body .cookie-bar{left:10px;right:10px;bottom:10px!important;width:auto}
+  body .cookie-inner{padding:12px 14px}
+  body .cookie-bar-text{font-size:12.5px;line-height:1.42}
+}
+
+/* ===================== reduced motion ===================== */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://savageskincare.com/#organization",
+      "name": "Savage Skincare",
+      "url": "https://savageskincare.com/",
+      "logo": "https://savageskincare.com/logo.png",
+      "email": "hello@savageskincare.com",
+      "sameAs": ["https://www.instagram.com/savageskincare_4teens/"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://savageskincare.com/#website",
+      "name": "Savage Skincare",
+      "url": "https://savageskincare.com/",
+      "publisher": { "@id": "https://savageskincare.com/#organization" }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "@id": "https://savageskincare.com/#lip-pod",
+  "name": "Lip Pod",
+  "brand": { "@type": "Brand", "name": "Savage Skincare" },
+  "sku": "SS-POD-01",
+  "description": "The Lip Pod by Savage Skincare is a clean, plant-based lip gloss in a refillable case that clips to your phone, bag or wrist so you never lose it. Ingredients: shea butter, squalane, hyaluronic acid, glycerin and vitamin E. No fragrance, no parabens, cruelty-free. Images are concept renders; the Pod is in design and shipping is estimated for early 2027.",
+  "image": [
+    "https://savageskincare.com/lip-pod/wear-phone.jpg",
+    "https://savageskincare.com/lip-pod/pod-hero.jpg"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "price": "24.00",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/PreOrder",
+    "url": "https://savageskincare.com/",
+    "seller": { "@id": "https://savageskincare.com/#organization" },
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "USD" },
+      "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "US" }
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://savageskincare.com/#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What's the difference between preordering and joining?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Preordering means you pay $24 today and we send you a Lip Pod when the first run is made. Joining the community is free — no card, no order — and just puts you on the list. Preorder if you want the Pod and the $24 price. Join if you want to watch first and decide later."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Am I being charged?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If you preorder, yes — $24 goes through today, on Shopify's checkout. If you only join the community, no, and there's no card field on that form at all."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the Lip Pod actually real?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It's real, and it's not finished. Every photo on this site is a concept render, the design is still being worked on, and the vote above genuinely decides parts of it. We'd rather show you the unfinished version than a fake finished one — which is also why the preorder terms say all of this out loud."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When does it ship?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Pod is in design right now — we haven’t locked in a manufacturer yet, that comes once the design is final. Our estimate is that shipping could begin in early 2027. That's an estimate, not a promise — it depends on tooling and the factory. If it slips, we email everyone who preordered and you can take a full refund instead of waiting."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I change my mind?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Email hello@savageskincare.com any time before your Pod ships and we refund you in full. You don't have to give a reason and we won't try to talk you out of it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I pay for shipping?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not right now. Shipping is free on every preorder, with no minimum spend — it's a limited-time offer that runs while preorders are open. Shipping normally costs $4.90. Put together with the $8 off the price, preordering today saves you $12.90 against the $32-plus-shipping launch price."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is it $24 now and $32 later?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because preorders fund the first production run, and money now is worth more to us than money later. That's the whole trade — you take the risk that it's early, we take $8 off the price and cover your shipping on top."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I have to give my phone number?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — phone is optional on the community form and email alone works. If you do add it, we can text you the moment the Pod ships. Texts are opt-in (the checkbox), and you can reply STOP anytime."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's actually in the gloss?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Clean, plant-based ingredients you can pronounce — shea butter, squalane, hyaluronic acid, glycerin, vitamin E — and we're sourcing organic wherever a supplier can certify it. No fragrance, no parabens, cruelty-free, and the full list goes on the label in plain English. It doesn't sting either: the fuller look comes from hydration, not irritation."
+      }
+    }
+  ]
+}
+</script>
   <script async src="https://static.klaviyo.com/onsite/js/XNMhJw/klaviyo.js"></script>
 </head>
 <body>
-<div class="bg-mesh"></div>
-<div class="layer">
+<a class="skip" href="#main">Skip to content</a>
 
-<nav class="top" id="nav" aria-label="Primary">
-  <a href="/" class="brand" aria-label="Savage Skin home"><span class="mark" aria-hidden="true"></span><span>Savage<em>/</em>Skin</span></a>
-  <div class="nav-links" id="navLinks">
-    <a href="/" aria-current="page">Home</a>
-    <a href="/shop/">Product</a>
-    <a href="/shop/#science">Science</a>
-    <a href="/blog/">Journal</a>
-    <a href="/founders/">Story</a>
-    <a href="/faq/">FAQ</a>
-  </div>
-  <a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1" class="nav-cta">Preorder &mdash; $24</a>
-  <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
-</nav>
-
-<!-- ================= HERO + FORM ================= -->
-<header class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <span class="pill"><span class="dot"></span> Drop 01 · Preorder open · 500 units</span>
-      <h1>Tired of losing <em>your lip gloss?</em></h1>
-      <p class="sub">You've replaced the same gloss three times this year. It's in a coat pocket, a car seat, the bottom of a bag you haven't used since April. <b style="color:var(--ink);font-weight:500">The Lip Pod doesn't get lost, because it doesn't live loose.</b> It clips to your phone, your bag, your wrist — the things you never put down.</p>
-      <ul class="perks">
-        <li><span class="chk">✓</span> <span><b style="font-weight:600">$24 instead of $32</b> — $8 off, locked in forever</span></li>
-        <li><span class="chk">✓</span> <span><b style="font-weight:600">Free shipping — limited-time preorder offer</b> (normally $4.90), so you save <b style="font-weight:600">$12.90 in total</b></span></li>
-        <li><span class="chk">✓</span> <span><b style="font-weight:600">Refundable anytime</b> before it ships — no reason needed</span></li>
-        <li><span class="chk">✓</span> <span><b style="font-weight:600">Clean, plant-based gloss</b> inside — every ingredient in plain English</span></li>
-      </ul>
-      <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-bottom:14px">
-        <a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1" class="btn btn-primary"><span>Preorder the Lip Pod — $24 <span class="arr">→</span></span></a>
-        <a href="#join" style="font-size:14px;color:var(--dim);text-decoration:underline;text-underline-offset:3px">or join free, no Pod reserved</a>
-      </div>
-      <p style="font-family:var(--mono);font-size:11.5px;color:var(--mute);letter-spacing:0">In design right now · charged today · est. shipping early 2027 · full refund anytime before it ships</p>
-    </div>
-
-    <div>
-      <div class="hero-art">
-        <img src="/lip-pod/pod-hero.jpg" alt="Lip Pod concept render — the ivory case on a rose lanyard beside the Savage Lips gloss tube" width="1200" height="1200" fetchpriority="high">
-      </div>
-      <p class="concept-cap">Pictured: the Lip Pod — concept render, not a finished product. The design is still being worked on, and the final Pod may differ. Read the <a href="#preorder" style="color:inherit;text-decoration:underline">preorder terms</a> before you buy.</p>
-    </div>
-  </div>
+<header class="site-head" id="siteHead">
+  <nav class="nav wrap" id="nav" aria-label="Primary">
+    <a href="/" class="wordmark" aria-label="Savage Skincare home">Savage Skincare</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/" aria-current="page">Home</a></li>
+      <li><a href="/shop/">Product</a></li>
+      <li><a href="/shop/#science">Science</a></li>
+      <li><a href="/blog/">Journal</a></li>
+      <li><a href="/founders/">Story</a></li>
+      <li><a href="/faq/">FAQ</a></li>
+    </ul>
+    <a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1" class="btn btn-primary nav-cta"><span>Preorder &mdash; $24</span></a>
+    <button class="nav-toggle" id="navToggle" type="button" aria-controls="navLinks" aria-expanded="false"><span id="navToggleLabel">Menu</span><i aria-hidden="true"></i></button>
+  </nav>
 </header>
 
-<!-- ================= PROGRESS / WHERE WE ARE ================= -->
-<section id="progress" style="padding:34px 0 6px">
+<main id="main">
+
+<!-- ================= HERO ================= -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-copy">
+    <div>
+      <h1 class="hero-title" id="hero-title"><span class="line"><span>Tired of</span></span> <span class="line"><span>losing your</span></span> <span class="line"><span>lip gloss?</span></span></h1>
+      <p class="hero-lede">Clean, plant-based gloss in a case you can’t lose.</p>
+      <div class="hero-actions">
+        <a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1" class="btn btn-primary" id="heroCta"><span>Preorder the Lip Pod — $24</span></a>
+        <a href="#join" class="link">Join the list instead</a>
+      </div>
+    </div>
+    <ul class="trust" aria-label="The gloss at a glance">
+      <li>Plant-based</li>
+      <li>No fragrance</li>
+      <li>No parabens</li>
+      <li>Cruelty-free</li>
+      <li>Ingredients in plain English</li>
+    </ul>
+  </div>
+  <figure class="hero-media">
+    <div class="float" data-float>
+      <picture>
+        <source type="image/avif" sizes="(min-width: 900px) 54vw, 100vw"
+          srcset="/images/home/lip-pod-clipped-to-phone-concept-render-560.avif 560w, /images/home/lip-pod-clipped-to-phone-concept-render-800.avif 800w, /images/home/lip-pod-clipped-to-phone-concept-render-1100.avif 1100w">
+        <source type="image/webp" sizes="(min-width: 900px) 54vw, 100vw"
+          srcset="/images/home/lip-pod-clipped-to-phone-concept-render-560.webp 560w, /images/home/lip-pod-clipped-to-phone-concept-render-800.webp 800w, /images/home/lip-pod-clipped-to-phone-concept-render-1100.webp 1100w">
+        <img src="/images/home/lip-pod-clipped-to-phone-concept-render-800.jpg" width="1100" height="1100" fetchpriority="high" data-parallax
+          alt="Concept render of the Lip Pod: an ivory case with rose-gold hardware hanging from a phone strap, held in a hand outdoors">
+      </picture>
+    </div>
+    <figcaption class="tag">Concept render</figcaption>
+  </figure>
+  <div class="hero-def">
+    <h2 class="q-label" id="what-title">What is the Lip Pod?</h2>
+    <p>The Lip Pod by Savage Skincare is a clean, plant-based lip gloss in a refillable case that clips to your phone, bag or wrist so you never lose it.</p>
+  </div>
+</section>
+
+<!-- ================= THE PROBLEM ================= -->
+<section class="problem" aria-labelledby="problem-title">
+  <div class="wrap problem-grid">
+    <div class="problem-head">
+      <h2 class="display" id="problem-title">Where does your lip gloss actually go?</h2>
+      <p class="answer">Nobody loses their phone. Everybody loses their gloss. It isn’t you: gloss is designed to live loose in a bag, and loose things disappear.</p>
+    </div>
+    <div class="problem-body">
+      <ul class="moments">
+        <li><h3>The bag black hole</h3><p>You know it’s in there. You’ve had your whole arm in there. It is not in there.</p></li>
+        <li><h3>The jacket you switched</h3><p>It’s in the pocket of the coat you stopped wearing when it got warm. You’ll find it in October.</p></li>
+        <li><h3>The borrow that never came back</h3><p>“I’ll give it back at lunch.” That was two weeks ago and she’s moved on with her life.</p></li>
+        <li><h3>The one you re-bought</h3><p>So you bought it again. And again. Same tube, same shade, three separate times.</p></li>
+      </ul>
+      <p class="punch" data-rise>You didn’t need a better formula. You needed one that stays attached to you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS (signature: drawing to render) ================= -->
+<section class="how" id="how" aria-labelledby="how-title">
+  <div class="wrap how-grid">
+    <div class="how-head">
+      <h2 class="display" id="how-title">How does the Lip Pod work?</h2>
+      <p class="answer">A refillable gloss tube snaps magnetically into a small case, and the case clips to your phone, your bag or your wrist.</p>
+      <a class="link how-more" href="/shop/">See every detail on the Lip Pod product page</a>
+    </div>
+    <figure class="stage" id="stage">
+      <div class="stage-frame">
+        <picture class="stage-drawing">
+          <source type="image/avif" sizes="(min-width: 900px) 40vw, 90vw"
+            srcset="/images/home/lip-pod-design-drawing-440.avif 440w, /images/home/lip-pod-design-drawing-660.avif 660w, /images/home/lip-pod-design-drawing-885.avif 885w">
+          <source type="image/webp" sizes="(min-width: 900px) 40vw, 90vw"
+            srcset="/images/home/lip-pod-design-drawing-440.webp 440w, /images/home/lip-pod-design-drawing-660.webp 660w, /images/home/lip-pod-design-drawing-885.webp 885w">
+          <img src="/images/home/lip-pod-design-drawing-660.jpg" width="885" height="1100" loading="lazy" decoding="async"
+            alt="Design drawing of the Lip Pod taken apart: the cap, the gloss tube, the case and the cord clip">
+        </picture>
+        <picture class="stage-render">
+          <source type="image/avif" sizes="(min-width: 900px) 40vw, 90vw"
+            srcset="/images/home/lip-pod-exploded-view-concept-render-440.avif 440w, /images/home/lip-pod-exploded-view-concept-render-660.avif 660w, /images/home/lip-pod-exploded-view-concept-render-885.avif 885w">
+          <source type="image/webp" sizes="(min-width: 900px) 40vw, 90vw"
+            srcset="/images/home/lip-pod-exploded-view-concept-render-440.webp 440w, /images/home/lip-pod-exploded-view-concept-render-660.webp 660w, /images/home/lip-pod-exploded-view-concept-render-885.webp 885w">
+          <img src="/images/home/lip-pod-exploded-view-concept-render-660.jpg" width="885" height="1100" loading="lazy" decoding="async"
+            alt="Concept render of the same parts: a rose-gold cap, a pink gloss tube, the ivory case and a rose cord with its clip">
+        </picture>
+        <span class="stage-line" aria-hidden="true"></span>
+      </div>
+      <figcaption><span class="tag">Concept render</span><span>The design drawing, then the concept render: cap, gloss tube, case and clip. Dimensions are still moving while the design is finalized.</span></figcaption>
+    </figure>
+    <div class="how-steps">
+      <article class="step">
+        <h3 class="h3">How does it clip on?</h3>
+        <p>The case hangs from a clip and cord, so it rides on the outside of your phone, your bag or your wrist instead of sinking to the bottom of something. You reach for it without looking, the way you reach for your keys.</p>
+      </article>
+      <article class="step">
+        <h3 class="h3">Is it refillable?</h3>
+        <p>Yes. When the gloss runs out you swap the tube, not the whole Pod, and every Pod comes with a refill in the box. Refills are the same clean, plant-based gloss.</p>
+      </article>
+      <article class="step">
+        <h3 class="h3">How do the two halves stay together?</h3>
+        <p>The tube snaps back into the case magnetically, so the gloss can’t wander off from the thing holding it.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INGREDIENTS ================= -->
+<section class="clean" id="ingredients" aria-labelledby="clean-title">
+  <div class="wrap clean-grid">
+    <div class="clean-main">
+      <div class="clean-head">
+        <h2 class="display" id="clean-title">Is the Lip Pod gloss clean?</h2>
+        <p class="answer">It’s made to be: a plant-based gloss with no fragrance and no parabens, built from ingredients you can pronounce and listed in plain English.</p>
+        <p class="clean-standard"><b>Nothing in it you’d be afraid to swallow.</b> You lick your lips, you eat, you talk, and it’s on you all day. So what goes in it isn’t an afterthought.</p>
+      </div>
+      <div class="specimen">
+        <h3>What’s in it</h3>
+        <ul>
+          <li><span class="name">Shea butter</span><span class="does">Plant-based. Seals in moisture and softens.</span></li>
+          <li><span class="name">Squalane</span><span class="does">Plant-derived. Weightless moisture.</span></li>
+          <li><span class="name">Hyaluronic acid</span><span class="does">Pulls in water, with no sting.</span></li>
+          <li><span class="name">Glycerin</span><span class="does">Plant-based. Keeps lips soft all day.</span></li>
+          <li><span class="name">Vitamin E</span><span class="does">A natural antioxidant.</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="clean-side">
+      <div class="macro" data-reveal>
+        <div class="inner" data-drift>
+          <picture>
+            <source type="image/avif" sizes="(min-width: 900px) 32vw, 100vw"
+              srcset="/images/home/lip-pod-gloss-droplet-concept-render-800.avif 800w, /images/home/lip-pod-gloss-droplet-concept-render-1200.avif 1200w, /images/home/lip-pod-gloss-droplet-concept-render-1400.avif 1400w">
+            <source type="image/webp" sizes="(min-width: 900px) 32vw, 100vw"
+              srcset="/images/home/lip-pod-gloss-droplet-concept-render-800.webp 800w, /images/home/lip-pod-gloss-droplet-concept-render-1200.webp 1200w, /images/home/lip-pod-gloss-droplet-concept-render-1400.webp 1400w">
+            <img src="/images/home/lip-pod-gloss-droplet-concept-render-1200.jpg" width="1400" height="1045" loading="lazy" decoding="async"
+              alt="Concept render, close up: a drop of pink gloss at the tip of the Lip Pod tube">
+          </picture>
+        </div>
+        <span class="tag">Concept render</span>
+      </div>
+      <div class="leave">
+        <h3>What we leave out</h3>
+        <ul>
+          <li>fragrance</li>
+          <li>parabens</li>
+          <li>mystery filler</li>
+        </ul>
+        <p>And no fear list. We tell you what’s in it instead.</p>
+      </div>
+    </div>
+    <p class="clean-foot"><span>Sourced organic wherever we can get it.</span> <span>Cruelty-free, always.</span> <span>The full list goes on the label, not in the fine print.</span> <a class="link" href="/shop/#science">See what each ingredient does on the Science page</a> <a class="link" href="/blog/">Read lip care guides in the Journal</a></p>
+  </div>
+</section>
+
+<!-- ================= FOUNDER + HONEST STATUS ================= -->
+<section class="founder" id="status" aria-labelledby="founder-title">
+  <div class="wrap founder-grid">
+    <div class="founder-col">
+      <figure class="founder-photo" aria-label="Placeholder: a photo of Brianna is coming soon">
+        <span class="mono" aria-hidden="true">B</span>
+        <p>Placeholder. A photo of Brianna is coming soon.</p>
+      </figure>
+      <div class="founder-note">
+        <h2 class="display" id="founder-title">A note from the founder</h2>
+        <blockquote>
+          <p>I’m actually building this. I’m working with designers on the Pod right now. It’s past the sketch stage, but it isn’t finished, and I haven’t picked a manufacturer yet.</p>
+          <p>I want the gloss inside to be clean and plant-based, because it’s on your lips all day. I’m passionate about getting this right, and that’s exactly why you’re seeing an honest concept render instead of a faked finished photo.</p>
+        </blockquote>
+        <p class="founder-sign">Brianna Savage<span>Founder, Savage Skincare</span></p>
+        <a class="link" href="/founders/">Read Brianna’s founder story</a>
+      </div>
+    </div>
+
+    <div class="status">
+      <div class="status-head">
+        <h2 class="display" id="status-title">Where is the Lip Pod right now?</h2>
+        <p class="answer">In design. The concept is done, designers are turning it into something a factory can build, and shipping is estimated for early 2027.</p>
+      </div>
+      <div class="timeline">
+        <span class="track" aria-hidden="true"></span><span class="bar" aria-hidden="true" data-bar></span>
+        <ol aria-label="Lip Pod progress">
+          <li class="done"><span class="state">Done</span><b>Concept</b><p>What the Pod has to do, what goes in the gloss, and the problem it solves are settled.</p></li>
+          <li class="now" aria-current="step"><span class="state">Happening now</span><b>Design</b><p>Designers are working on the shape, the clip and the materials, turning the concept into specs a factory can build from.</p></li>
+          <li><span class="state">Next, est. early 2027</span><b>Manufacturing and shipping</b><p>No manufacturer is locked in yet. That comes once the design is final.</p></li>
+        </ol>
+      </div>
+      <div class="terms" id="terms">
+        <h3 class="h3">The preorder terms</h3>
+        <ul>
+          <li><b>Every image is a concept render.</b><span>The design is still being worked on, so the final Pod may differ a little from what you see.</span></li>
+          <li><b>You’re charged today.</b><span>When you order, not when it ships.</span></li>
+          <li><b>Shipping is an estimate.</b><span>We expect early 2027. If it moves, we email you, and you can take a full refund instead of waiting.</span></li>
+          <li><b>Full refund any time before it ships.</b><span>One email to <a class="link" href="mailto:hello@savageskincare.com">hello@savageskincare.com</a>. No reason needed, no restocking fee.</span></li>
+        </ul>
+        <p class="terms-foot">The details are on <a class="link" href="/shipping-returns/">Shipping &amp; Returns</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= THE VOTE ================= -->
+<section class="vote" id="vote" aria-labelledby="vote-title">
   <div class="wrap">
-    <div class="prod">
-      <div class="eyebrow">where we actually are</div>
-      <h3 class="sec" style="margin-bottom:10px">It&rsquo;s actually <span class="serif">being made.</span></h3>
-      <p class="lead">The Lip Pod is officially in development &mdash; we&rsquo;re working with designers right now to turn it into something a factory can actually build. Here&rsquo;s exactly how far along it is, including the parts that aren&rsquo;t done. Based on where things stand today, we estimate Pods could start shipping in <b style="color:var(--ink);font-weight:600">2027</b>.</p>
-      <div class="ps-steps">
-        <div class="ps-step">
-          <span class="ps-tag">&#10003; Done</span>
-          <b>The concept is locked</b>
-          <span class="d">What the Pod has to do, what goes in the gloss, and the problem it solves &mdash; settled, with your votes shaping it.</span>
+    <div class="vote-head">
+      <h2 class="display" id="vote-title">Help decide the final design</h2>
+      <p class="answer">Two choices are still open. Pick one of each. Your picks are saved on this device, and they’re counted when you join the list.</p>
+    </div>
+
+    <div class="vote-grid">
+    <div class="vote-block" id="lip-pod-vote">
+      <h3 class="h3" id="wear-q">How would you wear it?</h3>
+      <div class="wear" id="pvTrack" role="group" aria-labelledby="wear-q">
+        <button class="wear-opt pv-btn" type="button" aria-pressed="false" data-concept="Wear it — Clipped to your phone">
+          <span class="ph">
+            <picture>
+              <source type="image/avif" sizes="(min-width: 900px) 30vw, 74vw" srcset="/images/home/lip-pod-clipped-to-phone-concept-render-560.avif 560w, /images/home/lip-pod-clipped-to-phone-concept-render-800.avif 800w">
+              <source type="image/webp" sizes="(min-width: 900px) 30vw, 74vw" srcset="/images/home/lip-pod-clipped-to-phone-concept-render-560.webp 560w, /images/home/lip-pod-clipped-to-phone-concept-render-800.webp 800w">
+              <img src="/images/home/lip-pod-clipped-to-phone-concept-render-800.jpg" width="1100" height="1100" loading="lazy" decoding="async" alt="Concept render: the Lip Pod hanging from a phone strap">
+            </picture>
+            <span class="tag">Concept render</span><span class="ring"></span>
+          </span>
+          <span class="meta"><span class="nm">Clipped to your phone</span><span class="pick">Pick</span></span>
+          <span class="ds">Hangs off your phone strap, so it’s there every time your phone is.</span>
+        </button>
+        <button class="wear-opt pv-btn" type="button" aria-pressed="false" data-concept="Wear it — As a bag charm">
+          <span class="ph">
+            <picture>
+              <source type="image/avif" sizes="(min-width: 900px) 30vw, 74vw" srcset="/images/home/lip-pod-bag-charm-concept-render-480.avif 480w, /images/home/lip-pod-bag-charm-concept-render-800.avif 800w">
+              <source type="image/webp" sizes="(min-width: 900px) 30vw, 74vw" srcset="/images/home/lip-pod-bag-charm-concept-render-480.webp 480w, /images/home/lip-pod-bag-charm-concept-render-800.webp 800w">
+              <img src="/images/home/lip-pod-bag-charm-concept-render-800.jpg" width="1100" height="1100" loading="lazy" decoding="async" alt="Concept render: the Lip Pod clipped to a bag like a charm">
+            </picture>
+            <span class="tag">Concept render</span><span class="ring"></span>
+          </span>
+          <span class="meta"><span class="nm">As a bag charm</span><span class="pick">Pick</span></span>
+          <span class="ds">Clips to your bag like jewelry. An accessory first, a lip product second.</span>
+        </button>
+        <button class="wear-opt pv-btn" type="button" aria-pressed="false" data-concept="Wear it — Looped on your wrist">
+          <span class="ph">
+            <picture>
+              <source type="image/avif" sizes="(min-width: 900px) 30vw, 74vw" srcset="/images/home/lip-pod-wristlet-concept-render-480.avif 480w, /images/home/lip-pod-wristlet-concept-render-800.avif 800w">
+              <source type="image/webp" sizes="(min-width: 900px) 30vw, 74vw" srcset="/images/home/lip-pod-wristlet-concept-render-480.webp 480w, /images/home/lip-pod-wristlet-concept-render-800.webp 800w">
+              <img src="/images/home/lip-pod-wristlet-concept-render-800.jpg" width="1100" height="1100" loading="lazy" decoding="async" alt="Concept render: the Lip Pod cord looped around a wrist">
+            </picture>
+            <span class="tag">Concept render</span><span class="ring"></span>
+          </span>
+          <span class="meta"><span class="nm">Looped on your wrist</span><span class="pick">Pick</span></span>
+          <span class="ds">The cord doubles as a wristlet. Hands free, and it moves with you.</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="vote-block">
+      <h3 class="h3" id="voteQ">Which flavor should we make first?</h3>
+      <div class="flavors" id="voteOpts" role="group" aria-labelledby="voteQ"></div>
+    </div>
+    </div>
+    <p class="vote-saved" id="voteSaved" role="status" aria-live="polite"></p>
+
+    <!-- Optional email capture: appears after the first wear pick. Voting works without it. -->
+    <div class="pod-capture" id="podCapture">
+      <div class="capture">
+        <div class="capture-copy">
+          <h3 class="h3">Want your picks to count?</h3>
+          <p>Add your email and they’re counted, and you’ll hear first if the Lip Pod goes into production. Optional, and no spam.</p>
         </div>
-        <div class="ps-step now">
-          <span class="ps-tag"><span class="dot"></span> Happening now</span>
-          <b>In design, for real</b>
-          <span class="d">We&rsquo;re working with designers on the shape, the clip, and the materials &mdash; turning the concept into specs a factory can build from.</span>
-        </div>
-        <div class="ps-step">
-          <span class="ps-tag">Next</span>
-          <b>Manufacturing, then shipping &mdash; est. 2027</b>
-          <span class="d">No manufacturer is locked in yet &mdash; that comes once the design is final. Preorders ship first, free. It&rsquo;s an estimate, not a promise: if it moves, we email you and you can take a full refund instead of waiting.</span>
+        <form id="podForm" novalidate>
+          <div class="field">
+            <label for="podEmail">Email <span class="hint">— optional</span></label>
+            <input id="podEmail" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com">
+          </div>
+          <div class="err" id="podErr" role="alert" aria-live="polite"></div>
+          <label class="consent">
+            <input type="checkbox" id="podAgree">
+            <span>I'm 16+ (or have a parent/guardian's permission) and agree to get email updates about the Lip Pod, per the
+              <a href="/privacy/">Privacy Policy</a> &amp; <a href="/terms/">Terms</a>.</span>
+          </label>
+          <button type="submit" class="btn btn-primary submit" id="podSubmit"><span>Keep me posted</span></button>
+          <button type="button" class="cap-skip" id="podSkip">No thanks</button>
+          <small class="fine">This is a vote, not an order.</small>
+        </form>
+        <div class="success" id="podSuccess" role="status" aria-live="polite">
+          <div class="big">Saved.</div>
+          <p id="podSuccessMsg">Thanks. We saved your pick.</p>
         </div>
       </div>
-      <p class="ps-note">Because the Pod isn&rsquo;t finished yet, every image on this site is still a concept render and the final product may differ. You&rsquo;re charged today, and refundable anytime before it ships.</p>
     </div>
   </div>
 </section>
 
-<!-- ================= PROBLEM / AGITATE ================= -->
-<section id="problem" style="padding:30px 0 10px">
-  <div class="wrap">
-    <div class="prob">
-      <div class="eyebrow">be honest</div>
-      <h3 class="sec" style="margin-bottom:10px">Where did it <span class="serif">actually go?</span></h3>
-      <p class="lead">Nobody loses their phone. Everybody loses their gloss. It's not you — it's that gloss is designed to live loose in a bag, and loose things disappear.</p>
-      <div class="prob-grid">
-        <div class="prob-item">
-          <span class="n">01</span>
-          <b>The bag black hole</b>
-          <span>You know it's in there. You've had your whole arm in there. It is not in there.</span>
-        </div>
-        <div class="prob-item">
-          <span class="n">02</span>
-          <b>The jacket you switched</b>
-          <span>It's in the pocket of the coat you stopped wearing when it got warm. You'll find it in October.</span>
-        </div>
-        <div class="prob-item">
-          <span class="n">03</span>
-          <b>The borrow that never came back</b>
-          <span>"I'll give it back at lunch." That was two weeks ago and she's moved on with her life.</span>
-        </div>
-        <div class="prob-item">
-          <span class="n">04</span>
-          <b>The one you re-bought</b>
-          <span>So you bought it again. And again. Same tube, same shade, three separate times.</span>
-        </div>
-      </div>
-      <p class="prob-punch">You didn't need a better formula. You needed one that <em>stays attached to you.</em></p>
-      <div class="prob-cta">
-        <a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1" class="btn btn-primary"><span>Preorder — $24 <span class="arr">→</span></span></a>
-        <span class="note">$32 at launch · refundable anytime before it ships</span>
-      </div>
+<!-- ================= THE OFFER (stated once) ================= -->
+<section class="offer" id="preorder" aria-labelledby="offer-title">
+  <figure class="offer-media" data-reveal>
+    <picture>
+      <source type="image/avif" sizes="(min-width: 900px) 50vw, 100vw"
+        srcset="/images/home/lip-pod-case-and-gloss-tube-concept-render-600.avif 600w, /images/home/lip-pod-case-and-gloss-tube-concept-render-900.avif 900w, /images/home/lip-pod-case-and-gloss-tube-concept-render-1200.avif 1200w">
+      <source type="image/webp" sizes="(min-width: 900px) 50vw, 100vw"
+        srcset="/images/home/lip-pod-case-and-gloss-tube-concept-render-600.webp 600w, /images/home/lip-pod-case-and-gloss-tube-concept-render-900.webp 900w, /images/home/lip-pod-case-and-gloss-tube-concept-render-1200.webp 1200w">
+      <img src="/images/home/lip-pod-case-and-gloss-tube-concept-render-900.jpg" width="1200" height="1200" loading="lazy" decoding="async"
+        alt="Concept render of what comes in the box: the ivory Lip Pod case on its rose cord, standing beside the pink gloss tube">
+    </picture>
+    <figcaption class="tag">Concept render</figcaption>
+  </figure>
+  <div class="offer-sheet">
+    <h2 class="display" id="offer-title">How much is the Lip Pod?</h2>
+    <p class="answer">$24 if you preorder now. It’s $32 at launch, and shipping is free while preorders are open.</p>
+    <p class="price"><span class="now">$24</span><span class="then"><s>$32</s> at launch</span></p>
+    <ul class="facts">
+      <li><span class="k">Shipping</span><span class="v">Free on every preorder, a limited-time offer. It’s normally $4.90, so you pay $12.90 less than at launch.</span></li>
+      <li><span class="k">Founder run</span><span class="v">500 units. Preorders ship first, before the public drop.</span></li>
+      <li><span class="k">In the box</span><span class="v">The Lip Pod case, a full-size gloss and one refill.</span></li>
+      <li><span class="k">Refills</span><span class="v">$11 for a 3-pack while preorders are open, $15 after launch.</span></li>
+    </ul>
+    <div class="offer-ctas">
+      <a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1" class="btn btn-primary" id="offerCta"><span>Preorder the Lip Pod — $24</span></a>
+      <a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1,53831245955437:1" class="btn btn-outline"><span>Preorder Pod + 3 refills — $35</span></a>
+    </div>
+    <p class="offer-fine"><a class="link" href="https://savageskincare-store.myshopify.com/cart/53831245955437:1">Or get refills on their own, $11</a> <span>Secure checkout on Shopify. Each link opens its own checkout.</span> <a class="link" href="#terms">Read the preorder terms</a></p>
+  </div>
+</section>
+
+<!-- ================= FAQ (every question and answer kept word for word) ================= -->
+<section class="faq-sec" id="faq" aria-labelledby="faq-title">
+  <div class="wrap faq-grid">
+    <div class="faq-side">
+      <h2 class="display" id="faq-title">Questions, answered</h2>
+      <p class="body">Straight answers about the Lip Pod, the preorder and the gloss.</p>
+      <a class="link" href="/faq/">More answers on the FAQ page</a>
+    </div>
+    <div class="faq">
+      <details><summary>What's the difference between preordering and joining?</summary><p>Preordering means you pay $24 today and we send you a Lip Pod when the first run is made. Joining the community is free — no card, no order — and just puts you on the list. Preorder if you want the Pod and the $24 price. Join if you want to watch first and decide later.</p></details>
+      <details><summary>Am I being charged?</summary><p>If you preorder, yes — $24 goes through today, on Shopify's checkout. If you only join the community, no, and there's no card field on that form at all.</p></details>
+      <details><summary>Is the Lip Pod actually real?</summary><p>It's real, and it's not finished. Every photo on this site is a concept render, the design is still being worked on, and the vote above genuinely decides parts of it. We'd rather show you the unfinished version than a fake finished one — which is also why the preorder terms say all of this out loud.</p></details>
+      <details><summary>When does it ship?</summary><p>The Pod is in design right now &mdash; we haven&rsquo;t locked in a manufacturer yet, that comes once the design is final. Our estimate is that shipping could begin in early 2027. That's an estimate, not a promise — it depends on tooling and the factory. If it slips, we email everyone who preordered and you can take a full refund instead of waiting.</p></details>
+      <details><summary>What if I change my mind?</summary><p>Email <a href="mailto:hello@savageskincare.com">hello@savageskincare.com</a> any time before your Pod ships and we refund you in full. You don't have to give a reason and we won't try to talk you out of it.</p></details>
+      <details><summary>Do I pay for shipping?</summary><p>Not right now. Shipping is <b>free on every preorder</b>, with no minimum spend &mdash; it's a limited-time offer that runs while preorders are open. Shipping normally costs $4.90. Put together with the $8 off the price, preordering today saves you <b>$12.90</b> against the $32-plus-shipping launch price.</p></details>
+      <details><summary>Why is it $24 now and $32 later?</summary><p>Because preorders fund the first production run, and money now is worth more to us than money later. That's the whole trade — you take the risk that it's early, we take $8 off the price and cover your shipping on top.</p></details>
+      <details><summary>Do I have to give my phone number?</summary><p>No — phone is optional on the community form and email alone works. If you do add it, we can text you the moment the Pod ships. Texts are opt-in (the checkbox), and you can reply STOP anytime.</p></details>
+      <details><summary>What's actually in the gloss?</summary><p>Clean, plant-based ingredients you can pronounce — shea butter, squalane, hyaluronic acid, glycerin, vitamin E — and we're sourcing organic wherever a supplier can certify it. No fragrance, no parabens, cruelty-free, and the full list goes on the label in plain English. It doesn't sting either: the fuller look comes from hydration, not irritation.</p></details>
     </div>
   </div>
 </section>
 
-<!-- ================= PREORDER ================= -->
-<section id="preorder" style="padding-top:18px">
-  <div class="wrap" style="max-width:900px">
-
-    <div style="text-align:center;margin-bottom:26px">
-      <div class="eyebrow">two ways in</div>
-      <h3 class="sec" style="margin-bottom:8px">Both get you early. <span class="serif">Only one gets you the Pod.</span></h3>
-      <p class="lead" style="margin:0 auto">Here's the honest difference, side by side.</p>
+<!-- ================= CLOSE + JOIN ================= -->
+<section class="close" id="close" aria-labelledby="close-title">
+  <div class="wrap close-grid">
+    <div class="close-copy">
+      <h2 class="display" id="close-title" data-rise>Stop buying the same gloss over and over.</h2>
+      <p>One clean, plant-based gloss that stays attached to you, in a case you refill instead of replace.</p>
+      <a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1" class="btn btn-light" id="closeCta"><span>Preorder the Lip Pod — $24</span></a>
     </div>
 
-    <div class="h2h">
-      <div class="h2h-col win">
-        <div class="h2h-hd">
-          <span class="h2h-badge">Best value</span>
-          <h4>Preorder the founder run</h4>
-          <div class="p">$24 <s>$32</s></div>
-          <div class="sub">One-time · free shipping · fully refundable</div>
-          <div class="sub" style="color:var(--neon);font-weight:600">You save $12.90 today</div>
-        </div>
-        <ul>
-          <li><i>&#10003;</i><div><b>You actually get a Lip Pod.</b> Reserved from the 500-unit first run.</div></li>
-          <li><i>&#10003;</i><div><b>You save $8 on the Pod</b> — it's $32 for everyone else at launch.</div></li>
-          <li><i>&#10003;</i><div><b>Free shipping, free right now</b> — a limited-time preorder offer. Shipping is normally $4.90, so $24 really is the whole cost. <b>$12.90 saved in total.</b></div></li>
-          <li><i>&#10003;</i><div><b>It ships to you first</b>, before the public drop.</div></li>
-          <li><i>&#10003;</i><div><b>Full refund anytime</b> before it ships — any reason, or none.</div></li>
-          <li><i>&#10003;</i><div>Plus everything on the community side &#8594;</div></li>
-        </ul>
-        <div class="h2h-cta">
-          <a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1" class="btn btn-primary"><span>Preorder the Lip Pod — $24 <span class="arr">&#8594;</span></span></a>
-          <p class="h2h-note">Charged today · est. shipping early 2027 · refundable anytime before it ships</p>
-        </div>
-      </div>
-
-      <div class="h2h-col alt">
-        <div class="h2h-hd">
-          <span class="h2h-badge mute">Free</span>
-          <h4>Just join the community</h4>
-          <div class="p">$0</div>
-          <div class="sub">No card · no order · unsubscribe anytime</div>
-        </div>
-        <ul>
-          <li><i>&#215;</i><div><b>No Lip Pod reserved.</b> If the 500 sell out, you wait for the public launch.</div></li>
-          <li><i>&#215;</i><div><b>You'll pay $32</b> when it launches.</div></li>
-          <li><i>&#215;</i><div><b>Shipping charged separately</b> — $4.90, once the preorder offer ends.</div></li>
-          <li><i>&#10003;</i><div>First to know when it ships.</div></li>
-          <li><i>&#10003;</i><div>A real vote on what we make next.</div></li>
-          <li><i>&#10003;</i><div>We email you when there's actual news — not weekly.</div></li>
-        </ul>
-        <div class="h2h-cta">
-          <a href="#join" class="btn btn-ghost"><span>Join free instead</span></a>
-          <p class="h2h-note">Free forever · you can preorder later at whatever the price is then</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="wrap" style="max-width:620px">
-    <div class="card">
-      <div class="card-top">
-        <span class="tag">Founder preorder</span>
-        <span class="save">You save $12.90</span>
-      </div>
-      <h2>Preorder the Lip Pod.</h2>
-      <p class="lead" style="margin-bottom:18px">The first production run is 500 units. Preordering is what pays for that run — so we're telling you exactly what you're buying and exactly where it stands.</p>
-
-      <div class="offer">
-        <div class="oh">What you're paying</div>
-        <ul>
-          <li><span class="chk">1</span><div><b>One of the 500, reserved for you.</b> <span class="d">Preorders are how the first run gets allocated — this is the only way to be certain you get one.</span></div></li>
-          <li><span class="chk">2</span><div><b>$24 instead of $32.</b> <span class="d">That's $8 off, and it never goes back down after launch week.</span></div></li>
-          <li><span class="chk">3</span><div><b>Free shipping — a limited-time preorder offer.</b> <span class="d">Shipping normally costs $4.90. While preorders are open it's on us, so $24 is genuinely the whole cost — nothing added at checkout. Between the two, <b>you're saving $12.90.</b></span></div></li>
-          <li><span class="chk">4</span><div><b>One Lip Pod case + one full-size gloss.</b> <span class="d">The tube refills, so the Pod keeps going — and the gloss inside is clean and plant-based, ingredients in plain English.</span></div></li>
-          <li><span class="chk">5</span><div><b>Yours ships first,</b> <span class="d">ahead of the public drop.</span></div></li>
-        </ul>
-        <div class="spots"><b>$24 today, shipped free</b> · $32 plus $4.90 shipping for everyone else at launch &mdash; <b>you save $12.90</b></div>
-      </div>
-
-      <div class="offer" style="border-color:var(--line2);background:rgba(255,255,255,.5)">
-        <div class="oh">The honest part</div>
-        <ul>
-          <li><span class="chk">&middot;</span><div><b>It's not made yet.</b> <span class="d">Every image here is a concept render. The design is still being worked out with our designers, so the final Pod may differ a little from what you see.</span></div></li>
-          <li><span class="chk">&middot;</span><div><b>You're charged today.</b> <span class="d">Not at shipping — today, when you order.</span></div></li>
-          <li><span class="chk">&middot;</span><div><b>Shipping is estimated for early 2027.</b> <span class="d">It's an estimate, not a promise. If it moves, we'll email you, and you can take a full refund instead of waiting.</span></div></li>
-        </ul>
-      </div>
-
-      <div class="fnote">
-        <b>Where I'm at, honestly.</b>
-        <span>I&rsquo;m actually building this &mdash; I&rsquo;m working with designers on the Pod right now. It&rsquo;s past the sketch stage, but it isn&rsquo;t finished, and I haven&rsquo;t picked a manufacturer yet. I'm passionate about getting this right, and that's exactly why you're seeing an honest concept render instead of a faked finished photo. &mdash; Brianna, founder</span>
-      </div>
-
-      <div class="guar">
-        <span class="ic">&#10003;</span>
-        <div>
-          <b>You can change your mind. Any time.</b>
-          <span>Until the day it ships, one email to <a href="mailto:hello@savageskincare.com" style="color:inherit;text-decoration:underline">hello@savageskincare.com</a> gets you a full refund — no reason needed, no questions, no restocking fee. You're not locked into anything.</span>
-        </div>
-      </div>
-
-      <a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:20px"><span>Preorder the Lip Pod — $24 <span class="arr">&#8594;</span></span></a>
-      <small class="fine">Secure checkout on Shopify · charged today · refundable anytime before shipping · <a href="/shipping-returns/">Shipping &amp; Returns</a></small>
-
-      <div class="offer" style="margin-top:20px;border-style:dashed">
-        <div class="oh">Add refills</div>
-        <p style="margin:0 0 14px;font-size:15px;line-height:1.6;color:var(--dim)">Your Pod already comes with a refill in the box. When those run out, the tube swaps and the Pod stays &mdash; refills are <b style="color:var(--ink)">$11 for a 3-pack</b> while preorders are open, <b style="color:var(--ink)">$15</b> after launch.</p>
-        <a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1,53831245955437:1" class="btn btn-primary" style="width:100%;justify-content:center"><span>Preorder Pod + 3 refills — $35 <span class="arr">&#8594;</span></span></a>
-        <small class="fine" style="margin-top:10px">Or <a href="https://savageskincare-store.myshopify.com/cart/53831245955437:1" style="color:var(--neon);font-weight:600">grab refills on their own — $11 &#8594;</a> &middot; each link opens its own Shopify checkout.</small>
-      </div>
-
-      <p style="text-align:center;margin-top:22px;font-size:14px;color:var(--dim)">Not ready to put money down? <a href="#join" style="color:var(--neon);font-weight:600">Join the community instead &#8594;</a></p>
-    </div>
-  </div>
-</section>
-
-<!-- ================= THE FORM ================= -->
-<section id="join" style="padding-top:18px">
-  <div class="wrap" style="max-width:560px">
-    <div class="card lite">
-      <div class="card-top">
-        <span class="tag">Free · no card</span>
-      </div>
-      <h2>Or just join the community.</h2>
-      <p class="lead" style="margin-bottom:18px">Not everyone wants to prepay for something that isn't made yet — completely fair. Get on the list instead and you still get a real say in what we build. You just don't get a Pod reserved, and you'll pay $32 when it launches.</p>
-
-      <div class="offer">
-        <div class="oh">What you get</div>
-        <ul>
-          <li><span class="chk">1</span><div><b>First to know when it ships.</b> <span class="d">Before any ad, any post, anyone else.</span></div></li>
-          <li><span class="chk">2</span><div><b>A vote on what we make.</b> <span class="d">Colorway, finish, what comes after the Pod — the votes on this page are real.</span></div></li>
-          <li><span class="chk">3</span><div><b>Email only when there's news.</b> <span class="d">Not weekly, not for the sake of it. When something actually happens, you hear it.</span></div></li>
-        </ul>
-        <div class="spots"><b>Free to join</b> · no card, no order, unsubscribe anytime</div>
-      </div>
-
+    <div class="join" id="join">
+      <h3>Not ready to preorder? Join the list instead.</h3>
+      <p class="perks">Free. You hear first when it ships, you get a vote on what we make, and we only email when there’s real news.</p>
       <form id="leadForm" novalidate>
         <div class="field">
           <label for="email">Email</label>
@@ -675,13 +1035,13 @@ em,i,cite,dfn{font-style:normal}
           <span>Text me about drops &amp; restocks. Msg &amp; data rates may apply, frequency varies; reply STOP to cancel, HELP for help. <em style="font-style:normal;color:var(--mute)">(Optional)</em></span>
         </label>
 
-        <button type="submit" class="submit" id="submitBtn">Join the community →</button>
-        <small class="fine">Free · no card · this is the community, not an order. No spam, unsubscribe anytime.<br><b style="color:var(--ink);font-weight:600">Want one guaranteed?</b> <a href="#preorder" style="color:var(--neon);font-weight:600">Preorder at $24 instead &#8594;</a> — refundable anytime.</small>
+        <button type="submit" class="btn btn-primary submit" id="submitBtn"><span>Join the list</span></button>
+        <small class="fine">Free. No card, no order. Unsubscribe anytime.</small>
       </form>
 
       <div class="success" id="success" role="status" aria-live="polite">
-        <div class="big">You're in.</div>
-        <p>You&rsquo;re on the list &mdash; nothing to confirm. Know someone who&rsquo;d love this? Send them the drop — we wrote it for you:</p>
+        <div class="big">You’re on the list.</div>
+        <p>Nothing to confirm. Know someone who’d love this? Send them the drop, we wrote it for you:</p>
         <div class="mini-btns">
           <button type="button" class="mini-btn" id="copyBtn">Copy the message</button>
           <a class="mini-btn" id="smsShare" href="#">Text it</a>
@@ -691,287 +1051,22 @@ em,i,cite,dfn{font-style:normal}
   </div>
 </section>
 
-<!-- ================= LIP POD CONCEPT VOTE ================= -->
-<section id="lip-pod-vote">
+</main>
+
+<footer class="site-foot">
   <div class="wrap">
-    <div class="eyebrow">sneak peek · concept</div>
-    <h3 class="sec">The Lip Pod is coming. <span class="serif">You pick how you'd wear it.</span></h3>
-    <p class="lead">A wearable magnetic gloss pod — still in development. Every photo in this section is a concept render, not the final product. Tell us how you'd actually carry it. <em style="font-style:normal;color:var(--mute)">Nothing here is for sale yet.</em></p>
-
-    <div class="pod-section">
-      <div class="pv-carousel-wrap">
-        <button class="pv-arrow prev" type="button" aria-label="Previous design">&#8592;</button>
-        <button class="pv-arrow next" type="button" aria-label="Next design">&#8594;</button>
-
-        <div class="pv-track" id="pvTrack">
-          <div class="pv-card">
-            <div class="pv-img-wrap">
-              <span class="concept-badge">Concept render</span>
-              <img src="/lip-pod/wear-phone.jpg" width="1100" height="1100" loading="lazy" alt="Lip Pod concept render — clipped to your phone">
-            </div>
-            <div class="pv-body">
-              <div class="pv-name">Clipped to your phone</div>
-              <div class="pv-desc">Hangs off your phone strap, so it's there every time your phone is. Never at the bottom of your bag.</div>
-              <div class="pv-meta"><span>Phone strap</span><span><b class="pv-count" data-count>0</b> votes</span></div>
-              <button class="pv-btn" type="button" data-concept="Wear it — Clipped to your phone">Vote this one</button>
-            </div>
-          </div>
-          <div class="pv-card">
-            <div class="pv-img-wrap">
-              <span class="concept-badge">Concept render</span>
-              <img src="/lip-pod/wear-bag.jpg" width="1100" height="1100" loading="lazy" alt="Lip Pod concept render — as a bag charm">
-            </div>
-            <div class="pv-body">
-              <div class="pv-name">As a bag charm</div>
-              <div class="pv-desc">Clips to your bag like jewelry. Reads as an accessory first and a lip product second.</div>
-              <div class="pv-meta"><span>Bag charm</span><span><b class="pv-count" data-count>0</b> votes</span></div>
-              <button class="pv-btn" type="button" data-concept="Wear it — As a bag charm">Vote this one</button>
-            </div>
-          </div>
-          <div class="pv-card">
-            <div class="pv-img-wrap">
-              <span class="concept-badge">Concept render</span>
-              <img src="/lip-pod/wear-wrist.jpg" width="1100" height="1100" loading="lazy" alt="Lip Pod concept render — looped on your wrist">
-            </div>
-            <div class="pv-body">
-              <div class="pv-name">Looped on your wrist</div>
-              <div class="pv-desc">The cord doubles as a wristlet. Hands free, and it moves with you.</div>
-              <div class="pv-meta"><span>Wristlet</span><span><b class="pv-count" data-count>0</b> votes</span></div>
-              <button class="pv-btn" type="button" data-concept="Wear it — Looped on your wrist">Vote this one</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="pv-dots" id="pvDots"></div>
-      </div>
-
-      <div class="keep">
-        <div class="keep-grid">
-          <div class="keep-ph">
-            <span class="concept-badge">Concept render</span>
-            <img src="/lip-pod/wear-phone.jpg" width="1100" height="1100" loading="lazy" alt="Lip Pod concept render — the pod clipped to a phone strap and looped around a wrist">
-          </div>
-          <div class="keep-copy">
-            <div class="eyebrow">the whole point</div>
-            <h3 class="sec">You won't lose this one. <span class="serif">It's attached to you.</span></h3>
-            <p class="lead">Lip gloss goes missing because it lives loose at the bottom of a bag. The Lip Pod doesn't live there. It clips onto the things you already never put down — so it's on you, not lost in something.</p>
-            <ul class="keep-list">
-              <li><span class="n">&#10003;</span><div><b>Clipped, not floating</b><span>Your phone, your bag, your wrist. It goes where you go instead of sinking to the bottom of something.</span></div></li>
-              <li><span class="n">&#10003;</span><div><b>Nothing to dig for</b><span>It rides on the outside. You reach for it without looking, the way you reach for your keys.</span></div></li>
-              <li><span class="n">&#10003;</span><div><b>The two halves stay together</b><span>The tube snaps back into the case magnetically, so the gloss can't wander off from the thing holding it.</span></div></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="build-head">
-        <div class="eyebrow">radical transparency</div>
-        <h3 class="sec">How it comes apart.</h3>
-        <p class="lead">No mystery parts. Here's the whole thing, and the drawing our factory works from.</p>
-      </div>
-      <div class="build-grid">
-        <div class="build-item">
-          <div class="build-ph">
-            <span class="concept-badge">Concept render</span>
-            <img src="/lip-pod/pod-exploded.jpg" width="1100" height="1366" loading="lazy" alt="Lip Pod concept render — the cap, gloss tube, case and lanyard shown apart">
-          </div>
-          <div class="build-cap">
-            <b>Every part, shown</b>
-            <span>Cap, gloss tube, case, lanyard clip. Nothing hidden — this is the whole product.</span>
-          </div>
-        </div>
-        <div class="build-item">
-          <div class="build-ph">
-            <span class="concept-badge">Concept render</span>
-            <img src="/lip-pod/pod-linework.jpg" width="1100" height="1366" loading="lazy" alt="Lip Pod concept render — a technical line drawing of the same assembly">
-          </div>
-          <div class="build-cap">
-            <b>The drawing behind it</b>
-            <span>The same assembly as a technical drawing. Dimensions are still moving while the design is being finalised.</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Optional email capture — appears after the first vote. Voting works without it. -->
-      <div class="pod-capture" id="podCapture">
-        <div class="card">
-          <form id="podForm" novalidate>
-            <span class="tag">First in line</span>
-            <h2>Want first access when the winning design drops?</h2>
-            <p style="color:var(--dim);font-size:14.5px;margin:0 0 16px;line-height:1.55">Your vote counts either way. Add your email to be <b style="color:var(--ink)">first to know</b> if the Lip Pod goes into production — optional, no spam, and it won't affect your vote.</p>
-            <div class="field">
-              <label for="podEmail">Email <span class="hint">— optional</span></label>
-              <input id="podEmail" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com">
-            </div>
-            <div class="err" id="podErr" role="alert" aria-live="polite"></div>
-            <label class="consent">
-              <input type="checkbox" id="podAgree">
-              <span>I'm 16+ (or have a parent/guardian's permission) and agree to get email updates about the Lip Pod, per the
-                <a href="/privacy/">Privacy Policy</a> &amp; <a href="/terms/">Terms</a>.</span>
-            </label>
-            <button type="submit" class="submit" id="podSubmit">Keep me posted →</button>
-            <button type="button" class="cap-skip" id="podSkip">No thanks — just count my vote</button>
-            <small class="fine">This vote is free and is not an order. The Lip Pod itself is available to <a href="#preorder">preorder at $24</a> — refundable anytime before it ships.</small>
-          </form>
-          <div class="success" id="podSuccess" role="status" aria-live="polite">
-            <div class="big">Vote locked in.</div>
-            <p id="podSuccessMsg">Thanks — we saved your pick.</p>
-          </div>
-        </div>
-      </div>
+    <p class="foot-mark" aria-hidden="true">Savage Skincare</p>
+    <div class="foot-cols">
+      <div><p>The Lip Pod</p><ul><li><a href="/shop/">Product</a></li><li><a href="/shop/#science">Science</a></li><li><a href="#terms">Preorder terms</a></li></ul></div>
+      <div><p>Read</p><ul><li><a href="/blog/">Journal</a></li><li><a href="/founders/">Story</a></li><li><a href="/faq/">FAQ</a></li></ul></div>
+      <div><p>Legal</p><ul><li><a href="/privacy/">Privacy</a></li><li><a href="/terms/">Terms</a></li><li><a href="/cookies/">Cookies</a></li></ul></div>
+      <div class="foot-help"><p>Help</p><ul><li><a href="/shipping-returns/">Shipping &amp; Returns</a></li><li><a href="mailto:hello@savageskincare.com">hello@savageskincare.com</a></li><li><a href="https://www.instagram.com/savageskincare_4teens/" rel="noopener">Instagram</a></li></ul></div>
     </div>
+    <div class="foot-legal"><span>© 2026 Savage Skincare</span><span>Results vary. Not medical advice.</span></div>
   </div>
-</section>
-
-<!-- ================= THE VOTE ================= -->
-<section id="vote">
-  <div class="wrap">
-    <div class="vote-wrap">
-      <div class="vote-head">
-        <div>
-          <div class="eyebrow">you decide</div>
-          <h3 class="sec" id="voteQ">Pick the finish.</h3>
-          <p class="lead" id="voteSub">Tap your favorite. Your vote helps choose what we make — and when you join, we save your pick.</p>
-        </div>
-        <div class="vote-count"><b id="voteTotal">0</b> votes so far</div>
-      </div>
-      <div class="flavor-band">
-        <span class="concept-badge">Concept render</span>
-        <img src="/lip-pod/gloss-texture.jpg" width="1400" height="520" loading="lazy" alt="Concept render — a droplet of Savage Lips gloss at the tube tip">
-      </div>
-      <div class="opts" id="voteOpts"></div>
-      <div class="vote-nudge" id="voteNudge">
-        <span>Love that pick? Preorder and you're in the founder run.</span>
-        <a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1" class="btn btn-primary"><span>Preorder — $24 <span class="arr">→</span></span></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= WHY ================= -->
-<section style="padding-top:10px">
-  <div class="wrap">
-    <div class="eyebrow">why it hits</div>
-    <h3 class="sec">Three things a tube <span class="serif">can't do.</span></h3>
-    <p class="lead">The Pod is the whole idea. It's not a gloss you carry — it's a gloss you wear, refill, and stop re-buying.</p>
-    <div class="cards">
-      <div class="vcard"><div class="n">01 · wear it</div><h4>It clips on</h4><p>Phone strap, bag, wrist. It rides on the outside of your life instead of sinking into the bottom of a bag you'll empty in October.</p></div>
-      <div class="vcard"><div class="n">02 · refill it</div><h4>The tube swaps out</h4><p>The gloss snaps into the case magnetically. When it runs out you replace the tube, not the whole thing — the Pod keeps going.</p></div>
-      <div class="vcard"><div class="n">03 · trust it</div><h4>Clean stuff inside</h4><p>Plant-based, food-simple ingredients you can pronounce. It's on your lips all day, so what's in it isn't an afterthought.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= OLD WAY VS LIP POD ================= -->
-<section style="padding-top:10px">
-  <div class="wrap">
-    <div class="eyebrow">the switch</div>
-    <h3 class="sec">Same lips. <span class="serif">Completely different math.</span></h3>
-    <p class="lead">Here's what you're actually choosing between.</p>
-    <div class="vs">
-      <div class="vs-col old">
-        <h4>The tube you keep re-buying</h4>
-        <span class="tagline">what you do now</span>
-        <ul>
-          <li><i>&#215;</i><div>Lives loose in a bag, so it's gone within weeks</div></li>
-          <li><i>&#215;</i><div>Wax stick that quits by second period</div></li>
-          <li><i>&#215;</i><div>Ingredient list you can't read, on a product you eat all day</div></li>
-          <li><i>&#215;</i><div>One job: shine. That's it.</div></li>
-          <li><i>&#215;</i><div>Replaced three times a year without thinking about it</div></li>
-        </ul>
-      </div>
-      <div class="vs-col now">
-        <h4>The Lip Pod</h4>
-        <span class="tagline">what we're building</span>
-        <ul>
-          <li><i>&#10003;</i><div>Clips to your phone, bag or wrist — it can't sink to the bottom of anything</div></li>
-          <li><i>&#10003;</i><div>Actually stays put through class, practice and your whole camera roll</div></li>
-          <li><i>&#10003;</i><div>Clean, plant-based formula — every ingredient in plain English on the label</div></li>
-          <li><i>&#10003;</i><div>Refillable: the tube swaps out, the Pod stays</div></li>
-          <li><i>&#10003;</i><div>The tube snaps back into the case, so the two halves stay together</div></li>
-        </ul>
-      </div>
-    </div>
-    <p class="concept-cap" style="max-width:none;text-align:left;margin-top:18px">The Lip Pod is still in development — every image on this page is a concept render, and the final product may differ. Preorders are open at $24 and are refundable anytime before shipping.</p>
-  </div>
-</section>
-
-<!-- ================= TRANSPARENCY BAND ================= -->
-<section>
-  <div class="wrap">
-    <div class="band">
-      <div class="eyebrow">the savage standard</div>
-      <h3 class="sec">Nothing in it you'd be <span class="serif">afraid to swallow.</span></h3>
-      <p class="lead">The Pod is the point — but we didn't cut corners on what goes in it. You lick your lips, you eat, you talk, and it's on you all day. So the gloss is clean and plant-based, sourced organic wherever we can get it, with every single ingredient in plain English on the label. No fragrance, no mystery filler, no fear list.</p>
-      <div class="ing">
-        <span>Shea butter — plant-based, seals + softens</span>
-        <span>Squalane — plant-derived, weightless moisture</span>
-        <span>Hyaluronic acid — pulls in water, no sting</span>
-        <span>Glycerin — plant-based, all-day soft</span>
-        <span>Vitamin E — natural antioxidant</span>
-      </div>
-      <p style="font-family:var(--mono);font-size:12px;color:var(--mute);letter-spacing:0;margin-top:14px">Cruelty-free, always · no fragrance · no parabens · the full list goes on the label, not in the fine print</p>
-    </div>
-  </div>
-</section>
-
-<!-- ================= FAQ ================= -->
-<section style="padding-top:10px">
-  <div class="wrap">
-    <div class="eyebrow">real questions</div>
-    <h3 class="sec">Before you ask.</h3>
-    <div class="faq">
-      <details><summary>What's the difference between preordering and joining?</summary><p>Preordering means you pay $24 today and we send you a Lip Pod when the first run is made. Joining the community is free — no card, no order — and just puts you on the list. Preorder if you want the Pod and the $24 price. Join if you want to watch first and decide later.</p></details>
-      <details><summary>Am I being charged?</summary><p>If you preorder, yes — $24 goes through today, on Shopify's checkout. If you only join the community, no, and there's no card field on that form at all.</p></details>
-      <details><summary>Is the Lip Pod actually real?</summary><p>It's real, and it's not finished. Every photo on this site is a concept render, the design is still being worked on, and the vote above genuinely decides parts of it. We'd rather show you the unfinished version than a fake finished one — which is also why the preorder terms say all of this out loud.</p></details>
-      <details><summary>When does it ship?</summary><p>The Pod is in design right now &mdash; we haven&rsquo;t locked in a manufacturer yet, that comes once the design is final. Our estimate is that shipping could begin in early 2027. That's an estimate, not a promise — it depends on tooling and the factory. If it slips, we email everyone who preordered and you can take a full refund instead of waiting.</p></details>
-      <details><summary>What if I change my mind?</summary><p>Email <a href="mailto:hello@savageskincare.com">hello@savageskincare.com</a> any time before your Pod ships and we refund you in full. You don't have to give a reason and we won't try to talk you out of it.</p></details>
-      <details><summary>Do I pay for shipping?</summary><p>Not right now. Shipping is <b>free on every preorder</b>, with no minimum spend &mdash; it's a limited-time offer that runs while preorders are open. Shipping normally costs $4.90. Put together with the $8 off the price, preordering today saves you <b>$12.90</b> against the $32-plus-shipping launch price.</p></details>
-      <details><summary>Why is it $24 now and $32 later?</summary><p>Because preorders fund the first production run, and money now is worth more to us than money later. That's the whole trade — you take the risk that it's early, we take $8 off the price and cover your shipping on top.</p></details>
-      <details><summary>Do I have to give my phone number?</summary><p>No — phone is optional on the community form and email alone works. If you do add it, we can text you the moment the Pod ships. Texts are opt-in (the checkbox), and you can reply STOP anytime.</p></details>
-      <details><summary>What's actually in the gloss?</summary><p>Clean, plant-based ingredients you can pronounce — shea butter, squalane, hyaluronic acid, glycerin, vitamin E — and we're sourcing organic wherever a supplier can certify it. No fragrance, no parabens, cruelty-free, and the full list goes on the label in plain English. It doesn't sting either: the fuller look comes from hydration, not irritation.</p></details>
-    </div>
-  </div>
-</section>
-
-<!-- ================= CLOSING CTA ================= -->
-<section style="padding-top:20px">
-  <div class="wrap">
-    <div class="close">
-      <div class="eyebrow">last thing</div>
-      <h3>Stop buying the same gloss <em>over and over.</em></h3>
-      <p>500 units in the founder run. $24 instead of $32, and free shipping while the preorder offer lasts — <b>$12.90 saved</b> — yours ships first, and a full refund anytime before it ships, for any reason. The only thing you're committing to is changing your mind later if you want to.</p>
-      <div style="display:flex;flex-direction:column;gap:14px;align-items:center">
-        <a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1" class="btn btn-primary"><span>Preorder the Lip Pod — $24 <span class="arr">&#8594;</span></span></a>
-        <a href="#join" style="font-size:14px;color:rgba(255,255,255,.62);text-decoration:underline;text-underline-offset:3px">or join free — no Pod reserved, $32 at launch</a>
-      </div>
-      <small class="fine">Charged today · est. shipping early 2027 · refundable anytime before it ships</small>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap foot-row">
-    <div class="foot-links">
-      <a href="/shop/">Product</a>
-      <a href="/blog/">Journal</a>
-      <a href="/founders/">Story</a>
-      <a href="/faq/">FAQ</a>
-      <a href="/shipping-returns/">Shipping &amp; Returns</a>
-      <a href="mailto:hello@savageskincare.com">hello@savageskincare.com</a>
-    </div>
-    <div class="foot-policies">
-      <a href="/privacy/">Privacy</a>
-      <a href="/terms/">Terms</a>
-      <a href="/cookies/">Cookies</a>
-    </div>
-  </div>
-  <div class="wrap" style="margin-top:14px;color:var(--mute)">© 2026 Savage Skin · Results vary. Not medical advice.</div>
 </footer>
 
-</div>
-
-<div class="sticky"><a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1">Preorder the Lip Pod — $24 →</a></div>
+<a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1" class="btn btn-primary sticky-cta" id="stickyCta" aria-hidden="true" tabindex="-1"><span>Preorder &mdash; $24</span></a>
 
 <script>
 (function(){
@@ -986,98 +1081,87 @@ em,i,cite,dfn{font-style:normal}
   var SHEET_ENDPOINT = '';
 
   /* =====================================================================
-     2) THE VOTE — edit these options anytime. Add, remove, rename freely.
-        'seed' is just a starting number so the bars don't begin at zero.
+     2) THE FLAVOR VOTE — edit these options anytime. Add, remove, rename freely.
+        No counts are shown: votes only reach us with a signup, so there is
+        no real total to display yet. (The old fake 'seed' numbers are gone.)
      --------------------------------------------------------------------- */
   var VOTE = {
-    question: 'Pick the flavor.',
-    subtitle: 'This is the gloss that goes in the pod. Tap your favorite — your vote helps us choose which flavor we make first, and we save your pick when you join.',
     options: [
-      { id:'cherrycola',  label:'Cherry Cola',     seed:118 },
-      { id:'peachfizz',   label:'Peach Fizz',      seed:94  },
-      { id:'vanillachai', label:'Vanilla Chai',    seed:131 },
-      { id:'strawmilk',   label:'Strawberry Milk', seed:87  }
+      { id:'cherrycola',  label:'Cherry Cola' },
+      { id:'peachfizz',   label:'Peach Fizz' },
+      { id:'vanillachai', label:'Vanilla Chai' },
+      { id:'strawmilk',   label:'Strawberry Milk' }
     ]
   };
   /* ===================================================================== */
 
   function qs(id){ return document.getElementById(id); }
+  function store(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+  function read(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
 
-  /* ---------- mobile nav ---------- */
-  var nav = qs('nav'), navToggle = qs('navToggle');
-  navToggle.addEventListener('click', function(){
-    var open = nav.classList.toggle('open');
-    navToggle.setAttribute('aria-expanded', open ? 'true':'false');
-  });
-  qs('navLinks').addEventListener('click', function(e){ if(e.target.tagName==='A') nav.classList.remove('open'); });
-
-  /* ---------- vote ---------- */
+  /* ---------- vote: flavor (saved on this device, sent with a signup) ---------- */
+  var VKEY = 'savage_vote_choice';
   var selectedVote = '';
-  var CKEY = 'savage_vote_counts', VKEY = 'savage_vote_choice';
-  function loadCounts(){ try{ return JSON.parse(localStorage.getItem(CKEY)) || {}; }catch(e){ return {}; } }
-  function saveCounts(c){ try{ localStorage.setItem(CKEY, JSON.stringify(c)); }catch(e){} }
-  var counts = loadCounts();
-
-  function countFor(opt){ return opt.seed + (counts[opt.id] || 0); }
-  function total(){ var t=0; VOTE.options.forEach(function(o){ t += countFor(o); }); return t; }
-
-  qs('voteQ').textContent = VOTE.question;
-  qs('voteSub').textContent = VOTE.subtitle;
-
   var optsEl = qs('voteOpts');
   VOTE.options.forEach(function(o){
     var b = document.createElement('button');
-    b.type='button'; b.className='opt'; b.setAttribute('data-id',o.id);
-    b.innerHTML =
-      '<div class="opt-fill" data-fill></div>'+
-      (o.img ? '<div class="opt-thumb"><img data-thumb alt="" loading="lazy"></div>' : '')+
-      '<div class="opt-info">'+
-        '<div class="opt-row"><span class="opt-name"></span><span class="opt-pct" data-pct>0%</span></div>'+
-        '<div class="opt-tick">✓ your pick</div>'+
-      '</div>';
-    b.querySelector('.opt-name').textContent = o.label;
-    if(o.img){ var t=b.querySelector('[data-thumb]'); t.src=o.img; t.alt='Lip Pod tube — '+o.label+' finish'; }
-    b.addEventListener('click', function(){ choose(o.id); });
+    b.type='button'; b.className='flavor'; b.setAttribute('data-id',o.id); b.setAttribute('aria-pressed','false');
+    b.innerHTML = '<span class="nm"></span><span class="pick">Pick</span>';
+    b.querySelector('.nm').textContent = o.label;
+    b.addEventListener('click', function(){ chooseFlavor(o.id); });
     optsEl.appendChild(b);
   });
-
-  function render(){
-    var t = total() || 1;
-    VOTE.options.forEach(function(o){
-      var el = optsEl.querySelector('[data-id="'+o.id+'"]');
-      var pct = Math.round(countFor(o)/t*100);
-      el.querySelector('[data-fill]').style.width = pct+'%';
-      el.querySelector('[data-pct]').textContent = pct+'%';
-      el.classList.toggle('chosen', selectedVote===o.id);
-    });
-    qs('voteTotal').textContent = total().toLocaleString();
-  }
-
-  function choose(id){
-    // move the user's vote (allow changing their mind)
-    if(selectedVote && selectedVote!==id){ counts[selectedVote] = Math.max(0,(counts[selectedVote]||0)-1); }
-    if(selectedVote!==id){ counts[id] = (counts[id]||0)+1; }
-    selectedVote = id;
-    try{ localStorage.setItem(VKEY, id); }catch(e){}
-    saveCounts(counts);
-    render();
-    qs('voteNudge').classList.add('show');
-  }
-
-  // restore a previous vote
-  try{ var prev = localStorage.getItem(VKEY); if(prev && VOTE.options.some(function(o){return o.id===prev;})){ selectedVote=prev; qs('voteNudge').classList.add('show'); } }catch(e){}
-  render();
-
   function voteLabel(){ var o = VOTE.options.filter(function(x){return x.id===selectedVote;})[0]; return o?o.label:''; }
+  function renderFlavor(){
+    [].forEach.call(optsEl.children, function(b){
+      var on = b.getAttribute('data-id')===selectedVote;
+      b.setAttribute('aria-pressed', on ? 'true':'false');
+      b.querySelector('.pick').textContent = on ? 'Your pick' : 'Pick';
+    });
+  }
+  function chooseFlavor(id){ selectedVote = id; store(VKEY,id); renderFlavor(); savedNote(); }
+  var prevFlavor = read(VKEY);
+  if(prevFlavor && VOTE.options.some(function(o){return o.id===prevFlavor;})) selectedVote = prevFlavor;
+  renderFlavor();
 
-  /* ---------- parent / share message ---------- */
+  /* ---------- vote: how you'd wear it ---------- */
+  var PKEY = 'savage_pod_choice';
+  var podPick = read(PKEY) || '';
+  var wearBtns = [].slice.call(document.querySelectorAll('.pv-btn'));
+  function renderWear(){
+    wearBtns.forEach(function(b){
+      var on = b.getAttribute('data-concept')===podPick;
+      b.setAttribute('aria-pressed', on ? 'true':'false');
+      b.querySelector('.pick').textContent = on ? 'Your pick' : 'Pick';
+    });
+  }
+  wearBtns.forEach(function(b){
+    b.addEventListener('click', function(){
+      podPick = b.getAttribute('data-concept'); store(PKEY,podPick); renderWear(); savedNote();
+      window.dispatchEvent(new CustomEvent('savage:podvote', { detail: podPick }));
+    });
+  });
+  if(!wearBtns.some(function(b){ return b.getAttribute('data-concept')===podPick; })) podPick = '';
+  renderWear();
+  window.__savagePodPick = function(){ return podPick; };
+  window.__savageFlavorPick = function(){ return voteLabel(); };
+
+  var savedEl = qs('voteSaved');
+  function savedNote(){
+    var a = podPick ? podPick.replace('Wear it — ','') : '', f = voteLabel();
+    var parts = [a, f].filter(Boolean);
+    savedEl.textContent = parts.length ? ('Saved on this device: ' + parts.join(' and ') + '. Join the list and it’s counted.') : '';
+  }
+  savedNote();
+
+  /* ---------- share message ---------- */
   var SHARE='https://savageskincare.com/?ref=share';
-  var MSG="just joined the Savage Skin community — the Lip Pod is a wearable gloss you clip to your phone, bag, or wrist, dropping soon. get on the list with me: "+SHARE;
+  var MSG="just joined the Savage Skincare list — the Lip Pod is a wearable gloss you clip to your phone, bag, or wrist, dropping soon. get on the list with me: "+SHARE;
   var smsShare = qs('smsShare');
   if(smsShare) smsShare.setAttribute('href','sms:?&body='+encodeURIComponent(MSG));
   var copyBtn = qs('copyBtn');
   if(copyBtn) copyBtn.addEventListener('click', function(){
-    navigator.clipboard.writeText(MSG).then(function(){ var t=copyBtn.textContent; copyBtn.textContent='Copied ✓'; setTimeout(function(){copyBtn.textContent=t;},1800); }).catch(function(){});
+    navigator.clipboard.writeText(MSG).then(function(){ var t=copyBtn.textContent; copyBtn.textContent='Copied'; setTimeout(function(){copyBtn.textContent=t;},1800); }).catch(function(){});
   });
 
   /* ---------- phone -> E.164 (US) ---------- */
@@ -1087,7 +1171,7 @@ em,i,cite,dfn{font-style:normal}
     return d.length===10 ? '+1'+d : null;
   }
 
-  /* ---------- submit ---------- */
+  /* ---------- submit: the list ---------- */
   var form = qs('leadForm');
   form.addEventListener('submit', function(e){
     e.preventDefault();
@@ -1102,7 +1186,7 @@ em,i,cite,dfn{font-style:normal}
     if(phoneRaw && !phone){ err.textContent='That phone number does not look right — enter 10 digits, or leave it blank.'; qs('phone').focus(); return; }
     if(!agree){ err.textContent='Please check the box to confirm your age and agree to the terms.'; return; }
 
-    var btn = qs('submitBtn'); btn.disabled=true; btn.textContent='Joining…';
+    var btn = qs('submitBtn'); btn.disabled=true; btn.firstChild.textContent='Joining…';
 
     var smsConsent = !!(phone && smsOk);   // no phone -> no SMS consent, ever
     var props = {
@@ -1112,6 +1196,7 @@ em,i,cite,dfn{font-style:normal}
       sms_consent_at: new Date().toISOString(),
       age_confirmed: '16+ or guardian'
     };
+    if(podPick) props.lip_pod_vote = podPick;   // the wear pick rides along when there is one
     var profileAttrs = { email: email, properties: props };
     if(phone) profileAttrs.phone_number = phone;   // Klaviyo rejects a null phone_number
 
@@ -1143,232 +1228,63 @@ em,i,cite,dfn{font-style:normal}
 
     function done(){ try{ if(window.fbq) fbq('track','Lead',{content_name:'home-collector'}); }catch(e){} form.style.display='none'; qs('success').classList.add('show'); }
   });
-})();
-</script>
 
-<!-- ===== Lip Pod concept carousel + optional email capture (self-contained) ===== -->
-<script>
-(function(){
-  var KLAVIYO_KEY = 'XNMhJw';   // same Klaviyo public key as the reserve form
-  var LIST_ID     = 'Ts8XmZ';   // same VIP Waitlist list
-  var SHEET_ENDPOINT = '';      // optional Google Sheet mirror (see GOOGLE_SHEET_SETUP.md)
-
-  // 'seed' keeps the vote tallies from starting at a lonely zero.
-  var SEED = { 'Wear it — Clipped to your phone':63, 'Wear it — As a bag charm':71,
-               'Wear it — Looped on your wrist':44 };
-
-  var CKEY = 'savage_pod_counts', VKEY = 'savage_pod_choice';
-  function qs(id){ return document.getElementById(id); }
-  function loadCounts(){ try{ return JSON.parse(localStorage.getItem(CKEY)) || {}; }catch(e){ return {}; } }
-  function saveCounts(c){ try{ localStorage.setItem(CKEY, JSON.stringify(c)); }catch(e){} }
-
-  var track = qs('pvTrack');
-  if(!track) return; // section not on this page
-  var counts = loadCounts();
-  var selected = '';
-  try{ selected = localStorage.getItem(VKEY) || ''; }catch(e){}
-
-  var cards = Array.prototype.slice.call(track.querySelectorAll('.pv-card'));
-  var dotsWrap = qs('pvDots');
-  var current = 0, autoTimer = null, userTookOver = false;
-
-  cards.forEach(function(_, i){
-    var d = document.createElement('button');
-    d.type='button'; d.className='pv-dot'+(i===0?' active':'');
-    d.setAttribute('aria-label','Go to design '+(i+1));
-    d.addEventListener('click', function(){ stopAuto(); goTo(i); });
-    dotsWrap.appendChild(d);
-  });
-  var dots = Array.prototype.slice.call(dotsWrap.children);
-
-  function goTo(i){
-    current = (i + cards.length) % cards.length;
-    var card = cards[current];
-    track.scrollTo({left: card.offsetLeft - (track.clientWidth - card.clientWidth)/2, behavior:'smooth'});
-    render();
-  }
-  function render(){
-    dots.forEach(function(d,i){ d.classList.toggle('active', i===current); });
-    cards.forEach(function(c,i){ c.classList.toggle('is-active', i===current); });
-  }
-
-  var scrollDebounce;
-  track.addEventListener('scroll', function(){
-    clearTimeout(scrollDebounce);
-    scrollDebounce = setTimeout(function(){
-      var center = track.scrollLeft + track.clientWidth/2, best=0, bestDist=Infinity;
-      cards.forEach(function(c,i){ var cc=c.offsetLeft+c.clientWidth/2, dist=Math.abs(cc-center); if(dist<bestDist){bestDist=dist;best=i;} });
-      current = best; render();
-    }, 80);
-  });
-
-  document.querySelector('.pv-arrow.prev').addEventListener('click', function(){ stopAuto(); goTo(current-1); });
-  document.querySelector('.pv-arrow.next').addEventListener('click', function(){ stopAuto(); goTo(current+1); });
-
-  function startAuto(){
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    autoTimer = setInterval(function(){ if(!userTookOver) goTo(current+1); }, 4500);
-  }
-  function stopAuto(){ userTookOver = true; if(autoTimer){ clearInterval(autoTimer); autoTimer=null; } }
-  ['touchstart','wheel','pointerdown'].forEach(function(ev){ track.addEventListener(ev, stopAuto, {passive:true, once:true}); });
-
-  /* ---------- vote counts ---------- */
-  function countFor(name){ return (SEED[name]||0) + (counts[name]||0); }
-  function renderCounts(){
-    cards.forEach(function(card){
-      var btn = card.querySelector('.pv-btn');
-      var name = btn.getAttribute('data-concept');
-      var el = card.querySelector('[data-count]');
-      if(el) el.textContent = countFor(name).toLocaleString();
-      var isMine = (name === selected);
-      btn.classList.toggle('voted', isMine);
-      btn.textContent = isMine ? 'Voted ✓' : 'Vote this one';
-    });
-  }
-
-  function castVote(name){
-    if(selected && selected !== name){ counts[selected] = Math.max(0,(counts[selected]||0)-1); }
-    if(selected !== name){ counts[name] = (counts[name]||0)+1; }
-    selected = name;
-    try{ localStorage.setItem(VKEY, name); }catch(e){}
-    saveCounts(counts);
-    renderCounts();
-    stopAuto();
-    showCapture();
-  }
-
-  cards.forEach(function(card){
-    card.querySelector('.pv-btn').addEventListener('click', function(){
-      castVote(this.getAttribute('data-concept'));
-    });
-  });
-
-  renderCounts();
-  render();
-  startAuto();
-
-  /* ---------- optional email capture ---------- */
-  var capture = qs('podCapture'), form = qs('podForm'), success = qs('podSuccess');
+  /* ---------- optional email capture after a wear pick ---------- */
+  var capture = qs('podCapture'), podForm = qs('podForm'), podSuccess = qs('podSuccess');
   var DISMISS_KEY = 'savage_pod_captured';
-  function alreadyDone(){ try{ return localStorage.getItem(DISMISS_KEY)==='1'; }catch(e){ return false; } }
-  function showCapture(){
-    if(alreadyDone()){ return; }
+  function alreadyDone(){ return read(DISMISS_KEY)==='1'; }
+  window.addEventListener('savage:podvote', function(){
+    if(alreadyDone() || capture.classList.contains('show')) return;
     capture.classList.add('show');
-    capture.scrollIntoView({behavior:'smooth', block:'center'});
-  }
-
-  qs('podSkip').addEventListener('click', function(){
-    finish('Thanks — we saved your pick. You can close this now.');
   });
-
+  qs('podSkip').addEventListener('click', function(){ finish('Saved on this device. You can close this now.'); });
   function finish(msg){
-    try{ localStorage.setItem(DISMISS_KEY,'1'); }catch(e){}
-    form.style.display='none';
+    store(DISMISS_KEY,'1');
+    podForm.style.display='none';
     if(msg) qs('podSuccessMsg').textContent = msg;
-    success.classList.add('show');
+    podSuccess.classList.add('show');
   }
-
-  form.addEventListener('submit', function(e){
+  podForm.addEventListener('submit', function(e){
     e.preventDefault();
     var email = qs('podEmail').value.trim();
     var agree = qs('podAgree').checked;
     var err = qs('podErr'); err.textContent='';
 
-    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ err.textContent='Please enter a valid email (or tap "just count my vote").'; qs('podEmail').focus(); return; }
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ err.textContent='Please enter a valid email (or tap "No thanks").'; qs('podEmail').focus(); return; }
     if(!agree){ err.textContent='Please check the box to confirm your age and agree to updates.'; return; }
 
-    var btn = qs('podSubmit'); btn.disabled=true; btn.textContent='Saving…';
+    var btn = qs('podSubmit'); btn.disabled=true; btn.firstChild.textContent='Saving…';
 
     var props = {
       signup_source:'lip-pod-vote',
-      lip_pod_vote: selected || '(no vote)',
+      lip_pod_vote: podPick || '(no vote)',
       lip_pod_vote_at: new Date().toISOString(),
       age_confirmed: '16+ or guardian'
     };
+    if(voteLabel()) props.style_vote = voteLabel();   // the flavor pick rides along when there is one
 
     if(SHEET_ENDPOINT){
       try{
         fetch(SHEET_ENDPOINT, { method:'POST', mode:'no-cors',
           headers:{'Content-Type':'application/x-www-form-urlencoded'},
-          body:new URLSearchParams({ email:email, vote:selected, source:'lip-pod-vote', ts:new Date().toISOString() }).toString()
+          body:new URLSearchParams({ email:email, vote:podPick, source:'lip-pod-vote', ts:new Date().toISOString() }).toString()
         }).catch(function(){});
       }catch(e){}
     }
 
-    function postKlaviyo(){
-      return fetch('https://a.klaviyo.com/client/subscriptions/?company_id='+KLAVIYO_KEY,{
-        method:'POST',
-        headers:{'Content-Type':'application/json','revision':'2024-10-15'},
-        body:JSON.stringify({ data:{ type:'subscription', attributes:{
-          profile:{ data:{ type:'profile', attributes:{ email:email, properties:props } } }
-        }, relationships:{ list:{ data:{ type:'list', id:LIST_ID } } } } })
-      }).then(function(r){ if(!r.ok && r.status!==202) throw new Error(r.status); return r; });
-    }
-    postKlaviyo()
-      .then(function(){ try{ if(window.fbq) fbq('track','Lead',{content_name:'lip-pod-vote'}); }catch(e){} finish("You're on the list — we'll email you first if the Lip Pod drops."); })
-      .catch(function(){ finish("Vote saved. (We had trouble saving your email — you can try again later.)"); });
+    fetch('https://a.klaviyo.com/client/subscriptions/?company_id='+KLAVIYO_KEY,{
+      method:'POST',
+      headers:{'Content-Type':'application/json','revision':'2024-10-15'},
+      body:JSON.stringify({ data:{ type:'subscription', attributes:{
+        profile:{ data:{ type:'profile', attributes:{ email:email, properties:props } } }
+      }, relationships:{ list:{ data:{ type:'list', id:LIST_ID } } } } })
+    }).then(function(r){ if(!r.ok && r.status!==202) throw new Error(r.status); return r; })
+      .then(function(){ try{ if(window.fbq) fbq('track','Lead',{content_name:'lip-pod-vote'}); }catch(e){} finish("You’re on the list. We’ll count your picks and email you first if the Lip Pod drops."); })
+      .catch(function(){ finish("Your pick is saved on this device. We had trouble saving your email, so you can try again later."); });
   });
 })();
 </script>
 <script type="module" src="/src/consent-boot.js"></script>
-<style>
-/* ---------- founder note ---------- */
-.fnote{display:flex;flex-direction:column;gap:6px;margin-top:18px;padding:16px 18px;border-radius:16px;
-  background:linear-gradient(135deg,rgba(255,45,149,.06),rgba(229,194,107,.07));
-  border:1px solid rgba(255,45,149,.18)}
-.fnote b{font-size:14px;letter-spacing:.01em}
-.fnote span{font-size:13.5px;line-height:1.6;color:var(--dim)}
-
-/* ---------- glossy CTA ---------- */
-.btn-primary{position:relative;overflow:hidden;
-  background:linear-gradient(135deg,#ff2d95 0%,#ff62b2 48%,#ff2d95 100%)}
-.btn-primary>span{position:relative;z-index:1}
-.btn-primary::after{content:"";position:absolute;top:0;left:-130%;width:65%;height:100%;pointer-events:none;
-  background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);
-  transform:skewX(-18deg);transition:left .65s cubic-bezier(.22,.61,.36,1)}
-.btn-primary:hover::after{left:150%}
-.btn-primary:hover{box-shadow:0 12px 35px rgba(255,45,149,.216), inset 0 0 0 1px rgba(255,255,255,.28)}
-
-/* ---------- reveal on scroll (class added by JS, so no-JS still shows everything) ---------- */
-@media(prefers-reduced-motion:no-preference){
-  .rv{opacity:0;transform:translateY(20px);
-    transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1)}
-  .rv.in{opacity:1;transform:none}
-}
-</style>
-<script>
-(function(){
-  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-  if(!window.innerHeight)return; // unknown viewport: never hide content
-  var sel='section .wrap > h2, section .wrap > .lead, .card, .h2h-col, .guar, .fnote';
-  var els=[].slice.call(document.querySelectorAll(sel));
-  if(!els.length)return;
-  els.forEach(function(el){el.classList.add('rv')});
-  function vh(){return window.innerHeight||document.documentElement.clientHeight||800}
-  function check(){
-    var h=vh(),left=0;
-    for(var i=0;i<els.length;i++){
-      var el=els[i];
-      if(el.classList.contains('in'))continue;
-      left++;
-      if(el.getBoundingClientRect().top < h*0.92)el.classList.add('in');
-    }
-    if(!left)teardown();
-  }
-  function teardown(){
-    window.removeEventListener('scroll',check);
-    window.removeEventListener('resize',check);
-  }
-  window.addEventListener('scroll',check,{passive:true});
-  window.addEventListener('resize',check);
-  check();
-  window.addEventListener('load',check);
-  // last-resort: never leave copy invisible
-  setTimeout(function(){
-    if(!document.querySelectorAll('.rv.in').length)
-      els.forEach(function(el){el.classList.add('in')});
-  },2500);
-})();
-</script>
+<script type="module" src="/src/home.js"></script>
 </body>
 </html>
