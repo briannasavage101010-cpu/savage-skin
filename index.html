@@ -524,6 +524,12 @@ body .cookie-btn-ghost:hover{background:var(--sweep)}
   body .cookie-bar-text{font-size:12.5px;line-height:1.42}
 }
 
+/* very small phones (under 380px): labels stay on one line; if a longer one must wrap, its price stays with its words */
+.btn>span{text-align:center;text-wrap:balance}
+@media (max-width:380px){
+  .btn{padding:0 16px;font-size:.9375rem}
+}
+
 /* ===================== reduced motion ===================== */
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -677,9 +683,9 @@ body .cookie-btn-ghost:hover{background:var(--sweep)}
       <li><a href="/blog/">Journal</a></li>
       <li><a href="/founders/">Story</a></li>
       <li><a href="/faq/">FAQ</a></li>
-      <li class="menu-cta"><a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1" class="btn btn-primary"><span>Preorder the Lip Pod — $24</span></a></li>
+      <li class="menu-cta"><a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1" class="btn btn-primary"><span>Preorder the Lip Pod&nbsp;—&nbsp;$24</span></a></li>
     </ul>
-    <a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1" class="btn btn-primary nav-cta"><span>Preorder &mdash; $24</span></a>
+    <a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1" class="btn btn-primary nav-cta"><span>Preorder&nbsp;&mdash;&nbsp;$24</span></a>
     <button class="nav-toggle" id="navToggle" type="button" aria-controls="navLinks" aria-expanded="false"><span id="navToggleLabel">Menu</span><i aria-hidden="true"></i></button>
   </nav>
 </header>
@@ -693,7 +699,7 @@ body .cookie-btn-ghost:hover{background:var(--sweep)}
       <h1 class="hero-title" id="hero-title"><span class="line"><span>Tired of</span></span> <span class="line"><span>losing your</span></span> <span class="line"><span>lip gloss?</span></span></h1>
       <p class="hero-lede">Clean, plant-based gloss in a case you can’t lose.</p>
       <div class="hero-actions">
-        <a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1" class="btn btn-primary" id="heroCta"><span>Preorder the Lip Pod — $24</span></a>
+        <a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1" class="btn btn-primary" id="heroCta"><span>Preorder the Lip Pod&nbsp;—&nbsp;$24</span></a>
         <a href="#join" class="link">Join the list instead</a>
       </div>
     </div>
@@ -1006,8 +1012,8 @@ body .cookie-btn-ghost:hover{background:var(--sweep)}
       <li><span class="k">Refills</span><span class="v">$11 for a 3-pack while preorders are open, $15 after launch.</span></li>
     </ul>
     <div class="offer-ctas">
-      <a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1" class="btn btn-primary" id="offerCta"><span>Preorder the Lip Pod — $24</span></a>
-      <a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1,53831245955437:1" class="btn btn-outline"><span>Preorder Pod + 3 refills — $35</span></a>
+      <a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1" class="btn btn-primary" id="offerCta"><span>Preorder the Lip Pod&nbsp;—&nbsp;$24</span></a>
+      <a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1,53831245955437:1" class="btn btn-outline"><span>Preorder Pod + 3 refills&nbsp;—&nbsp;$35</span></a>
     </div>
     <p class="offer-fine"><a class="link" href="https://savageskincare-store.myshopify.com/cart/53831245955437:1">Or get refills on their own, $11</a></p>
     <p class="offer-fine">Secure checkout on Shopify. Each link opens its own checkout. <a class="link" href="#terms">Read the preorder terms</a></p>
@@ -1042,7 +1048,7 @@ body .cookie-btn-ghost:hover{background:var(--sweep)}
     <div class="close-copy">
       <h2 class="display" id="close-title" data-rise>Stop buying the same gloss over and over.</h2>
       <p>One clean, plant-based gloss that stays attached to you, in a case you refill instead of replace.</p>
-      <a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1" class="btn btn-light" id="closeCta"><span>Preorder the Lip Pod — $24</span></a>
+      <a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1" class="btn btn-light" id="closeCta"><span>Preorder the Lip Pod&nbsp;—&nbsp;$24</span></a>
     </div>
 
     <div class="join" id="join">
@@ -1103,7 +1109,7 @@ body .cookie-btn-ghost:hover{background:var(--sweep)}
   </div>
 </footer>
 
-<a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1" class="btn btn-primary sticky-cta" id="stickyCta" aria-hidden="true" tabindex="-1"><span>Preorder &mdash; $24</span></a>
+<a href="https://savageskincare-store.myshopify.com/cart/53828394680685:1" class="btn btn-primary sticky-cta" id="stickyCta" aria-hidden="true" tabindex="-1"><span>Preorder&nbsp;&mdash;&nbsp;$24</span></a>
 
 <script>
 (function(){
